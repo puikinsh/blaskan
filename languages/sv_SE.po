@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Blaskan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-05 00:50+0100\n"
+"PO-Revision-Date: 2011-03-05 01:00+0100\n"
+"Last-Translator: Per Sandström <per@helloper.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:5
+msgid "4-uh-oh-4 <span>Page not found...</span>"
+msgstr "4-uh-oh-4 <span>Sidan hittades inte...</span>"
+
+#: ../404.php:7
+msgid "The page you requested could not be found... sorry. Perhaps searching will help?"
+msgstr "Sidan du sökte kunde inte hittas. Prova att söka efter det du letar efter."
+
+#: ../archive.php:11
+#, php-format
+msgid "Daily Archives: <time format=\"%s\">%s</time>"
+msgstr "Dagligt arkiv: <time format=\"%s\">%s</time>"
+
+#: ../archive.php:24
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Månadsarkiv: <span>%s</span>"
+
+#: ../archive.php:37
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Årligt arkiv: <span>%s</span>"
+
+#: ../archive.php:50
+#, php-format
+msgid "Tagged: <span>%s</span>"
+msgstr "Taggad: <span>%s</span>"
+
+#: ../archive.php:65
+#, php-format
+msgid "Category: <span>%s</span>"
+msgstr "Kategori: <span>%s</span>"
+
+#: ../archive.php:79
+msgid "Archives"
+msgstr "Arkiv"
+
+#: ../author.php:18
+msgid "Posts"
+msgstr "Inlägg"
+
+#: ../comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Detta inlägg är lösenordsskyddat. Ange lösenordet för att se kommentarerna."
+
+#: ../comments.php:16
+#: ../comments.php:26
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Äldre kommentarer"
+
+#: ../comments.php:17
+#: ../comments.php:27
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nyare kommentarer <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../comments.php:35
+msgid "Comments are closed."
+msgstr "Kommentarer stängda."
+
+#: ../comments.php:46
+msgid "Name"
+msgstr "Namn"
+
+#: ../comments.php:47
+msgid "(required)"
+msgstr "(obligatoriskt)"
+
+#: ../comments.php:54
+msgid "Email"
+msgstr "E-post"
+
+#: ../comments.php:55
+msgid "(required - will be kept a secret)"
+msgstr "(obligatoriskt - visas ej)"
+
+#: ../comments.php:61
+msgid "Website"
+msgstr "Webbsida"
+
+#: ../comments.php:64
+msgid "Comment"
+msgstr "Kommentar"
+
+#: ../comments.php:67
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Du måste vara <a href=\"%s\">inloggad</a> för att kunna kommentera."
+
+#: ../comments.php:69
+#, php-format
+msgid "You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out of this account\">Log out?</a></p>"
+msgstr "Du är inloggad som <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Logga ut från detta konto\">Logga ut?</a></p>"
+
+#: ../comments.php:73
+msgid "You may use the following <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+msgstr "Du kan använda följande HTML <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+
+#: ../comments.php:79
+msgid "Post a comment"
+msgstr "Skriv en kommentar"
+
+#: ../comments.php:81
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Skriv ett svar till %s"
+
+#: ../comments.php:83
+msgid "Cancel reply"
+msgstr "Avbryt svar"
+
+#: ../comments.php:85
+msgid "Post comment"
+msgstr "Skicka kommentar"
+
+#: ../functions.php:55
+msgid "Primary Navigation"
+msgstr "Huvudmeny"
+
+#: ../functions.php:56
+msgid "Footer Navigation"
+msgstr "Sidfotsmeny"
+
+#: ../functions.php:82
+msgid "Primary Widget Area"
+msgstr "Vänster sidospalt"
+
+#: ../functions.php:84
+msgid "The primary sidebar"
+msgstr "Den vänstra sidospalten"
+
+#: ../functions.php:93
+msgid "Secondary Widget Area"
+msgstr "Höger sidospalt"
+
+#: ../functions.php:95
+msgid "The secondary sidebar"
+msgstr "Den högra sidospalten"
+
+#: ../functions.php:104
+msgid "Footer Widget Area"
+msgstr "Sidfot"
+
+#: ../functions.php:106
+msgid "The footer widget area"
+msgstr "Sidfot"
+
+#: ../functions.php:135
+#, php-format
+msgid "Page %s"
+msgstr "Sida %s"
+
+#: ../functions.php:320
+#, php-format
+msgid "%1$s - %2$s"
+msgstr "%1$s - %2$s"
+
+#: ../functions.php:330
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar väntar på att bli granskad."
+
+#: ../functions.php:338
+#: ../functions.php:346
+#: ../functions.php:352
+#: ../loop-attachment.php:62
+#: ../loop.php:77
+#: ../page.php:13
+msgid "Edit"
+msgstr "Redigera"
+
+#: ../functions.php:346
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../functions.php:352
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: ../functions.php:388
+#, php-format
+msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
+msgstr "Drivs med <a href=\"%s\">Blaskan</a> och <a href=\"%s\">WordPress</a>."
+
+#: ../loop-attachment.php:54
+#: ../loop.php:51
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Fortsätt läsa <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../loop-attachment.php:55
+#: ../loop.php:52
+#: ../page.php:11
+msgid "Pages:"
+msgstr "Sidor:"
+
+#: ../loop-attachment.php:60
+msgid "Uploaded by"
+msgstr "Uppladdad av"
+
+#: ../loop.php:5
+msgid "Not Found"
+msgstr "Inget resultat"
+
+#: ../loop.php:8
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Ledsen, men inget resultat hittades för detta arkiv. Har du provat att söka?"
+
+#: ../loop.php:58
+msgid "Written by"
+msgstr "Skrivet av"
+
+#: ../loop.php:61
+msgid "No comments"
+msgstr "Inga kommentarer"
+
+#: ../loop.php:61
+msgid "<span>1</span> Comment"
+msgstr "<span>1</span> kommentar"
+
+#: ../loop.php:61
+msgid "<span>%</span> Comments"
+msgstr "<span>%</span> kommentarer"
+
+#: ../loop.php:65
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Postad i</span> %2$s"
+
+#: ../loop.php:73
+#, php-format
+msgid "<span class=\"%1$s\">Tagged with</span> %2$s"
+msgstr "<span class=\"%1$s\">Taggad</span> %2$s"
+
+#: ../loop.php:99
+msgid "Older posts"
+msgstr "Äldre inlägg"
+
+#: ../loop.php:100
+msgid "Newer posts"
+msgstr "Nyare inlägg"
+
+#: ../search.php:6
+#, php-format
+msgid "Search results for: %s"
+msgstr "Sökresultat för: %s"
+
+#: ../search.php:10
+msgid "Nothing Found"
+msgstr "Ingenting hittades"
+
+#: ../search.php:11
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Ledsen, men ingenting matched dina sökord. Försök igen med en ny sökning."
+
+#: ../theme-options.php:22
+msgid "Theme Options"
+msgstr "Temainställningar"
+
+#: ../theme-options.php:36
+msgid " Theme Options"
+msgstr " Temainställningar"
+
+#: ../theme-options.php:39
+msgid "Options saved"
+msgstr "Inställningarna sparade"
+
+#: ../theme-options.php:53
+msgid "Header message"
+msgstr "Meddelande i sidhuvud"
+
+#: ../theme-options.php:56
+msgid "A message that is displayed in the header. Falls back to the blog description if empty."
+msgstr "Ett meddelande som visas i sidhuvudet. Om detta är tomt används bloggens beskrivning om det finns någon."
+
+#: ../theme-options.php:65
+msgid "Footer message"
+msgstr "Meddelande i sidfot"
+
+#: ../theme-options.php:68
+msgid "A message that is displayed in the footer."
+msgstr "Ett meddelande som visas i sidfoten."
+
+#: ../theme-options.php:77
+msgid "Show credits"
+msgstr "Visa länkar"
+
+#: ../theme-options.php:80
+msgid "Display links to the Blaskan theme and WordPress.org in the footer."
+msgstr "Visa länkar till Blaskans sajt och WordPress.org i sidfoten."
+
+#: ../theme-options.php:86
+msgid "Save Options"
+msgstr "Spara inställningar"
+
