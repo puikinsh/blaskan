@@ -991,14 +991,12 @@ figcaption {
 #header nav .current_page_item a:hover,
 #header nav .current_menu_item a:focus,
 #header nav .current_page_item a:focus {
-	background: #f43059;
-	background: -moz-linear-gradient(top,  #fba2b5,  #f43059);
-	background: -o-linear-gradient(top, #fba2b5, #f43059);
-	background: -webkit-gradient(linear, left top, left bottom, from(#fba2b5), to(#f43059));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fba2b5', endColorstr='#f43059');
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#fba2b5, endColorstr=#f43059)";
-	border-color: #f43059;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	background: #999;
+	background: -moz-linear-gradient(top,  #999,  #000);
+	background: -o-linear-gradient(top, #999, #000);
+	background: -webkit-gradient(linear, left top, left bottom, from(#999), to(#000));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#999999', endColorstr='#000000');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999, endColorstr=#000000)";
 }
 
 #header nav a:focus,
@@ -1009,7 +1007,6 @@ figcaption {
 	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#666666, endColorstr=#000000)";
-	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
 }
 
 @media only screen and (max-width: 480px) {
