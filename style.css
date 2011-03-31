@@ -456,7 +456,7 @@ h5,
 h6 {
 	color: #000;
   margin: 0 0 10px;
-	padding: 20px 0 0;
+	padding: 10px 0 0;
 }
 
 h1 {
@@ -472,6 +472,7 @@ h1 {
 h2 {
 	font-size: 18px;
 	line-height: 24px;
+	padding: 20px 0 0;
 }
 
 h3 {
