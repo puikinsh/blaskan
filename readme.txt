@@ -12,8 +12,8 @@ Overview:
 Blaskan is a responsive and accessible WordPress theme that's built for 
 mobile devices and tablets as well a desktops/laptops/netbooks.
 
-Roadmap/future:
----------------
+Future development:
+-------------------
 I'm using Blaskan on my own swedish blog, http://www.permalink.se, so expect
 active development and upgrades as WordPress evolves.
 
