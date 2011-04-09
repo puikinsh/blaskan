@@ -84,8 +84,6 @@ if ( ! function_exists( 'blaskan_init' ) ):
 function blaskan_init() {
 	if ( !is_admin() ) {
 		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr-1.7.min.js' );
-	} else {
-		wp_enqueue_script( 'blaskan-wp-admin', get_template_directory_uri() . '/js/blaskan.wpadmin.js' );
 	}
 }
 endif;
