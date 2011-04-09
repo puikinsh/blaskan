@@ -96,55 +96,53 @@ add_action( 'init', 'blaskan_init' );
  */
 if ( ! function_exists( 'blaskan_widgets_init' ) ):
 function blaskan_widgets_init() {
-	if ( BLASKAN_SIDEBARS !== 'no_sidebars') {
-		if ( BLASKAN_SIDEBARS == 'one_sidebar' || BLASKAN_SIDEBARS == 'two_sidebars' ) {
-			// Primary sidebar
-			register_sidebar( array(
-				'name' => __( 'Primary Widget Area', 'blaskan' ),
-				'id' => 'primary-sidebar',
-				'description' => __( 'The primary sidebar', 'blaskan' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget' => '</section>',
-				'before_title' => '<h3 class="title">',
-				'after_title' => '</h3>',
-			) );
-		}
-		if ( BLASKAN_SIDEBARS == 'two_sidebars' ) {
-			// Secondary sidebar
-			register_sidebar( array(
-				'name' => __( 'Secondary Widget Area', 'blaskan' ),
-				'id' => 'secondary-sidebar',
-				'description' => __( 'The secondary sidebar', 'blaskan' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget' => '</section>',
-				'before_title' => '<h3 class="title">',
-				'after_title' => '</h3>',
-			) );
-		}
-		if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( BLASKAN_SIDEBARS == 'one_sidebar' || BLASKAN_SIDEBARS == 'two_sidebars' ) ) {
-			// Primary page sidebar
-			register_sidebar( array(
-				'name' => __( 'Primary Page Widget Area', 'blaskan' ),
-				'id' => 'primary-page-sidebar',
-				'description' => __( 'The primary page sidebar', 'blaskan' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget' => '</section>',
-				'before_title' => '<h3 class="title">',
-				'after_title' => '</h3>',
-			) );
-		}
-		if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && BLASKAN_SIDEBARS == 'two_sidebars' ) {
-			// Secondary page sidebar
-			register_sidebar( array(
-				'name' => __( 'Secondary Page Widget Area', 'blaskan' ),
-				'id' => 'secondary-page-sidebar',
-				'description' => __( 'The secondary page sidebar', 'blaskan' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget' => '</section>',
-				'before_title' => '<h3 class="title">',
-				'after_title' => '</h3>',
-			) );
-		}
+	if ( BLASKAN_SIDEBARS == 'one_sidebar' || BLASKAN_SIDEBARS == 'two_sidebars' ) {
+		// Primary sidebar
+		register_sidebar( array(
+			'name' => __( 'Primary Widget Area', 'blaskan' ),
+			'id' => 'primary-sidebar',
+			'description' => __( 'The primary sidebar', 'blaskan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget' => '</section>',
+			'before_title' => '<h3 class="title">',
+			'after_title' => '</h3>',
+		) );
+	}
+	if ( BLASKAN_SIDEBARS == 'two_sidebars' ) {
+		// Secondary sidebar
+		register_sidebar( array(
+			'name' => __( 'Secondary Widget Area', 'blaskan' ),
+			'id' => 'secondary-sidebar',
+			'description' => __( 'The secondary sidebar', 'blaskan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget' => '</section>',
+			'before_title' => '<h3 class="title">',
+			'after_title' => '</h3>',
+		) );
+	}
+	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( BLASKAN_SIDEBARS == 'one_sidebar' || BLASKAN_SIDEBARS == 'two_sidebars' ) ) {
+		// Primary page sidebar
+		register_sidebar( array(
+			'name' => __( 'Primary Page Widget Area', 'blaskan' ),
+			'id' => 'primary-page-sidebar',
+			'description' => __( 'The primary page sidebar', 'blaskan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget' => '</section>',
+			'before_title' => '<h3 class="title">',
+			'after_title' => '</h3>',
+		) );
+	}
+	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && BLASKAN_SIDEBARS == 'two_sidebars' ) {
+		// Secondary page sidebar
+		register_sidebar( array(
+			'name' => __( 'Secondary Page Widget Area', 'blaskan' ),
+			'id' => 'secondary-page-sidebar',
+			'description' => __( 'The secondary page sidebar', 'blaskan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget' => '</section>',
+			'before_title' => '<h3 class="title">',
+			'after_title' => '</h3>',
+		) );
 	}
 	
 	// Footer widgets
@@ -209,10 +207,6 @@ function blaskan_body_class($classes) {
   if ( get_theme_mod( 'header_image' ) ) {
     $classes[] = 'header-image';
   }
-
-	if ( BLASKAN_SIDEBARS == 'no_sidebars' ) {
-		$classes[] = 'content-100';
-	}
 	
 	if ( BLASKAN_SIDEBARS == 'one_sidebar' ) {
 		$classes[] = 'content-75';
@@ -227,9 +221,7 @@ function blaskan_body_class($classes) {
 			$classes[] = 'no-sidebars';
 			$classes[] = 'content-75-no-sidebars';
 		}
-	}
-	
-	if ( BLASKAN_SIDEBARS !== 'no_sidebars' && BLASKAN_SIDEBARS !== 'one_sidebar') {
+	} else {
 		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
 			$classes[] = 'sidebars';
 		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( is_active_sidebar( 'primary-page-sidebar' ) || is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
@@ -242,16 +234,6 @@ function blaskan_body_class($classes) {
 			$classes[] = 'no-sidebars';
 		}
 	}
-	
-	/*
-	if ( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) {
-		$classes[] = 'sidebars';
-	} elseif ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) {
-		$classes[] = 'sidebar';
-	} else {
-		$classes[] = 'no-sidebars';
-	}
-	*/
 	
 	if ( is_active_sidebar( 'footer-widget-area' ) ) {
 		$classes[] = 'footer-widgets';

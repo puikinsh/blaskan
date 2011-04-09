@@ -33,10 +33,6 @@ $sidebars_options = array(
 	'1' => array(
 		'value' =>	'one_sidebar',
 		'label' => __( 'Up to one sidebar - content max width 830 px', 'blaskan' )
-	),
-	'0' => array(
-		'value' => 'no_sidebars',
-		'label' => __( 'No sidebars - content max width 1120 px', 'blaskan' )
 	)
 );
 
