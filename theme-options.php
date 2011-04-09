@@ -23,10 +23,28 @@ function blaskan_options_add_page() {
 }
 
 /**
+ * Create arrays for the sidebars on pages options
+ */
+$sidebars_options = array(
+	'2' => array(
+		'value' =>	'two_sidebars',
+		'label' => __( 'Up to two sidebars - content max width 560 px', 'blaskan' )
+	),
+	'1' => array(
+		'value' =>	'one_sidebar',
+		'label' => __( 'Up to one sidebar - content max width 830 px', 'blaskan' )
+	),
+	'0' => array(
+		'value' => 'no_sidebars',
+		'label' => __( 'No sidebars - content max width 1120 px', 'blaskan' )
+	)
+);
+
+/**
  * Create the options page
  */
 function blaskan_options_do_page() {
-	global $footer_widget_width_options;
+	global $sidebars_options;
 
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false;
@@ -44,6 +62,48 @@ function blaskan_options_do_page() {
 			<?php $options = get_option( 'blaskan_options' ); ?>
 
 			<table class="form-table">
+			  
+			  <tr><th colspan="2"><strong><?php _e( 'Layout', 'blaskan' ); ?></strong></th></tr>
+			  
+			  <?php
+				/**
+				 * Content layout
+				 */
+				?>
+				<tr valign="top" id="blaskan-options-sidebars"><th scope="row"><?php _e( 'Sidebars', 'blaskan' ); ?></th>
+					<td><?php // print_r($options); ?>
+						<select name="blaskan_options[sidebars]">
+							<?php
+								$selected = $options['sidebars'];
+								$p = '';
+								$r = '';
+								foreach ( $sidebars_options as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+								}
+								echo $p . $r;
+							?>
+						</select>
+						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'The maximum amount of sidebars', 'blaskan' ); ?></label>
+					</td>
+				</tr>
+			  
+			  <?php
+				/**
+				 * Custom sidebars in pages?
+				 */
+				?>
+				<tr valign="top" id="blaskan-option-custom-sidebars-in-pages"><th scope="row"><?php _e( 'Custom sidebars', 'blaskan' ); ?></th>
+					<td>
+						<input id="blaskan_options[custom_sidebars_in_pages]" name="blaskan_options[custom_sidebars_in_pages]" type="checkbox" value="1" <?php checked( '1', $options['custom_sidebars_in_pages'] ); ?> />
+						<label class="description" for="blaskan_options[custom_sidebars_in_pages]"><?php _e( 'Use custom sidebars in pages.', 'blaskan' ); ?></label>
+					</td>
+				</tr>
+
+        <tr><th colspan="2"><strong><?php _e( 'Header', 'blaskan' ); ?></strong></th></tr>
 
 				<?php
 				/**
@@ -57,6 +117,8 @@ function blaskan_options_do_page() {
 					</td>
 				</tr>
 
+				<tr><th colspan="2"><strong><?php _e( 'Footer', 'blaskan' ); ?></strong></th></tr>
+
 				<?php
 				/**
 				 * Footer message
@@ -68,6 +130,8 @@ function blaskan_options_do_page() {
 						<label class="description" for="blaskan_options[footer_message]"><?php _e( 'A message that is displayed in the footer.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
+				
+				<tr><th colspan="2"><strong><?php _e( 'Misc', 'blaskan' ); ?></strong></th></tr>
 				
 				<?php
 				/**
@@ -94,6 +158,17 @@ function blaskan_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function blaskan_options_validate( $input ) {
+	global $sidebars_options;
+	
+	// Validate layout options
+	/*if ( ! array_key_exists( $input['sidebars'], $sidebars_options ) )
+		$input['sidebars'] = null;*/
+		
+	// Our custom sidebars value is either 0 or 1
+	if ( ! isset( $input['custom_sidebars_in_pages'] ) )
+		$input['custom_sidebars_in_pages'] = null;
+	$input['custom_sidebars_in_pages'] = ( $input['custom_sidebars_in_pages'] == 1 ? 1 : 0 );
+	
 	// Header message may contain allowed HTML tags
 	$input['header_message'] = wp_filter_post_kses( $input['header_message'] );
 	
