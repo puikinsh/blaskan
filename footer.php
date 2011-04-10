@@ -26,7 +26,7 @@
 	<!--[if lt IE 9]>
 		<script type="text/javascript">
 			// Load jQuery?
-			!window.jQuery && document.write(unescape('%3Cscript src="/wp-includes/js/jquery/jquery.js"%3E%3C/script%3E'));
+			!window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="<?php echo home_url(); ?>/wp-includes/js/jquery/jquery.js"%3E%3C/script%3E'));
 		</script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ie.js"></script>
   <![endif]-->

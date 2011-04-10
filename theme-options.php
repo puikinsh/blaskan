@@ -66,8 +66,8 @@ function blaskan_options_do_page() {
 				 * Content layout
 				 */
 				?>
-				<tr valign="top" id="blaskan-options-sidebars"><th scope="row"><?php _e( 'Sidebars', 'blaskan' ); ?></th>
-					<td><?php // print_r($options); ?>
+				<tr valign="top"><th scope="row"><?php _e( 'Sidebars', 'blaskan' ); ?></th>
+					<td>
 						<select name="blaskan_options[sidebars]">
 							<?php
 								$selected = $options['sidebars'];
@@ -92,10 +92,22 @@ function blaskan_options_do_page() {
 				 * Custom sidebars in pages?
 				 */
 				?>
-				<tr valign="top" id="blaskan-option-custom-sidebars-in-pages"><th scope="row"><?php _e( 'Custom sidebars', 'blaskan' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Custom sidebars', 'blaskan' ); ?></th>
 					<td>
 						<input id="blaskan_options[custom_sidebars_in_pages]" name="blaskan_options[custom_sidebars_in_pages]" type="checkbox" value="1" <?php checked( '1', $options['custom_sidebars_in_pages'] ); ?> />
 						<label class="description" for="blaskan_options[custom_sidebars_in_pages]"><?php _e( 'Use custom sidebars in pages.', 'blaskan' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
+				 * Do not hide content in listings on small screens?
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Content in listings', 'blaskan' ); ?></th>
+					<td>
+						<input id="blaskan_options[show_content_in_listings]" name="blaskan_options[show_content_in_listings]" type="checkbox" value="1" <?php checked( '1', $options['show_content_in_listings'] ); ?> />
+						<label class="description" for="blaskan_options[show_content_in_listings]"><?php _e( "Show content in listings on small screens (recommended for photo blogs).", 'blaskan' ); ?></label>
 					</td>
 				</tr>
 
@@ -164,6 +176,11 @@ function blaskan_options_validate( $input ) {
 	if ( ! isset( $input['custom_sidebars_in_pages'] ) )
 		$input['custom_sidebars_in_pages'] = null;
 	$input['custom_sidebars_in_pages'] = ( $input['custom_sidebars_in_pages'] == 1 ? 1 : 0 );
+	
+	// Do not hide content in listings on small screens?
+	if ( ! isset( $input['show_content_in_listings'] ) )
+		$input['show_content_in_listings'] = null;
+	$input['show_content_in_listings'] = ( $input['show_content_in_listings'] == 1 ? 1 : 0 );
 	
 	// Header message may contain allowed HTML tags
 	$input['header_message'] = wp_filter_post_kses( $input['header_message'] );

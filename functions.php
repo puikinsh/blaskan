@@ -1,7 +1,4 @@
 <?php
-if ( ! isset( $content_width ) )
-	$content_width = 540;
-
 /**
  * Theme options
  * Credits: http://themeshaper.com/sample-theme-options/
@@ -15,6 +12,7 @@ require_once ( get_template_directory() . '/theme-options.php' );
 $blaskan_options = get_option('blaskan_options');
 define( 'BLASKAN_SIDEBARS', $blaskan_options['sidebars'] );
 define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', $blaskan_options['custom_sidebars_in_pages'] );
+define( 'BLASKAN_SHOW_CONTENT_IN_LISTINGS', $blaskan_options['show_content_in_listings'] );
 define( 'BLASKAN_HEADER_MESSAGE', $blaskan_options['header_message'] );
 define( 'BLASKAN_FOOTER_MESSAGE', $blaskan_options['footer_message'] );
 define( 'BLASKAN_SHOW_CREDITS', $blaskan_options['show_credits'] );
@@ -28,12 +26,14 @@ function blaskan_setup() {
 	
 	add_theme_support( 'post-thumbnails' );
 	
-	if ( BLASKAN_SIDEBARS == 'no_sidebars' ) {
-		set_post_thumbnail_size( 1120, 9999, true );
-	} elseif ( BLASKAN_SIDEBARS == 'one_sidebar') {
+	if ( BLASKAN_SIDEBARS == 'one_sidebar') {
 		set_post_thumbnail_size( 830, 9999, true );
-	} elseif ( BLASKAN_SIDEBARS == 'two_sidebars') {
+		if ( ! isset( $content_width ) )
+			$content_width = 830;
+	} else {
 		set_post_thumbnail_size( 540, 9999, true );
+		if ( ! isset( $content_width ) )
+			$content_width = 540;
 	}
 	
 	load_theme_textdomain( 'blaskan', TEMPLATEPATH . '/languages' );
@@ -205,19 +205,23 @@ function blaskan_body_class($classes) {
   if ( get_theme_mod( 'header_image' ) ) {
     $classes[] = 'header-image';
   }
+
+	if ( BLASKAN_SHOW_CONTENT_IN_LISTINGS ) {
+		$classes[] = 'show-content';
+	}
 	
 	if ( BLASKAN_SIDEBARS == 'one_sidebar' ) {
-		$classes[] = 'content-75';
+		$classes[] = 'content-wide';
 		
 		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && is_active_sidebar( 'primary-page-sidebar' ) ) {
 			$classes[] = 'sidebar';
-			$classes[] = 'content-75-sidebar';
+			$classes[] = 'content-wide-sidebar';
 		} elseif ( ( !BLASKAN_CUSTOM_SIDEBARS_IN_PAGES || !is_page() ) && is_active_sidebar( 'primary-sidebar' ) ) {
 			$classes[] = 'sidebar';
-			$classes[] = 'content-75-sidebar';
+			$classes[] = 'content-wide-sidebar';
 		} else {
 			$classes[] = 'no-sidebars';
-			$classes[] = 'content-75-no-sidebars';
+			$classes[] = 'content-wide-no-sidebars';
 		}
 	} else {
 		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
@@ -475,3 +479,11 @@ function blaskan_footer_credits() {
 	}
 }
 endif;
+
+/*
+
+BACKLOG
+* Validator for layout option
+* Translation
+
+*/
