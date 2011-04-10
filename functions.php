@@ -478,10 +478,3 @@ function blaskan_footer_credits() {
 	}
 }
 endif;
-
-/*
-
-BACKLOG
-* Translation
-
-*/
