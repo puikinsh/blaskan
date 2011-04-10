@@ -94,19 +94,18 @@ add_action( 'init', 'blaskan_init' );
  */
 if ( ! function_exists( 'blaskan_widgets_init' ) ):
 function blaskan_widgets_init() {
-	if ( BLASKAN_SIDEBARS == 'one_sidebar' || BLASKAN_SIDEBARS == 'two_sidebars' ) {
-		// Primary sidebar
-		register_sidebar( array(
-			'name' => __( 'Primary Widget Area', 'blaskan' ),
-			'id' => 'primary-sidebar',
-			'description' => __( 'The primary sidebar', 'blaskan' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<h3 class="title">',
-			'after_title' => '</h3>',
-		) );
-	}
-	if ( BLASKAN_SIDEBARS == 'two_sidebars' ) {
+	// Primary sidebar
+	register_sidebar( array(
+		'name' => __( 'Primary Widget Area', 'blaskan' ),
+		'id' => 'primary-sidebar',
+		'description' => __( 'The primary sidebar', 'blaskan' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget' => '</section>',
+		'before_title' => '<h3 class="title">',
+		'after_title' => '</h3>',
+	) );
+	
+	if ( BLASKAN_SIDEBARS !== 'one_sidebar' ) {
 		// Secondary sidebar
 		register_sidebar( array(
 			'name' => __( 'Secondary Widget Area', 'blaskan' ),
@@ -118,7 +117,7 @@ function blaskan_widgets_init() {
 			'after_title' => '</h3>',
 		) );
 	}
-	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( BLASKAN_SIDEBARS == 'one_sidebar' || BLASKAN_SIDEBARS == 'two_sidebars' ) ) {
+	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES ) {
 		// Primary page sidebar
 		register_sidebar( array(
 			'name' => __( 'Primary Page Widget Area', 'blaskan' ),
@@ -130,7 +129,7 @@ function blaskan_widgets_init() {
 			'after_title' => '</h3>',
 		) );
 	}
-	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && BLASKAN_SIDEBARS == 'two_sidebars' ) {
+	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && BLASKAN_SIDEBARS !== 'one_sidebar' ) {
 		// Secondary page sidebar
 		register_sidebar( array(
 			'name' => __( 'Secondary Page Widget Area', 'blaskan' ),
@@ -256,7 +255,7 @@ function blaskan_custom_image_header_admin() {
                 width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
                 height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
             }
-        </style><?php
+      </style><?php
 }
 
 /**
@@ -483,7 +482,6 @@ endif;
 /*
 
 BACKLOG
-* Validator for layout option
 * Translation
 
 */

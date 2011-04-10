@@ -1005,8 +1005,10 @@ button {
  * Images
  */
 
-img {
-  border: 0;
+img,
+object,
+embed {
+	border: 0;
   max-width: 100%;
 }
 
@@ -2200,6 +2202,12 @@ content: " ← ";
 
 .ie #searchsubmit {
 	filter: none;
+}
+
+.ie img,
+.ie object,
+.ie embed {
+	width: 100%;
 }
 
 /**

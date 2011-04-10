@@ -28,11 +28,11 @@ function blaskan_options_add_page() {
 $sidebars_options = array(
 	'2' => array(
 		'value' =>	'two_sidebars',
-		'label' => __( 'Up to two sidebars - content max width 560 px', 'blaskan' )
+		'label' => __( 'Up to two sidebars. Content full width = 560 px', 'blaskan' )
 	),
 	'1' => array(
 		'value' =>	'one_sidebar',
-		'label' => __( 'Up to one sidebar - content max width 830 px', 'blaskan' )
+		'label' => __( 'Up to one sidebar. Content full width = 830 px', 'blaskan' )
 	)
 );
 
@@ -74,7 +74,7 @@ function blaskan_options_do_page() {
 								$p = '';
 								$r = '';
 								foreach ( $sidebars_options as $option ) {
-									$label = $option['label'];
+									$label = __($option['label'], 'blaskan');
 									if ( $selected == $option['value'] ) // Make default first in list
 										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
 									else
@@ -83,7 +83,7 @@ function blaskan_options_do_page() {
 								echo $p . $r;
 							?>
 						</select>
-						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'The maximum amount of sidebars', 'blaskan' ); ?></label>
+						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'The maximum amount of sidebars and content width', 'blaskan' ); ?></label>
 					</td>
 				</tr>
 			  
@@ -139,7 +139,7 @@ function blaskan_options_do_page() {
 					</td>
 				</tr>
 				
-				<tr><th colspan="2"><strong><?php _e( 'Misc', 'blaskan' ); ?></strong></th></tr>
+				<tr><th colspan="2"><strong><?php _e( 'Support Blaskan', 'blaskan' ); ?></strong></th></tr>
 				
 				<?php
 				/**
@@ -166,11 +166,12 @@ function blaskan_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function blaskan_options_validate( $input ) {
-	global $sidebars_options;
-	
 	// Validate layout options
-	/*if ( ! array_key_exists( $input['sidebars'], $sidebars_options ) )
-		$input['sidebars'] = null;*/
+	if ( $input['sidebars'] !== 'one_sidebar' ) {
+		$input['sidebars'] = 'two_sidebars';
+	} else {
+		$input['sidebars'] = 'one_sidebar';
+	}
 		
 	// Our custom sidebars value is either 0 or 1
 	if ( ! isset( $input['custom_sidebars_in_pages'] ) )
