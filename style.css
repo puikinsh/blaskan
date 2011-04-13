@@ -4,7 +4,7 @@ Theme URI: http://www.blaskan.net
 Description: A responsive and accessible theme that's not afraid to use modern web technologies…
 Author: Per Sandström
 Author URI: http://www.helloper.com
-Version: 1.1
+Version: 1.1.1
 Tags: custom-header, custom-background, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready, black, white, light, left-sidebar, right-sidebar
 License: GNU General Public License
 License URI: license.txt
@@ -549,16 +549,12 @@ body {
 	 */
 	
 	/* Hide post content */
-	.post .content {
+	.hide-content .post .content {
 		display: none;
 	}
 	
-	.show-content .content {
-		display: block;
-	}
-	
-	.post h1 {
-		margin-bottom: 10px;
+	.hide-content .post h1 {
+		margin-bottom: 15px;
 	}
 	
 	.single .post h1 {

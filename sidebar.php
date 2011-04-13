@@ -6,11 +6,6 @@ if ( $blaskan_options['custom_sidebars_in_pages'] == 1 ) {
 	$custom_sidebars_in_pages = FALSE;
 }
 ?>
-<?php /* if ($custom_sidebars): ?>
-	true
-<?php else: ?>
-	false
-<?php endif; */ ?>
 
 <?php if ( BLASKAN_SIDEBARS == 'no_sidebar' ): ?>
 	<?php return; ?>
@@ -85,5 +80,3 @@ if ( $blaskan_options['custom_sidebars_in_pages'] == 1 ) {
     <?php endif; ?>
 	<?php endif;?>
 <?php endif; ?>
-
-		
