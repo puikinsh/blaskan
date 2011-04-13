@@ -23,6 +23,7 @@ Blaskan supports:
 * Custom header
 * Custom background
 * Three widget areas (left sidebar, right sidebar, footer widgets)
+* Optionally use custom or no sidebars in pages
 
 You may add also a custom header message and/or footer message and choose if to
 display credit links in the theme options:
