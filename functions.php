@@ -11,11 +11,20 @@ require_once ( get_template_directory() . '/theme-options.php' );
 
 $blaskan_options = get_option('blaskan_options');
 define( 'BLASKAN_SIDEBARS', $blaskan_options['sidebars'] );
-define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', $blaskan_options['custom_sidebars_in_pages'] );
+if ( $blaskan_options['custom_sidebars_in_pages'] == 1 ) {
+	define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', TRUE );
+} else {
+	define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', FALSE );
+}
 define( 'BLASKAN_SHOW_CONTENT_IN_LISTINGS', $blaskan_options['show_content_in_listings'] );
 define( 'BLASKAN_HEADER_MESSAGE', $blaskan_options['header_message'] );
 define( 'BLASKAN_FOOTER_MESSAGE', $blaskan_options['footer_message'] );
 define( 'BLASKAN_SHOW_CREDITS', $blaskan_options['show_credits'] );
+
+/*if (BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE) {
+	die('false');
+}*/
+
 
 /**
  * Theme setup
@@ -117,7 +126,7 @@ function blaskan_widgets_init() {
 			'after_title' => '</h3>',
 		) );
 	}
-	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES ) {
+	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE ) {
 		// Primary page sidebar
 		register_sidebar( array(
 			'name' => __( 'Primary Page Widget Area', 'blaskan' ),
@@ -129,7 +138,7 @@ function blaskan_widgets_init() {
 			'after_title' => '</h3>',
 		) );
 	}
-	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && BLASKAN_SIDEBARS !== 'one_sidebar' ) {
+	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && BLASKAN_SIDEBARS !== 'one_sidebar' ) {
 		// Secondary page sidebar
 		register_sidebar( array(
 			'name' => __( 'Secondary Page Widget Area', 'blaskan' ),
@@ -212,10 +221,10 @@ function blaskan_body_class($classes) {
 	if ( BLASKAN_SIDEBARS == 'one_sidebar' ) {
 		$classes[] = 'content-wide';
 		
-		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && is_active_sidebar( 'primary-page-sidebar' ) ) {
+		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && is_active_sidebar( 'primary-page-sidebar' ) ) {
 			$classes[] = 'sidebar';
 			$classes[] = 'content-wide-sidebar';
-		} elseif ( ( !BLASKAN_CUSTOM_SIDEBARS_IN_PAGES || !is_page() ) && is_active_sidebar( 'primary-sidebar' ) ) {
+		} elseif ( ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE || !is_page() ) && is_active_sidebar( 'primary-sidebar' ) ) {
 			$classes[] = 'sidebar';
 			$classes[] = 'content-wide-sidebar';
 		} else {
@@ -223,16 +232,20 @@ function blaskan_body_class($classes) {
 			$classes[] = 'content-wide-no-sidebars';
 		}
 	} else {
-		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
+		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && ( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
 			$classes[] = 'sidebars';
-		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES && ( is_active_sidebar( 'primary-page-sidebar' ) || is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
+		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && ( is_active_sidebar( 'primary-page-sidebar' ) || is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
 			$classes[] = 'sidebar';
 		} elseif ( !is_page() && ( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) ) {
 			$classes[] = 'sidebars';
 		} elseif ( !is_page() && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) ) {
 			$classes[] = 'sidebar';
+		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE && ( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) ) {
+			$classes[] = 'sidebars';
+		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) ) {
+			$classes[] = 'sidebar';
 		} else {
-			$classes[] = 'no-sidebars';
+			$classes[] = 'no-sidebars11';
 		}
 	}
 	

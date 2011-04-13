@@ -1238,7 +1238,7 @@ figcaption {
 	}
 	
 	.content-wide-sidebar #primary {
-    border-top: 12px solid #000;
+    border-top: 0;
     margin-bottom: 0;
     margin-left: 0;
     padding-bottom: 5px;
