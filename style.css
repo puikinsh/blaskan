@@ -618,7 +618,7 @@ h4,
 h5,
 h6 {
 	color: #000;
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 	padding: 10px 0 0;
 }
 
@@ -689,7 +689,7 @@ q {
 	background: url(img/sprite.png) 0 -85px no-repeat;
 	color: #888;
 	padding: 0 35px;
-	margin: 0 0 10px;
+	margin: 0 0 20px;
 }
 
 .multiplebgs blockquote,
@@ -740,7 +740,7 @@ acronym {
 
 address {
 	font-style: italic;
-	margin: 0 0 10px;
+	margin: 0 0 20px;
 }
 
 del,
@@ -762,7 +762,7 @@ pre {
 }
 
 code {
-	margin: 10px 0;
+	margin: 20px 0;
 }
 
 pre,
@@ -806,13 +806,17 @@ sup {
 
 li ul, 
 li ol {
-	margin: 0 10px;
+	margin: 0 20px;
 }
 
-ul,
-ol {
+ul {
 	list-style: disc outside;
-	margin: 0 0 10px;
+	margin: 0 0 20px;
+}
+
+ol {
+	list-style: decimal;
+	margin: 0 0 20px;
 }
 
 dl {
@@ -825,7 +829,7 @@ dl dt {
 }
 
 dd {
-	margin:0 0 10px;
+	margin:0 0 20px;
 }
 
 /**
