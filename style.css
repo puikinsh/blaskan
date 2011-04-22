@@ -684,20 +684,23 @@ p {
 	margin: 0 0 20px;
 }
 
-blockquote {
+blockquote,
+q {
 	background: url(img/sprite.png) 0 -85px no-repeat;
 	color: #888;
 	padding: 0 35px;
 	margin: 0 0 10px;
 }
 
-.multiplebgs blockquote {
+.multiplebgs blockquote,
+.multiplebgs q {
 	background-image: url(img/sprite.png), url(img/sprite.png);
 	background-repeat: no-repeat;
 	background-position: 0 -85px, bottom right;
 }
 
-blockquote a {
+blockquote a,
+q a {
 	color: #888;
 }
 
@@ -705,7 +708,8 @@ cite {
 	color: #000;
 }
 
-blockquote cite {
+blockquote cite,
+q cite {
 	color: #888;
 }
 
@@ -739,7 +743,8 @@ address {
 	margin: 0 0 10px;
 }
 
-del {
+del,
+s {
 	color: #888;
 	text-decoration: line-through;
 }
