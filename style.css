@@ -595,6 +595,10 @@ a:hover {
 	color: #f43059;
 }
 
+a:focus {
+	outline: dotted thin;
+}
+
 a:link {
   -webkit-tap-highlight-color: #fe7793;
 }
