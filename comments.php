@@ -30,7 +30,7 @@
 			</footer>
 		<?php endif; ?>
 	<?php else : ?>
-		<?php if ( ! comments_open() ) : ?>
+		<?php if ( ! comments_open() && ! is_page() ) : ?>
 			<p class="nocomments"><?php _e( 'Comments are closed.', 'blaskan' ); ?></p>
 		<?php endif;?>
 
