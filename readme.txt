@@ -45,7 +45,7 @@ Typography:
 -----------
 League Gothic from The League of Moveable Type:
 http://www.theleagueofmoveabletype.com/fonts/7-league-gothic
-Licensed under the Open Font License:
+Licensed under the Open Font License. See OFL.txt.
 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 Contributions:
