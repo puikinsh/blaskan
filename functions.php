@@ -298,18 +298,6 @@ function blaskan_primary_nav() {
 }
 
 /**
- * Date and author archives only show the title so lets display more posts
- */
-function blaskan_date_archive_posts_per_page( $query ){
-  if ( $query->is_year || $query->is_month || $query->is_day || $query->is_author ) {
-    $query->set( 'posts_per_page', 60 );
-  }
-  return $query;
-}
-add_filter( 'pre_get_posts', 'blaskan_date_archive_posts_per_page' );
-
-
-/**
  * Returns footer nav
  */
 function blaskan_footer_nav() {
