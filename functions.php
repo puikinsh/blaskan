@@ -10,35 +10,34 @@ require_once ( get_template_directory() . '/theme-options.php' );
  */
 
 $blaskan_options = get_option('blaskan_options');
+
 define( 'BLASKAN_SIDEBARS', $blaskan_options['sidebars'] );
+
 if ( $blaskan_options['custom_sidebars_in_pages'] == 1 ) {
 	define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', TRUE );
 } else {
 	define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', FALSE );
 }
+
 define( 'BLASKAN_SHOW_CONTENT_IN_LISTINGS', $blaskan_options['show_content_in_listings'] );
 define( 'BLASKAN_HEADER_MESSAGE', $blaskan_options['header_message'] );
 define( 'BLASKAN_FOOTER_MESSAGE', $blaskan_options['footer_message'] );
 define( 'BLASKAN_SHOW_CREDITS', $blaskan_options['show_credits'] );
+
+if ( empty( $blaskan_options['hide_site_title_header_message'] ) ) {
+	$blaskan_options['hide_site_title_header_message'] = FALSE;
+}
 
 /**
  * Theme setup
  */
 if ( ! function_exists( 'blaskan_setup' ) ):
 function blaskan_setup() {
+	global $blaskan_options;
+
 	add_theme_support( 'automatic-feed-links' );
 	
 	add_theme_support( 'post-thumbnails' );
-	
-	if ( BLASKAN_SIDEBARS == 'one_sidebar') {
-		set_post_thumbnail_size( 830, 9999, true );
-		if ( ! isset( $content_width ) )
-			$content_width = 830;
-	} else {
-		set_post_thumbnail_size( 540, 9999, true );
-		if ( ! isset( $content_width ) )
-			$content_width = 540;
-	}
 	
 	load_theme_textdomain( 'blaskan', TEMPLATEPATH . '/languages' );
 	$locale = get_locale();
@@ -53,6 +52,34 @@ function blaskan_setup() {
 	define( 'HEADER_TEXTCOLOR', '' );
 	define( 'HEADER_IMAGE', '' );
 
+	if ( empty ( $blaskan_options['header_image_height'] ) || !is_numeric( $blaskan_options['header_image_height'] ) ) {
+		define( 'HEADER_IMAGE_HEIGHT', 160 );
+	} else {
+		define( 'HEADER_IMAGE_HEIGHT', $blaskan_options['header_image_height'] );
+	}
+
+	define( 'NO_HEADER_TEXT', true );
+	
+	add_custom_image_header( '', 'blaskan_custom_image_header_admin' );	
+}
+endif;
+add_action( 'after_setup_theme', 'blaskan_setup' );
+
+/**
+ * Setup widths
+ */
+if ( ! function_exists( 'blaskan_setup_widths' ) ):
+function blaskan_setup_widths() {
+	if ( BLASKAN_SIDEBARS == 'one_sidebar') {
+		set_post_thumbnail_size( 830, 9999, true );
+		if ( ! isset( $content_width ) )
+			$content_width = 830;
+	} else {
+		set_post_thumbnail_size( 540, 9999, true );
+		if ( ! isset( $content_width ) )
+			$content_width = 540;
+	}
+
 	if (
 		( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) ||
 		( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) )
@@ -66,32 +93,52 @@ function blaskan_setup() {
 	} else {
 		define( 'HEADER_IMAGE_WIDTH', 540 );
 	}
-	
-	define( 'HEADER_IMAGE_HEIGHT', 160 );
-	define( 'NO_HEADER_TEXT', true );
-	
-	add_custom_image_header( '', 'blaskan_custom_image_header_admin' );
+}
+endif;
+add_action( 'after_setup_theme', 'blaskan_setup_widths' );
 
+/**
+ * Register menus
+ */
+if ( ! function_exists( 'blaskan_register_nav_menus' ) ):
+function blaskan_register_nav_menus() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'blaskan' ),
 		'footer' => __( 'Footer Navigation', 'blaskan' ),
-	) );	
-	
+	) );
 }
 endif;
-add_action( 'after_setup_theme', 'blaskan_setup' );
+add_action( 'after_setup_theme', 'blaskan_register_nav_menus' );
 
 /**
- * Theme init
+ * JS init
  */
-if ( ! function_exists( 'blaskan_init' ) ):
-function blaskan_init() {
+if ( ! function_exists( 'blaskan_js_init' ) ):
+function blaskan_js_init() {
 	if ( !is_admin() ) {
-		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr-1.7.min.js' );
+		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr.min.js' );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'mobile-boilerplate-helper', get_template_directory_uri() . '/js/mylibs/helper.js' );
+		wp_enqueue_script( 'blaskan', get_template_directory_uri() . '/js/script.js' );
+		wp_localize_script( 'blaskan', 'objectL10n', array( 'blaskan_navigation_title' => __( '- Navigation -', 'blaskan' ) ) );
 	}
 }
 endif;
-add_action( 'init', 'blaskan_init' );
+add_action( 'init', 'blaskan_js_init' );
+
+/**
+ * CSS init
+ */
+if ( ! function_exists( 'blaskan_css_init' ) ):
+function blaskan_css_init() {
+	if ( !is_admin() ) {
+		wp_enqueue_style( 'blaskan-framework', get_template_directory_uri() . '/framework.css', array(), false, 'screen' );
+		wp_enqueue_style( 'blaskan-style', get_template_directory_uri() . '/style.css', array(), false, 'screen' );
+		wp_enqueue_style( 'blaskan-handheld', get_template_directory_uri() . '/css/handheld.css', array(), false, 'handheld' );
+	}
+}
+endif;
+add_action( 'init', 'blaskan_css_init' );
 
 /**
  * Register widget areas. All are empty by default.
@@ -166,9 +213,9 @@ add_action( 'widgets_init', 'blaskan_widgets_init' );
 function blaskan_head_cleanup() {
   remove_action( 'wp_head', 'rsd_link' );
   remove_action( 'wp_head', 'wlwmanifest_link' );
+  remove_action( 'wp_head', 'wp_generator' );
 }
 add_action( 'init' , 'blaskan_head_cleanup' );
-remove_action( 'wp_head', 'wp_generator' );
 
 /**
  * Format the title
@@ -194,6 +241,21 @@ function blaskan_head_title() {
 endif;
 
 /**
+ * Add content to wp_head()
+ */
+if ( ! function_exists( 'blaskan_head' ) ):
+function blaskan_head() {
+	echo '<link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">'."\r";
+	echo '<meta name="HandheldFriendly" content="True">'."\r";
+	echo '<meta name="MobileOptimized" content="320">'."\r";
+	echo '<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1">'."\r";
+	echo '<meta http-equiv="cleartype" content="on">'."\r";
+	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">'."\r";
+}
+endif;
+add_action( 'wp_head', 'blaskan_head' );
+
+/**
  * Add body classes
  */
 if ( ! function_exists( 'blaskan_body_class' ) ):
@@ -207,6 +269,17 @@ function blaskan_body_class($classes) {
   
   if ( get_theme_mod( 'header_image' ) ) {
     $classes[] = 'header-image';
+  }
+
+  $nav = wp_nav_menu( array( 'theme_location' => 'primary', 'echo' => false, 'container' => false ) );
+  $nav_links = substr_count( $nav, '<a' );
+  $nav_lists = substr_count( $nav, '<ul' );
+  if ( $nav_links == 0 ) {
+  	$classes[] = 'no-menu';
+  } elseif ( $nav_links < 9 && $nav_lists < 2 ) {
+  	$classes[] = 'simple-menu';
+  } else {
+  	$classes[] = 'advanced-menu';
   }
 
 	if ( BLASKAN_SHOW_CONTENT_IN_LISTINGS ) {
@@ -242,7 +315,7 @@ function blaskan_body_class($classes) {
 		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) ) {
 			$classes[] = 'sidebar';
 		} else {
-			$classes[] = 'no-sidebars11';
+			$classes[] = 'no-sidebars';
 		}
 	}
 	
@@ -259,14 +332,56 @@ add_filter( 'body_class', 'blaskan_body_class' );
  * Sets custom image header in admin
  */
 function blaskan_custom_image_header_admin() {
-    ?><style type="text/css">
-            #headimg {
-                background-repeat: no-repeat;
-                width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-                height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-            }
-      </style><?php
+?>
+	<style type="text/css">
+    #headimg {
+      background-repeat: no-repeat;
+      height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
+      width: <?php echo HEADER_IMAGE_WIDTH; ?>px;  
+    }
+  </style>
+<?php
 }
+
+/**
+ * Blaskan top
+ * Empty per default but could be used by child themes
+ */
+if ( ! function_exists( 'blaskan_top' ) ):
+function blaskan_top() {
+	return;
+}
+endif;
+
+/**
+ * Blaskan header structure
+ */
+if ( ! function_exists( 'blaskan_header_structure' ) ):
+function blaskan_header_structure( $description = '' ) {
+	global $blaskan_options;
+
+	$output = '';
+
+	if ( get_header_image() ):
+		$output .= '<figure><a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home"><img src="'.get_header_image().'" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"></a></figure>';
+	endif;
+
+	if ( $blaskan_options['hide_site_title_header_message'] !== 1 ) {
+		if ( is_front_page() ) {
+			$header_element = 'h1';
+		} else {
+			$header_element = 'div';
+		}
+		$output .= '<'.$header_element.' id="site-name"><a href="'.home_url( '/' ).'" title="'. esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></'.$header_element.'>';
+				
+		$output .= blaskan_header_message( get_bloginfo( 'description' ) );	
+	}
+			
+	$output .= blaskan_primary_nav();
+
+	return $output;
+}
+endif;
 
 /**
  * Checks if to display a header message
@@ -274,9 +389,9 @@ function blaskan_custom_image_header_admin() {
 if ( ! function_exists( 'blaskan_header_message' ) ):
 function blaskan_header_message( $description = '' ) {
 	if ( strlen( BLASKAN_HEADER_MESSAGE ) > 1 ) {
-		echo '<div id="header-message">' . nl2br( stripslashes( wp_filter_post_kses( BLASKAN_HEADER_MESSAGE ) ) ) . '</div>';
+		return '<div id="header-message">' . nl2br( stripslashes( wp_filter_post_kses( BLASKAN_HEADER_MESSAGE ) ) ) . '</div>';
 	} elseif ( !empty( $description ) ) {
-		echo '<div id="header-message">' . $description . '</div>';
+		return '<div id="header-message">' . $description . '</div>';
 	} else {
 		return false;
 	}
@@ -286,20 +401,53 @@ endif;
 /**
  * Returns primary nav
  */
+if ( ! function_exists( 'blaskan_primary_nav' ) ):
 function blaskan_primary_nav() {
-  $nav = wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1, 'echo' => false, 'container' => false ) );
+  $nav = wp_nav_menu( array( 'theme_location' => 'primary', 'echo' => false, 'container' => false ) );
   
   // Check nav for links
   if ( strpos( $nav, '<a' ) ) {
-    return '<nav id="nav" role="navigation">' . $nav . '</nav>';
+  	if ( strpos( $nav, 'div class="menu"' ) ) {
+  		$nav_prepend = '';
+  		$nav_append = '';
+  	} else {
+  		$nav_prepend = '<div class="menu">';
+  		$nav_append = '</div>';
+  		$nav = str_replace('class="menu"', '', $nav);
+  	}
+
+    return '<nav id="nav" role="navigation">' . $nav_prepend . $nav . $nav_append . '</nav>';
   } else {
     return; 
   }
 }
+endif;
+
+/**
+ * Blaskan footer structure
+ */
+if ( ! function_exists( 'blaskan_footer_structure' ) ):
+function blaskan_footer_structure() {
+  $output = '';
+
+  $output .= get_sidebar( 'footer' );
+	$output .= blaskan_footer_nav();
+			
+	if ( blaskan_footer_message() || blaskan_footer_credits() ) :
+		$output .= '<div id="footer-info" role="contentinfo">';
+		$output .= blaskan_footer_message();
+		$output .= blaskan_footer_credits();
+		$output .= '</div>';
+	endif;
+
+  return $output;
+}
+endif;
 
 /**
  * Returns footer nav
  */
+if ( ! function_exists( 'blaskan_footer_nav' ) ):
 function blaskan_footer_nav() {
   $nav = wp_nav_menu( array( 'theme_location' => 'footer', 'depth' => 1, 'fallback_cb' => false, 'echo' => false, 'container' => false ) );
 
@@ -310,6 +458,24 @@ function blaskan_footer_nav() {
     return; 
   }
 }
+endif;
+
+/**
+ * Add content to wp_footer()
+ */
+if ( ! function_exists( 'blaskan_footer' ) ):
+function blaskan_footer() {
+	// Unit PNG fix for IE 7
+	echo '<!--[if lt IE 7]><script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/unitpngfix.js"></script><![endif]-->'."\r";
+
+	// Selectivizr and Respond.js
+	echo '<!--[if (lt IE 9) & (!IEMobile)]>'."\r";
+	echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/selectivizr.1.0.3b.js"></script>'."\r";
+	echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/respond.min.js"></script>'."\r";
+	echo '<![endif]-->'."\r";
+}
+endif;
+add_action( 'wp_footer', 'blaskan_footer' );
 
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
@@ -392,8 +558,8 @@ function blaskan_comment( $comment, $args, $depth ) {
 		case '' :
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<header class="comment-header">
-		  <article>
+		<article>
+			<header class="comment-header">
 			  <?php echo blaskan_avatar( $comment ); ?>
   			<time><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s - %2$s', 'blaskan' ), get_comment_date(),  get_comment_time() ); ?></a></time>
 

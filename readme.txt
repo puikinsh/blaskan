@@ -10,7 +10,11 @@ License: GNU General Public License (see license.txt)
 Overview:
 ---------
 Blaskan is a responsive and accessible WordPress theme that's built for 
-mobile devices and tablets as well a desktops/laptops/netbooks.
+many kinds of screens.
+
+Getting started and help:
+-------------------------
+See guides on http://www.blaskan.net.
 
 Future development:
 -------------------
@@ -24,6 +28,7 @@ Blaskan supports:
 * Custom background
 * Three widget areas (left sidebar, right sidebar, footer widgets)
 * Optionally use custom or no sidebars in pages
+* Use a wide content column. Useful for e.g. photo blogs.
 
 You may add also a custom header message and/or footer message and choose if to
 display credit links in the theme options:
@@ -35,7 +40,7 @@ Supported browsers and platforms:
 * Safari
 * Chrome
 * Opera
-* Internet Explorer 6-9
+* Internet Explorer 7 and above
 
 * Android
 * Mobile Safari (iPhone/iPad/iPod touch)

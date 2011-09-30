@@ -1,33 +1,21 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html id="blaskan" <?php language_attributes(); ?> class="no-js ie ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html id="blaskan" <?php language_attributes(); ?> class="no-js ie ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html id="blaskan" <?php language_attributes(); ?> class="no-js ie ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html id="blaskan" <?php language_attributes(); ?> class="no-js ie ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html id="blaskan" <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
+<!--[if IEMobile 7 ]><html id="blaskan" class="no-js iem7" <?php language_attributes(); ?>><![endif]-->
+<!--[if lt IE 7 ]><html id="blaskan" class="no-js ie6" <?php language_attributes(); ?>><![endif]-->
+<!--[if IE 7 ]><html id="blaskan" class="no-js ie7" <?php language_attributes(); ?>><![endif]-->
+<!--[if IE 8 ]><html id="blaskan" class="no-js ie8" <?php language_attributes(); ?>><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html id="blaskan" class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	<title><?php blaskan_head_title(); ?></title>
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>">
-	<link rel="stylesheet" type="text/css" media="handheld" href="<?php echo get_template_directory_uri(); ?>/css/handheld.css">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
+	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php echo blaskan_top(); ?>
 <div id="site">
 	<div id="wrapper">
 		<header id="header" role="banner">
-		  <?php if ( get_header_image() ): ?>
-				<figure><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php header_image(); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a></figure>
-		  <?php endif; ?>
-		  
-			<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			
-			<?php echo blaskan_header_message( get_bloginfo( 'description' ) ); ?>
-			
-			<?php echo blaskan_primary_nav(); ?>
+		  <?php echo blaskan_header_structure(); ?>
 		</header>
 		<!-- / #header -->
 		

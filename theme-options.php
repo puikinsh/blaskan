@@ -28,11 +28,11 @@ function blaskan_options_add_page() {
 $sidebars_options = array(
 	'2' => array(
 		'value' =>	'two_sidebars',
-		'label' => __( 'Up to two sidebars. Content full width = 560 px', 'blaskan' )
+		'label' => __( 'Up to two sidebars', 'blaskan' )
 	),
 	'1' => array(
 		'value' =>	'one_sidebar',
-		'label' => __( 'Up to one sidebar. Content full width = 830 px', 'blaskan' )
+		'label' => __( 'Up to one sidebar', 'blaskan' )
 	)
 );
 
@@ -44,7 +44,6 @@ function blaskan_options_do_page() {
 
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false;
-
 	?>
 	<div class="wrap">
 		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Theme Options', 'blaskan' ) . "</h2>"; ?>
@@ -83,7 +82,7 @@ function blaskan_options_do_page() {
 								echo $p . $r;
 							?>
 						</select>
-						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'The maximum amount of sidebars and content width', 'blaskan' ); ?></label>
+						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'Up to only one sidebar will result in a wider content column.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
 			  
@@ -125,6 +124,36 @@ function blaskan_options_do_page() {
 					</td>
 				</tr>
 
+				<?php
+				/**
+				 * Header image height
+				 */
+				if ( empty ( $options['header_image_height'] ) || !is_numeric ( $options['header_image_height'] ) ) {
+					$header_image_height = '160';
+				} else {
+					$header_image_height = $options['header_image_height'];
+				}
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Header image height', 'blaskan' ); ?></th>
+					<td>
+						<input type="text" id="blaskan_options[header_image_height]" name="blaskan_options[header_image_height]" value="<?php echo $header_image_height; ?>" /> px<br/>
+						<label class="description" for="blaskan_options[header_image_height]"><?php _e( 'The height of the image in the header', 'blaskan' ); ?></label>
+					</td>
+				</tr>
+
+				<?php
+				/**
+				 * Hide site title and header message?
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Hide site title and header message?', 'blaskan' ); ?></th>
+					<td>
+						<input id="blaskan_options[hide_site_title_header_message]" name="blaskan_options[hide_site_title_header_message]" type="checkbox" value="1" <?php checked( '1', $options['hide_site_title_header_message'] ); ?> />
+						<label class="description" for="blaskan_options[hide_site_title_header_message]"><?php _e( "Hide", 'blaskan' ); ?></label><br/>
+						<small style="color: #666"><?php _e( "Might be useful if you're using a custom header.", 'blaskan' ); ?></small>
+					</td>
+				</tr>
+
 				<tr><th colspan="2"><strong><?php _e( 'Footer', 'blaskan' ); ?></strong></th></tr>
 
 				<?php
@@ -158,6 +187,10 @@ function blaskan_options_do_page() {
 				<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'blaskan' ); ?>" />
 			</p>
 		</form>
+
+		<p style="color: #777; margin-top: 30px;">
+			<?php printf( __( '<a href="%s">%s</a> is designed and developed by <a href="%s">%s</a>. Please report bugs and provide feedback on <a href="%s">GitHub</a>.', 'blaskan' ), 'http://www.blaskan.net', 'Blaskan', 'http://www.helloper.com', 'Per Sandström', 'http://github.com/persand/blaskan' ); ?>
+		</p>
 	</div>
 	<?php
 }
@@ -185,6 +218,14 @@ function blaskan_options_validate( $input ) {
 	
 	// Header message may contain allowed HTML tags
 	$input['header_message'] = wp_filter_post_kses( $input['header_message'] );
+
+	// Hide site title and header message?
+	if ( ! isset( $input['hide_site_title_header_message'] ) )
+		$input['hide_site_title_header_message'] = null;
+	$input['hide_site_title_header_message'] = ( $input['hide_site_title_header_message'] == 1 ? 1 : 0 );
+
+	// Header image height
+	$input['header_image_height'] = esc_attr( $input['header_image_height'] );
 	
 	// Footer message may contain allowed HTML tags
 	$input['footer_message'] = wp_filter_post_kses( $input['footer_message'] );

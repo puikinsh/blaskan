@@ -1,5 +1,5 @@
 
-<?php if ( ! have_posts() ) : ?>
+<?php if ( ! have_posts() && ! is_front_page() ) : ?>
 	<article id="post-0">
 		<header>
 			<h1><?php _e( 'Not Found', 'blaskan' ); ?></h1>
@@ -9,9 +9,12 @@
 		<?php get_search_form(); ?>
 	</article>
 	<!-- /#post-0 -->
+<?php elseif ( ! have_posts() && is_front_page() ) : ?>
+	<?php // We cant have #content empty. That would break sidebars. ?>
+	&nbsp; 
 <?php endif; ?>
 
-<?php /* Start the loop */ ?>
+<?php // Start the loop ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	
 	<?php if ( ( is_archive() || is_author() ) && ( !is_category() && !is_tag() ) ) : // Archives ?>
