@@ -38,6 +38,9 @@ function blaskan_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	
 	add_theme_support( 'post-thumbnails' );
+
+	register_taxonomy_for_object_type( 'post_tag', 'page' );
+  register_taxonomy_for_object_type( 'category', 'page' );
 	
 	load_theme_textdomain( 'blaskan', TEMPLATEPATH . '/languages' );
 	$locale = get_locale();
