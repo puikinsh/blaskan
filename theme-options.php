@@ -13,6 +13,8 @@ add_action( 'admin_menu', 'blaskan_options_add_page' );
  */
 function blaskan_options_init(){
 	register_setting( 'theme_options', 'blaskan_options', 'blaskan_options_validate' );
+	register_taxonomy_for_object_type( 'post_tag', 'page' );
+  register_taxonomy_for_object_type( 'category', 'page' );
 }
 
 /**
