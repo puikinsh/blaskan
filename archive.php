@@ -56,6 +56,13 @@
 				
 				<?php rewind_posts(); ?>
 
+				<?
+				// List both pages and posts
+				global $wp_query;
+				$args = array_merge( $wp_query->query, array( 'post_type' => array('page', 'post') ) );
+				query_posts( $args );
+				?>
+
 				<?php get_template_part( 'loop', 'archive' ); ?>
 			</section>
 			<!-- / #content -->	
@@ -70,6 +77,13 @@
 				</header>
 				
 				<?php rewind_posts(); ?>
+
+				<?
+				// List both pages and posts
+				global $wp_query;
+				$args = array_merge( $wp_query->query, array( 'post_type' => array('page', 'post') ) );
+				query_posts( $args );
+				?>
 
 				<?php get_template_part( 'loop', 'archive' ); ?>
 			</section>
