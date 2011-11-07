@@ -56,7 +56,7 @@
 				
 				<?php rewind_posts(); ?>
 
-				<?
+				<?php
 				// List both pages and posts
 				global $wp_query;
 				$args = array_merge( $wp_query->query, array( 'post_type' => array('page', 'post') ) );
@@ -78,7 +78,7 @@
 				
 				<?php rewind_posts(); ?>
 
-				<?
+				<?php
 				// List both pages and posts
 				global $wp_query;
 				$args = array_merge( $wp_query->query, array( 'post_type' => array('page', 'post') ) );
