@@ -28,11 +28,7 @@
 			<header>
 				<?php if ( has_post_thumbnail() ) : ?>
 				  <figure class="post-thumbnail">
-						<?php if ( !is_single() ) : ?>
-							<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'blaskan' ), the_title_attribute( 'echo=0' ) ); ?>"><?php the_post_thumbnail(); ?></a>
-						<?php else: ?>
-							<?php the_post_thumbnail(); ?>
-						<?php endif; ?>
+						<?php the_post_thumbnail(); ?>
 					</figure>
 				<?php endif; ?>
 				
