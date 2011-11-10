@@ -27,14 +27,16 @@ html {
 }
 
 @media only screen and (max-width: 480px) {
+
   .advanced-menu #nav select {
 	  display: inline-block;
-	  width: 100%;
+  	width: 100%;
 	}
 
 	.advanced-menu #nav .menu {
 		display: none;
 	}
+	
 }
 
 /** =STRUCTURE MIN: 480px ----- */

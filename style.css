@@ -597,8 +597,9 @@ iframe {
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #header {
-  border-bottom: 12px solid #000;
+  border-bottom: 1px solid #CCC;
   margin: 0 0 40px;
+  padding: 0 0 10px;
 }
 
 .background-image #header {
@@ -639,7 +640,7 @@ iframe {
 	clear: both;
 	margin-top: 10px;
 	line-height: 1;
-	margin-bottom: -10px;
+	margin-bottom: 0;
 }
 
 #nav ul {
@@ -662,19 +663,17 @@ iframe {
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#454545, endColorstr=#000000)";
 	-webkit-background-clip: padding-box;
 	border: 1px solid #000;
-	border-bottom: 0;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 	color: #fff;
   display: block;
 	font-size: 11px;
 	font-weight: bold;
   line-height: 20px;
-	margin-right: 1px;
-	margin-top: 0;
-	margin-bottom: 1px;
-	padding: 7px 10px;
+	margin: 0 1px 1px 0;
+	padding: 4px 10px;
 	position: relative;
 	text-decoration: none;
 	text-shadow: 0 1px 1px #000;
@@ -696,7 +695,8 @@ iframe {
 #nav .menu > ul > .current_menu_item > a:hover,
 #nav .menu > ul > .current_page_item > a:hover,
 #nav .menu > ul > .current_menu_item > a:focus,
-#nav .menu > ul > .current_page_item > a:focus {
+#nav .menu > ul > .current_page_item > a:focus,
+#nav .menu > ul > .current_page_ancestor > a {
 	background: #999;
 	background: -moz-linear-gradient(top,  #999,  #000);
 	background: -o-linear-gradient(top, #999, #000);
@@ -710,7 +710,7 @@ iframe {
 	float: left;
 	margin: 0;
 	position: absolute;
-	top: 36px;
+	top: 31px;
 	left: 0;
 	width: 200px;
 	z-index: 99999;
@@ -720,19 +720,9 @@ iframe {
 	left: 100%;
 	top: 0;
 }
-#nav ul ul a {
-	background: #000;
-	background: -moz-linear-gradient(top, #000, #222);
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-	border: 0;
-	margin-bottom: 0;
-	width: 180px;
-}
 
-#nav ul ul li:last-child a {
-	border-radius: 0 0 6px 6px;
+#nav ul ul a {
+	width: 180px;
 }
 
 #nav li:hover > a {
@@ -742,58 +732,33 @@ iframe {
 	background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#000));
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#666666, endColorstr=#000000)";
-	padding-bottom: 6px;
+}
+
+#nav .has-children a {
 	position: relative;
-	top: 1px;
 }
 
-#nav li li a {
-	box-shadow: 0 0 2px #000;
-	box-shadow: 0 0 2px rgba(0,0,0,.8);
-}
-
-#nav li li:hover > a {
-	top: 0;
-}
-
-#nav li.has-children:hover > a {
-	-moz-border-radius: 6px 6px 0 0;
-	-webkit-border-radius: 6px 6px 0 0;
-	border-radius: 6px 6px 0 0;
-	padding-bottom: 7px;
-}
-
-#nav li.has-children li:hover a {
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-	padding-bottom: 7px;
-}
-
-#nav li.has-children li:last-child a,
-#nav li.has-children li:last-child:hover a {
-	-moz-border-radius: 0 0 6px 6px;
-	-webkit-border-radius: 0 0 6px 6px;
-	border-radius: 0 0 6px 6px;
-}
-
-#blaskan #nav li.has-children li:only-of-type a,
-#blaskan #nav li.has-children li:only-of-type:hover a {
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-}
-
-#nav .arrow {
-	background-image: url(img/sprite.png);
-	background-position: -10px -148px;
-	background-repeat: no-repeat;
+#nav .has-children > a:after {
 	display: inline-block;
-	height: 12px;
-	position: absolute;
-	right: 10px;
-	top: 13px;
-	width: 8px;
+	font: normal 14px/1 Arial, sans-serif;
+	content: "\00bb";
+	margin-left: 10px;
+	opacity: .5;
+	text-align: right;
+}
+
+#nav .menu > ul > li.has-children > a:after {
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+	transform: rotate(90deg);
+}
+
+#nav li .has-children a:after {
+	float: right;
+	padding-top: 2px;
 }
 
 #nav li li:hover > a,
@@ -804,21 +769,27 @@ iframe {
 	color: #ccc;
 	top: 0;
 }
+
 #nav li li:hover > a,
 #nav a:focus {
 	color: #ccc;
 }
+
 #nav ul li:hover > ul {
 	display: block;
 }
-#nav .current_page_item > a,
-#nav .current_page_ancestor > a {
-	font-weight: bold;
-}
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .advanced-menu #nav select {
 	  margin: 0 0 25px;
+	}
+
+	#nav li {
+		width: 50%;
+	}
+
+	#nav ul li:hover > ul {
+		display: none;
 	}
 }
 

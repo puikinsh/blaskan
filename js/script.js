@@ -46,11 +46,5 @@
   });
 })(jQuery);
 
-(function($) {
-  $(document).ready( function() {
-    $('li .has-children > a').append('<span class="arrow"></span>');
-  });
-})(jQuery);
-
 MBP.scaleFix();
 MBP.hideUrlBar();
