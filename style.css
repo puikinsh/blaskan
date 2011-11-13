@@ -1281,10 +1281,8 @@ nav li {
 }
 
 .sticky h1 a {
-	border-left: 12px solid #000;
+	border-bottom: 8px solid #ccc;
 	display: inline-block;
-	padding-left: 12px;
-	margin-left: -24px;
 }
 
 /**
