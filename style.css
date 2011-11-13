@@ -664,6 +664,7 @@ iframe {
 	-webkit-background-clip: padding-box;
 	border: 1px solid #000;
 	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
 	-o-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -740,25 +741,20 @@ iframe {
 
 #nav .has-children > a:after {
 	display: inline-block;
-	font: normal 14px/1 Arial, sans-serif;
-	content: "\00bb";
+	content: "▼";
+	font: normal 8px/14px Arial, sans-serif;
 	margin-left: 10px;
 	opacity: .5;
 	text-align: right;
 }
 
-#nav .menu > ul > li.has-children > a:after {
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
-	-ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-	transform: rotate(90deg);
+#nav li .has-children > a:after {
+	content: "▶";
 }
 
-#nav li .has-children a:after {
+#nav li .has-children > a:after {
 	float: right;
-	padding-top: 2px;
+	padding-top: 4px;
 }
 
 #nav li li:hover > a,
@@ -1540,6 +1536,7 @@ nav li {
 
 .widget .title {
   font-size: 13px;
+  font-weight: bold;
   margin: 0 0 5px;
 	padding: 0;
 	text-transform: uppercase;
@@ -1970,10 +1967,6 @@ nav li {
 	vertical-align: text-bottom;
 }
 
-.ie6 #header nav {
-	border-bottom: 12px solid #000;
-}
-
 .ie6 #content,
 .ie6 #primary,
 .ie6 #secondary,
@@ -2017,17 +2010,8 @@ nav li {
 	vertical-align: baseline;
 }
 
-.ie7 #header nav .current_menu_item,
-.ie7 #header nav .current_page_item {
-	margin-top: -10px;
-}
-
-/**
- * IE 8
- */
-
-.ie8 #header nav {
-	margin-bottom: -3px;
+.ie7 #nav a {
+	position: static;
 }
 
 /**
