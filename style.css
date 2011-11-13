@@ -602,6 +602,19 @@ iframe {
   padding: 0 0 10px;
 }
 
+#header:before, 
+#header:after {
+	content: "";
+	display: table;
+}
+
+#header:after {
+	clear: both;
+}
+#header {
+	*zoom: 1;
+}
+
 .background-image #header {
 	margin-left: 0;
 	padding-left: 0;
@@ -644,9 +657,8 @@ iframe {
 }
 
 #nav ul {
-	display: inline-block;
+	display: inline;
 	margin: 0;
-	width: 100%;
 }
 
 #nav li {
@@ -690,6 +702,15 @@ iframe {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#666666, endColorstr=#000000)";
 }
+
+#nav .menu > ul:hover > li {
+	opacity: .7;
+}
+
+#nav .menu > ul:hover > li:hover {
+	opacity: 1;
+}
+
 
 #nav .menu > ul > .current_menu_item > a,
 #nav .menu > ul > .current_page_item > a,
@@ -1930,9 +1951,13 @@ nav li {
 	padding: 0 5px;
 }
 
-/**
- * IE FIXES
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =USEFUL CLASSES ---------- */
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/** =IE ---------- */
 
 /* Added via js/ie.js */
 .ie-divider {
