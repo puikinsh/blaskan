@@ -26,27 +26,6 @@ License URI: license.txt
 	     url('fonts/league_gothic-webfont.svg#webfont3nLbXkSC') format('svg'); /* Legacy iOS */
 }
 
-/** =HIDE CONTENT ----- */
-
-/* Hide post content */
-.hide-content .post .content {
-	display: none;
-}
-
-/* Show post content in posts */
-.single .post .content {
-	display: block;
-}
-
-@media only screen and (min-width: 480px) {
-
-	/* Do not hide post content at all */
-	.hide-content .post .content {
-		display: block;
-	}
-
-}
-
 /** =SETUP ----- */
 
 body {
@@ -55,6 +34,12 @@ body {
 	font: 15px/22px 'Helvetica Neue', sans-serif;
 	font-weight: 300;
 	padding: 0 10px;
+}
+
+@media only screen and (max-width: 480px) {
+	body {
+		font-size: 13px;
+	}
 }
 
 /** =TYPOGRAPHY ----- */
@@ -574,6 +559,12 @@ iframe {
 	padding-top: 40px;
 }
 
+@media (max-width: 480px) {
+	#site {
+		padding: 10px 0;
+	}
+}
+
 @media (max-width: 768px) {
   body.background-image {
   	background: none;
@@ -615,6 +606,12 @@ iframe {
 	*zoom: 1;
 }
 
+@media only screen and (max-width: 480px) {
+	.advanced-menu #header {
+		padding-bottom: 0;
+	}
+}
+
 .background-image #header {
 	margin-left: 0;
 	padding-left: 0;
@@ -647,6 +644,19 @@ iframe {
 
 #header-message a {
   color: #666;
+}
+
+@media only screen and (max-width: 480px) {
+
+	#site-name {
+		font-size: 40px;
+		line-height: 44px;
+	}
+
+	#header-message {
+		font-size: 13px;
+	}
+
 }
 
 #nav {
@@ -1139,9 +1149,27 @@ nav li {
 	
 }
 
-/**
- * =POSTS, PAGES & ATTACHMENTS
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =HIDE CONTENT ----- */
+
+/* Hide post content */
+.hide-content .post .content {
+	display: none;
+}
+
+/* Show post content in posts */
+.single .post .content {
+	display: block;
+}
+
+@media only screen and (min-width: 480px) {
+
+	.hide-content .post .content {
+		display: block;
+	}
+
+}
+
+/** =POSTS, PAGES & ATTACHMENTS ---------- */
 
 .type-post,
 .type-page,
@@ -1278,9 +1306,16 @@ nav li {
 	.type-post {
 		margin-bottom: 20px;
 	}
+
+	.type-post h1,
+	.type-page h1 {
+		font-size: 36px;
+		line-height: 40px;
+		margin-bottom: 10px;
+	}
 	
 	.type-post header,
-	.type-post h1 {
+	.hide-content .type-post h1 {
 		margin-bottom: 0;
 	}
 	
@@ -1304,6 +1339,23 @@ nav li {
 .sticky h1 a {
 	border-bottom: 8px solid #ccc;
 	display: inline-block;
+}
+
+@media only screen and (max-width: 480px) {
+
+	.sticky h1 {
+		font-size: 40px;
+		line-height: 44px;
+	}
+
+	.sticky h1 a {
+		border-bottom: 0;
+	}
+
+	.hide-content .sticky h1 {
+		margin-bottom: 10px;
+	}
+
 }
 
 /**

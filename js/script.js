@@ -45,6 +45,3 @@
     });
   });
 })(jQuery);
-
-MBP.scaleFix();
-MBP.hideUrlBar();

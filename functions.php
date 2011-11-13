@@ -465,6 +465,14 @@ endif;
  */
 if ( ! function_exists( 'blaskan_footer' ) ):
 function blaskan_footer() {
+	// MBP helper functions
+	echo '
+	<script>
+	MBP.scaleFix();
+	MBP.hideUrlBar();
+	</script>
+	';
+
 	// Unit PNG fix for IE 7
 	echo '<!--[if lt IE 7]><script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/unitpngfix.js"></script><![endif]-->'."\r";
 
