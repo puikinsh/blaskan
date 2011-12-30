@@ -26,7 +26,7 @@ License URI: license.txt
 	     url('fonts/league_gothic-webfont.svg#webfont3nLbXkSC') format('svg'); /* Legacy iOS */
 }
 
-/** =SETUP ----- */
+/** =SETUP ---------- */
 
 body {
 	background: #fff;
@@ -42,7 +42,7 @@ body {
 	}
 }
 
-/** =TYPOGRAPHY ----- */
+/** =TYPOGRAPHY ---------- */
 
 /**
  * Links
@@ -523,9 +523,7 @@ iframe {
   max-width: 100%;
 }
 
-/**
- * =BACKGROUND IMAGE
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =BACKGROUND IMAGE ---------- */
 
 #site {
   padding: 40px 0;
@@ -573,9 +571,7 @@ iframe {
   }
 }
 
-/**
- * =HEADER
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =HEADER ---------- */
 
 #header {
   border-bottom: 1px solid #CCC;
@@ -810,9 +806,7 @@ iframe {
 	}
 }
 
-/**
- * =CONTENT
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =CONTENT ---------- */
 
 .sidebar #content,
 .sidebars #content {
@@ -889,9 +883,7 @@ iframe {
 	
 }
 
-/**
- * =FOOTER
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =FOOTER ---------- */
 
 #footer {
 	border-top: 12px solid #000;
@@ -974,9 +966,7 @@ iframe {
 	color: #999;
 }
 
-/**
- * =DEFAULT WORDPRESS CLASSES
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =DEFAULT WORDPRESS CLASSES ---------- */
 
 /**
  * http://codex.wordpress.org/CSS
@@ -1019,9 +1009,7 @@ div.aligncenter {
 	padding: 5px 0;
 }
 
-/**
- * =POST NAV
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =POST NAV ---------- */
 
 .menu ul,
 nav ul {
@@ -1066,9 +1054,7 @@ nav li {
 	padding: 0 26px 0 0;
 }
 
-/**
- * SEARCH FORM
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =SEARCH FORM ---------- */
 
 #searchform {
   position: relative;
@@ -1161,6 +1147,11 @@ nav li {
 }
 
 /** =POSTS, PAGES & ATTACHMENTS ---------- */
+
+/* Use clearfix on content div */
+article .content:before, article .content:after { content: ""; display: table; }
+article .content:after { clear: both; }
+article .content { *zoom: 1; }
 
 .type-post,
 .type-page,
@@ -1318,9 +1309,7 @@ nav li {
 	
 }
 
-/**
- * STICKY
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =STICKY ---------- */
 
 .sticky h1 {
   font-size: 60px;
@@ -1350,9 +1339,7 @@ nav li {
 
 }
 
-/**
- * GALLERY
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =GALLERY ---------- */
 
 .gallery {
 	padding-top: 10px;
@@ -1372,9 +1359,7 @@ nav li {
 	text-align: left;
 }
 
-/**
- * =COMMENTS
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =COMMENTS ---------- */
 
 #comments {
 	margin: 0 0 40px;
@@ -1588,9 +1573,7 @@ nav li {
 	font-size: 13px;
 }
 
-/**
- * =WIDGETS
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =WIDGETS ---------- */
 
 .widget {
   font-size: 15px;
@@ -1703,9 +1686,7 @@ nav li {
   color: #888;
 }
 
-/**
- * ARCHIVES & SEARCH
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =ARCHIVES AND SEARCH ---------- */
 
 /**
  * Archive titles
@@ -1826,9 +1807,7 @@ nav li {
 	text-transform: uppercase;
 }
 
-/**
- * 404
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =404 ---------- */
 
 .error404 h1 span {
 	color: #888;
@@ -1839,9 +1818,7 @@ nav li {
 	margin-bottom: 40px;
 }
 
-/**
- * DISQUS
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =DISQUS ---------- */
 
 /**
  * Custom styling for Disqus Comment System
@@ -2081,9 +2058,7 @@ nav li {
 	position: static;
 }
 
-/**
- * PRINT
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/** =PRINT ---------- */
 
 /**
  * Credits: Hartija & HTML 5 Boilerplate

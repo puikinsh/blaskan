@@ -16,7 +16,7 @@
 					<?php endif; ?>
 				</header>
 
-				<?php the_content(); ?>
+				<div class="content"><?php the_content(); ?></div>
 				
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'blaskan' ), 'after' => '</div>' ) ); ?>
 				
