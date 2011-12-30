@@ -170,16 +170,6 @@ q {
 	font-style: italic;
 }
 
-q:before {
-	content: "“";
-	font-style: normal;
-}
-
-q:after {
-	content: "”";
-	font-style: normal;
-}
-
 blockquote a,
 q a {
 	color: #888;
@@ -196,7 +186,7 @@ q cite {
 
 blockquote cite:before,
 q cite:before {
-	content: " — ";
+	content: " \2014  ";
 }
 
 strong {
@@ -772,7 +762,7 @@ iframe {
 
 #nav .has-children > a:after {
 	display: inline-block;
-	content: "▼";
+	content: "\25BC";
 	font: normal 8px/14px Arial, sans-serif;
 	margin-left: 10px;
 	opacity: .5;
@@ -780,7 +770,7 @@ iframe {
 }
 
 #nav li .has-children > a:after {
-	content: "▶";
+	content: "\25B6";
 }
 
 #nav li .has-children > a:after {
@@ -943,7 +933,8 @@ iframe {
 }
 
 #footer-nav li:before {
-  content: " – ";
+  content: " \2014  ";
+  font-family: Arial, sans-serif;
 }
 
 #footer-nav li:first-child:before {
@@ -1247,7 +1238,8 @@ nav li {
 
 .type-post footer span:before,
 .type-attachment footer span:before {
-	content: " – ";
+	content: " \2014  ";
+	font-family: Arial, sans-serif;
 }
 
 .type-post footer span:first-child:before,
@@ -1261,7 +1253,7 @@ nav li {
 }
 
 .back-to-post:before {
-	content: " ← ";
+	content: " \2190  ";
 	font-family: Arial, sans-serif;
 }
 
