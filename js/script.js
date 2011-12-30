@@ -43,5 +43,7 @@
         window.location = location;
       }
     });
+
+    $('#content').fitVids();
   });
 })(jQuery);

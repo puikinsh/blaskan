@@ -118,6 +118,7 @@ function blaskan_js_init() {
 	if ( !is_admin() ) {
 		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr.min.js' );
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/libs/jquery.fitvids.js' );
 		wp_enqueue_script( 'mobile-boilerplate-helper', get_template_directory_uri() . '/js/mylibs/helper.js' );
 		wp_enqueue_script( 'blaskan', get_template_directory_uri() . '/js/script.js' );
 		wp_localize_script( 'blaskan', 'objectL10n', array( 'blaskan_navigation_title' => __( '- Navigation -', 'blaskan' ) ) );
