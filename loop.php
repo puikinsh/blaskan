@@ -48,20 +48,16 @@
 			</header>
 		
 			<div class="content">
-	<?php if ( is_search() || is_archive() ) : ?>
-			<?php the_excerpt(); ?>
-	<?php else : ?>
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'blaskan' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<nav class="page-link" role="navigation">' . __( 'Pages:', 'blaskan' ), 'after' => '</nav>' ) ); ?>
-	<?php endif; ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'blaskan' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<nav class="page-link" role="navigation">' . __( 'Pages:', 'blaskan' ), 'after' => '</nav>' ) ); ?>
 	
-			<?php if ( !is_single() && !get_the_title() ) : ?>
-				<p>
-					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'blaskan' ), the_title_attribute( 'echo=0' ) ); ?>">
-					<?php _e( 'Continue reading <span class="meta-nav">&rarr;</span>', 'blaskan' ); ?>
-					</a>
-				</p>
-			<?php endif; ?>	
+				<?php if ( !is_single() && !get_the_title() ) : ?>
+					<p>
+						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'blaskan' ), the_title_attribute( 'echo=0' ) ); ?>">
+						<?php _e( 'Continue reading <span class="meta-nav">&rarr;</span>', 'blaskan' ); ?>
+						</a>
+					</p>
+				<?php endif; ?>	
 			</div>
 			<!-- / .content -->
 			
