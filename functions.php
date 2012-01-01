@@ -168,7 +168,7 @@ add_action( 'wp_head', 'blaskan_font_face', 1 );
  */
 if ( ! function_exists( 'blaskan_css_init' ) ):
 function blaskan_css_init() {
-	if ( !is_admin() ) {
+	if ( !is_admin() && !in_array( $GLOBALS['pagenow'], array( 'wp-login.php', 'wp-signup.php', 'wp-register.php' ) ) ) {
 		wp_enqueue_style( 'blaskan-framework', get_template_directory_uri() . '/framework.css', array(), false, 'screen' );
 		wp_enqueue_style( 'blaskan-style', get_template_directory_uri() . '/style.css', array(), false, 'screen' );
 		wp_enqueue_style( 'blaskan-handheld', get_template_directory_uri() . '/css/handheld.css', array(), false, 'handheld' );
