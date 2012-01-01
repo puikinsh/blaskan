@@ -39,10 +39,25 @@ $sidebars_options = array(
 );
 
 /**
+ * Create arrays for typeface in titles options
+ */
+$typeface_title_options = array(
+	'1' => array(
+		'value' =>	'default',
+		'label' => __( 'League Gothic (default)', 'blaskan' )
+	),
+	'2' => array(
+		'value' =>	'sans_serif',
+		'label' => __( 'Helvetica Neue, sans-serif', 'blaskan' )
+	)
+);
+
+/**
  * Create the options page
  */
 function blaskan_options_do_page() {
 	global $sidebars_options;
+	global $typeface_title_options;
 
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false;
@@ -84,6 +99,7 @@ function blaskan_options_do_page() {
 								echo $p . $r;
 							?>
 						</select>
+						<br>
 						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'Up to only one sidebar will result in a wider content column.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
@@ -109,6 +125,38 @@ function blaskan_options_do_page() {
 					<td>
 						<input id="blaskan_options[show_content_in_listings]" name="blaskan_options[show_content_in_listings]" type="checkbox" value="1" <?php checked( '1', $options['show_content_in_listings'] ); ?> />
 						<label class="description" for="blaskan_options[show_content_in_listings]"><?php _e( "Show content in listings on small screens (recommended for photo blogs).", 'blaskan' ); ?></label>
+					</td>
+				</tr>
+
+				<tr><th colspan="2"><strong><?php _e( 'Design', 'blaskan' ); ?></strong></th></tr>
+
+				<?php
+				/**
+				 * Typeface in titles
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Typeface in titles', 'blaskan' ); ?></th>
+					<td>
+						<select name="blaskan_options[typeface_titles]">
+							<?php
+								if ( empty( $options['typeface_titles'] ) ) {
+									$options['typeface_titles'] = '';
+								}
+								$selected = $options['typeface_titles'];
+								$p = '';
+								$r = '';
+								foreach ( $typeface_title_options as $option ) {
+									$label = __($option['label'], 'blaskan');
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+								}
+								echo $p . $r;
+							?>
+						</select>
+						<br>
+						<label class="description" for="blaskan_options[typeface_titles]"><?php _e( "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead.", 'blaskan' ); ?></label>
 					</td>
 				</tr>
 
@@ -217,6 +265,13 @@ function blaskan_options_validate( $input ) {
 	if ( ! isset( $input['show_content_in_listings'] ) )
 		$input['show_content_in_listings'] = null;
 	$input['show_content_in_listings'] = ( $input['show_content_in_listings'] == 1 ? 1 : 0 );
+
+	// Validate typeface in titles options
+	if ( $input['typeface_titles'] !== 'default' ) {
+		$input['typeface_titles'] = 'sans_serif';
+	} else {
+		$input['typeface_titles'] = 'default';
+	}
 	
 	// Header message may contain allowed HTML tags
 	$input['header_message'] = wp_filter_post_kses( $input['header_message'] );
