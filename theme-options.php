@@ -115,18 +115,6 @@ function blaskan_options_do_page() {
 						<label class="description" for="blaskan_options[custom_sidebars_in_pages]"><?php _e( 'Use custom sidebars in pages.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
-				
-				<?php
-				/**
-				 * Do not hide content in listings on small screens?
-				 */
-				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Content in listings', 'blaskan' ); ?></th>
-					<td>
-						<input id="blaskan_options[show_content_in_listings]" name="blaskan_options[show_content_in_listings]" type="checkbox" value="1" <?php checked( '1', $options['show_content_in_listings'] ); ?> />
-						<label class="description" for="blaskan_options[show_content_in_listings]"><?php _e( "Show content in listings on small screens (recommended for photo blogs).", 'blaskan' ); ?></label>
-					</td>
-				</tr>
 
 				<tr><th colspan="2"><strong><?php _e( 'Design', 'blaskan' ); ?></strong></th></tr>
 
@@ -260,11 +248,6 @@ function blaskan_options_validate( $input ) {
 	if ( ! isset( $input['custom_sidebars_in_pages'] ) )
 		$input['custom_sidebars_in_pages'] = null;
 	$input['custom_sidebars_in_pages'] = ( $input['custom_sidebars_in_pages'] == 1 ? 1 : 0 );
-	
-	// Do not hide content in listings on small screens?
-	if ( ! isset( $input['show_content_in_listings'] ) )
-		$input['show_content_in_listings'] = null;
-	$input['show_content_in_listings'] = ( $input['show_content_in_listings'] == 1 ? 1 : 0 );
 
 	// Validate typeface in titles options
 	if ( $input['typeface_titles'] !== 'default' ) {

@@ -19,7 +19,6 @@ if ( $blaskan_options['custom_sidebars_in_pages'] == 1 ) {
 	define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', FALSE );
 }
 
-define( 'BLASKAN_SHOW_CONTENT_IN_LISTINGS', $blaskan_options['show_content_in_listings'] );
 define( 'BLASKAN_HEADER_MESSAGE', $blaskan_options['header_message'] );
 define( 'BLASKAN_FOOTER_MESSAGE', $blaskan_options['footer_message'] );
 define( 'BLASKAN_SHOW_CREDITS', $blaskan_options['show_credits'] );
@@ -318,12 +317,6 @@ function blaskan_body_class($classes) {
   } else {
   	$classes[] = 'advanced-menu';
   }
-
-	if ( BLASKAN_SHOW_CONTENT_IN_LISTINGS ) {
-		$classes[] = 'show-content';
-	} else {
-		$classes[] = 'hide-content';
-	}
 	
 	if ( BLASKAN_SIDEBARS == 'one_sidebar' ) {
 		$classes[] = 'content-wide';

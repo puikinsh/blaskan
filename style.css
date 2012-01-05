@@ -1137,26 +1137,6 @@ nav li {
 	
 }
 
-/** =HIDE CONTENT ----- */
-
-/* Hide post content */
-.hide-content .post .content {
-	display: none;
-}
-
-/* Show post content in posts */
-.single .post .content {
-	display: block;
-}
-
-@media only screen and (min-width: 480px) {
-
-	.hide-content .post .content {
-		display: block;
-	}
-
-}
-
 /** =POSTS, PAGES & ATTACHMENTS ---------- */
 
 /* Use clearfix on content div */
@@ -1348,10 +1328,6 @@ article .content { *zoom: 1; }
 
 	.sticky h1 a {
 		border-bottom: 0;
-	}
-
-	.hide-content .sticky h1 {
-		margin-bottom: 10px;
 	}
 
 }
