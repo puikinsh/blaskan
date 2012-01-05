@@ -1,0 +1,3 @@
+2012-01-05: Blaskan 2.2
+-----------------------
+See: https://github.com/persand/blaskan/issues?milestone=7&state=closed
