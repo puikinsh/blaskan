@@ -1,0 +1,412 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Blaskan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-30 16:33+0100\n"
+"PO-Revision-Date: 2012-01-04 22:21+0100\n"
+"Last-Translator: Matthijs de Vries <matthijs.devries@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:5
+msgid "4-uh-oh-4 <span>Page not found...</span>"
+msgstr "4-uh-oh-4 <span>Pagina niet gevonden...</span>"
+
+#: ../404.php:7
+msgid "The page you requested could not be found... sorry. Perhaps searching will help?"
+msgstr "De gevraagde pagina kon niet gevonden worden... sorry. Probeer een zoekopdracht."
+
+#: ../archive.php:11
+#, php-format
+msgid "Daily Archives: <time format=\"%s\">%s</time>"
+msgstr "Dagarchief: <time format=\"%s\">%s</time>"
+
+#: ../archive.php:24
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Maandarchief: <span>%s</span>"
+
+#: ../archive.php:37
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Jaararchief: <span>%s</span>"
+
+#: ../archive.php:50
+#, php-format
+msgid "Tagged: <span>%s</span>"
+msgstr "Tagged: <span>%s</span>"
+
+#: ../archive.php:65
+#, php-format
+msgid "Category: <span>%s</span>"
+msgstr "Kategorie: <span>%s</span>"
+
+#: ../archive.php:79
+msgid "Archives"
+msgstr "Archieven"
+
+#: ../author.php:18
+msgid "Posts"
+msgstr "Posts"
+
+#: ../comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Deze post is beschermd met een wachtwoord. Voer het wachtwoord in om het commentaar te zien."
+
+#: ../comments.php:15
+#: ../comments.php:26
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Ouder Commentaar"
+
+#: ../comments.php:16
+#: ../comments.php:27
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nieuwer Commentaar <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../comments.php:34
+msgid "Comments are closed."
+msgstr "Gesloten voor commentaar ."
+
+#: ../comments.php:44
+msgid "Name"
+msgstr "Naam"
+
+#: ../comments.php:45
+msgid "(required)"
+msgstr "(verplicht)"
+
+#: ../comments.php:52
+msgid "Email"
+msgstr "Email"
+
+#: ../comments.php:53
+msgid "(required - will be kept a secret)"
+msgstr "(verplicht - wordt geheim gehouden)"
+
+#: ../comments.php:59
+msgid "Website"
+msgstr "Website"
+
+#: ../comments.php:62
+msgid "Comment"
+msgstr "Commentaar"
+
+#: ../comments.php:65
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Je moet <a href=\"%s\">ingelogd</a> zijn om commentaar te plaatsen."
+
+#: ../comments.php:67
+#, php-format
+msgid "You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out of this account\">Log out?</a></p>"
+msgstr "Je bent ingelogd als <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Dit account uitloggen\">Uitloggen?</a></p>"
+
+#: ../comments.php:71
+msgid "You may use the following <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+msgstr "Je kunt de volgende <abbr title=\"HyperText Markup Language\">HTML</abbr> tags gebruiken:"
+
+#: ../comments.php:77
+msgid "Post a comment"
+msgstr "Plaats commentaar"
+
+#: ../comments.php:79
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Plaats een Reactie op %s"
+
+#: ../comments.php:81
+msgid "Cancel reply"
+msgstr "Avbryt svar"
+
+#: ../comments.php:83
+msgid "Post comment"
+msgstr "Plaats Reactie"
+
+#: ../functions.php:106
+msgid "Primary Navigation"
+msgstr "Primaire Navigatie"
+
+#: ../functions.php:107
+msgid "Footer Navigation"
+msgstr "Footer Navigatie"
+
+#: ../functions.php:123
+msgid "- Navigation -"
+msgstr "- Navigatie -"
+
+#: ../functions.php:150
+msgid "Primary Widget Area"
+msgstr "Primaire Widget Area"
+
+#: ../functions.php:152
+msgid "The primary sidebar"
+msgstr "De primaire sidebar"
+
+#: ../functions.php:162
+msgid "Secondary Widget Area"
+msgstr "Secondaire Widget Area"
+
+#: ../functions.php:164
+msgid "The secondary sidebar"
+msgstr "De secondaire sidebar"
+
+#: ../functions.php:174
+msgid "Primary Page Widget Area"
+msgstr "Primaire Pagina Widget Area"
+
+#: ../functions.php:176
+msgid "The primary page sidebar"
+msgstr "De primaire pagina sidebar"
+
+#: ../functions.php:186
+msgid "Secondary Page Widget Area"
+msgstr "Secondaire Pagina Widget Area"
+
+#: ../functions.php:188
+msgid "The secondary page sidebar"
+msgstr "De secondaire pagina sidebar"
+
+#: ../functions.php:198
+msgid "Footer Widget Area"
+msgstr "Footer Widget Area"
+
+#: ../functions.php:200
+msgid "The footer widget area"
+msgstr "De footer widget area"
+
+#: ../functions.php:239
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: ../functions.php:564
+#: ../functions.php:590
+#: ../functions.php:597
+#, php-format
+msgid "%1$s - %2$s"
+msgstr "%1$s - %2$s"
+
+#: ../functions.php:574
+msgid "Your comment is awaiting moderation."
+msgstr "Uw commentaar wacht op moderatie."
+
+#: ../functions.php:582
+#: ../functions.php:591
+#: ../functions.php:598
+#: ../loop-attachment.php:62
+#: ../loop.php:93
+#: ../page.php:27
+msgid "Edit"
+msgstr "Bewerk"
+
+#: ../functions.php:591
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../functions.php:598
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: ../functions.php:639
+#, php-format
+msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
+msgstr "Powered by <a href=\"%s\">Blaskan</a> och <a href=\"%s\">WordPress</a>."
+
+#: ../loop-attachment.php:54
+#: ../loop.php:58
+#: ../loop.php:65
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../loop-attachment.php:55
+#: ../loop.php:59
+#: ../page.php:25
+msgid "Pages:"
+msgstr "Pagina&rsquo;s:"
+
+#: ../loop-attachment.php:60
+msgid "Uploaded by"
+msgstr "Uppladdad av"
+
+#: ../loop.php:5
+msgid "Not Found"
+msgstr "Niet Gevonden"
+
+#: ../loop.php:8
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Sorry, geen resultaten gevonden voor het gevraagde archief. Probeer eventueel de zoekfunctie."
+
+#: ../loop.php:74
+msgid "Written by"
+msgstr "Geschreven door"
+
+#: ../loop.php:77
+msgid "No comments"
+msgstr "Geen commentaar"
+
+#: ../loop.php:77
+msgid "<span>1</span> Comment"
+msgstr "<span>1</span> Commentaar"
+
+#: ../loop.php:77
+msgid "<span>%</span> Comments"
+msgstr "<span>%</span> Commentaar"
+
+#: ../loop.php:81
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Gepost in</span> %2$s"
+
+#: ../loop.php:89
+#, php-format
+msgid "<span class=\"%1$s\">Tagged with</span> %2$s"
+msgstr "<span class=\"%1$s\">Taggad</span> %2$s"
+
+#: ../loop.php:115
+msgid "Older posts"
+msgstr "Oudere posts"
+
+#: ../loop.php:116
+msgid "Newer posts"
+msgstr "Nieuwere posts"
+
+#: ../search.php:5
+#, php-format
+msgid "Search results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: ../search.php:9
+msgid "Nothing Found"
+msgstr "Niks Gevonden"
+
+#: ../search.php:10
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Sorry, geen overeenkomsten met uw zoekcriteria. Probeer het eventueel met andere argumenten."
+
+#: ../theme-options.php:22
+msgid "Theme Options"
+msgstr "Thema-instellingen"
+
+#: ../theme-options.php:31
+msgid "Up to two sidebars"
+msgstr "Tot twee sidebars"
+
+#: ../theme-options.php:35
+msgid "Up to one sidebar"
+msgstr "&Egrave;&egrave;n sidebar"
+
+#: ../theme-options.php:49
+msgid " Theme Options"
+msgstr " Thema-instellingen"
+
+#: ../theme-options.php:52
+msgid "Options saved"
+msgstr "Instellingen opgeslagen"
+
+#: ../theme-options.php:61
+msgid "Layout"
+msgstr "Layout"
+
+#: ../theme-options.php:68
+msgid "Sidebars"
+msgstr "Sidebars"
+
+#: ../theme-options.php:85
+msgid "Up to only one sidebar will result in a wider content column."
+msgstr "&Egrave;&egrave;n sidebar zal resulteren in een bredere content column."
+
+#: ../theme-options.php:94
+msgid "Custom sidebars"
+msgstr "Custom sidebars"
+
+#: ../theme-options.php:97
+msgid "Use custom sidebars in pages."
+msgstr "Gebruik custom sidebars in pagina&rsquo;s."
+
+#: ../theme-options.php:106
+msgid "Content in listings"
+msgstr "Inhoud in lijsten"
+
+#: ../theme-options.php:109
+msgid "Show content in listings on small screens (recommended for photo blogs)."
+msgstr "Presenteer inhoud in lijsten op kleine schermen (aanbevolen voor foto blogs)."
+
+#: ../theme-options.php:113
+msgid "Header"
+msgstr "Header"
+
+#: ../theme-options.php:120
+msgid "Header message"
+msgstr "Header bericht"
+
+#: ../theme-options.php:123
+msgid "A message that is displayed in the header. Falls back to the blog description if empty."
+msgstr "Een bericht dat wordt afgebeeld in de header. De blog omschrijving wordt gebruikt als deze leeg blijft."
+
+#: ../theme-options.php:137
+msgid "Header image height"
+msgstr "Hoogte header afbeelding"
+
+#: ../theme-options.php:140
+msgid "The height of the image in the header"
+msgstr "De hoogte van de afbeelding in de header."
+
+#: ../theme-options.php:149
+msgid "Hide site title and header message?"
+msgstr "Verberg site titel en header bericht?"
+
+#: ../theme-options.php:152
+msgid "Hide"
+msgstr "Verberg"
+
+#: ../theme-options.php:153
+msgid "Might be useful if you're using a custom header."
+msgstr "Kan handig zijn als je een custom header gebruikt."
+
+#: ../theme-options.php:157
+msgid "Footer"
+msgstr "Footer"
+
+#: ../theme-options.php:164
+msgid "Footer message"
+msgstr "Footer bericht"
+
+#: ../theme-options.php:167
+msgid "A message that is displayed in the footer."
+msgstr "Een bericht dat wordt afgebeeld in de footer."
+
+#: ../theme-options.php:171
+msgid "Support Blaskan"
+msgstr "Support Blaskan"
+
+#: ../theme-options.php:178
+msgid "Show credits"
+msgstr "Laat de credits zien"
+
+#: ../theme-options.php:181
+msgid "Display links to the Blaskan theme and WordPress.org in the footer."
+msgstr "Presenteer links naar het Blaskan thema en WordPress.org in de footer."
+
+#: ../theme-options.php:187
+msgid "Save Options"
+msgstr "Opslaan Instellingen"
+
+#: ../theme-options.php:192
+#, php-format
+msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
+msgstr "<a href=\"%s\">%s</a> is ontworpen en ontwikkeld door <a href=\"%s\">%s</a>. Rapporteer bugs and feedback op <a href=\"%s\">GitHub</a>."
+
+#~ msgid "Up to two sidebars. Content full width = 560 px"
+#~ msgstr "Met twee sidebars. Breedte inhoud = 560 px"
+
+#~ msgid "Up to one sidebar. Content full width = 830 px"
+#~ msgstr "Met &Egrave;&egrave;n sidebar. Breedte inhoud = 830 px"
+
+#~ msgid "The maximum amount of sidebars and content width"
+#~ msgstr "Het maximale aantal sidebars en breedte inhoud"
