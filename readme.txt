@@ -55,4 +55,6 @@ http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 Contributions:
 --------------
-See links/comments in source files.
+Dutch translation by Matthijs de Vries.
+
+See also links/comments in source files.
