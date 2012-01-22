@@ -25,9 +25,11 @@
 	<script src="/javascripts/libs/modernizr-2.0.6.min.js"></script>
 </head>
 <body>
+	<div id="fb-root"></div>
+
 	<header id="header" class="container" role="banner">
 		<div class="row">
-			<div class="five columns">
+			<div class="four columns">
 				<h1>Blaskan</h1>
 
 				<h2>A forever free high quality theme focused on what WordPress does best: blogging.</h2>
@@ -42,7 +44,15 @@
 						<a href="http://github.com/persand/blaskan">Source code on GitHub</a>
 					</li>
 				</ul>
+
+				<div id="share">
+					<div id="share-twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-via="blaskantheme" data-related="persand">Tweet</a></div>
+
+					<div id="share-facebook"><div class="fb-like" data-href="http://blaskan.net" data-send="true" data-layout="button_count" data-width="120" data-show-faces="false" data-font="arial"></div></div>
+				</div>
+				<!-- / #share -->
 			</div>
+			<!-- / .four .columns -->
 		</div>
 		<!-- / .row -->
 	</header>
@@ -124,6 +134,23 @@
 			</article>
 			<!-- / #tech-specs -->
 
+			<article id="follow">
+				<h1>Stay in the loop</h1>
+
+				<div class="row">
+					<section class="four columns">
+						<h2>Follow</h2>
+
+						<p><a href="https://twitter.com/blaskantheme" class="twitter-follow-button" data-show-count="false">Follow @blaskantheme</a></p>
+
+						<div class="fb-like-box" data-href="https://www.facebook.com/blaskantheme" data-width="292" data-show-faces="true" data-stream="false" data-header="false"></div>
+					</section>
+					<!-- / .four columns -->
+				</div>
+				<!-- / .row -->
+			</article>
+			<!-- / #follow -->
+
 			<article id="questions">
 				<h1>Got any questions?</h1>
 				
@@ -172,13 +199,23 @@
 
 	<footer id="footer" class="container" role="contentinfo">
 		<div class="row">
-			<p>Blaskan is designed and developed by <a href="http://www.helloper.com">Per Sandström</a> and released under GNU/GPL.</p>
+			<p>Blaskan is designed and developed by <a href="http://www.helloper.com">Per Sandström</a> and released under <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPL v2</a>.</p>
 			<p>This page is built with <a href="http://foundation.zurb.com">Foundation</a> and hosted on <a href="http://pages.github.com">GitHub Pages</a>.</p>
 		</div>
 	</footer>
 	<!-- / #footer, .container -->
 
 	<a id="github-fork" href="http://github.com/persand/blaskan"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+	<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1&appId=308647319171308";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 	<script>
     var _gaq=[['_setAccount','UA-11122428-3'],['_trackPageview']];
