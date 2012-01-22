@@ -497,6 +497,21 @@ img {
 	height: auto;
 }
 
+/* Contain floats: h5bp.com/q */
+figure:before,
+figure:after {
+	content: "";
+	display: table;
+}
+
+figure:after {
+	clear: both;
+}
+
+figure {
+	*zoom: 1;
+}
+
 figure img {
 	float: left;
 }
