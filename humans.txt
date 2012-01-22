@@ -1,8 +1,16 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
-/* humanstxt.org */
+/* TEAM */
+
+Designer/Developer: Per Sandstrom
+Contact: per [at] helloper.com
+Twitter: @persand
+From: Stockholm, Sweden
 
 /* SITE */
-  Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
+
+Released: 2012-01-22
+Language: English
+Standards: HTML5, CSS3, JavaScript
+Components: Foundation, Modernizr
+Software: Sublime Text 2
+Fonts: League Gothic
+Hosting: GitHub Pages
