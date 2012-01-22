@@ -485,20 +485,20 @@ button {
  * Images
  */
 
+figure,
 img,
 object,
 embed {
+  max-width: 100%;
+}
+
+img {
 	border: 0;
 	height: auto;
-  max-width: 100%;
 }
 
 figure img {
 	float: left;
-}
-
-figure {
-	max-width: 100%;
 }
 
 figcaption {
