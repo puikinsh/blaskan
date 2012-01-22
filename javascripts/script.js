@@ -11,7 +11,7 @@ function blaskan_forum_posts() {
 
       for (var i = 0; i < result.feed.entries.length; i++) {
         var entry = result.feed.entries[i];
-        html += '<li><a href="' + entry.url + '">' + entry.title + '</a><br>' + entry.contentSnippet + '</li>';
+        html += '<li><a href="' + entry.link + '">' + entry.title + '</a><br>' + entry.contentSnippet + '</li>';
       }
 
       html += '</ul>'
@@ -32,7 +32,7 @@ function blaskan_github_feed() {
 
       for (var i = 0; i < result.feed.entries.length; i++) {
         var entry = result.feed.entries[i];
-        html += '<li><a href="' + entry.url + '">' + entry.title + '</a><br>' + entry.contentSnippet + '</li>';
+        html += '<li><a href="' + entry.link + '">' + entry.title + '</a><br>' + entry.contentSnippet + '</li>';
       }
 
       html += '</ul>'
