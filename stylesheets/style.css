@@ -115,6 +115,14 @@ ul {
   font-size: 48px;
 }
 
+/**
+ * Forum posts
+ */
+
+#blaskan-forum-posts ul {
+  list-style: none;
+}
+
 /** =FOOTER ---------- */
 
 #footer {
