@@ -115,11 +115,8 @@ ul {
   font-size: 48px;
 }
 
-/**
- * Forum posts
- */
-
-#blaskan-forum-posts ul {
+#blaskan-forum-posts ul,
+#blaskan-github-feed ul {
   list-style: none;
 }
 
