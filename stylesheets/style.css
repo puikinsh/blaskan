@@ -98,7 +98,8 @@ ul {
   border-bottom: 10px solid #c0c0c0;
   color: #000;
   margin-bottom: 4.4%;
-  padding: 40px 0;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 #header ul {
