@@ -86,13 +86,19 @@ function blaskan_setup_widths() {
 	}
 
 	if (
-		( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) ||
+		( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) )
+		||
 		( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) )
+		||
+		( BLASKAN_SIDEBARS == 'one_sidebar' && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'primary-page-sidebar' ) ) )
 	) {
 		define( 'HEADER_IMAGE_WIDTH', 1120 );
 	} elseif (
-		( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) ||
+		( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) )
+		||
 		( is_active_sidebar( 'primary-page-sidebar' ) || is_active_sidebar( 'secondary-page-sidebar' ) )
+		||
+		( BLASKAN_SIDEBARS == 'one_sidebar' && ( !is_active_sidebar( 'primary-sidebar' ) || !is_active_sidebar( 'primary-page-sidebar' ) ) )
 	) {
 		define( 'HEADER_IMAGE_WIDTH', 830 );
 	} else {
