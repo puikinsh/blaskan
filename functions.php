@@ -512,9 +512,6 @@ function blaskan_footer() {
 	</script>
 	';
 
-	// Unit PNG fix for IE 7
-	echo '<!--[if lt IE 7]><script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/unitpngfix.js"></script><![endif]-->'."\r";
-
 	// Selectivizr and Respond.js
 	echo '<!--[if (lt IE 9) & (!IEMobile)]>'."\r";
 	echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/selectivizr.1.0.3b.js"></script>'."\r";
