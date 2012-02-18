@@ -485,16 +485,8 @@ button {
  * Images
  */
 
-figure,
-img,
-object,
-embed {
-  max-width: 100%;
-}
-
 img {
 	border: 0;
-	height: auto;
 }
 
 /* Contain floats: h5bp.com/q */
@@ -527,7 +519,6 @@ figcaption {
 
 iframe {
 	border: 0;
-  max-width: 100%;
 }
 
 /** =BACKGROUND IMAGE ---------- */
