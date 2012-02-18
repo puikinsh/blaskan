@@ -289,7 +289,7 @@ function blaskan_head() {
 	echo '<link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">'."\r";
 	echo '<meta name="HandheldFriendly" content="True">'."\r";
 	echo '<meta name="MobileOptimized" content="320">'."\r";
-	echo '<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1">'."\r";
+	echo '<meta name="viewport" content="width=device-width">'."\r";
 	echo '<meta http-equiv="cleartype" content="on">'."\r";
 	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">'."\r";
 }
