@@ -1663,6 +1663,23 @@ article .content { *zoom: 1; }
 }
 
 /**
+ * Menus in widgets
+ */
+
+.widget .menu li {
+	display: block;
+}
+
+.widget .menu .current-menu-item > a {
+	color: #000;
+	font-weight: normal;
+}
+
+.widget .menu .sub-menu {
+	padding: 5px 0 0 10px;
+}
+
+/**
  * Recent comments widget
  */
 
