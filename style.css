@@ -1637,6 +1637,11 @@ article .content { *zoom: 1; }
   color: #888;
 }
 
+.widget_categories .current-cat a {
+	color: #000;
+	font-weight: normal;
+}
+
 /**
  * Calendar widget
  */
