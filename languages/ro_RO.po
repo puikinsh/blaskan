@@ -1,0 +1,445 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Blaskan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-04 20:54+0100\n"
+"PO-Revision-Date: 2012-04-03 13:43+0200\n"
+"X-Poedit-Language: Romanian\n"
+"X-Poedit-Country: Romania\n"
+"Language-Team: Web Geeks\n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n>1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:5
+msgid "4-uh-oh-4 <span>Page not found...</span>"
+msgstr "4-uh-oh-4 <span>pagina nu a fost găsit...</span>"
+
+#: ../404.php:7
+msgid "The page you requested could not be found... sorry. Perhaps searching will help?"
+msgstr "Pagina aţi solicitat nu a fost găsit... Îmi pare rău. Probabil căutarea va ajuta?"
+
+#: ../archive.php:11
+#, php-format
+msgid "Daily Archives: <time format=\"%s\">%s</time>"
+msgstr "Arhiva de zi cu zi: <time format=\"%s\">%s</time>"
+
+#: ../archive.php:24
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Arhivele lunare: <span>%s</span>"
+
+#: ../archive.php:37
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Arhivele anual: <span>%s</span>"
+
+#: ../archive.php:50
+#, php-format
+msgid "Tagged: <span>%s</span>"
+msgstr "Tagged: <span>%s</span>"
+
+#: ../archive.php:72
+#, php-format
+msgid "Category: <span>%s</span>"
+msgstr "Categorie: <span>%s</span>"
+
+#: ../archive.php:93
+msgid "Archives"
+msgstr "Arhivele"
+
+#: ../author.php:18
+msgid "Posts"
+msgstr "Posturi"
+
+#: ../comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Acest post este protejată prin parolă. Introduceţi parola pentru vizualizarea comentariilor."
+
+#: ../comments.php:15
+#: ../comments.php:26
+msgid "<span class=\"meta-nav\">←</span> Older Comments"
+msgstr "<span class=\"meta-nav\">←</span> comentarii mai vechi"
+
+#: ../comments.php:16
+#: ../comments.php:27
+msgid "Newer Comments <span class=\"meta-nav\">→</span>"
+msgstr "Mai nou Comentarii <span class=\"meta-nav\">→</span>"
+
+#: ../comments.php:34
+msgid "Comments are closed."
+msgstr "Comentariile sunt închise."
+
+#: ../comments.php:44
+msgid "Name"
+msgstr "nume"
+
+#: ../comments.php:45
+msgid "(required)"
+msgstr "(obligatoriu)"
+
+#: ../comments.php:52
+msgid "Email"
+msgstr "E-mail"
+
+#: ../comments.php:53
+msgid "(required - will be kept a secret)"
+msgstr "(necesare - va fi păstrat un secret)"
+
+#: ../comments.php:59
+msgid "Website"
+msgstr "Site-ul Web"
+
+#: ../comments.php:62
+msgid "Comment"
+msgstr "Comentariu"
+
+#: ../comments.php:65
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Tu trebuie să fie <a href=\"%s\"> logat</a> pentru a posta un comentariu."
+
+#: ../comments.php:67
+#, php-format
+msgid "You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out of this account\">Log out?</a></p>"
+msgstr "Sunteţi logat ca <a href=\"%s\">%s </a>. <a href=\"%s\" title=\"Log din acest account\">Log out?</a></p>"
+
+#: ../comments.php:71
+msgid "You may use the following <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+msgstr "Puteţi utiliza următoarele <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+
+#: ../comments.php:77
+msgid "Post a comment"
+msgstr "Posta un comentariu"
+
+#: ../comments.php:79
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Lasă un răspuns la %s"
+
+#: ../comments.php:81
+msgid "Cancel reply"
+msgstr "Anulare răspuns"
+
+#: ../comments.php:83
+msgid "Post comment"
+msgstr "Comentariu de post"
+
+#: ../functions.php:112
+msgid "Primary Navigation"
+msgstr "Navigare primare"
+
+#: ../functions.php:113
+msgid "Footer Navigation"
+msgstr "Subsol de navigare"
+
+#: ../functions.php:130
+msgid "- Navigation -"
+msgstr "-Navigare-"
+
+#: ../functions.php:187
+msgid "Primary Widget Area"
+msgstr "Zona Widget primare"
+
+#: ../functions.php:189
+msgid "The primary sidebar"
+msgstr "Bara laterală primare"
+
+#: ../functions.php:199
+msgid "Secondary Widget Area"
+msgstr "Domeniu secundar Widget"
+
+#: ../functions.php:201
+msgid "The secondary sidebar"
+msgstr "Bara laterală secundare"
+
+#: ../functions.php:211
+msgid "Primary Page Widget Area"
+msgstr "Principal pagină Widget zona"
+
+#: ../functions.php:213
+msgid "The primary page sidebar"
+msgstr "Pagina principală bara laterală"
+
+#: ../functions.php:223
+msgid "Secondary Page Widget Area"
+msgstr "Domeniu secundar pagina Widget"
+
+#: ../functions.php:225
+msgid "The secondary page sidebar"
+msgstr "Bara laterală pagina secundare"
+
+#: ../functions.php:235
+msgid "Footer Widget Area"
+msgstr "Aria subsol Widget"
+
+#: ../functions.php:237
+msgid "The footer widget area"
+msgstr "Aria subsol widget"
+
+#: ../functions.php:276
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: ../functions.php:613
+#: ../functions.php:639
+#: ../functions.php:646
+#, php-format
+msgid "%1$s - %2$s"
+msgstr "%1$ s - %2$ s"
+
+#: ../functions.php:623
+msgid "Your comment is awaiting moderation."
+msgstr "Comentariu este în aşteptarea moderaţie."
+
+#: ../functions.php:631
+#: ../functions.php:640
+#: ../functions.php:647
+#: ../loop-attachment.php:62
+#: ../loop.php:85
+#: ../page.php:39
+msgid "Edit"
+msgstr "Editare"
+
+#: ../functions.php:640
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../functions.php:647
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: ../functions.php:688
+#, php-format
+msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
+msgstr "Powered by <a href=\"%s\"> Blaskan </a> şi <a href=\"%s\">WordPress</a>."
+
+#: ../loop-attachment.php:54
+#: ../loop.php:51
+#: ../loop.php:57
+msgid "Continue reading <span class=\"meta-nav\">→</span>"
+msgstr "Continuaţi lectură <span class=\"meta-nav\">→</span>"
+
+#: ../loop-attachment.php:55
+#: ../loop.php:52
+#: ../page.php:21
+msgid "Pages:"
+msgstr "Pagini:"
+
+#: ../loop-attachment.php:60
+msgid "Uploaded by"
+msgstr "Încărcat de către"
+
+#: ../loop.php:5
+msgid "Not Found"
+msgstr "Nu a fost găsit"
+
+#: ../loop.php:8
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Ne cerem scuze, dar rezultatele nu au fost găsite la Arhiva solicitate. Probabil căutarea va ajuta să găsiţi un post legate."
+
+#: ../loop.php:22
+#: ../loop.php:41
+#: ../loop.php:56
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalink la %s"
+
+#: ../loop.php:66
+msgid "Written by"
+msgstr "Scris de"
+
+#: ../loop.php:69
+msgid "No comments"
+msgstr "No comments"
+
+#: ../loop.php:69
+msgid "<span>1</span> Comment"
+msgstr "<span>1</span> Comentariu"
+
+#: ../loop.php:69
+msgid "<span>%</span> Comments"
+msgstr "<span>%</span> Comentarii"
+
+#: ../loop.php:73
+#: ../page.php:26
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Postat în</span> %2$ s"
+
+#: ../loop.php:81
+#: ../page.php:35
+#, php-format
+msgid "<span class=\"%1$s\">Tagged with</span> %2$s"
+msgstr "<span class=\"%1$s\">Etichetate cu</span> %2$ s"
+
+#: ../loop.php:107
+msgid "Older posts"
+msgstr "Posturi mai vechi"
+
+#: ../loop.php:108
+msgid "Newer posts"
+msgstr "Mai nou posturi"
+
+#: ../search.php:5
+#, php-format
+msgid "Search results for: %s"
+msgstr "Rezultatele cautarii pentru: %s"
+
+#: ../search.php:9
+msgid "Nothing Found"
+msgstr "Nimic găsit"
+
+#: ../search.php:10
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Ne pare rau, dar nimic potrivite criteriile de căutare. Vă rugăm să încercaţi din nou cu unele cuvinte cheie diferite."
+
+#: ../theme-options.php:24
+msgid "Theme Options"
+msgstr "Opţiuni de temă"
+
+#: ../theme-options.php:33
+msgid "Up to two sidebars"
+msgstr "Până la două sidebars"
+
+#: ../theme-options.php:37
+msgid "Up to one sidebar"
+msgstr "Până la o bara laterală"
+
+#: ../theme-options.php:47
+msgid "League Gothic (default)"
+msgstr "Liga gotic (implicit)"
+
+#: ../theme-options.php:51
+msgid "Helvetica Neue, sans-serif"
+msgstr "Helvetica Neue, sans-serif"
+
+#: ../theme-options.php:66
+msgid " Theme Options"
+msgstr " Opţiuni de temă"
+
+#: ../theme-options.php:69
+msgid "Options saved"
+msgstr "Opţiuni salvate"
+
+#: ../theme-options.php:78
+msgid "Layout"
+msgstr "Aspect"
+
+#: ../theme-options.php:85
+msgid "Sidebars"
+msgstr "Sidebars"
+
+#: ../theme-options.php:103
+msgid "Up to only one sidebar will result in a wider content column."
+msgstr "Până la doar un singur bara laterală va duce la o coloană de conţinut mai larg."
+
+#: ../theme-options.php:112
+msgid "Custom sidebars"
+msgstr "Sidebars particularizate"
+
+#: ../theme-options.php:115
+msgid "Use custom sidebars in pages."
+msgstr "Utilizaţi sidebars particularizate în pagini."
+
+#: ../theme-options.php:124
+msgid "Content in listings"
+msgstr "Conţinut în liste"
+
+#: ../theme-options.php:127
+msgid "Show content in listings on small screens (recommended for photo blogs)."
+msgstr "Arată conţinutul în listări pe ecrane mici (recomandat pentru blog-uri foto)."
+
+#: ../theme-options.php:131
+msgid "Design"
+msgstr "Design"
+
+#: ../theme-options.php:138
+msgid "Typeface in titles"
+msgstr "Set de caractere în titluri"
+
+#: ../theme-options.php:159
+msgid "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead."
+msgstr "Alege care de caractere pentru a utiliza în titluri. Setul de caractere implicit, gotic League, nu joacă frumos în toate limbile și probabil aţi prefera Helvetica în schimb."
+
+#: ../theme-options.php:163
+msgid "Header"
+msgstr "Antet"
+
+#: ../theme-options.php:170
+msgid "Header message"
+msgstr "Antet mesaj"
+
+#: ../theme-options.php:173
+msgid "A message that is displayed in the header. Falls back to the blog description if empty."
+msgstr "Un mesaj care este afişat în antet. Cade înapoi la descrierea blog dacă gol."
+
+#: ../theme-options.php:187
+msgid "Header image height"
+msgstr "Inaltime imagine antet"
+
+#: ../theme-options.php:190
+msgid "The height of the image in the header"
+msgstr "Înălțimea imaginii în antetul"
+
+#: ../theme-options.php:199
+msgid "Hide site title and header message?"
+msgstr "Ascunde site-ul titlu şi antet mesaj?"
+
+#: ../theme-options.php:202
+msgid "Hide"
+msgstr "Ascunde"
+
+#: ../theme-options.php:203
+msgid "Might be useful if you're using a custom header."
+msgstr "Poate fi util dacă utilizaţi un antet particularizat."
+
+#: ../theme-options.php:207
+msgid "Footer"
+msgstr "Subsol"
+
+#: ../theme-options.php:214
+msgid "Footer message"
+msgstr "Subsol mesaj"
+
+#: ../theme-options.php:217
+msgid "A message that is displayed in the footer."
+msgstr "Un mesaj care este afişat în subsol."
+
+#: ../theme-options.php:221
+msgid "Support Blaskan"
+msgstr "Suport Blaskan"
+
+#: ../theme-options.php:228
+msgid "Show credits"
+msgstr "Arată credite"
+
+#: ../theme-options.php:231
+msgid "Display links to the Blaskan theme and WordPress.org in the footer."
+msgstr "Afişa link-uri la tema Blaskan şi WordPress.org în subsol."
+
+#: ../theme-options.php:237
+msgid "Save Options"
+msgstr "Opţiuni de salvare"
+
+#: ../theme-options.php:242
+#, php-format
+msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
+msgstr "<a href=\"%s\">%s </a> este proiectat şi dezvoltat de <a href=\"%s\">%s</a>. Vă rugăm să raportul bug-uri şi să ofere feedback cu privire la <a href=\"%s\">GitHub</a>."
+
+#~ msgid "Up to two sidebars. Content full width = 560 px"
+#~ msgstr "Până la două sidebars. Conţinut lăţime maximă = 560 px"
+
+#~ msgid "Up to one sidebar. Content full width = 830 px"
+#~ msgstr "Până la o bara laterală. Conţinut lăţime maximă = 830 px"
+
+#~ msgid "The maximum amount of sidebars and content width"
+#~ msgstr "Valoarea maximă a sidebars şi conţinut lăţime"

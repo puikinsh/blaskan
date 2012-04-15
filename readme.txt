@@ -64,5 +64,6 @@ http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 Contributions:
 --------------
 Dutch translation by Matthijs de Vries.
+Romanian translation by WebHostingGeeks.com.
 
 See also links/comments in source files.
