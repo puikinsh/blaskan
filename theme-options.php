@@ -11,7 +11,9 @@ add_action( 'admin_menu', 'blaskan_options_add_page' );
 /**
  * Init plugin options to white list our options
  */
-function blaskan_options_init(){
+function blaskan_options_init() {
+	wp_enqueue_style( 'blaskan-theme-options', get_template_directory_uri() . '/theme-options.css' );
+
 	register_setting( 'theme_options', 'blaskan_options', 'blaskan_options_validate' );
 	register_taxonomy_for_object_type( 'post_tag', 'page' );
   register_taxonomy_for_object_type( 'category', 'page' );
@@ -29,12 +31,10 @@ function blaskan_options_add_page() {
  */
 $sidebars_options = array(
 	'2' => array(
-		'value' =>	'two_sidebars',
-		'label' => __( 'Up to two sidebars', 'blaskan' )
+		'value' =>	'two_sidebars'
 	),
 	'1' => array(
-		'value' =>	'one_sidebar',
-		'label' => __( 'Up to one sidebar', 'blaskan' )
+		'value' =>	'one_sidebar'
 	)
 );
 
@@ -75,32 +75,103 @@ function blaskan_options_do_page() {
 
 			<table class="form-table">
 			  
-			  <tr><th colspan="2"><strong><?php _e( 'Layout', 'blaskan' ); ?></strong></th></tr>
+			  <tr><th colspan="2"><strong><?php _e( 'Design', 'blaskan' ); ?></strong></th></tr>
 			  
+			  <?php
+				/**
+				 * Typeface in titles
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Typeface in titles', 'blaskan' ); ?></th>
+					<td>
+						<p>
+							<?php _e( "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead.", 'blaskan' ); ?>
+						</p>
+
+						<?php
+						if ( empty( $options['typeface_titles'] ) ) {
+							$options['typeface_titles'] = '';
+						}
+						$selected = $options['typeface_titles'];
+						$typeface_options = array();
+						foreach ( $typeface_title_options as $option ) {
+							if ( $selected == $option['value'] ) {
+								$typeface_options[] = '<input checked="checked" type="radio" name="blaskan_options[typeface_titles]" value="' . esc_attr( $option['value'] ) . '">';
+							} else {
+								$typeface_options[] = '<input type="radio" name="blaskan_options[typeface_titles]" value="' . esc_attr( $option['value'] ) . '">';
+							}
+						}
+						?>
+
+						<div class="blaskan-option">
+							<label class="description">
+								<?php echo $typeface_options[0]; ?>
+								<br>
+								<span class="blaskan-typeface-option blaskan-typeface-option-league-gothic">
+									League Gothic
+								</span>
+							</label>
+						</div>
+
+						<div class="blaskan-option">
+							<label class="description">
+								<?php echo $typeface_options[1]; ?>
+								<br>
+								<span class="blaskan-typeface-option blaskan-typeface-option-helvetica">
+									Helvetica Neue / Sans Serif
+								</span>
+							</label>
+						</div>
+
+						<div style="clear: both;"></div>
+					</td>
+				</tr>
+
+				<tr><th colspan="2"><strong><?php _e( 'Layout', 'blaskan' ); ?></strong></th></tr>
+
 			  <?php
 				/**
 				 * Content layout
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Sidebars', 'blaskan' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Default layout', 'blaskan' ); ?></th>
 					<td>
-						<select name="blaskan_options[sidebars]">
-							<?php
-								$selected = $options['sidebars'];
-								$p = '';
-								$r = '';
-								foreach ( $sidebars_options as $option ) {
-									$label = __($option['label'], 'blaskan');
-									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
-									else
-										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
-								}
-								echo $p . $r;
-							?>
-						</select>
-						<br>
-						<label class="description" for="blaskan_options[sidebars]"><?php _e( 'Up to only one sidebar will result in a wider content column.', 'blaskan' ); ?></label>
+						<?php
+						$selected = $options['sidebars'];
+						$layout_options = array();
+						foreach ( $sidebars_options as $option ) {
+							$label = __($option['label'], 'blaskan');
+							if ( $selected == $option['value'] ) {
+								$layout_options[] = '<input checked="checked" type="radio" name="blaskan_options[sidebars]" value="' . esc_attr( $option['value'] ) . '">';
+							} else {
+								$layout_options[] = '<input type="radio" name="blaskan_options[sidebars]" value="' . esc_attr( $option['value'] ) . '">';
+							}
+						}
+						?>
+
+						<div class="blaskan-option">
+							<label class="description">
+								<?php echo $layout_options[0]; ?>
+								<br>
+								<img src="<?php echo get_template_directory_uri(); ?>/img/content-two-sidebars.png">
+								<br>
+								<?php _e( "Narrow content column", 'blaskan' ); ?><br>
+								<?php _e( "Max two sidebars", 'blaskan' ); ?>
+							</label>
+						</div>
+
+						<div class="blaskan-option">
+							<label class="description">
+								<?php echo $layout_options[1]; ?>
+								<br>
+								<img src="<?php echo get_template_directory_uri(); ?>/img/content-wide-one-sidebar.png">
+								<br>
+								<?php _e( "Wide content column", 'blaskan' ); ?><br>
+								<?php _e( "Max one sidebar", 'blaskan' ); ?>
+							</label>
+						</div>
+
+						<div style="clear: both;"></div>
 					</td>
 				</tr>
 			  
@@ -109,42 +180,10 @@ function blaskan_options_do_page() {
 				 * Custom sidebars in pages?
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Custom sidebars', 'blaskan' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Separate sidebar widget areas', 'blaskan' ); ?></th>
 					<td>
 						<input id="blaskan_options[custom_sidebars_in_pages]" name="blaskan_options[custom_sidebars_in_pages]" type="checkbox" value="1" <?php checked( '1', $options['custom_sidebars_in_pages'] ); ?> />
-						<label class="description" for="blaskan_options[custom_sidebars_in_pages]"><?php _e( 'Use custom sidebars in pages.', 'blaskan' ); ?></label>
-					</td>
-				</tr>
-
-				<tr><th colspan="2"><strong><?php _e( 'Design', 'blaskan' ); ?></strong></th></tr>
-
-				<?php
-				/**
-				 * Typeface in titles
-				 */
-				?>
-				<tr valign="top"><th scope="row"><?php _e( 'Typeface in titles', 'blaskan' ); ?></th>
-					<td>
-						<select name="blaskan_options[typeface_titles]">
-							<?php
-								if ( empty( $options['typeface_titles'] ) ) {
-									$options['typeface_titles'] = '';
-								}
-								$selected = $options['typeface_titles'];
-								$p = '';
-								$r = '';
-								foreach ( $typeface_title_options as $option ) {
-									$label = __($option['label'], 'blaskan');
-									if ( $selected == $option['value'] ) // Make default first in list
-										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
-									else
-										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";
-								}
-								echo $p . $r;
-							?>
-						</select>
-						<br>
-						<label class="description" for="blaskan_options[typeface_titles]"><?php _e( "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead.", 'blaskan' ); ?></label>
+						<label class="description" for="blaskan_options[custom_sidebars_in_pages]"><?php _e( 'Use separate sidebar widget areas in pages and posts.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
 
