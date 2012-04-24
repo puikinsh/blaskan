@@ -13,6 +13,9 @@ add_action( 'admin_menu', 'blaskan_options_add_page' );
  */
 function blaskan_options_init() {
 	wp_enqueue_style( 'blaskan-theme-options', get_template_directory_uri() . '/theme-options.css' );
+	wp_enqueue_style( 'farbtastic' );
+
+	wp_enqueue_script( 'blaskan-theme-options', get_template_directory_uri() . '/theme-options.js', array( 'farbtastic' ) );
 
 	register_setting( 'theme_options', 'blaskan_options', 'blaskan_options_validate' );
 	register_taxonomy_for_object_type( 'post_tag', 'page' );
@@ -124,6 +127,27 @@ function blaskan_options_do_page() {
 						</div>
 
 						<div style="clear: both;"></div>
+					</td>
+				</tr>
+
+				<?php
+				/**
+				 * Link color
+				 */
+				if ( empty( $options['link_color'] ) ) {
+					$link_color = '#2e6eb0';
+				} else {
+					$link_color = stripslashes( $options['link_color'] );
+				}
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Link color', 'blaskan' ); ?></th>
+					<td style="position:relative">
+						<input type="text" name="blaskan_options[link_color]" id="link-color" value="<?php echo esc_attr( $link_color ); ?>" />
+						<a href="#" class="pickcolor hide-if-no-js" id="link-color-example"></a>
+						<input type="button" class="pickcolor button hide-if-no-js" value="<?php esc_attr_e( 'Select a color', 'blaskan' ); ?>" />
+						<div id="colorPickerDiv" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+						<br />
+						<span><?php printf( __( 'Default color: %s', 'blaskan' ), '<span id="default-color">#2e6eb0</span>' ); ?></span>
 					</td>
 				</tr>
 
@@ -286,6 +310,17 @@ function blaskan_options_do_page() {
  * Sanitize and validate input. Accepts an array, return a sanitized array.
  */
 function blaskan_options_validate( $input ) {
+	// Validate typeface in titles options
+	if ( $input['typeface_titles'] !== 'default' ) {
+		$input['typeface_titles'] = 'sans_serif';
+	} else {
+		$input['typeface_titles'] = 'default';
+	}
+
+	// Link color must be 3 or 6 hexadecimal characters
+	if ( isset( $input['link_color'] ) && preg_match( '/^#?([a-f0-9]{3}){1,2}$/i', $input['link_color'] ) )
+		$input['link_color'] = '#' . strtolower( ltrim( $input['link_color'], '#' ) );
+
 	// Validate layout options
 	if ( $input['sidebars'] !== 'one_sidebar' ) {
 		$input['sidebars'] = 'two_sidebars';
@@ -297,13 +332,6 @@ function blaskan_options_validate( $input ) {
 	if ( ! isset( $input['custom_sidebars_in_pages'] ) )
 		$input['custom_sidebars_in_pages'] = null;
 	$input['custom_sidebars_in_pages'] = ( $input['custom_sidebars_in_pages'] == 1 ? 1 : 0 );
-
-	// Validate typeface in titles options
-	if ( $input['typeface_titles'] !== 'default' ) {
-		$input['typeface_titles'] = 'sans_serif';
-	} else {
-		$input['typeface_titles'] = 'default';
-	}
 	
 	// Header message may contain allowed HTML tags
 	$input['header_message'] = wp_filter_post_kses( $input['header_message'] );
@@ -326,3 +354,30 @@ function blaskan_options_validate( $input ) {
 
 	return $input;
 }
+
+/**
+ * Add a style block to the theme for the current link color.
+ *
+ * This function is attached to the wp_head action hook.
+ *
+ * Lifted from Twenty Ten theme
+ */
+function blaskan_print_link_color_style() {
+	$options = get_option( 'blaskan_options' );
+	$link_color = $options['link_color'];
+
+	$default_link_color = '#2e6eb0';
+
+	// Don't do anything if the current link color is the default.
+	if ( $default_link_color == $link_color || empty( $link_color ) )
+		return;
+?>
+	<style>
+		/* Link color */
+		a {
+			color: <?php echo $link_color; ?>;
+		}
+	</style>
+<?php
+}
+add_action( 'wp_head', 'blaskan_print_link_color_style', 100 );

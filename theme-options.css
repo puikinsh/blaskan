@@ -43,3 +43,12 @@
 	font-size: 28px;
 	font-weight: bold;
 }
+
+#link-color-example {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #dfdfdf;
+	margin: 0 7px 0 3px;
+	padding: 4px 14px;
+}
