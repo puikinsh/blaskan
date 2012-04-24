@@ -364,9 +364,15 @@ function blaskan_options_validate( $input ) {
  */
 function blaskan_print_link_color_style() {
 	$options = get_option( 'blaskan_options' );
-	$link_color = $options['link_color'];
-
 	$default_link_color = '#2e6eb0';
+
+	if ( ! empty( $options['link_color'] ) ) {
+		$link_color = $options['link_color'];
+	} else {
+		$link_color = $default_link_color;
+	}
+	
+
 
 	// Don't do anything if the current link color is the default.
 	if ( $default_link_color == $link_color || empty( $link_color ) )
