@@ -1,3 +1,7 @@
+2012-04-24: Blaskan 2.4
+-----------------------
+See: https://github.com/persand/blaskan/issues?milestone=10&state=closed
+
 2012-02-17: Blaskan 2.3
 -----------------------
 See: https://github.com/persand/blaskan/issues?milestone=8&state=closed
