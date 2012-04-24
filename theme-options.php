@@ -372,8 +372,6 @@ function blaskan_print_link_color_style() {
 		$link_color = $default_link_color;
 	}
 	
-
-
 	// Don't do anything if the current link color is the default.
 	if ( $default_link_color == $link_color || empty( $link_color ) )
 		return;
