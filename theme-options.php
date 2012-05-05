@@ -12,15 +12,20 @@ add_action( 'admin_menu', 'blaskan_options_add_page' );
  * Init plugin options to white list our options
  */
 function blaskan_options_init() {
-	wp_enqueue_style( 'blaskan-theme-options', get_template_directory_uri() . '/theme-options.css' );
-	wp_enqueue_style( 'farbtastic' );
-
-	wp_enqueue_script( 'blaskan-theme-options', get_template_directory_uri() . '/theme-options.js', array( 'farbtastic' ) );
-
 	register_setting( 'theme_options', 'blaskan_options', 'blaskan_options_validate' );
 	register_taxonomy_for_object_type( 'post_tag', 'page' );
   register_taxonomy_for_object_type( 'category', 'page' );
 }
+
+/**
+ * Properly enqueue styles and scripts for our theme options page
+ */
+function blaskan_admin_enqueue_scripts( $hook_suffix ) {
+	wp_enqueue_style( 'blaskan-theme-options', get_template_directory_uri() . '/theme-options.css' );
+	wp_enqueue_script( 'blaskan-theme-options', get_template_directory_uri() . '/theme-options.js', array( 'farbtastic' ) );
+	wp_enqueue_style( 'farbtastic' );
+}
+add_action( 'admin_print_styles-appearance_page_theme_options', 'blaskan_admin_enqueue_scripts' );
 
 /**
  * Load up the menu page
