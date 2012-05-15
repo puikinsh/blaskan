@@ -103,11 +103,7 @@ function blaskan_options_do_page() {
 						$selected = $options['typeface_titles'];
 						$typeface_options = array();
 						foreach ( $typeface_title_options as $option ) {
-							if ( $selected == $option['value'] ) {
-								$typeface_options[] = '<input checked="checked" type="radio" name="blaskan_options[typeface_titles]" value="' . esc_attr( $option['value'] ) . '">';
-							} else {
-								$typeface_options[] = '<input type="radio" name="blaskan_options[typeface_titles]" value="' . esc_attr( $option['value'] ) . '">';
-							}
+							$typeface_options[] = '<input ' . checked( $selected, $option['value'], false ) . ' type="radio" name="blaskan_options[typeface_titles]" value="' . esc_attr( $option['value'] ) . '">';
 						}
 						?>
 
@@ -169,12 +165,7 @@ function blaskan_options_do_page() {
 						$selected = $options['sidebars'];
 						$layout_options = array();
 						foreach ( $sidebars_options as $option ) {
-							$label = __($option['label'], 'blaskan');
-							if ( $selected == $option['value'] ) {
-								$layout_options[] = '<input checked="checked" type="radio" name="blaskan_options[sidebars]" value="' . esc_attr( $option['value'] ) . '">';
-							} else {
-								$layout_options[] = '<input type="radio" name="blaskan_options[sidebars]" value="' . esc_attr( $option['value'] ) . '">';
-							}
+							$layout_options[] = '<input ' . checked( $selected, $option['value'], false ) . ' type="radio" name="blaskan_options[sidebars]" value="' . esc_attr( $option['value'] ) . '">';
 						}
 						?>
 
