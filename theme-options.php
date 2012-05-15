@@ -225,12 +225,13 @@ function blaskan_options_do_page() {
 				if ( empty( $options['header_message'] ) ) {
 					$header_message = '';
 				} else {
-					$header_message = stripslashes( $options['header_message'] );
+					$header_message = esc_textarea( stripslashes( $options['header_message'] ) );
 				}
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Header message', 'blaskan' ); ?></th>
 					<td>
 						<textarea id="blaskan_options[header_message]" class="large-text" cols="50" rows="10" name="blaskan_options[header_message]"><?php echo $header_message; ?></textarea>
+						<br>
 						<label class="description" for="blaskan_options[header_message]"><?php _e( 'A message that is displayed in the header. Falls back to the blog description if empty.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
@@ -274,12 +275,13 @@ function blaskan_options_do_page() {
 				if ( empty( $options['footer_message'] ) ) {
 					$footer_message = '';
 				} else {
-					$footer_message = stripslashes( $options['footer_message'] );
+					$footer_message = esc_textarea( stripslashes( $options['footer_message'] ) );
 				}
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Footer message', 'blaskan' ); ?></th>
 					<td>
 						<textarea id="blaskan_options[footer_message]" class="large-text" cols="50" rows="10" name="blaskan_options[footer_message]"><?php echo $footer_message; ?></textarea>
+						<br>
 						<label class="description" for="blaskan_options[footer_message]"><?php _e( 'A message that is displayed in the footer.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
