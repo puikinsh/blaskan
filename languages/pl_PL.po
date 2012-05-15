@@ -1,0 +1,433 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Blaskan - PL\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-13 21:04+0100\n"
+"PO-Revision-Date: 2012-05-13 21:07+0100\n"
+"Last-Translator: Pablo <badziewmax@gmail.com>\n"
+"Language-Team: Paweł Grześ <pawelgrzes@hotmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_x;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: Poland\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:5
+msgid "4-uh-oh-4 <span>Page not found...</span>"
+msgstr "Błąd 404 <span>- Nie znaleziono strony</span>"
+
+#: ../404.php:7
+msgid "The page you requested could not be found... sorry. Perhaps searching will help?"
+msgstr "Nie można znaleźć strony, której szukasz. Może warto użyć wyszukiwarki?"
+
+#: ../archive.php:11
+#, php-format
+msgid "Daily Archives: <time format=\"%s\">%s</time>"
+msgstr "Archiwa dzienne : <time format=\"%s\">%s</time>"
+
+#: ../archive.php:24
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Archiwa miesięczne : <span>%s</span>"
+
+#: ../archive.php:37
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Archiwa roczne : <span>%s</span>"
+
+#: ../archive.php:50
+#, php-format
+msgid "Tagged: <span>%s</span>"
+msgstr "Otagowane : <span>%s</span>"
+
+#: ../archive.php:72
+#, php-format
+msgid "Category: <span>%s</span>"
+msgstr "Kategoria : <span>%s</span>"
+
+#: ../archive.php:93
+msgid "Archives"
+msgstr "Archiwa"
+
+#: ../author.php:18
+msgid "Posts"
+msgstr "Posty"
+
+#: ../comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Ten post jest chroniony hasłem. Wprowadź je."
+
+#: ../comments.php:15
+#: ../comments.php:26
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Starsze komentarze"
+
+#: ../comments.php:16
+#: ../comments.php:27
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nowsze komentarze <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../comments.php:34
+msgid "Comments are closed."
+msgstr "Komentowanie zamknięte."
+
+#: ../comments.php:44
+msgid "Name"
+msgstr "Imię"
+
+#: ../comments.php:45
+msgid "(required)"
+msgstr "(wymagane)"
+
+#: ../comments.php:52
+msgid "Email"
+msgstr "E-mail"
+
+#: ../comments.php:53
+msgid "(required - will be kept a secret)"
+msgstr "(wymagane - nie będzie pokazywane publicznie)"
+
+#: ../comments.php:59
+msgid "Website"
+msgstr "Adres WWW"
+
+#: ../comments.php:62
+msgid "Comment"
+msgstr "Komentarz"
+
+#: ../comments.php:65
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Musisz być <a href=\"%s\">zalogowany</a> by dodać komentarz."
+
+#: ../comments.php:67
+#, php-format
+msgid "You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out of this account\">Log out?</a></p>"
+msgstr "Jesteś zalogowany jako <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Wyloguj z tego konta\">Wylogować ?</a></p>"
+
+#: ../comments.php:71
+msgid "You may use the following <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+msgstr "Możesz użyć <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+
+#: ../comments.php:77
+msgid "Post a comment"
+msgstr "Dodaj komentarz"
+
+#: ../comments.php:79
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Odpowiedz %s"
+
+#: ../comments.php:81
+msgid "Cancel reply"
+msgstr "Anuluj odpowiedź"
+
+#: ../comments.php:83
+msgid "Post comment"
+msgstr "Dodaj komentarz"
+
+#: ../functions.php:117
+msgid "Primary Navigation"
+msgstr "Nawigacja I"
+
+#: ../functions.php:118
+msgid "Footer Navigation"
+msgstr "Nawigacja stopki"
+
+#: ../functions.php:135
+msgid "- Navigation -"
+msgstr "- Nawigacja -"
+
+#: ../functions.php:191
+msgid "Primary Widget Area"
+msgstr "Pierwsza strefa widżetów"
+
+#: ../functions.php:193
+msgid "The primary sidebar"
+msgstr "Główny pasek boczny"
+
+#: ../functions.php:203
+msgid "Secondary Widget Area"
+msgstr "Druga strefa widżetów"
+
+#: ../functions.php:205
+msgid "The secondary sidebar"
+msgstr "Drugi pasek boczny"
+
+#: ../functions.php:215
+msgid "Primary Page Widget Area"
+msgstr "Główna strefa widżetów"
+
+#: ../functions.php:217
+msgid "The primary page sidebar"
+msgstr "Główny pasek boczny"
+
+#: ../functions.php:227
+msgid "Secondary Page Widget Area"
+msgstr "Drugorzędna strefa widżetów"
+
+#: ../functions.php:229
+msgid "The secondary page sidebar"
+msgstr "Drugorzędny pasek boczny"
+
+#: ../functions.php:239
+msgid "Footer Widget Area"
+msgstr "Strefa widzetów stopki"
+
+#: ../functions.php:241
+msgid "The footer widget area"
+msgstr "Strefa widżetów stopki"
+
+#: ../functions.php:280
+#, php-format
+msgid "Page %s"
+msgstr "Strona %s"
+
+#: ../functions.php:608
+#: ../functions.php:634
+#: ../functions.php:641
+#, php-format
+msgid "%1$s - %2$s"
+msgstr "%1$s - %2$s"
+
+#: ../functions.php:618
+msgid "Your comment is awaiting moderation."
+msgstr "Twój komentarz oczekuje na zaakceptowanie przez moderatora."
+
+#: ../functions.php:626
+#: ../functions.php:635
+#: ../functions.php:642
+#: ../loop-attachment.php:62
+#: ../loop.php:85
+#: ../page.php:39
+msgid "Edit"
+msgstr "Edytuj"
+
+#: ../functions.php:635
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../functions.php:642
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: ../functions.php:683
+#, php-format
+msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
+msgstr "Oparte na <a href=\"%s\">Blaskan</a> et <a href=\"%s\">WordPress</a>."
+
+#: ../loop-attachment.php:54
+#: ../loop.php:51
+#: ../loop.php:57
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Czytaj dalej <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../loop-attachment.php:55
+#: ../loop.php:52
+#: ../page.php:21
+msgid "Pages:"
+msgstr "Stron:"
+
+#: ../loop-attachment.php:60
+msgid "Uploaded by"
+msgstr "Dodano przez"
+
+#: ../loop.php:5
+msgid "Not Found"
+msgstr "Nie znaleziono"
+
+#: ../loop.php:8
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Przepraszamy, ale nie znaleziono takiego archiwum. Może pomoże szukanie powiązanego wpisu."
+
+#: ../loop.php:66
+msgid "Written by"
+msgstr "Napisał"
+
+#: ../loop.php:69
+msgid "No comments"
+msgstr "Brak komentarzy"
+
+#: ../loop.php:69
+msgid "<span>1</span> Comment"
+msgstr "<span>1</span> komentarz"
+
+#: ../loop.php:69
+msgid "<span>%</span> Comments"
+msgstr "<span>%</span> komentarzy"
+
+#: ../loop.php:73
+#: ../page.php:26
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Dodane w</span> %2$s"
+
+#: ../loop.php:81
+#: ../page.php:35
+#, php-format
+msgid "<span class=\"%1$s\">Tagged with</span> %2$s"
+msgstr "<span class=\"%1$s\">Tagi:</span> %2$s"
+
+#: ../loop.php:107
+msgid "Older posts"
+msgstr "Starsze posty"
+
+#: ../loop.php:108
+msgid "Newer posts"
+msgstr "Nowsze posty"
+
+#: ../search.php:5
+#, php-format
+msgid "Search results for: %s"
+msgstr "Wyniki wyszukiwania dla: %s"
+
+#: ../search.php:9
+msgid "Nothing Found"
+msgstr "Nic nie znaleziono"
+
+#: ../search.php:10
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Przykro nam, ale nie znaleziono nic, co pasowało by do podanych kryteriów. Poszukaj jeszcze raz używając innych słów kluczowych."
+
+#: ../theme-options.php:34
+msgid "Theme Options"
+msgstr "Opcje szablonu"
+
+#: ../theme-options.php:55
+msgid "League Gothic (default)"
+msgstr "League Gothic (domyślnie)"
+
+#: ../theme-options.php:59
+msgid "Helvetica Neue, sans-serif"
+msgstr "Helvetica Neue, sans-serif"
+
+#: ../theme-options.php:74
+msgid " Theme Options"
+msgstr "Opcje szablonu"
+
+#: ../theme-options.php:77
+msgid "Options saved"
+msgstr "Opcje zapisane"
+
+#: ../theme-options.php:86
+msgid "Design"
+msgstr "Design"
+
+#: ../theme-options.php:93
+msgid "Typeface in titles"
+msgstr "Czcionki tytułów"
+
+#: ../theme-options.php:96
+msgid "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead."
+msgstr "Wybierz czcionki tytułów. Domyślna czcionka, League Gothic, nie wygląda dobrze ze wszystkimi językami, więc warto pomyśleć o użyciu Helvetica."
+
+#: ../theme-options.php:148
+msgid "Link color"
+msgstr "Kolor linka"
+
+#: ../theme-options.php:155
+#, php-format
+msgid "Default color: %s"
+msgstr "Kolor linka"
+
+#: ../theme-options.php:159
+msgid "Layout"
+msgstr "Wygląd"
+
+#: ../theme-options.php:166
+msgid "Default layout"
+msgstr "Kolor linka"
+
+#: ../theme-options.php:187
+msgid "Narrow content column"
+msgstr "Wąska kolumna treści"
+
+#: ../theme-options.php:188
+msgid "Max two sidebars"
+msgstr "Maksymalnie 2 paski boczne"
+
+#: ../theme-options.php:198
+msgid "Wide content column"
+msgstr "Szeroka kolumna treści"
+
+#: ../theme-options.php:199
+msgid "Max one sidebar"
+msgstr "Maksymalnie 1 pasek boczny"
+
+#: ../theme-options.php:212
+msgid "Separate sidebar widget areas"
+msgstr "Oddziel strefy widżetów w pasku bocznym"
+
+#: ../theme-options.php:215
+msgid "Use separate sidebar widget areas in pages and posts."
+msgstr "Używaj odseparowanych stref widżetów na stronach i w postach."
+
+#: ../theme-options.php:219
+msgid "Header"
+msgstr "Nagłówek"
+
+#: ../theme-options.php:231
+msgid "Header message"
+msgstr "Wiadomość nagłówka"
+
+#: ../theme-options.php:234
+msgid "A message that is displayed in the header. Falls back to the blog description if empty."
+msgstr "Wiadomość, która wyświetlana będzie w nagłówku. Jeżeli pusta, użyty będzie domyślny opis bloga."
+
+#: ../theme-options.php:248
+msgid "Header image height"
+msgstr "Wysokość obrazu nagłówka"
+
+#: ../theme-options.php:251
+msgid "The height of the image in the header"
+msgstr "Wysokość obrazu w nagłówku"
+
+#: ../theme-options.php:260
+msgid "Hide site title and header message?"
+msgstr "Schować tytuł strony i wiadomość nagłówka?"
+
+#: ../theme-options.php:263
+msgid "Hide"
+msgstr "Ukryj"
+
+#: ../theme-options.php:264
+msgid "Might be useful if you're using a custom header."
+msgstr "Może być przydatne, jeżeli używasz własnego nagłówka."
+
+#: ../theme-options.php:268
+msgid "Footer"
+msgstr "Stopka"
+
+#: ../theme-options.php:280
+msgid "Footer message"
+msgstr "Wiadomość w stopce"
+
+#: ../theme-options.php:283
+msgid "A message that is displayed in the footer."
+msgstr "Wiadomość, która jest wyświetlana w stopce."
+
+#: ../theme-options.php:287
+msgid "Support Blaskan"
+msgstr "Wspomóż Blaskan"
+
+#: ../theme-options.php:294
+msgid "Show credits"
+msgstr "Pokaż podziękowania"
+
+#: ../theme-options.php:297
+msgid "Display links to the Blaskan theme and WordPress.org in the footer."
+msgstr "Pokazuj linki do Blaskan i Wordpress.org w stopce."
+
+#: ../theme-options.php:303
+msgid "Save Options"
+msgstr "Zapisz opcje"
+
+#: ../theme-options.php:308
+#, php-format
+msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
+msgstr "<a href=\"%s\">%s</a> został stworzony przez <a href=\"%s\">%s</a>. Proszę, raportuj bugi i swoje opinie na <a href=\"%s\">GitHub</a>."
+

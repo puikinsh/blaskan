@@ -65,6 +65,7 @@ Contributions:
 --------------
 Dutch translation by Matthijs de Vries.
 German translation by Joachim Kroll.
+Polish translation by Paweł Grześ – dealwynajem.pl.
 Romanian translation by WebHostingGeeks.com.
 
 See also links/comments in source files.
