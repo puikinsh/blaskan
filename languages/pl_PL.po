@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Blaskan - PL\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-13 21:04+0100\n"
-"PO-Revision-Date: 2012-05-13 21:07+0100\n"
+"PO-Revision-Date: 2012-05-20 22:17+0100\n"
 "Last-Translator: Pablo <badziewmax@gmail.com>\n"
 "Language-Team: Paweł Grześ <pawelgrzes@hotmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -132,11 +132,11 @@ msgstr "Dodaj komentarz"
 
 #: ../functions.php:117
 msgid "Primary Navigation"
-msgstr "Nawigacja I"
+msgstr "Pasek menu (główny)"
 
 #: ../functions.php:118
 msgid "Footer Navigation"
-msgstr "Nawigacja stopki"
+msgstr "Nawigacja (menu) stopki"
 
 #: ../functions.php:135
 msgid "- Navigation -"
@@ -148,7 +148,7 @@ msgstr "Pierwsza strefa widżetów"
 
 #: ../functions.php:193
 msgid "The primary sidebar"
-msgstr "Główny pasek boczny"
+msgstr "Pierwszy pasek boczny"
 
 #: ../functions.php:203
 msgid "Secondary Widget Area"
@@ -160,19 +160,19 @@ msgstr "Drugi pasek boczny"
 
 #: ../functions.php:215
 msgid "Primary Page Widget Area"
-msgstr "Główna strefa widżetów"
+msgstr "Pierwsza strefa widżetów"
 
 #: ../functions.php:217
 msgid "The primary page sidebar"
-msgstr "Główny pasek boczny"
+msgstr "Pierwszy pasek boczny"
 
 #: ../functions.php:227
 msgid "Secondary Page Widget Area"
-msgstr "Drugorzędna strefa widżetów"
+msgstr "Druga strefa widżetów"
 
 #: ../functions.php:229
 msgid "The secondary page sidebar"
-msgstr "Drugorzędny pasek boczny"
+msgstr "Drugi pasek boczny"
 
 #: ../functions.php:239
 msgid "Footer Widget Area"
@@ -242,7 +242,7 @@ msgstr "Nie znaleziono"
 
 #: ../loop.php:8
 msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Przepraszamy, ale nie znaleziono takiego archiwum. Może pomoże szukanie powiązanego wpisu."
+msgstr "Przepraszamy, ale nie znaleziono nic takiego w archiwum. Może pomoże szukanie powiązanego wpisu."
 
 #: ../loop.php:66
 msgid "Written by"
@@ -332,7 +332,7 @@ msgstr "Kolor linka"
 #: ../theme-options.php:155
 #, php-format
 msgid "Default color: %s"
-msgstr "Kolor linka"
+msgstr "Kolor linka: %s"
 
 #: ../theme-options.php:159
 msgid "Layout"
