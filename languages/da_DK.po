@@ -1,0 +1,441 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Blaskan\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-01 19:54+0100\n"
+"PO-Revision-Date: 2012-05-27 21:23-0500\n"
+"Last-Translator: Kristian Olsen <m@kristianolsen.dk>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:5
+msgid "4-uh-oh-4 <span>Page not found...</span>"
+msgstr "4-uh-oh-4 <span>Siden blev ikke fundet...</span>"
+
+#: ../404.php:7
+msgid "The page you requested could not be found... sorry. Perhaps searching will help?"
+msgstr "Siden du efterspurgte kunne ikke findes. Prøv at søge i stedet?"
+
+#: ../archive.php:11
+#, php-format
+msgid "Daily Archives: <time format=\"%s\">%s</time>"
+msgstr "Dagligt arkiv: <time format=\"%s\">%s</time>"
+
+#: ../archive.php:24
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Månedsarkiv: <span>%s</span>"
+
+#: ../archive.php:37
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Årligt arkiv: <span>%s</span>"
+
+#: ../archive.php:50
+#, php-format
+msgid "Tagged: <span>%s</span>"
+msgstr "Tagged: <span>%s</span>"
+
+#: ../archive.php:72
+#, php-format
+msgid "Category: <span>%s</span>"
+msgstr "Kategori: <span>%s</span>"
+
+#: ../archive.php:93
+msgid "Archives"
+msgstr "Arkiv"
+
+#: ../author.php:18
+msgid "Posts"
+msgstr "Indlæg"
+
+#: ../comments.php:4
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Dette indlæg er beskyttet med kodeord. Indtast kodeordet for at se kommentarerne."
+
+#: ../comments.php:15
+#: ../comments.php:26
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Ældre kommentarer"
+
+#: ../comments.php:16
+#: ../comments.php:27
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nyere kommentarer <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../comments.php:34
+msgid "Comments are closed."
+msgstr "Muligheden for at kommentere er slået fra."
+
+#: ../comments.php:44
+msgid "Name"
+msgstr "Navn"
+
+#: ../comments.php:45
+msgid "(required)"
+msgstr "(obligatorisk)"
+
+#: ../comments.php:52
+msgid "Email"
+msgstr "E-post"
+
+#: ../comments.php:53
+msgid "(required - will be kept a secret)"
+msgstr "(obligatorisk - bliver ikke offenliggjort)"
+
+#: ../comments.php:59
+msgid "Website"
+msgstr "Hjemnmeside"
+
+#: ../comments.php:62
+msgid "Comment"
+msgstr "Kommentar"
+
+#: ../comments.php:65
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Du skal være<a href=\"%s\">logget ind</a> for at kunne kommentere."
+
+#: ../comments.php:67
+#, php-format
+msgid "You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out of this account\">Log out?</a></p>"
+msgstr "Du er logget ind som <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log ud fra denne konto\">Log ud?</a></p>"
+
+#: ../comments.php:71
+msgid "You may use the following <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+msgstr "Du kan anvende følgende HTML <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+
+#: ../comments.php:77
+msgid "Post a comment"
+msgstr "Skriv en kommentar"
+
+#: ../comments.php:79
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Skriv et svar till %s"
+
+#: ../comments.php:81
+msgid "Cancel reply"
+msgstr "Afbryd svar"
+
+#: ../comments.php:83
+msgid "Post comment"
+msgstr "Send kommentar"
+
+#: ../functions.php:112
+msgid "Primary Navigation"
+msgstr "Hovedmenu"
+
+#: ../functions.php:113
+msgid "Footer Navigation"
+msgstr "Sidefods-menu"
+
+#: ../functions.php:130
+msgid "- Navigation -"
+msgstr "- Navigering -"
+
+#: ../functions.php:187
+msgid "Primary Widget Area"
+msgstr "Venstre sidebar"
+
+#: ../functions.php:189
+msgid "The primary sidebar"
+msgstr "Den venstre sidebar"
+
+#: ../functions.php:199
+msgid "Secondary Widget Area"
+msgstr "Højre sidebar"
+
+#: ../functions.php:201
+msgid "The secondary sidebar"
+msgstr "Den højre sidebar"
+
+#: ../functions.php:211
+msgid "Primary Page Widget Area"
+msgstr "Venstre sidebar på sider"
+
+#: ../functions.php:213
+msgid "The primary page sidebar"
+msgstr "Den venstre sidebar på sider"
+
+#: ../functions.php:223
+msgid "Secondary Page Widget Area"
+msgstr "Højre sidebar på sider"
+
+#: ../functions.php:225
+msgid "The secondary page sidebar"
+msgstr "Den højre sidebar på sider"
+
+#: ../functions.php:235
+msgid "Footer Widget Area"
+msgstr "Sidefod"
+
+#: ../functions.php:237
+msgid "The footer widget area"
+msgstr "Sidefod"
+
+#: ../functions.php:276
+#, php-format
+msgid "Page %s"
+msgstr "Side %s"
+
+#: ../functions.php:613
+#: ../functions.php:639
+#: ../functions.php:646
+#, php-format
+msgid "%1$s - %2$s"
+msgstr "%1$s - %2$s"
+
+#: ../functions.php:623
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar venter på at blive godkendt"
+
+#: ../functions.php:631
+#: ../functions.php:640
+#: ../functions.php:647
+#: ../loop-attachment.php:62
+#: ../loop.php:85
+#: ../page.php:39
+msgid "Edit"
+msgstr "Rediger"
+
+#: ../functions.php:640
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../functions.php:647
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: ../functions.php:688
+#, php-format
+msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
+msgstr "Drivs med <a href=\"%s\">Blaskan</a> och <a href=\"%s\">WordPress</a>."
+
+#: ../loop-attachment.php:54
+#: ../loop.php:51
+#: ../loop.php:57
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Læs mere<span class=\"meta-nav\">&rarr;</span>"
+
+#: ../loop-attachment.php:55
+#: ../loop.php:52
+#: ../page.php:21
+msgid "Pages:"
+msgstr "Sider:"
+
+#: ../loop-attachment.php:60
+msgid "Uploaded by"
+msgstr "Uploaded af"
+
+#: ../loop.php:5
+msgid "Not Found"
+msgstr "Ingen resultat"
+
+#: ../loop.php:8
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Beklager, men der blev ikke fundet noget resultat for dette arkiv. Har du prøvet at søge?"
+
+#: ../loop.php:22
+#: ../loop.php:41
+#: ../loop.php:56
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalink til %s"
+
+#: ../loop.php:66
+msgid "Written by"
+msgstr "Skrevet af"
+
+#: ../loop.php:69
+msgid "No comments"
+msgstr "Ingen kommentarer"
+
+#: ../loop.php:69
+msgid "<span>1</span> Comment"
+msgstr "<span>1</span> kommentar"
+
+#: ../loop.php:69
+msgid "<span>%</span> Comments"
+msgstr "<span>%</span> kommentarer"
+
+#: ../loop.php:73
+#: ../page.php:26
+#, php-format
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Posted i</span> %2$s"
+
+#: ../loop.php:81
+#: ../page.php:35
+#, php-format
+msgid "<span class=\"%1$s\">Tagged with</span> %2$s"
+msgstr "<span class=\"%1$s\">Tagged med</span> %2$s"
+
+#: ../loop.php:107
+msgid "Older posts"
+msgstr "Ældre indlæg"
+
+#: ../loop.php:108
+msgid "Newer posts"
+msgstr "Nyere indlæg"
+
+#: ../search.php:5
+#, php-format
+msgid "Search results for: %s"
+msgstr "Søgeresultater for: %s"
+
+#: ../search.php:9
+msgid "Nothing Found"
+msgstr "Ingen resultater"
+
+#: ../search.php:10
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Beklager, men ingenting matchede dine søgeord. Prøv igen med en ny søgning."
+
+#: ../theme-options.php:24
+msgid "Theme Options"
+msgstr "Temaindstillinger"
+
+#: ../theme-options.php:33
+msgid "Up to two sidebars"
+msgstr "Op til to sidebarer"
+
+#: ../theme-options.php:37
+msgid "Up to one sidebar"
+msgstr "Op til en sidebar"
+
+#: ../theme-options.php:47
+msgid "League Gothic (default)"
+msgstr "League Gothic (standard)"
+
+#: ../theme-options.php:51
+msgid "Helvetica Neue, sans-serif"
+msgstr "Helvetica Neue, sans-serif"
+
+#: ../theme-options.php:66
+msgid " Theme Options"
+msgstr "Tamaindstillinger"
+
+#: ../theme-options.php:69
+msgid "Options saved"
+msgstr "Indstillingerne er gemt"
+
+#: ../theme-options.php:78
+msgid "Layout"
+msgstr "Layout"
+
+#: ../theme-options.php:85
+msgid "Sidebars"
+msgstr "Sidebarer"
+
+#: ../theme-options.php:103
+msgid "Up to only one sidebar will result in a wider content column."
+msgstr "Én sidebar vil medføre en bredere indholdskolonne."
+
+#: ../theme-options.php:112
+msgid "Custom sidebars"
+msgstr "Tilpassede sidebarer"
+
+#: ../theme-options.php:115
+msgid "Use custom sidebars in pages."
+msgstr "Brug tilpassede sidebarer på siderne."
+
+#: ../theme-options.php:124
+msgid "Content in listings"
+msgstr "Indhold i opslag"
+
+#: ../theme-options.php:127
+msgid "Show content in listings on small screens (recommended for photo blogs)."
+msgstr "Vis indhold i opslag på små skærme (anbefalet for photoblogs)."
+
+#: ../theme-options.php:131
+msgid "Design"
+msgstr "Design"
+
+#: ../theme-options.php:138
+msgid "Typeface in titles"
+msgstr "Skrifttype for titler"
+
+#: ../theme-options.php:159
+msgid "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead."
+msgstr "Vælg hvilke skrifttype der skal bruges i titler. Standard-skrifttypen, League Gothic, virker ikke godt med alle sprog. Er der problemer, kan du vælge Helvetica i stedet."
+
+#: ../theme-options.php:163
+msgid "Header"
+msgstr "Sidehoved"
+
+#: ../theme-options.php:170
+msgid "Header message"
+msgstr "Meddelelse i sidehoved"
+
+#: ../theme-options.php:173
+msgid "A message that is displayed in the header. Falls back to the blog description if empty."
+msgstr "En meddelelse som vises i sidehovedet. Hvis dette felt er tomt, anvendes bloggens beskrivelse hvis en sådan forefindes."
+
+#: ../theme-options.php:187
+msgid "Header image height"
+msgstr "Højde på billedet i sidehovedet. "
+
+#: ../theme-options.php:190
+msgid "The height of the image in the header"
+msgstr "Angiv højden på billedet i sidehovedet."
+
+#: ../theme-options.php:199
+msgid "Hide site title and header message?"
+msgstr "Skjul sidens titel og meddelelsen i sidehovedet?"
+
+#: ../theme-options.php:202
+msgid "Hide"
+msgstr "Skjul"
+
+#: ../theme-options.php:203
+msgid "Might be useful if you're using a custom header."
+msgstr "Denne indstilling kan være brugbar hvis du bruger et specialtilpasset sidehovede."
+
+#: ../theme-options.php:207
+msgid "Footer"
+msgstr "Sidefod"
+
+#: ../theme-options.php:214
+msgid "Footer message"
+msgstr "Meddelelse i sidefoden."
+
+#: ../theme-options.php:217
+msgid "A message that is displayed in the footer."
+msgstr "En meddelelse som vises i sidefoden."
+
+#: ../theme-options.php:221
+msgid "Support Blaskan"
+msgstr "Støt Blaskan"
+
+#: ../theme-options.php:228
+msgid "Show credits"
+msgstr "Vis credits"
+
+#: ../theme-options.php:231
+msgid "Display links to the Blaskan theme and WordPress.org in the footer."
+msgstr "Vis links til Blaskan themet og Wordpress.org i sidefoden."
+
+#: ../theme-options.php:237
+msgid "Save Options"
+msgstr "Gem indstillinger"
+
+#: ../theme-options.php:242
+#, php-format
+msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
+msgstr "<a href=\"%s\">%s</a> er designet og udviklet af <a href=\"%s\">%s</a>. Rapporter venligt bugs og kom med feedbavk på <a href=\"%s\">GitHub</a>."
+
+#~ msgid "Up to two sidebars. Content full width = 560 px"
+#~ msgstr "Upp till två sidospalter. Full bredd på innehållet = 560 px"
+
+#~ msgid "Up to one sidebar. Content full width = 830 px"
+#~ msgstr "Upp till en sidospalt. Full bredd på innehållet = 830 px"
+
+#~ msgid "The maximum amount of sidebars and content width"
+#~ msgstr "Maximalt antal sidospalter och innehållsbredd"
