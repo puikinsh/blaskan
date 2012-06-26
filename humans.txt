@@ -11,6 +11,6 @@ Released: 2012-01-22
 Language: English
 Standards: HTML5, CSS3, JavaScript
 Components: Foundation, Modernizr
-Software: Sublime Text 2
+Software: Sublime Text 2, Prose.io
 Fonts: League Gothic
 Hosting: GitHub Pages
