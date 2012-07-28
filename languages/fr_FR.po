@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Blaskan\n"
+"Project-Id-Version: Blaskan 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-04 20:54+0100\n"
-"PO-Revision-Date: 2012-01-04 20:59+0100\n"
+"POT-Creation-Date: 2012-07-01 00:52+0100\n"
+"PO-Revision-Date: 2012-07-01 01:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_x;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_attr__;_n;_nx;_ex;_ngettext;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n>1\n"
 "X-Poedit-Language: French\n"
@@ -63,6 +63,10 @@ msgstr "Articles"
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Cet article est protégé par mot de passe. Connectez-vous pour voir les commentaires."
 
+#: ../comments.php:11
+msgid "One comment"
+msgstr "Un commentaire"
+
 #: ../comments.php:15
 #: ../comments.php:26
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
@@ -87,7 +91,7 @@ msgstr "(requis)"
 
 #: ../comments.php:52
 msgid "Email"
-msgstr "E-mail"
+msgstr "Email"
 
 #: ../comments.php:53
 msgid "(required - will be kept a secret)"
@@ -95,7 +99,7 @@ msgstr "(requis - ne sera pas divulgé)"
 
 #: ../comments.php:59
 msgid "Website"
-msgstr "Website"
+msgstr "Site Web"
 
 #: ../comments.php:62
 msgid "Comment"
@@ -132,92 +136,92 @@ msgstr "Annuler la réponse"
 msgid "Post comment"
 msgstr "Poster un commentaire"
 
-#: ../functions.php:112
+#: ../functions.php:117
 msgid "Primary Navigation"
 msgstr "Navigation principale"
 
-#: ../functions.php:113
+#: ../functions.php:118
 msgid "Footer Navigation"
 msgstr "Navigation Pied de Page"
 
-#: ../functions.php:130
+#: ../functions.php:135
 msgid "- Navigation -"
 msgstr "- Navigation -"
 
-#: ../functions.php:187
+#: ../functions.php:191
 msgid "Primary Widget Area"
 msgstr "Zone Widget primaire Articles"
 
-#: ../functions.php:189
+#: ../functions.php:193
 msgid "The primary sidebar"
 msgstr "Barre latérale primaire (interne) pour les Articles"
 
-#: ../functions.php:199
+#: ../functions.php:203
 msgid "Secondary Widget Area"
 msgstr "Zone Widget secondaire Articles"
 
-#: ../functions.php:201
+#: ../functions.php:205
 msgid "The secondary sidebar"
 msgstr "Barre latérale secondaire (externe) pour les Articles"
 
-#: ../functions.php:211
+#: ../functions.php:215
 msgid "Primary Page Widget Area"
 msgstr "Zone Widget primaire Pages"
 
-#: ../functions.php:213
+#: ../functions.php:217
 msgid "The primary page sidebar"
 msgstr "Barre latérale primaire (interne) pour les Pages Statiques"
 
-#: ../functions.php:223
+#: ../functions.php:227
 msgid "Secondary Page Widget Area"
 msgstr "Zone Widget secondaire Pages"
 
-#: ../functions.php:225
+#: ../functions.php:229
 msgid "The secondary page sidebar"
 msgstr "Barre latérale secondaire (externe) pour les Pages Statiques"
 
-#: ../functions.php:235
+#: ../functions.php:239
 msgid "Footer Widget Area"
 msgstr "Zone Widget Pied de Page"
 
-#: ../functions.php:237
+#: ../functions.php:241
 msgid "The footer widget area"
 msgstr "Zone Widget du Pied de Page"
 
-#: ../functions.php:276
+#: ../functions.php:280
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
 
-#: ../functions.php:613
-#: ../functions.php:639
-#: ../functions.php:646
+#: ../functions.php:608
+#: ../functions.php:634
+#: ../functions.php:641
 #, php-format
 msgid "%1$s - %2$s"
 msgstr "%1$s - %2$s"
 
-#: ../functions.php:623
+#: ../functions.php:618
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../functions.php:631
-#: ../functions.php:640
-#: ../functions.php:647
+#: ../functions.php:626
+#: ../functions.php:635
+#: ../functions.php:642
 #: ../loop-attachment.php:62
 #: ../loop.php:85
 #: ../page.php:39
 msgid "Edit"
 msgstr "Editer"
 
-#: ../functions.php:640
+#: ../functions.php:635
 msgid "Pingback:"
 msgstr "Ping :"
 
-#: ../functions.php:647
+#: ../functions.php:642
 msgid "Trackback:"
 msgstr "Rétrolien :"
 
-#: ../functions.php:688
+#: ../functions.php:683
 #, php-format
 msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
 msgstr "Propulsé par <a href=\"%s\">Blaskan</a> et <a href=\"%s\">WordPress</a>."
@@ -302,138 +306,168 @@ msgstr "Rien n'a été trouvé"
 msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
 msgstr "Désolé, rien ne correspond à votre critère de recherche. Essayez avec d'autres mots-clé."
 
-#: ../theme-options.php:24
+#: ../theme-options.php:34
 msgid "Theme Options"
 msgstr "Options du Thème Blaskan"
 
-#: ../theme-options.php:33
-msgid "Up to two sidebars"
-msgstr "Jusqu'à deux barres latérales"
-
-#: ../theme-options.php:37
-msgid "Up to one sidebar"
-msgstr "Jusqu'à une barre latérale"
-
-#: ../theme-options.php:47
+#: ../theme-options.php:55
 msgid "League Gothic (default)"
-msgstr "League Gothic (configuration par défault)"
+msgstr "League Gothic (configuration par défaut)"
 
-#: ../theme-options.php:51
+#: ../theme-options.php:59
 msgid "Helvetica Neue, sans-serif"
 msgstr "Helvetica Neue, sans-serif"
 
-#: ../theme-options.php:66
+#: ../theme-options.php:74
 msgid " Theme Options"
 msgstr " Options du Thème"
 
-#: ../theme-options.php:69
+#: ../theme-options.php:77
 msgid "Options saved"
 msgstr "Options sauvées"
 
-#: ../theme-options.php:78
-msgid "Layout"
-msgstr "Mise en Page"
-
-#: ../theme-options.php:85
-msgid "Sidebars"
-msgstr "Barres latérales"
-
-#: ../theme-options.php:103
-msgid "Up to only one sidebar will result in a wider content column."
-msgstr "\"Jusqu'à une barre latérale\" (primaire) donnera une colonne de contenu plus large, \"Jusqu'à deux barres latérales\" (primaire et secondaire) donnera une colonne de contenu moins large."
-
-#: ../theme-options.php:112
-msgid "Custom sidebars"
-msgstr "Barres latérales personalisées"
-
-#: ../theme-options.php:115
-msgid "Use custom sidebars in pages."
-msgstr "Utiliser les barres latérales personnalisées du thème. Permet de gérer de manière indépendante les barres latérales des Articles et des Pages Statiques. Si non coché les options communes pour les barres latérales sont celles des Articles."
-
-#: ../theme-options.php:124
-msgid "Content in listings"
-msgstr "Contenu en listes"
-
-#: ../theme-options.php:127
-msgid "Show content in listings on small screens (recommended for photo blogs)."
-msgstr "Afficher le contenu en listes sur les petits écrans (recommendé pour les blogs de photographies)."
-
-#: ../theme-options.php:131
+#: ../theme-options.php:86
 msgid "Design"
 msgstr "Design"
 
-#: ../theme-options.php:138
+#: ../theme-options.php:93
 msgid "Typeface in titles"
 msgstr "Fonte des titres"
 
-#: ../theme-options.php:159
+#: ../theme-options.php:96
 msgid "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead."
-msgstr "Choisir quelle fonte utiliser dans les titres. La fonte par défaut, League Gothic, ne s'affiche pas correctement dans toutes les langues et/ou vous préfèrerez peut-être plutôt la fonte Helvetica."
+msgstr "Choisir quelle fonte utiliser pour les titres. La fonte par défaut, League Gothic, ne s'affiche pas correctement dans toutes les langues et/ou vous préfèrerez peut-être plutôt la fonte Helvetica."
 
-#: ../theme-options.php:163
+#: ../theme-options.php:144
+msgid "Link color"
+msgstr "Couleur des liens"
+
+#: ../theme-options.php:148
+msgid "Select a color"
+msgstr "Choisir une couleur"
+
+#: ../theme-options.php:151
+#, php-format
+msgid "Default color: %s"
+msgstr "Couleur par défault : %s"
+
+#: ../theme-options.php:155
+msgid "Layout"
+msgstr "Mise en Page"
+
+#: ../theme-options.php:162
+msgid "Default layout"
+msgstr "Mise en page par défaut"
+
+#: ../theme-options.php:178
+msgid "Narrow content column"
+msgstr "Colonne à faible contenu"
+
+#: ../theme-options.php:179
+msgid "Max two sidebars"
+msgstr "Au maximum deux barres latérales"
+
+#: ../theme-options.php:189
+msgid "Wide content column"
+msgstr "Colonne à large contenu"
+
+#: ../theme-options.php:190
+msgid "Max one sidebar"
+msgstr "Au maximum une barre latérale"
+
+#: ../theme-options.php:203
+msgid "Separate sidebar widget areas"
+msgstr "Séparer les barres latérales"
+
+#: ../theme-options.php:206
+msgid "Use separate sidebar widget areas in pages and posts."
+msgstr "Gérer de manière indépendante les barres latérales des Articles et des Pages Statiques. Si non coché les options communes pour les barres latérales sont celles des Articles."
+
+#: ../theme-options.php:210
 msgid "Header"
 msgstr "Haut de Page"
 
-#: ../theme-options.php:170
+#: ../theme-options.php:222
 msgid "Header message"
 msgstr "Message du Haut de Page"
 
-#: ../theme-options.php:173
+#: ../theme-options.php:226
 msgid "A message that is displayed in the header. Falls back to the blog description if empty."
 msgstr "Le message à afficher dans le Haut de Page. HTML supporté. Reviens au slogan du site (cf Réglages/Général) si laissé vide."
 
-#: ../theme-options.php:187
+#: ../theme-options.php:240
 msgid "Header image height"
 msgstr "Hauteur de l'image du Haut de Page"
 
-#: ../theme-options.php:190
+#: ../theme-options.php:243
 msgid "The height of the image in the header"
 msgstr "La hauteur en pixels de l'image dans le Haut de Page (cf Apparence/En-tête)."
 
-#: ../theme-options.php:199
+#: ../theme-options.php:252
 msgid "Hide site title and header message?"
 msgstr "Masquer le titre du site et le message du Haut de Page ?"
 
-#: ../theme-options.php:202
+#: ../theme-options.php:255
 msgid "Hide"
 msgstr "Masquer"
 
-#: ../theme-options.php:203
+#: ../theme-options.php:256
 msgid "Might be useful if you're using a custom header."
 msgstr "Cela peut être utile si vous utilisez un Haut de Page personnalisé."
 
-#: ../theme-options.php:207
+#: ../theme-options.php:260
 msgid "Footer"
 msgstr "Pied de Page"
 
-#: ../theme-options.php:214
+#: ../theme-options.php:272
 msgid "Footer message"
 msgstr "Message de Pied de Page"
 
-#: ../theme-options.php:217
+#: ../theme-options.php:276
 msgid "A message that is displayed in the footer."
 msgstr "Le message à afficher dans le Pied de Page. HTML supporté."
 
-#: ../theme-options.php:221
+#: ../theme-options.php:280
 msgid "Support Blaskan"
 msgstr "Supporter Blaskan"
 
-#: ../theme-options.php:228
+#: ../theme-options.php:287
 msgid "Show credits"
 msgstr "Montrer les crédits"
 
-#: ../theme-options.php:231
+#: ../theme-options.php:290
 msgid "Display links to the Blaskan theme and WordPress.org in the footer."
 msgstr "Affiche les liens vers le thème Blaskan et Wordpress dans le Pied de Page."
 
-#: ../theme-options.php:237
+#: ../theme-options.php:296
 msgid "Save Options"
 msgstr "Sauver les Options"
 
-#: ../theme-options.php:242
+#: ../theme-options.php:301
 #, php-format
 msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
 msgstr "<a href=\"%s\">%s</a> est conçu et développé par <a href=\"%s\">%s</a>. Merci de rapporter les bugs et de fournir votre expérience en retour à <a href=\"%s\">GitHub</a>."
+
+#~ msgid "Sidebars"
+#~ msgstr "Barres latérales"
+
+#~ msgid "Up to only one sidebar will result in a wider content column."
+#~ msgstr ""
+#~ "\"Jusqu'à une barre latérale\" (primaire) donnera une colonne de contenu "
+#~ "plus large, \"Jusqu'à deux barres latérales\" (primaire et secondaire) "
+#~ "donnera une colonne de contenu moins large."
+
+#~ msgid "Custom sidebars"
+#~ msgstr "Barres latérales personalisées"
+
+#~ msgid "Content in listings"
+#~ msgstr "Contenu en listes"
+
+#~ msgid ""
+#~ "Show content in listings on small screens (recommended for photo blogs)."
+#~ msgstr ""
+#~ "Afficher le contenu en listes sur les petits écrans (recommendé pour les "
+#~ "blogs de photographies)."
 
 #~ msgid "Up to two sidebars. Content full width = 560 px"
 #~ msgstr "Upp till två sidospalter. Full bredd på innehållet = 560 px"
