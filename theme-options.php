@@ -71,7 +71,7 @@ function blaskan_options_do_page() {
 		$_REQUEST['updated'] = false;
 	?>
 	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . get_current_theme() . __( ' Theme Options', 'blaskan' ) . "</h2>"; ?>
+		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'blaskan' ) . "</h2>"; ?>
 
 		<?php if ( false !== $_REQUEST['updated'] ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'blaskan' ); ?></strong></p></div>
@@ -82,9 +82,9 @@ function blaskan_options_do_page() {
 			<?php $options = get_option( 'blaskan_options' ); ?>
 
 			<table class="form-table">
-			  
+
 			  <tr><th colspan="2"><strong><?php _e( 'Design', 'blaskan' ); ?></strong></th></tr>
-			  
+
 			  <?php
 				/**
 				 * Typeface in titles
@@ -194,7 +194,7 @@ function blaskan_options_do_page() {
 						<div style="clear: both;"></div>
 					</td>
 				</tr>
-			  
+
 			  <?php
 				/**
 				 * Custom sidebars in pages?
@@ -276,9 +276,9 @@ function blaskan_options_do_page() {
 						<label class="description" for="blaskan_options[footer_message]"><?php _e( 'A message that is displayed in the footer.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
-				
+
 				<tr><th colspan="2"><strong><?php _e( 'Support Blaskan', 'blaskan' ); ?></strong></th></tr>
-				
+
 				<?php
 				/**
 				 * Show credits?
@@ -325,12 +325,12 @@ function blaskan_options_validate( $input ) {
 	} else {
 		$input['sidebars'] = 'one_sidebar';
 	}
-		
+
 	// Our custom sidebars value is either 0 or 1
 	if ( ! isset( $input['custom_sidebars_in_pages'] ) )
 		$input['custom_sidebars_in_pages'] = null;
 	$input['custom_sidebars_in_pages'] = ( $input['custom_sidebars_in_pages'] == 1 ? 1 : 0 );
-	
+
 	// Header message may contain allowed HTML tags
 	$input['header_message'] = wp_filter_post_kses( $input['header_message'] );
 
@@ -341,10 +341,10 @@ function blaskan_options_validate( $input ) {
 
 	// Header image height
 	$input['header_image_height'] = esc_attr( $input['header_image_height'] );
-	
+
 	// Footer message may contain allowed HTML tags
 	$input['footer_message'] = wp_filter_post_kses( $input['footer_message'] );
-	
+
 	// Our show_credits value is either 0 or 1
 	if ( ! isset( $input['show_credits'] ) )
 		$input['show_credits'] = null;
@@ -369,7 +369,7 @@ function blaskan_print_link_color_style() {
 	} else {
 		$link_color = $default_link_color;
 	}
-	
+
 	// Don't do anything if the current link color is the default.
 	if ( $default_link_color == $link_color || empty( $link_color ) )
 		return;
