@@ -37,30 +37,30 @@
 	<?php endif; // end have_comments() ?>
 
 	<?php
-	$commentform = array( 
-		'fields' => apply_filters( 'comment_form_default_fields', 
-								
+	$commentform = array(
+		'fields' => apply_filters( 'comment_form_default_fields',
+
 		array(
-			'author' => '<label for="comment-author">' . __( 'Name', 'blaskan' ) . 
+			'author' => '<label for="comment-author">' . __( 'Name', 'blaskan' ) .
       ( $req ? ' <span class="required">' . __( '(required)', 'blaskan' ) . '</span>' : '' ) .
 			'</label> ' .
       '<input id="comment-author" name="author" type="text" value="' .
-      esc_attr( $commenter['comment_author'] ) . '" size="30" tabindex="1"'.
+      esc_attr( $commenter['comment_author'] ) . '" size="30"'.
 			( $req ? ' aria-required="true"' : '' ) .
 			'>',
 
-			'email' => '<label for="comment-email">' . __( 'Email', 'blaskan' ) . 
+			'email' => '<label for="comment-email">' . __( 'Email', 'blaskan' ) .
 			( $req ? ' <span class="required">' . __( '(required - will be kept a secret)', 'blaskan' ) . '</span>' : '' ) .
 			'</label> ' .
-      '<input id="comment-email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" tabindex="2"'.
+      '<input id="comment-email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"'.
 			( $req ? ' aria-required="true"' : '' ) .
 			'>',
 
 			'url' => '<label for="comment-url">' . __( 'Website', 'blaskan' ) . '</label>' .
-       '<input id="comment-url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" tabindex="3">' ) ),
+       '<input id="comment-url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30">' ) ),
 
 			'comment_field' => '<label for="comment">' . __( 'Comment', 'blaskan' ) . '</label>' .
-      '<textarea id="comment" name="comment" cols="45" rows="8" tabindex="4" aria-required="true"></textarea>',
+      '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>',
 
 			'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'blaskan' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ) . '</p>',
 
