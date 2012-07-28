@@ -162,7 +162,12 @@ function blaskan_options_do_page() {
 				<tr valign="top"><th scope="row"><?php _e( 'Default layout', 'blaskan' ); ?></th>
 					<td>
 						<?php
-						$selected = $options['sidebars'];
+						if ( !empty( $options['sidebars'] ) ) {
+							$selected = $options['sidebars'];
+						} else {
+							$selected = '';
+						}
+
 						$layout_options = array();
 						foreach ( $sidebars_options as $option ) {
 							$layout_options[] = '<input ' . checked( $selected, $option['value'], false ) . ' type="radio" name="blaskan_options[sidebars]" value="' . esc_attr( $option['value'] ) . '">';
@@ -199,10 +204,15 @@ function blaskan_options_do_page() {
 				/**
 				 * Custom sidebars in pages?
 				 */
+				if ( !empty( $options['custom_sidebars_in_pages'] ) ) {
+					$selected = $options['custom_sidebars_in_pages'];
+				} else {
+					$selected = '';
+				}
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Separate sidebar widget areas', 'blaskan' ); ?></th>
 					<td>
-						<input id="blaskan_options[custom_sidebars_in_pages]" name="blaskan_options[custom_sidebars_in_pages]" type="checkbox" value="1" <?php checked( '1', $options['custom_sidebars_in_pages'] ); ?> />
+						<input id="blaskan_options[custom_sidebars_in_pages]" name="blaskan_options[custom_sidebars_in_pages]" type="checkbox" value="1" <?php checked( '1', $selected ); ?> />
 						<label class="description" for="blaskan_options[custom_sidebars_in_pages]"><?php _e( 'Use separate sidebar widget areas in pages and posts.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
@@ -248,10 +258,15 @@ function blaskan_options_do_page() {
 				/**
 				 * Hide site title and header message?
 				 */
+				if ( !empty( $options['hide_site_title_header_message'] ) ) {
+					$selected = $options['hide_site_title_header_message'];
+				} else {
+					$selected = '';
+				}
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Hide site title and header message?', 'blaskan' ); ?></th>
 					<td>
-						<input id="blaskan_options[hide_site_title_header_message]" name="blaskan_options[hide_site_title_header_message]" type="checkbox" value="1" <?php checked( '1', $options['hide_site_title_header_message'] ); ?> />
+						<input id="blaskan_options[hide_site_title_header_message]" name="blaskan_options[hide_site_title_header_message]" type="checkbox" value="1" <?php checked( '1', $selected ); ?> />
 						<label class="description" for="blaskan_options[hide_site_title_header_message]"><?php _e( "Hide", 'blaskan' ); ?></label><br/>
 						<small style="color: #666"><?php _e( "Might be useful if you're using a custom header.", 'blaskan' ); ?></small>
 					</td>
@@ -283,10 +298,15 @@ function blaskan_options_do_page() {
 				/**
 				 * Show credits?
 				 */
+				if ( !empty( $options['show_credits'] ) ) {
+					$selected = $options['show_credits'];
+				} else {
+					$selected = '';
+				}
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Show credits', 'blaskan' ); ?></th>
 					<td>
-						<input id="blaskan_options[show_credits]" name="blaskan_options[show_credits]" type="checkbox" value="1" <?php checked( '1', $options['show_credits'] ); ?> />
+						<input id="blaskan_options[show_credits]" name="blaskan_options[show_credits]" type="checkbox" value="1" <?php checked( '1', $selected ); ?> />
 						<label class="description" for="blaskan_options[show_credits]"><?php _e( 'Display links to the Blaskan theme and WordPress.org in the footer.', 'blaskan' ); ?></label>
 					</td>
 				</tr>
