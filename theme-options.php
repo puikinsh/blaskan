@@ -73,7 +73,7 @@ function blaskan_options_do_page() {
 	<div class="wrap">
 		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'blaskan' ) . "</h2>"; ?>
 
-		<?php if ( false !== $_REQUEST['updated'] ) : ?>
+		<?php if ( $_REQUEST['updated'] !== false ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'blaskan' ); ?></strong></p></div>
 		<?php endif; ?>
 
@@ -97,10 +97,12 @@ function blaskan_options_do_page() {
 						</p>
 
 						<?php
-						if ( empty( $options['typeface_titles'] ) ) {
-							$options['typeface_titles'] = '';
+						if ( !empty( $options['typeface_titles'] ) ) {
+							$selected = $options['typeface_titles'];
+						} else {
+							$selected = 'default';
 						}
-						$selected = $options['typeface_titles'];
+
 						$typeface_options = array();
 						foreach ( $typeface_title_options as $option ) {
 							$typeface_options[] = '<input ' . checked( $selected, $option['value'], false ) . ' type="radio" name="blaskan_options[typeface_titles]" value="' . esc_attr( $option['value'] ) . '">';
@@ -165,7 +167,7 @@ function blaskan_options_do_page() {
 						if ( !empty( $options['sidebars'] ) ) {
 							$selected = $options['sidebars'];
 						} else {
-							$selected = '';
+							$selected = 'two_sidebars';
 						}
 
 						$layout_options = array();
