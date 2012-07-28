@@ -69,5 +69,6 @@ German translation by Joachim Kroll.
 Spanish translation by mantobani – https://github.com/mantobani.
 Polish translation by Paweł Grześ – http://dealwynajem.pl.
 Romanian translation by WebHostingGeeks.com.
+Russian translation by Michael Esutin.
 
 See also links/comments in source files.
