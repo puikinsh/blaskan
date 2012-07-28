@@ -65,7 +65,13 @@ function blaskan_setup() {
 
 	define( 'NO_HEADER_TEXT', true );
 
-	add_custom_image_header( '', 'blaskan_custom_image_header_admin' );
+	$custom_header_args = array(
+		'flex-height' => true,
+		'flex-width' => true,
+		'height' => HEADER_IMAGE_HEIGHT,
+		'width' => HEADER_IMAGE_WIDTH,
+	);
+	add_theme_support( 'custom-header', $custom_header_args );
 }
 endif;
 add_action( 'after_setup_theme', 'blaskan_setup' );
@@ -106,7 +112,7 @@ function blaskan_setup_widths() {
 	}
 }
 endif;
-add_action( 'after_setup_theme', 'blaskan_setup_widths' );
+add_action( 'after_setup_theme', 'blaskan_setup_widths', 0 );
 
 /**
  * Register menus
@@ -368,21 +374,6 @@ endif;
 add_filter( 'body_class', 'blaskan_body_class' );
 
 /**
- * Sets custom image header in admin
- */
-function blaskan_custom_image_header_admin() {
-?>
-	<style type="text/css">
-    #headimg {
-      background-repeat: no-repeat;
-      height: <?php echo HEADER_IMAGE_HEIGHT; ?>px;
-      width: <?php echo HEADER_IMAGE_WIDTH; ?>px;
-    }
-  </style>
-<?php
-}
-
-/**
  * Blaskan top
  * Empty per default but could be used by child themes
  */
@@ -402,7 +393,7 @@ function blaskan_header_structure( $description = '' ) {
 	$output = '';
 
 	if ( get_header_image() ):
-		$output .= '<figure><a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home"><img src="'.get_header_image().'" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"></a></figure>';
+		$output .= '<figure><a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home"><img src="'.get_header_image().'" height="'.get_custom_header()->height.'" width="'.get_custom_header()->width.'" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"></a></figure>';
 	endif;
 
 	if ( $blaskan_options['hide_site_title_header_message'] !== 1 ) {
