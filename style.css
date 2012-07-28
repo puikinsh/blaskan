@@ -1144,7 +1144,8 @@ nav li {
   width: 14px;
 }
 
-#searchsubmit:hover {
+#searchsubmit:hover,
+#searchsubmit:focus {
 	opacity: .8;
 }
 
