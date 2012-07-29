@@ -555,33 +555,32 @@ add_filter('the_content_more_link', 'blaskan_remove_more_jump_link');
 
 /**
  * Use <figure> and <figcaption> in captions
- * Credits: http://wpengineer.com/917/filter-caption-shortcode-in-wordpress/
  */
 if ( ! function_exists( 'blaskan_caption' ) ):
-function blaskan_caption($attr, $content = null) {
-	// Allow plugins/themes to override the default caption template.
-	$output = apply_filters( 'img_caption_shortcode', '', $attr, $content );
-	if ( $output != '' )
-		return $output;
-
-	extract( shortcode_atts ( array(
+function blaskan_caption( $val, $attr, $content = null ) {
+	extract( shortcode_atts( array(
 		'id'	=> '',
-		'align'	=> 'alignnone',
+		'align'	=> '',
 		'width'	=> '',
 		'caption' => ''
-	), $attr ) );
+	) , $attr ) );
 
 	if ( 1 > (int) $width || empty( $caption ) )
-		return $content;
+		return $val;
 
-	if ( $id ) $id = 'id="' . $id . '" ';
+	$capid = '';
+	if ( $id ) {
+		$id = esc_attr( $id );
+		$capid = 'id="figcaption_'. $id . '" ';
+		$id = 'id="' . $id . '" aria-labelledby="figcaption_' . $id . '" ';
+	}
 
-	return '<figure ' . $id . 'class="wp-caption ' . $align . '" style="width: ' . $width . 'px">'
-	. do_shortcode( $content ) . '<figcaption class="wp-caption-text">' . $caption . '</figcaption></figure>';
+	return '<figure ' . $id . 'class="wp-caption ' . esc_attr( $align ) . '" style="width: '
+	. ( 4 + (int) $width ) . 'px">' . do_shortcode( $content ) . '<figcaption ' . $capid
+	. 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
 endif;
-add_shortcode( 'wp_caption', 'blaskan_caption' );
-add_shortcode( 'caption', 'blaskan_caption' );
+add_filter( 'img_caption_shortcode', 'blaskan_caption', 10, 3 );
 
 if ( ! function_exists( 'blaskan_comment' ) ) :
 function blaskan_comment( $comment, $args, $depth ) {
