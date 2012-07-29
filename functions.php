@@ -292,12 +292,9 @@ endif;
  */
 if ( ! function_exists( 'blaskan_head' ) ):
 function blaskan_head() {
-	echo '<link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">'."\r";
-	echo '<meta name="HandheldFriendly" content="True">'."\r";
-	echo '<meta name="MobileOptimized" content="320">'."\r";
-	echo '<meta name="viewport" content="width=device-width">'."\r";
-	echo '<meta http-equiv="cleartype" content="on">'."\r";
 	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">'."\r";
+	echo '<meta name="viewport" content="width=device-width">'."\r";
+	echo '<link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">'."\r";
 }
 endif;
 add_action( 'wp_head', 'blaskan_head' );
