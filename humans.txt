@@ -1,0 +1,15 @@
+/* TEAM */
+
+Designer/Developer: Per Sandstrom
+Contact: per [at] helloper.com
+Twitter: @persand
+From: Stockholm, Sweden
+
+/* SITE */
+
+Released: 2012-07-30
+Language: English
+Standards: HTML5, CSS3, JavaScript
+Components: Modernizr
+Software: Sublime Text 2
+Hosting: GitHub Pages

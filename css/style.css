@@ -1,0 +1,682 @@
+/**
+ * Blaskan.net styles
+ *
+ * Contents:
+ *
+ * 1. Reset
+ * 2. Setup
+ * 3. Links
+ */
+
+/** 1. RESET ---------- */
+/**
+ * html5doctor.com Reset Stylesheet
+ * v1.6.1
+ * Last Updated: 2010-09-17
+ * Author: Richard Clark - http://richclarkdesign.com
+ * Twitter: @rich_clark
+ */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{ margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent}body{ line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{ display:block}nav ul{ list-style:none}blockquote,q{ quotes:none}blockquote:before,blockquote:after,q:before,q:after{ content:''; content:none}a{ margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent}ins{ background-color:#ff9; color:#000; text-decoration:none}mark{ background-color:#ff9; color:#000; font-style:italic; font-weight:bold}del{ text-decoration:line-through}abbr[title],dfn[title]{ border-bottom:1px dotted; cursor:help}table{ border-collapse:collapse; border-spacing:0}hr{ display:block; height:1px; border:0;  border-top:1px solid #ccc; margin:1em 0; padding:0}input,select{ vertical-align:middle}
+
+/** 2. SETUP ---------- */
+
+html {
+  background: #111;
+  color: #999;
+  font: 100%/1.5 'Helvetica Neue', sans-serif; /* 16px */
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1.125em; /* 18px */
+  line-height: 1.6666; /* 30px */
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 5em 1.111em; /* 90px 20px */
+}
+
+@media only screen and (max-width: 760px) {
+  body {
+    padding: 1.388em 1.111em; /* 25px 20px */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 0.875em; /* 14px */
+    line-height: 1.4285; /* 20px */
+    padding: 1.4285em; /* 20px */
+  }
+}
+
+/** 3. LINKS ---------- */
+
+a {
+  color: #fff;
+  text-decoration: underine;
+}
+
+a:active {
+  background: #000;
+  color: #000;
+}
+
+a:hover,
+a:active {
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:link {
+  -webkit-tap-highlight-color: #33B4DA;
+}
+
+/** 4. HEADINGS ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2em; /* 36px */
+  line-height: 1.555em; /* 56px */
+  margin: 0 0 0.444em; /* 0 0 16px */
+}
+
+h1 strong {
+  font-size: 1.166em; /* 42px */
+}
+
+h2 {
+  font-size: 1.666em; /* 30px */
+  line-height: 1.133; /* 34px */
+}
+
+h3 {
+  color: #fff;
+  font-weight: bold;
+}
+
+h4 {
+  margin: .6em 0 0.3em; /* 12px 0 6px */
+}
+
+h5 {
+  font-size: .7em; /* 14px */
+  line-height: 1.4285; /* 20px */
+  margin: .8571em 0; /* 12px */
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: .7em; /* 14px */
+  line-height: 1.4285; /* 20px */
+  margin: .8571em 0; /* 12px */
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #fff;
+}
+
+h1 a:hover,
+h1 a:focus,
+h2 a:hover,
+h2 a:focus,
+h3 a:hover,
+h3 a:focus,
+h4 a:hover,
+h4 a:focus,
+h5 a:hover,
+h5 a:focus,
+h6 a:hover,
+h6 a:focus {
+  color: #ccc;
+  text-decoration: none;
+}
+
+/** 4. TEXT ---------- */
+
+p {
+  margin: 0 0 .6em; /* 0 0 12px */
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #444;
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: 0 0 4.444em; /* 0 0 80px */
+}
+
+blockquote {
+  border-left: 4px solid #000;
+  color: #666;
+  padding: .3em 0 .3em 1.2em; /* 6px 0 6px 24px */
+  margin: 0 0 1.2em; /* 0 0 24px */
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+q {
+  font-style: italic;
+}
+
+cite {
+  color: #000;
+  font-style: italic;
+}
+
+blockquote cite {
+  color: #888;
+}
+
+strong {
+  color: #fff;
+  font-weight: bold;
+}
+
+em,
+dfn {
+  color: #000;
+  font-style: italic;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #222;
+}
+
+address {
+  display: block;
+  font-style: italic;
+  margin: 0 0 .6em; /* 0 0 12px */
+}
+
+del {
+  color: #888;
+  text-decoration: line-through;
+}
+
+mark {
+  background: #F2594B;
+  color: #fff;
+  font-weight: 400;
+  padding: 0 0.15em; /* 3px */
+}
+
+ins {
+  background: #B5D5FF;
+  padding: 0 0.15em; /* 3px */
+  text-decoration: none;
+}
+
+pre {
+  padding: .6em; /* 12px */
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+code {
+  margin: .6em 0; /* 12px */
+}
+
+pre,
+code,
+tt,
+kbd,
+samp {
+  font-family: monospace, sans-serif;
+}
+
+sup,
+sub {
+  line-height: 90%;
+}
+
+sub {
+  font-size: smaller;
+  vertical-align: sub;
+}
+
+sup {
+  font-size: smaller;
+  vertical-align: super;
+}
+
+time {
+
+}
+
+small {
+  font-size: 0.7em; /* 14px */
+}
+
+kbd {
+  background: #ccc;
+  border: 1px solid #acacac;
+  border-radius: 4px;
+  color: #666;
+  font: normal normal 0.8em/90% sans-serif; /* 16px/90% */
+  margin: 0 0.2em; /* 0 4px */
+  padding: 0.1em 0.3em; /* 2px 6px */
+}
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none;
+}
+
+/** 5. LISTS ---------- */
+
+li ul,
+li ol {
+  margin: 0 0 0.6em 1.2em; /* 0 0 12px 24px */
+}
+
+ul,
+ol {
+  list-style: disc outside;
+  margin: 0 0 0.6em; /* 0 0 12px */
+  padding: 0;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  color: #000;
+  font-weight: 700;
+}
+
+dd {
+  margin:0 0 0.6em; /* 0 0 12px */
+}
+
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+}
+
+/** 6. MEDIA ---------- */
+
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* Fluid images: http://unstoppablerobotninja.com/entry/fluid-images/ */
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/* Use clearfix on figure */
+figure:before, figure:after { content: ""; display: table; }
+figure:after { clear: both; }
+figure { *zoom: 1; }
+
+figure {
+  margin: 0 0 .6em; /* 0 0 12px */
+}
+
+figure img {
+  float: left;
+}
+
+figcaption {
+  clear: both;
+  color: #666;
+}
+
+/** 7. TABLES ---------- */
+
+table {
+  margin: 0 0 .6em; /* 0 0 12px */
+  width: 100%;
+}
+
+caption {
+  font-size: 1.2em; /* 24px */
+  font-weight: 700;
+  line-height: 1.3333; /* 32px */
+  text-align: left;
+}
+
+tbody {
+  border: 0;
+}
+
+tbody th {
+  border: 0;
+}
+
+thead th {
+  text-align: left;
+}
+
+th {
+  font-weight: 700;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+td,
+td img {
+  vertical-align: top;
+}
+
+tfoot {
+  font-style: italic;
+}
+
+/** 8. FORMS ---------- */
+
+fieldset {
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  border-top-width: 2px;
+  border-radius: 3px;
+  margin: 0 0 .6em; /* 0 0 12px */
+  padding: 1.2em; /* 24px */
+}
+
+fieldset fieldset {
+  margin-bottom: 1.2em;
+}
+
+legend {
+  font-size: 1.2em; /* 24px */
+  font-weight: 700;
+  line-height: 1.3333; /* 32px */
+  margin-left: -.8em;
+  padding: 0 .8em;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin: 0;
+}
+
+input,
+textarea,
+select {
+  background: #FFF;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .1);
+  font-family: inherit;
+  font-size: 1em; /* 20px */
+  margin: 0 0 .6em; /* 0 0 12px */
+  padding: 0.3em; /* 6px */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #aaa;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .2);
+}
+
+input[type=radio],
+input[type=checkbox] {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  overflow: visible;
+  width: auto;
+}
+
+button,
+input[type=submit] {
+  background: #27a2c4;
+
+  /*background: #0080B0;*/
+  border: 0;
+  border-radius: 5px 5px 7px 7px;
+  box-shadow: inset 0 0 1px #27a2c4, 0 2px 4px rgba(0, 0, 0, .2);
+  border-bottom: 3px solid #1D829B;
+  color: #FFF;
+  cursor: hand;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em; /* 20px */
+  font-weight: 700;
+  margin: 0 0 .6em; /* 0 0 12px */
+  padding: 0.3em 0.6em; /* 6px */
+  text-align: center;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  vertical-align: baseline;
+}
+
+button:hover,
+button:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
+  background: #1E94B2;
+  box-shadow: inset 0 0 1px #1E94B2, 0 2px 4px rgba(0, 0, 0, .4);
+  color: #fff;
+}
+
+button:active,
+input[type=submit]:active {
+  position: relative;
+  top: 1px;
+}
+
+textarea {
+  background: #FFF;
+  overflow: auto;
+}
+
+optgroup {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/** 9. STRUCTURE ---------- */
+
+/**
+ * Apply clearfix
+ */
+article:before,
+article:after { content: ""; display: table; }
+article:after { clear: both; }
+article { *zoom: 1; }
+
+article {
+  padding: 0 0 5em; /* 0 0 90px */
+}
+
+/** UI ---------- */
+
+/**
+ * Actions
+ */
+.actions {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 5em; /* 0 0 90px */
+}
+
+.actions li {
+  float: left;
+}
+
+/**
+ * Buttons
+ */
+.button {
+  border-bottom: 3px solid #2E6EB0;
+  color: #fff;
+  display: inline-block;
+  font-weight: normal;
+  margin: 0 8px 0 0;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus {
+  border-bottom-width: 6px;
+  padding-bottom: 5px;
+}
+
+/**
+ * Screenshot image
+ */
+.screenshot {
+  border-radius: 3px;
+}
+
+/** HEADER ---------- */
+
+.header {
+  padding: 0 0 5em; /* 0 0 90px */
+}
+
+.header h1,
+.header h2 {
+  margin: 0;
+}
+
+/** FOOTER ---------- */
+
+.footer {
+  font-size: 0.777em; /* 14px */
+  text-align: center;
+}
+
+.footer a {
+  color: #fff;
+}
+
+/** MISC ---------- */
+
+/**
+ * Fork me on GitHub
+ */
+#github-fork {
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media only screen and (max-width: 660px) {
+  #github-fork {
+    display: none; /* Hide on smaller screens */
+  }
+}
+
+/** 10. USEFUL CLASSES ---------- */
+
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/**
+ * Clearfix
+ *
+ * Credits:
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    *zoom:1;
+}
