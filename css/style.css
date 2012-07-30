@@ -57,7 +57,11 @@ body {
 
 a {
   color: #fff;
-  text-decoration: underine;
+  text-decoration: underline;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 a:active {
@@ -72,9 +76,7 @@ a:active {
 
 a:focus,
 a:hover {
-  background: #000;
-  color: #fff;
-  text-decoration: none;
+
 }
 
 a:link {
@@ -94,7 +96,7 @@ h6 {
 
 h1 {
   font-size: 2em; /* 36px */
-  line-height: 1.555em; /* 56px */
+  line-height: 1.388em; /* 50px */
   margin: 0 0 0.444em; /* 0 0 16px */
 }
 
@@ -583,16 +585,22 @@ article {
   border-bottom: 3px solid #2E6EB0;
   color: #fff;
   display: inline-block;
+  font-size: 1.222em;
   font-weight: normal;
-  margin: 0 8px 0 0;
-  padding: 8px 0;
+  margin: 0 1em 0 0; /* 0 18px 0 0 */
+  padding: 2px 0;
   text-decoration: none;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .button:hover,
 .button:focus {
-  border-bottom-width: 6px;
-  padding-bottom: 5px;
+  background: none;
+  border-bottom-color: #fff;
+  color: #fff;
 }
 
 /**
@@ -618,10 +626,6 @@ article {
 .footer {
   font-size: 0.777em; /* 14px */
   text-align: center;
-}
-
-.footer a {
-  color: #fff;
 }
 
 /** MISC ---------- */
