@@ -1723,6 +1723,23 @@ article .content { *zoom: 1; }
 }
 
 /**
+ * Pages widget
+ */
+
+.widget_pages .page_item {
+  color: #888;
+}
+
+.widget_pages .current_page_item > a {
+	color: #000;
+	font-weight: normal;
+}
+
+.widget_pages .children {
+	padding: 5px 0 0 10px;
+}
+
+/**
  * Recent comments widget
  */
 
