@@ -66,6 +66,7 @@ Contributions:
 Danish translation by Kristian Steen Olsen – http://www.kristianolsen.dk.
 Dutch translation by Matthijs de Vries.
 German translation by Joachim Kroll.
+Italian translation by Pierluigi Ferro.
 Spanish translation by mantobani – https://github.com/mantobani.
 Polish translation by Paweł Grześ – http://dealwynajem.pl.
 Romanian translation by WebHostingGeeks.com.
