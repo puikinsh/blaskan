@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blaskan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-01 19:54+0100\n"
-"PO-Revision-Date: 2012-01-01 19:55+0100\n"
+"POT-Creation-Date: 2012-10-10 15:25+0100\n"
+"PO-Revision-Date: 2012-10-10 15:25+0100\n"
 "Last-Translator: Per Sandström <per@helloper.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,16 +11,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../404.php:5
 msgid "4-uh-oh-4 <span>Page not found...</span>"
-msgstr "4-uh-oh-4 <span>Sidan hittades inte...</span>"
+msgstr "4-uh-oh-4 <span>Sidan hittades inte…</span>"
 
 #: ../404.php:7
-msgid "The page you requested could not be found... sorry. Perhaps searching will help?"
-msgstr "Sidan du sökte kunde inte hittas. Prova att söka efter det du letar efter."
+msgid ""
+"The page you requested could not be found... sorry. Perhaps searching will "
+"help?"
+msgstr ""
+"Sidan du sökte kunde inte hittas. Prova att söka efter det du letar efter."
 
 #: ../archive.php:11
 #, php-format
@@ -56,16 +60,25 @@ msgid "Posts"
 msgstr "Inlägg"
 
 #: ../comments.php:4
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Detta inlägg är lösenordsskyddat. Ange lösenordet för att se kommentarerna."
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Detta inlägg är lösenordsskyddat. Ange lösenordet för att se kommentarerna."
 
-#: ../comments.php:15
-#: ../comments.php:26
+#: ../comments.php:11
+msgid "One comment"
+msgstr "En kommentar"
+
+#: ../comments.php:11
+#, php-format
+msgid "%1$s comments"
+msgstr "%1$s kommentarer"
+
+#: ../comments.php:15 ../comments.php:26
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Äldre kommentarer"
 
-#: ../comments.php:16
-#: ../comments.php:27
+#: ../comments.php:16 ../comments.php:27
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyare kommentarer <span class=\"meta-nav\">&rarr;</span>"
 
@@ -104,12 +117,20 @@ msgstr "Du måste vara <a href=\"%s\">inloggad</a> för att kunna kommentera."
 
 #: ../comments.php:67
 #, php-format
-msgid "You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out of this account\">Log out?</a></p>"
-msgstr "Du är inloggad som <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Logga ut från detta konto\">Logga ut?</a></p>"
+msgid ""
+"You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out "
+"of this account\">Log out?</a></p>"
+msgstr ""
+"Du är inloggad som <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Logga ut "
+"från detta konto\">Logga ut?</a></p>"
 
 #: ../comments.php:71
-msgid "You may use the following <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
-msgstr "Du kan använda följande HTML <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+msgid ""
+"You may use the following <abbr title=\"HyperText Markup Language\">HTML</"
+"abbr>:"
+msgstr ""
+"Du kan använda följande HTML <abbr title=\"HyperText Markup Language\">HTML</"
+"abbr>:"
 
 #: ../comments.php:77
 msgid "Post a comment"
@@ -128,105 +149,95 @@ msgstr "Avbryt svar"
 msgid "Post comment"
 msgstr "Skicka kommentar"
 
-#: ../functions.php:112
+#: ../functions.php:123
 msgid "Primary Navigation"
 msgstr "Huvudmeny"
 
-#: ../functions.php:113
+#: ../functions.php:124
 msgid "Footer Navigation"
 msgstr "Sidfotsmeny"
 
-#: ../functions.php:130
+#: ../functions.php:141
 msgid "- Navigation -"
 msgstr "- Navigering -"
 
-#: ../functions.php:187
+#: ../functions.php:197
 msgid "Primary Widget Area"
 msgstr "Vänster sidospalt"
 
-#: ../functions.php:189
+#: ../functions.php:199
 msgid "The primary sidebar"
 msgstr "Den vänstra sidospalten"
 
-#: ../functions.php:199
+#: ../functions.php:209
 msgid "Secondary Widget Area"
 msgstr "Höger sidospalt"
 
-#: ../functions.php:201
+#: ../functions.php:211
 msgid "The secondary sidebar"
 msgstr "Den högra sidospalten"
 
-#: ../functions.php:211
+#: ../functions.php:221
 msgid "Primary Page Widget Area"
 msgstr "Vänster sidospalt på sidor"
 
-#: ../functions.php:213
+#: ../functions.php:223
 msgid "The primary page sidebar"
 msgstr "Den vänstra sidospalten på sidor"
 
-#: ../functions.php:223
+#: ../functions.php:233
 msgid "Secondary Page Widget Area"
 msgstr "Höger sidospalt på sidor"
 
-#: ../functions.php:225
+#: ../functions.php:235
 msgid "The secondary page sidebar"
 msgstr "Den högra sidospalten på sidor"
 
-#: ../functions.php:235
+#: ../functions.php:245
 msgid "Footer Widget Area"
 msgstr "Sidfot"
 
-#: ../functions.php:237
+#: ../functions.php:247
 msgid "The footer widget area"
 msgstr "Sidfot"
 
-#: ../functions.php:276
+#: ../functions.php:286
 #, php-format
 msgid "Page %s"
 msgstr "Sida %s"
 
-#: ../functions.php:613
-#: ../functions.php:639
-#: ../functions.php:646
+#: ../functions.php:595 ../functions.php:621 ../functions.php:628
 #, php-format
 msgid "%1$s - %2$s"
 msgstr "%1$s - %2$s"
 
-#: ../functions.php:623
+#: ../functions.php:605
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar väntar på att bli granskad."
 
-#: ../functions.php:631
-#: ../functions.php:640
-#: ../functions.php:647
-#: ../loop-attachment.php:62
-#: ../loop.php:85
-#: ../page.php:39
+#: ../functions.php:613 ../functions.php:622 ../functions.php:629
+#: ../loop-attachment.php:62 ../loop.php:85 ../page.php:39
 msgid "Edit"
 msgstr "Redigera"
 
-#: ../functions.php:640
+#: ../functions.php:622
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:647
+#: ../functions.php:629
 msgid "Trackback:"
 msgstr "Trackback:"
 
-#: ../functions.php:688
+#: ../functions.php:670
 #, php-format
 msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
 msgstr "Drivs med <a href=\"%s\">Blaskan</a> och <a href=\"%s\">WordPress</a>."
 
-#: ../loop-attachment.php:54
-#: ../loop.php:51
-#: ../loop.php:57
+#: ../loop-attachment.php:54 ../loop.php:51 ../loop.php:57
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Fortsätt läsa <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../loop-attachment.php:55
-#: ../loop.php:52
-#: ../page.php:21
+#: ../loop-attachment.php:55 ../loop.php:52 ../page.php:21
 msgid "Pages:"
 msgstr "Sidor:"
 
@@ -239,12 +250,13 @@ msgid "Not Found"
 msgstr "Inget resultat"
 
 #: ../loop.php:8
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Ledsen, men inget resultat hittades för detta arkiv. Har du provat att söka?"
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Ledsen, men inget resultat hittades för detta arkiv. Har du provat att söka?"
 
-#: ../loop.php:22
-#: ../loop.php:41
-#: ../loop.php:56
+#: ../loop.php:22 ../loop.php:41 ../loop.php:56
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalänk till %s"
@@ -265,14 +277,12 @@ msgstr "<span>1</span> kommentar"
 msgid "<span>%</span> Comments"
 msgstr "<span>%</span> kommentarer"
 
-#: ../loop.php:73
-#: ../page.php:26
+#: ../loop.php:73 ../page.php:26
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
 msgstr "<span class=\"%1$s\">Postad i</span> %2$s"
 
-#: ../loop.php:81
-#: ../page.php:35
+#: ../loop.php:81 ../page.php:35
 #, php-format
 msgid "<span class=\"%1$s\">Tagged with</span> %2$s"
 msgstr "<span class=\"%1$s\">Taggad</span> %2$s"
@@ -295,141 +305,182 @@ msgid "Nothing Found"
 msgstr "Ingenting hittades"
 
 #: ../search.php:10
-msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
-msgstr "Ledsen, men ingenting matched dina sökord. Försök igen med en ny sökning."
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Ledsen, men ingenting matched dina sökord. Försök igen med en ny sökning."
 
-#: ../theme-options.php:24
+#: ../theme-options.php:34
 msgid "Theme Options"
 msgstr "Temainställningar"
 
-#: ../theme-options.php:33
-msgid "Up to two sidebars"
-msgstr "Upp till två sidospalter"
-
-#: ../theme-options.php:37
-msgid "Up to one sidebar"
-msgstr "Upp till en sidospalt"
-
-#: ../theme-options.php:47
+#: ../theme-options.php:55
 msgid "League Gothic (default)"
 msgstr "League Gothic (standard)"
 
-#: ../theme-options.php:51
+#: ../theme-options.php:59
 msgid "Helvetica Neue, sans-serif"
 msgstr "Helvetica Neue, sans-serif"
 
-#: ../theme-options.php:66
+#: ../theme-options.php:74
 msgid " Theme Options"
 msgstr " Temainställningar"
 
-#: ../theme-options.php:69
+#: ../theme-options.php:77
 msgid "Options saved"
 msgstr "Inställningarna sparade"
 
-#: ../theme-options.php:78
-msgid "Layout"
-msgstr "Layout"
-
-#: ../theme-options.php:85
-msgid "Sidebars"
-msgstr "Sidospalter"
-
-#: ../theme-options.php:103
-msgid "Up to only one sidebar will result in a wider content column."
-msgstr "Om du använder upp till en sidospalt kommer innehållskolumnen att göras bredare."
-
-#: ../theme-options.php:112
-msgid "Custom sidebars"
-msgstr "Anpassade sidospalter"
-
-#: ../theme-options.php:115
-msgid "Use custom sidebars in pages."
-msgstr "Använd anpassade sidospalter på sidor."
-
-#: ../theme-options.php:124
-msgid "Content in listings"
-msgstr "Innehåll i listningar"
-
-#: ../theme-options.php:127
-msgid "Show content in listings on small screens (recommended for photo blogs)."
-msgstr "Visa innehåll i listningar på små skärmar (rekommenderas för fotobloggar)."
-
-#: ../theme-options.php:131
+#: ../theme-options.php:86
 msgid "Design"
 msgstr "Design"
 
-#: ../theme-options.php:138
+#: ../theme-options.php:93
 msgid "Typeface in titles"
 msgstr "Typsnitt i rubriker"
 
-#: ../theme-options.php:159
-msgid "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead."
-msgstr "Välj vilket typsnitt som ska användas i rubriker. Standardtypsnittet, League Gothic, är inte optimalt för alla språk och/eller så kanske du föredrar Helvetica istället."
+#: ../theme-options.php:96
+msgid ""
+"Choose which typeface to use in titles. The default typeface, League Gothic, "
+"doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica "
+"instead."
+msgstr ""
+"Välj vilket typsnitt som ska användas i rubriker. Standardtypsnittet, League "
+"Gothic, är inte optimalt för alla språk och/eller så kanske du föredrar "
+"Helvetica istället."
 
-#: ../theme-options.php:163
+#: ../theme-options.php:146
+msgid "Link color"
+msgstr "Länkfärg"
+
+#: ../theme-options.php:153
+#, php-format
+msgid "Default color: %s"
+msgstr "Standardfärg: %s"
+
+#: ../theme-options.php:157
+msgid "Layout"
+msgstr "Layout"
+
+#: ../theme-options.php:164
+msgid "Default layout"
+msgstr "Standardkolumn"
+
+#: ../theme-options.php:185
+msgid "Narrow content column"
+msgstr "Smal innehållskolumn"
+
+#: ../theme-options.php:186
+msgid "Max two sidebars"
+msgstr "Upp till två sidospalter"
+
+#: ../theme-options.php:196
+msgid "Wide content column"
+msgstr "Bred innehållskolumn"
+
+#: ../theme-options.php:197
+msgid "Max one sidebar"
+msgstr "Upp till en sidospalt"
+
+#: ../theme-options.php:215
+msgid "Separate sidebar widget areas"
+msgstr "Separata widgetytor i sidospalt"
+
+#: ../theme-options.php:218
+msgid "Use separate sidebar widget areas in pages and posts."
+msgstr "Använd anpassade sidospalter på sidor."
+
+#: ../theme-options.php:222
 msgid "Header"
 msgstr "Sidhuvud"
 
-#: ../theme-options.php:170
+#: ../theme-options.php:234
 msgid "Header message"
 msgstr "Meddelande i sidhuvud"
 
-#: ../theme-options.php:173
-msgid "A message that is displayed in the header. Falls back to the blog description if empty."
-msgstr "Ett meddelande som visas i sidhuvudet. Om detta är tomt används bloggens beskrivning om det finns någon."
+#: ../theme-options.php:238
+msgid ""
+"A message that is displayed in the header. Falls back to the blog "
+"description if empty."
+msgstr ""
+"Ett meddelande som visas i sidhuvudet. Om detta är tomt används bloggens "
+"beskrivning om det finns någon."
 
-#: ../theme-options.php:187
+#: ../theme-options.php:252
 msgid "Header image height"
 msgstr "Höjd på bild i sidhuvud"
 
-#: ../theme-options.php:190
+#: ../theme-options.php:255
 msgid "The height of the image in the header"
 msgstr "Ange den höjd du vill att bilden i sidhuvudet ska ha."
 
-#: ../theme-options.php:199
+#: ../theme-options.php:269
 msgid "Hide site title and header message?"
 msgstr "Dölj webbplatsens namn och meddelande i sidhuvud?"
 
-#: ../theme-options.php:202
+#: ../theme-options.php:272
 msgid "Hide"
 msgstr "Dölj"
 
-#: ../theme-options.php:203
+#: ../theme-options.php:273
 msgid "Might be useful if you're using a custom header."
 msgstr "Kan vara användbart om du använder en bild i sidhuvudet."
 
-#: ../theme-options.php:207
+#: ../theme-options.php:277
 msgid "Footer"
 msgstr "Sidfot"
 
-#: ../theme-options.php:214
+#: ../theme-options.php:289
 msgid "Footer message"
 msgstr "Meddelande i sidfot"
 
-#: ../theme-options.php:217
+#: ../theme-options.php:293
 msgid "A message that is displayed in the footer."
 msgstr "Ett meddelande som visas i sidfoten."
 
-#: ../theme-options.php:221
+#: ../theme-options.php:297
 msgid "Support Blaskan"
 msgstr "Stöd Blaskan"
 
-#: ../theme-options.php:228
+#: ../theme-options.php:309
 msgid "Show credits"
 msgstr "Visa länkar"
 
-#: ../theme-options.php:231
+#: ../theme-options.php:312
 msgid "Display links to the Blaskan theme and WordPress.org in the footer."
 msgstr "Visa länkar till Blaskans sajt och WordPress.org i sidfoten."
 
-#: ../theme-options.php:237
+#: ../theme-options.php:318
 msgid "Save Options"
 msgstr "Spara inställningar"
 
-#: ../theme-options.php:242
+#: ../theme-options.php:323
 #, php-format
-msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
-msgstr "<a href=\"%s\">%s</a> är designad och utvecklad av <a href=\"%s\">%s</a>. Vänligen rapportera buggar och kom med feedback på <a href=\"%s\">GitHub</a>."
+msgid ""
+"<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. "
+"Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
+msgstr ""
+"<a href=\"%s\">%s</a> är designad och utvecklad av <a href=\"%s\">%s</a>. "
+"Vänligen rapportera buggar och kom med feedback på <a href=\"%s\">GitHub</a>."
+
+#~ msgid "Sidebars"
+#~ msgstr "Sidospalter"
+
+#~ msgid "Up to only one sidebar will result in a wider content column."
+#~ msgstr ""
+#~ "Om du använder upp till en sidospalt kommer innehållskolumnen att göras "
+#~ "bredare."
+
+#~ msgid "Custom sidebars"
+#~ msgstr "Anpassade sidospalter"
+
+#~ msgid "Content in listings"
+#~ msgstr "Innehåll i listningar"
+
+#~ msgid ""
+#~ "Show content in listings on small screens (recommended for photo blogs)."
+#~ msgstr ""
+#~ "Visa innehåll i listningar på små skärmar (rekommenderas för fotobloggar)."
 
 #~ msgid "Up to two sidebars. Content full width = 560 px"
 #~ msgstr "Upp till två sidospalter. Full bredd på innehållet = 560 px"
