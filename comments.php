@@ -8,7 +8,7 @@
 	<?php endif; ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h1 id="comments-title"><?php printf( _n( 'One comment', '%1$s comments', get_comments_number(), 'blaskan' ), number_format_i18n( get_comments_number() ) ); ?></h1>
+		<h1 id="comments-title"><?php printf( _n( __( 'One comment', 'blaskan' ), __( '%1$s comments', 'blaskan' ), get_comments_number(), 'blaskan' ), number_format_i18n( get_comments_number() ) ); ?></h1>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav class="post-nav" role="navigation">
