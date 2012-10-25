@@ -257,11 +257,13 @@ add_action( 'widgets_init', 'blaskan_widgets_init' );
 /**
  * Head clean up
  */
+if ( ! function_exists( 'blaskan_head_cleanup' ) ):
 function blaskan_head_cleanup() {
   remove_action( 'wp_head', 'rsd_link' );
   remove_action( 'wp_head', 'wlwmanifest_link' );
   remove_action( 'wp_head', 'wp_generator' );
 }
+endif;
 add_action( 'init' , 'blaskan_head_cleanup' );
 
 /**
@@ -513,34 +515,41 @@ add_action( 'wp_footer', 'blaskan_footer' );
  * Removes the default styles that are packaged with the Recent Comments widget.
  * Credits: http://wordpress.org/extend/themes/coraline
  */
+if ( ! function_exists( 'blaskan_remove_recent_comments_style' ) ):
 function blaskan_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
+endif;
 add_action( 'widgets_init', 'blaskan_remove_recent_comments_style' );
 
 /**
  * Root relative permalinks
  * Credits: http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
  */
+if ( ! function_exists( 'blaskan_root_relative_permalinks' ) ):
 function blaskan_root_relative_permalinks($input) {
     return preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $input);
 }
+endif;
 add_filter( 'the_permalink', 'blaskan_root_relative_permalinks' );
 
 /**
  * Remove empty span
  * Credits: http://nicolasgallagher.com/anatomy-of-an-html5-wordpress-theme/
  */
+if ( ! function_exists( 'blaskan_remove_empty_read_more_span' ) ):
 function blaskan_remove_empty_read_more_span($content) {
 	return eregi_replace( "(<p><span id=\"more-[0-9]{1,}\"></span></p>)", "", $content );
 }
+endif;
 add_filter( 'the_content', 'blaskan_remove_empty_read_more_span' );
 
 /**
  * Remove more jump link
  * Credits: http://codex.wordpress.org/Customizing_the_Read_More#Link_Jumps_to_More_or_Top_of_Page
  */
+if ( ! function_exists( 'blaskan_remove_more_jump_link' ) ):
 function blaskan_remove_more_jump_link($link) {
 	$offset = strpos($link, '#more-');
 	if ($offset) {
@@ -551,6 +560,7 @@ function blaskan_remove_more_jump_link($link) {
 	}
 	return $link;
 }
+endif;
 add_filter('the_content_more_link', 'blaskan_remove_more_jump_link');
 
 /**
