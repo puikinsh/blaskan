@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Blaskan 2.5\n"
+"Project-Id-Version: Blaskan 2.6.3 plus Issue#100\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-01 00:52+0100\n"
-"PO-Revision-Date: 2012-07-01 01:14+0100\n"
+"POT-Creation-Date: 2012-10-17 20:57+0100\n"
+"PO-Revision-Date: 2012-10-17 21:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -66,6 +66,11 @@ msgstr "Cet article est protégé par mot de passe. Connectez-vous pour voir les
 #: ../comments.php:11
 msgid "One comment"
 msgstr "Un commentaire"
+
+#: ../comments.php:11
+#, php-format
+msgid "%1$s comments"
+msgstr "%1$s commentaires"
 
 #: ../comments.php:15
 #: ../comments.php:26
@@ -136,92 +141,92 @@ msgstr "Annuler la réponse"
 msgid "Post comment"
 msgstr "Poster un commentaire"
 
-#: ../functions.php:117
+#: ../functions.php:123
 msgid "Primary Navigation"
 msgstr "Navigation principale"
 
-#: ../functions.php:118
+#: ../functions.php:124
 msgid "Footer Navigation"
 msgstr "Navigation Pied de Page"
 
-#: ../functions.php:135
+#: ../functions.php:141
 msgid "- Navigation -"
 msgstr "- Navigation -"
 
-#: ../functions.php:191
+#: ../functions.php:197
 msgid "Primary Widget Area"
 msgstr "Zone Widget primaire Articles"
 
-#: ../functions.php:193
+#: ../functions.php:199
 msgid "The primary sidebar"
 msgstr "Barre latérale primaire (interne) pour les Articles"
 
-#: ../functions.php:203
+#: ../functions.php:209
 msgid "Secondary Widget Area"
 msgstr "Zone Widget secondaire Articles"
 
-#: ../functions.php:205
+#: ../functions.php:211
 msgid "The secondary sidebar"
 msgstr "Barre latérale secondaire (externe) pour les Articles"
 
-#: ../functions.php:215
+#: ../functions.php:221
 msgid "Primary Page Widget Area"
 msgstr "Zone Widget primaire Pages"
 
-#: ../functions.php:217
+#: ../functions.php:223
 msgid "The primary page sidebar"
 msgstr "Barre latérale primaire (interne) pour les Pages Statiques"
 
-#: ../functions.php:227
+#: ../functions.php:233
 msgid "Secondary Page Widget Area"
 msgstr "Zone Widget secondaire Pages"
 
-#: ../functions.php:229
+#: ../functions.php:235
 msgid "The secondary page sidebar"
 msgstr "Barre latérale secondaire (externe) pour les Pages Statiques"
 
-#: ../functions.php:239
+#: ../functions.php:245
 msgid "Footer Widget Area"
 msgstr "Zone Widget Pied de Page"
 
-#: ../functions.php:241
+#: ../functions.php:247
 msgid "The footer widget area"
 msgstr "Zone Widget du Pied de Page"
 
-#: ../functions.php:280
+#: ../functions.php:286
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
 
-#: ../functions.php:608
-#: ../functions.php:634
-#: ../functions.php:641
+#: ../functions.php:595
+#: ../functions.php:621
+#: ../functions.php:628
 #, php-format
 msgid "%1$s - %2$s"
 msgstr "%1$s - %2$s"
 
-#: ../functions.php:618
+#: ../functions.php:605
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../functions.php:626
-#: ../functions.php:635
-#: ../functions.php:642
+#: ../functions.php:613
+#: ../functions.php:622
+#: ../functions.php:629
 #: ../loop-attachment.php:62
 #: ../loop.php:85
 #: ../page.php:39
 msgid "Edit"
 msgstr "Editer"
 
-#: ../functions.php:635
+#: ../functions.php:622
 msgid "Pingback:"
 msgstr "Ping :"
 
-#: ../functions.php:642
+#: ../functions.php:629
 msgid "Trackback:"
 msgstr "Rétrolien :"
 
-#: ../functions.php:683
+#: ../functions.php:670
 #, php-format
 msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
 msgstr "Propulsé par <a href=\"%s\">Blaskan</a> et <a href=\"%s\">WordPress</a>."
@@ -338,112 +343,112 @@ msgstr "Fonte des titres"
 msgid "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead."
 msgstr "Choisir quelle fonte utiliser pour les titres. La fonte par défaut, League Gothic, ne s'affiche pas correctement dans toutes les langues et/ou vous préfèrerez peut-être plutôt la fonte Helvetica."
 
-#: ../theme-options.php:144
+#: ../theme-options.php:146
 msgid "Link color"
 msgstr "Couleur des liens"
 
-#: ../theme-options.php:148
+#: ../theme-options.php:150
 msgid "Select a color"
 msgstr "Choisir une couleur"
 
-#: ../theme-options.php:151
+#: ../theme-options.php:153
 #, php-format
 msgid "Default color: %s"
 msgstr "Couleur par défault : %s"
 
-#: ../theme-options.php:155
+#: ../theme-options.php:157
 msgid "Layout"
 msgstr "Mise en Page"
 
-#: ../theme-options.php:162
+#: ../theme-options.php:164
 msgid "Default layout"
 msgstr "Mise en page par défaut"
 
-#: ../theme-options.php:178
+#: ../theme-options.php:185
 msgid "Narrow content column"
 msgstr "Colonne à faible contenu"
 
-#: ../theme-options.php:179
+#: ../theme-options.php:186
 msgid "Max two sidebars"
 msgstr "Au maximum deux barres latérales"
 
-#: ../theme-options.php:189
+#: ../theme-options.php:196
 msgid "Wide content column"
 msgstr "Colonne à large contenu"
 
-#: ../theme-options.php:190
+#: ../theme-options.php:197
 msgid "Max one sidebar"
 msgstr "Au maximum une barre latérale"
 
-#: ../theme-options.php:203
+#: ../theme-options.php:215
 msgid "Separate sidebar widget areas"
 msgstr "Séparer les barres latérales"
 
-#: ../theme-options.php:206
+#: ../theme-options.php:218
 msgid "Use separate sidebar widget areas in pages and posts."
 msgstr "Gérer de manière indépendante les barres latérales des Articles et des Pages Statiques. Si non coché les options communes pour les barres latérales sont celles des Articles."
 
-#: ../theme-options.php:210
+#: ../theme-options.php:222
 msgid "Header"
 msgstr "Haut de Page"
 
-#: ../theme-options.php:222
+#: ../theme-options.php:234
 msgid "Header message"
 msgstr "Message du Haut de Page"
 
-#: ../theme-options.php:226
+#: ../theme-options.php:238
 msgid "A message that is displayed in the header. Falls back to the blog description if empty."
 msgstr "Le message à afficher dans le Haut de Page. HTML supporté. Reviens au slogan du site (cf Réglages/Général) si laissé vide."
 
-#: ../theme-options.php:240
+#: ../theme-options.php:252
 msgid "Header image height"
 msgstr "Hauteur de l'image du Haut de Page"
 
-#: ../theme-options.php:243
+#: ../theme-options.php:255
 msgid "The height of the image in the header"
 msgstr "La hauteur en pixels de l'image dans le Haut de Page (cf Apparence/En-tête)."
 
-#: ../theme-options.php:252
+#: ../theme-options.php:269
 msgid "Hide site title and header message?"
 msgstr "Masquer le titre du site et le message du Haut de Page ?"
 
-#: ../theme-options.php:255
+#: ../theme-options.php:272
 msgid "Hide"
 msgstr "Masquer"
 
-#: ../theme-options.php:256
+#: ../theme-options.php:273
 msgid "Might be useful if you're using a custom header."
 msgstr "Cela peut être utile si vous utilisez un Haut de Page personnalisé."
 
-#: ../theme-options.php:260
+#: ../theme-options.php:277
 msgid "Footer"
 msgstr "Pied de Page"
 
-#: ../theme-options.php:272
+#: ../theme-options.php:289
 msgid "Footer message"
 msgstr "Message de Pied de Page"
 
-#: ../theme-options.php:276
+#: ../theme-options.php:293
 msgid "A message that is displayed in the footer."
 msgstr "Le message à afficher dans le Pied de Page. HTML supporté."
 
-#: ../theme-options.php:280
+#: ../theme-options.php:297
 msgid "Support Blaskan"
 msgstr "Supporter Blaskan"
 
-#: ../theme-options.php:287
+#: ../theme-options.php:309
 msgid "Show credits"
 msgstr "Montrer les crédits"
 
-#: ../theme-options.php:290
+#: ../theme-options.php:312
 msgid "Display links to the Blaskan theme and WordPress.org in the footer."
 msgstr "Affiche les liens vers le thème Blaskan et Wordpress dans le Pied de Page."
 
-#: ../theme-options.php:296
+#: ../theme-options.php:318
 msgid "Save Options"
 msgstr "Sauver les Options"
 
-#: ../theme-options.php:301
+#: ../theme-options.php:323
 #, php-format
 msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
 msgstr "<a href=\"%s\">%s</a> est conçu et développé par <a href=\"%s\">%s</a>. Merci de rapporter les bugs et de fournir votre expérience en retour à <a href=\"%s\">GitHub</a>."
