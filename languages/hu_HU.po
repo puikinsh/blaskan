@@ -1,0 +1,567 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Blaskan v2.6.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-12-10 14:13:12+0000\n"
+"Last-Translator: gyeben <gyonkibendeguz@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:5
+#@ blaskan
+msgid "4-uh-oh-4 <span>Page not found...</span>"
+msgstr "404 <span>A keresett oldal nem található.</span>"
+
+#: 404.php:7
+#@ blaskan
+msgid "The page you requested could not be found... sorry. Perhaps searching will help?"
+msgstr "Az általad keresett oldal sajnálatos módon nem található."
+
+#: archive.php:11
+#, php-format
+#@ blaskan
+msgid "Daily Archives: <time format=\"%s\">%s</time>"
+msgstr "Napi archívumok: <time format=\"%s\">%s</time>"
+
+#: archive.php:24
+#, php-format
+#@ blaskan
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Havi archívumok: <span>%s</span>"
+
+#: archive.php:37
+#, php-format
+#@ blaskan
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Éves archívumok: <span>%s</span>"
+
+#: archive.php:50
+#, php-format
+#@ blaskan
+msgid "Tagged: <span>%s</span>"
+msgstr "Címkék: <span>%s</span>"
+
+#: archive.php:72
+#, php-format
+#@ blaskan
+msgid "Category: <span>%s</span>"
+msgstr "Kategória: <span>%s</span>"
+
+#: archive.php:93
+#@ blaskan
+msgid "Archives"
+msgstr "Archívumok"
+
+#: author.php:18
+#@ blaskan
+msgid "Posts"
+msgstr "Bejegyzések"
+
+#: comments.php:4
+#@ blaskan
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Ez a bejegyzés jelszóval védett. Add meg a jelszót, a hozzászólások megtekintéséhez."
+
+#: comments.php:11
+#@ blaskan
+msgid "One comment"
+msgstr "1 hozzászólás"
+
+#: comments.php:11
+#, php-format
+#@ blaskan
+msgid "%1$s comments"
+msgstr "%1$s hozzászólás"
+
+#: comments.php:15
+#: comments.php:26
+#@ blaskan
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Régebbi hozzászólások"
+
+#: comments.php:16
+#: comments.php:27
+#@ blaskan
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Újabb hozzászólások <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:34
+#@ blaskan
+msgid "Comments are closed."
+msgstr "A hozzászólások le vannak zárva."
+
+#: comments.php:44
+#@ blaskan
+msgid "Name"
+msgstr "Név"
+
+#: comments.php:45
+#@ blaskan
+msgid "(required)"
+msgstr "(kötelező)"
+
+#: comments.php:52
+#@ blaskan
+msgid "Email"
+msgstr "E-mail"
+
+#: comments.php:53
+#@ blaskan
+msgid "(required - will be kept a secret)"
+msgstr "(kötelező - nem fog megjelenni)"
+
+#: comments.php:59
+#@ blaskan
+msgid "Website"
+msgstr "Weboldal"
+
+#: comments.php:62
+#@ blaskan
+msgid "Comment"
+msgstr "Hozzászólás"
+
+#: comments.php:65
+#, php-format
+#@ blaskan
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "<a href=\"%s\">Be kell jelentkezned</a>, hogy elküldhesd a hozzászólásodat."
+
+#: comments.php:67
+#, php-format
+#@ blaskan
+msgid "You are logged in as <a href=\"%s\">%s</a>. <a href=\"%s\" title=\"Log out of this account\">Log out?</a></p>"
+msgstr "Be vagy jelentkezve, mint <a href=\"%s\">%s</a>. | <a href=\"%s\" title=\"Log out of this account\">Kijelentkezés</a></p>"
+
+#: comments.php:71
+#@ blaskan
+msgid "You may use the following <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+msgstr "Az alábbi <abbr title=\"HyperText Markup Language\">HTML</abbr> kódokat használhatod:"
+
+#: comments.php:77
+#@ blaskan
+msgid "Post a comment"
+msgstr "Hozzászólás(ok)"
+
+#: comments.php:79
+#, php-format
+#@ blaskan
+msgid "Leave a Reply to %s"
+msgstr "Válasz küldése neki: %s"
+
+#: comments.php:81
+#@ blaskan
+msgid "Cancel reply"
+msgstr "Válasz elvetése"
+
+#: comments.php:83
+#@ blaskan
+msgid "Post comment"
+msgstr "Hozzászólás elküldése"
+
+#: functions.php:123
+#@ blaskan
+msgid "Primary Navigation"
+msgstr "Elsődleges navigáció"
+
+#: functions.php:124
+#@ blaskan
+msgid "Footer Navigation"
+msgstr "Lábrész navigáció"
+
+#: functions.php:141
+#@ blaskan
+msgid "- Navigation -"
+msgstr "- Navigáció -"
+
+#: functions.php:197
+#@ blaskan
+msgid "Primary Widget Area"
+msgstr "Elsődleges widgetmező"
+
+#: functions.php:199
+#@ blaskan
+msgid "The primary sidebar"
+msgstr "Az elsődleges oldalsáv"
+
+#: functions.php:209
+#@ blaskan
+msgid "Secondary Widget Area"
+msgstr "Másodlagos widgetmező"
+
+#: functions.php:211
+#@ blaskan
+msgid "The secondary sidebar"
+msgstr "A másodlagos oldalsáv"
+
+#: functions.php:221
+#@ blaskan
+msgid "Primary Page Widget Area"
+msgstr "Elsődleges oldal-widgetmező"
+
+#: functions.php:223
+#@ blaskan
+msgid "The primary page sidebar"
+msgstr "Az oldal elsődleges oldalsávja"
+
+#: functions.php:233
+#@ blaskan
+msgid "Secondary Page Widget Area"
+msgstr "Másodlagos oldal-widgetmező"
+
+#: functions.php:235
+#@ blaskan
+msgid "The secondary page sidebar"
+msgstr "Az oldal másodlagos oldalsávja"
+
+#: functions.php:245
+#@ blaskan
+msgid "Footer Widget Area"
+msgstr "Lábrész widgetmező"
+
+#: functions.php:247
+#@ blaskan
+msgid "The footer widget area"
+msgstr "A lábrész widgetmezője"
+
+#: functions.php:288
+#, php-format
+#@ blaskan
+msgid "Page %s"
+msgstr "Oldal: %s"
+
+#: functions.php:605
+#: functions.php:631
+#: functions.php:638
+#, php-format
+#@ blaskan
+msgid "%1$s - %2$s"
+msgstr "%1$s - %2$s"
+
+#: functions.php:615
+#@ blaskan
+msgid "Your comment is awaiting moderation."
+msgstr "A hozzászólásod moderációra várakozik."
+
+#: functions.php:623
+#: functions.php:632
+#: functions.php:639
+#: loop-attachment.php:62
+#: loop.php:85
+#: page.php:39
+#@ blaskan
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: functions.php:632
+#@ blaskan
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:639
+#@ blaskan
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: functions.php:680
+#, php-format
+#@ blaskan
+msgid "Powered by <a href=\"%s\">Blaskan</a> and <a href=\"%s\">WordPress</a>."
+msgstr "Téma: <a href=\"%s\">Blaskan</a> | Blogmotor: <a href=\"%s\">WordPress</a>."
+
+#: loop-attachment.php:54
+#: loop.php:51
+#: loop.php:57
+#@ blaskan
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Tovább <span class=\"meta-nav\">&rarr;</span>"
+
+#: loop-attachment.php:55
+#: loop.php:52
+#: page.php:21
+#@ blaskan
+msgid "Pages:"
+msgstr "Oldalak:"
+
+#: loop-attachment.php:60
+#@ blaskan
+msgid "Uploaded by"
+msgstr "Feltöltötte"
+
+#: loop.php:5
+#@ blaskan
+msgid "Not Found"
+msgstr "Nem található"
+
+#: loop.php:8
+#@ blaskan
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Sajnálom, de a keresett archívum egy elemet sem tartalmaz."
+
+#: loop.php:22
+#: loop.php:41
+#: loop.php:56
+#, php-format
+#@ blaskan
+msgid "Permalink to %s"
+msgstr "Közvetlen link ehhez:"
+
+#: loop.php:66
+#@ blaskan
+msgid "Written by"
+msgstr "Írta:"
+
+#: loop.php:69
+#@ blaskan
+msgid "No comments"
+msgstr "Nincs egy hozzászólás sem"
+
+#: loop.php:69
+#@ blaskan
+msgid "<span>1</span> Comment"
+msgstr "<span>1</span> hozzászólás"
+
+#: loop.php:69
+#@ blaskan
+msgid "<span>%</span> Comments"
+msgstr "<span>%</span> hozzászólás"
+
+#: loop.php:73
+#: page.php:26
+#, php-format
+#@ blaskan
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Kategória:</span> %2$s"
+
+#: loop.php:81
+#: page.php:35
+#, php-format
+#@ blaskan
+msgid "<span class=\"%1$s\">Tagged with</span> %2$s"
+msgstr "<span class=\"%1$s\">Címkék:</span> %2$s"
+
+#: loop.php:94
+#@ blaskan
+msgctxt "Previous post link"
+msgid ""
+msgstr ""
+
+#: loop.php:95
+#@ blaskan
+msgctxt "Next post link"
+msgid ""
+msgstr ""
+
+#: loop.php:107
+#@ blaskan
+msgid "Older posts"
+msgstr "Régebbi bejegyzések"
+
+#: loop.php:108
+#@ blaskan
+msgid "Newer posts"
+msgstr "Újabb bejegyzések"
+
+#: search.php:5
+#, php-format
+#@ blaskan
+msgid "Search results for: %s"
+msgstr "Keresési találatok erre: %s"
+
+#: search.php:9
+#@ blaskan
+msgid "Nothing Found"
+msgstr "Nincs találat"
+
+#: search.php:10
+#@ blaskan
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Sajnálom, de az általad megadott keresési kulcsszavakkal semmit sem találtam. Próbáld újra, más keresési kulcsszavakkal!"
+
+#: theme-options.php:34
+#@ blaskan
+msgid "Theme Options"
+msgstr "Témabeállítások"
+
+#: theme-options.php:55
+#@ blaskan
+msgid "League Gothic (default)"
+msgstr "League Gothic (alapértelmezett)"
+
+#: theme-options.php:59
+#@ blaskan
+msgid "Helvetica Neue, sans-serif"
+msgstr "Helvetica Neue, sans-serif"
+
+#: theme-options.php:74
+#@ blaskan
+msgid " Theme Options"
+msgstr "Témabeállítások"
+
+#: theme-options.php:77
+#@ blaskan
+msgid "Options saved"
+msgstr "Beállítások elmentve"
+
+#: theme-options.php:86
+#@ blaskan
+msgid "Design"
+msgstr "Kinézet"
+
+#: theme-options.php:93
+#@ blaskan
+msgid "Typeface in titles"
+msgstr "A címek betűképe"
+
+#: theme-options.php:96
+#@ blaskan
+msgid "Choose which typeface to use in titles. The default typeface, League Gothic, doesn't play nicely in all languages and/or perhaps you'd prefer Helvetica instead."
+msgstr "Válaszd ki a címek betűképét. Az alapértelmezett betűtípus, a League Gothic nem tartalmazza az összes ékezetes karaktert."
+
+#: theme-options.php:146
+#@ blaskan
+msgid "Link color"
+msgstr "Linkek színe"
+
+#: theme-options.php:150
+#@ blaskan
+msgid "Select a color"
+msgstr "Szín kiválasztása"
+
+#: theme-options.php:153
+#, php-format
+#@ blaskan
+msgid "Default color: %s"
+msgstr "Alapértelmezett szín: %s"
+
+#: theme-options.php:157
+#@ blaskan
+msgid "Layout"
+msgstr "Elrendezés"
+
+#: theme-options.php:164
+#@ blaskan
+msgid "Default layout"
+msgstr "Alapértelmezett elrendezés"
+
+#: theme-options.php:185
+#@ blaskan
+msgid "Narrow content column"
+msgstr "Vékony tartalomoszlop"
+
+#: theme-options.php:186
+#@ blaskan
+msgid "Max two sidebars"
+msgstr "Maximum kettő oldalsáv"
+
+#: theme-options.php:196
+#@ blaskan
+msgid "Wide content column"
+msgstr "Széles tartalomoszlop"
+
+#: theme-options.php:197
+#@ blaskan
+msgid "Max one sidebar"
+msgstr "Maximum egy oldalsáv"
+
+#: theme-options.php:215
+#@ blaskan
+msgid "Separate sidebar widget areas"
+msgstr "Oldalsávi widgetmezők elkülönítése"
+
+#: theme-options.php:218
+#@ blaskan
+msgid "Use separate sidebar widget areas in pages and posts."
+msgstr "Különböző widgetmezők használata az oldalakon és a bejegyzések oldalain."
+
+#: theme-options.php:222
+#@ blaskan
+msgid "Header"
+msgstr "Fejrész"
+
+#: theme-options.php:234
+#@ blaskan
+msgid "Header message"
+msgstr "Fejrész üzenet"
+
+#: theme-options.php:238
+#@ blaskan
+msgid "A message that is displayed in the header. Falls back to the blog description if empty."
+msgstr "Egy, a fejrészben megjelenített üzenet."
+
+#: theme-options.php:252
+#@ blaskan
+msgid "Header image height"
+msgstr "Fejléckép magassága"
+
+#: theme-options.php:255
+#@ blaskan
+msgid "The height of the image in the header"
+msgstr "A fejlécben lévő kép magassága"
+
+#: theme-options.php:269
+#@ blaskan
+msgid "Hide site title and header message?"
+msgstr "Oldalcím és fejléc elrejtése"
+
+#: theme-options.php:272
+#@ blaskan
+msgid "Hide"
+msgstr "Elrejtés"
+
+#: theme-options.php:273
+#@ blaskan
+msgid "Might be useful if you're using a custom header."
+msgstr "Hasznos lehet, ha egyedi fejlécet szeretnél használni."
+
+#: theme-options.php:277
+#@ blaskan
+msgid "Footer"
+msgstr "Lábrész"
+
+#: theme-options.php:289
+#@ blaskan
+msgid "Footer message"
+msgstr "Lábrész üzenet"
+
+#: theme-options.php:293
+#@ blaskan
+msgid "A message that is displayed in the footer."
+msgstr "Egy, a lábrészben megjelenített üzenet."
+
+#: theme-options.php:297
+#@ blaskan
+msgid "Support Blaskan"
+msgstr "A Blaskan támogatása"
+
+#: theme-options.php:309
+#@ blaskan
+msgid "Show credits"
+msgstr "Névjegy megjelenítése"
+
+#: theme-options.php:312
+#@ blaskan
+msgid "Display links to the Blaskan theme and WordPress.org in the footer."
+msgstr "A Blaskan téma és a WordPress oldalára mutató linkek megjelenítése a lábrészben."
+
+#: theme-options.php:318
+#@ blaskan
+msgid "Save Options"
+msgstr "Beállítások mentése"
+
+#: theme-options.php:323
+#, php-format
+#@ blaskan
+msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
+msgstr "A <a href=\"%s\">%s</a>t tervezte és készítette: <a href=\"%s\">%s</a>. Kérlek, az esetleg felmerülő hibákat, illetve egyéb észrevételeket oszd meg a téma <a href=\"%s\">GitHub</a> oldalán."
