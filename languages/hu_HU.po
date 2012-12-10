@@ -565,3 +565,4 @@ msgstr "Beállítások mentése"
 #@ blaskan
 msgid "<a href=\"%s\">%s</a> is designed and developed by <a href=\"%s\">%s</a>. Please report bugs and provide feedback on <a href=\"%s\">GitHub</a>."
 msgstr "A <a href=\"%s\">%s</a>t tervezte és készítette: <a href=\"%s\">%s</a>. Kérlek, az esetleg felmerülő hibákat, illetve egyéb észrevételeket oszd meg a téma <a href=\"%s\">GitHub</a> oldalán."
+
