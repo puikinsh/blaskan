@@ -16,11 +16,6 @@ Getting started and help:
 -------------------------
 See guides on http://www.blaskan.net.
 
-Future development:
--------------------
-I'm using Blaskan on my own swedish blog, http://www.permalink.se, so expect
-active development and upgrades as WordPress evolves.
-
 Configuration:
 --------------
 Blaskan supports:
