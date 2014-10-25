@@ -1830,6 +1830,16 @@ article .content { *zoom: 1; }
 }
 
 /**
+ * Archive navigation
+ */
+ 
+ ul > .post-nav {
+	margin-top: 15px;
+	border-top: 1px dashed #ccc;
+	padding-top: 15px;
+}
+ 
+/**
  * Author and date archives
  */
 
