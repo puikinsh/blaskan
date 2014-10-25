@@ -71,7 +71,7 @@ function blaskan_options_do_page() {
 		$_REQUEST['updated'] = false;
 	?>
 	<div class="wrap">
-		<?php screen_icon(); echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'blaskan' ) . "</h2>"; ?>
+		<?php echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'blaskan' ) . "</h2>"; ?>
 
 		<?php if ( $_REQUEST['updated'] !== false ) : ?>
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'blaskan' ); ?></strong></p></div>
