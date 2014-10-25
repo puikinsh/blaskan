@@ -1,3 +1,7 @@
+2014-10-26: Blaskan 2.6.6
+-------------------------
+See: https://github.com/persand/blaskan/issues?milestone=20&q=is%3Aclosed
+
 2014-10-25: Blaskan 2.6.5
 -------------------------
 See: https://github.com/persand/blaskan/issues?milestone=19&q=is%3Aclosed
