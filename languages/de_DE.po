@@ -283,7 +283,7 @@ msgstr "<span class=\"%1$s\">Schlagworte:</span> %2$s"
 
 #: ../loop.php:107
 msgid "Older posts"
-msgstr "&Aumll;tere Beitr&auml;ge"
+msgstr "&Auml;ltere Beitr&auml;ge"
 
 #: ../loop.php:108
 msgid "Newer posts"
