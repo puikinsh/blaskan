@@ -470,7 +470,11 @@ table {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-
+.site-title {
+	font-size: 30px;
+    line-height: 1.1;
+    font-family: 'Droid Serif', serif;
+}
 .site-branding {
 	text-align: center;
 	padding: 30px 0;
@@ -1640,6 +1644,9 @@ a:active {
 .entry-thumbnail {
 	text-align: center;
 	margin-bottom: 50px;
+}
+.entry-thumbnail a {
+	display: block;
 }
 .entry-footer .tags-links a {
 	font-size: 13px;
