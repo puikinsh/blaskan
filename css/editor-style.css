@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700|Source+Sans+Pro:300,400,600,700|Work+Sans');
+body {
+	color: #898989;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	line-height: 1.85;
+	font-weight: 400;
+}
+table.mce-item-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+table.mce-item-table {
+	border-top: 1px solid #ebebeb;
+	border-left: 1px solid #ebebeb;
+}
+table.mce-item-table tr {
+	border-bottom: 1px solid #ebebeb;
+}
+
+table.mce-item-table td,
+table.mce-item-table th {
+	padding: 5px;
+	border-right: 1px solid #ebebeb;
+}
+ul,
+ol {
+    margin: 0;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 2.85;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-weight: 400;
+	font-family: 'Droid Serif', serif;
+	color: #333;
+}
+
+h1 {
+	font-size: 30px;
+	line-height: 1.1;
+}
+h2 {
+	font-size: 28px;
+	line-height: 1.2;
+}
+h3 {
+	font-size: 25px;
+	line-height: 1.2;
+}
+h4 {
+	font-size: 23px;
+	line-height: 1.22;
+}
+h5 {
+	font-size: 20px;
+	line-height: 1.4;
+}
+h6 {
+	font-size: 18px;
+	line-height: 1.33;
+}
+
+p {
+	margin-top: 0; 
+	margin-bottom: 1.5em;
+}
+blockquote {
+	margin: 0 1.5em;
+	font-size: 20px;
+	text-align: center;
+	line-height: 1.75;
+}
+
+a {
+	color: #f63c4e;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: #ae3c4e;
+	outline: 0;
+	text-decoration: none;
+}
+
+a:active {
+	color: #333333;
+	outline: 0;
+	text-decoration: none;
+}

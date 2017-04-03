@@ -1,71 +1,38 @@
-WordPress theme Blaskan:
-------------------------
-Author: Per Sandström
-Author URL: http://www.helloper.com
-Theme URL: http://www.blaskan.net
-Source code: http://github.com/persand/blaskan
-Requires: WordPress 3.x
-License: GNU General Public License (see license.txt)
+=== blaskan ===
 
-Overview:
----------
-Blaskan is a responsive and accessible WordPress theme that's built for
-many kinds of screens.
+Contributors: automattic
+Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
-Getting started and help:
--------------------------
-See guides on http://www.blaskan.net.
+Requires at least: 4.0
+Tested up to: 4.7
+Stable tag: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
 
-Configuration:
---------------
-Blaskan supports:
-* Custom header
-* Custom background
-* Three widget areas (left sidebar, right sidebar, footer widgets)
-* Optionally use custom or no sidebars in pages
-* Use a wide content column. Useful for e.g. photo blogs.
+A starter theme called blaskan, or underscores.
 
-You may add also a custom header message and/or footer message and choose if to
-display credit links in the theme options:
-/wp-admin/themes.php?page=theme_options
+== Description ==
 
-If need to do any customizations that requires that you modify the code then
-please use a child theme.
-Get started fast and easy using the Blaskan child theme boilerplate.
-Source code:
-http://bit.ly/blaskanchild
-Download:
-http://bit.ly/blaskanchilddownload
+Hi. I'm a starter theme called blaskan, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
-Supported browsers and platforms:
----------------------------------
-* Firefox
-* Safari
-* Chrome
-* Opera
-* Internet Explorer 7 and above
+== Installation ==
 
-* Android
-* Mobile Safari (iPhone/iPad/iPod touch)
-* Opera Mini
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-Typography:
------------
-League Gothic from The League of Moveable Type:
-http://www.theleagueofmoveabletype.com/fonts/7-league-gothic
-Licensed under the Open Font License. See OFL.txt.
-http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+== Frequently Asked Questions ==
 
-Contributions:
---------------
-Chinese translation by Morning Bai
-Danish translation by Kristian Steen Olsen – http://www.kristianolsen.dk
-Dutch translation by Matthijs de Vries
-German translation by Joachim Kroll
-Italian translation by Pierluigi Ferro
-Polish translation by Paweł Grześ – http://dealwynajem.pl
-Romanian translation by WebHostingGeeks.com
-Russian translation by Michael Esutin
-Spanish translation by mantobani – https://github.com/mantobani
+= Does this theme support any plugins? =
 
-See also links/comments in source files.
+blaskan includes support for Infinite Scroll in Jetpack.
+
+== Changelog ==
+
+= 1.0 - May 12 2015 =
+* Initial release
+
+== Credits ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
