@@ -137,6 +137,7 @@ function blaskan_scripts() {
 	wp_enqueue_style( 'blaskan-font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
 	wp_enqueue_style( 'blaskan-style', get_stylesheet_uri() );
 
+	wp_enqueue_script('imagesloaded');
 	wp_enqueue_script('masonry');
 	wp_enqueue_script( 'blaskan-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'blaskan-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
