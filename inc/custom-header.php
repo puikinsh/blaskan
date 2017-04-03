@@ -18,12 +18,13 @@
  */
 function blaskan_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'blaskan_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'height'      			 => 460,
-      	'width'      			 => 1600,
+		'default-image'         => '',
+		'default-text-color'    => '000000',
+		'height'      			=> 460,
+      	'width'      			=> 1600,
 		'flex-width'            => true,
-		'wp-head-callback'       => 'blaskan_header_style',
+		'wp-head-callback'      => 'blaskan_header_style',
+		'default-image' 		=> get_template_directory_uri() . '/images/custom-header.jpg',
 	) ) );
 }
 add_action( 'after_setup_theme', 'blaskan_custom_header_setup' );
