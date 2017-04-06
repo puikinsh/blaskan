@@ -32,7 +32,11 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
-			get_template_part( 'template-parts/content', 'author' );
+			$author_bio = get_option( 'jetpack_content_author_bio' );
+
+			if ( $author_bio ) {
+				get_template_part( 'template-parts/content', 'author' );
+			}
 
 			$current_post_categories = wp_get_post_categories( get_the_ID(), array( 'fields' => 'ids' ) );
 			if ( !empty( $current_post_categories ) ) {

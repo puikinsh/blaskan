@@ -62,9 +62,11 @@ function blaskan_post_classes( $classes ) {
 		$classes[] = 'col-md-6 col-sm-12';
 	}
 
+	// $classes[] = 'col-md-6 col-sm-12';
+
 	return $classes;
 }
-add_filter( 'post_class', 'blaskan_post_classes' );
+// add_filter( 'post_class', 'blaskan_post_classes' );
 
 function blaskan_comment($comment, $args, $depth) {
     if ( 'div' === $args['style'] ) {

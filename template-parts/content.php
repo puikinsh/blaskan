@@ -7,21 +7,25 @@
  * @package blaskan
  */
 
-?>
+if ( !is_single() ) {
+	$class = 'col-md-6 col-sm-12';
+}else{
+	$class = 'col-md-12 col-sm-12';
+}
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
 	<header class="entry-header">
 
-		<?php if ( has_post_thumbnail() ) { 
+		<?php if ( has_post_thumbnail() && blaskan_jetpack_featured_image() ) { 
 			echo '<div class="entry-thumbnail">';
 				if ( is_single() ) {
-					the_post_thumbnail();
+					the_post_thumbnail( 'small-blog-post' );
 				}else{
 					echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-					the_post_thumbnail();
+					the_post_thumbnail( 'small-blog-post' );
 					echo '</a>';
 				}
-				
 			echo '</div>';
 		} ?>
 	
@@ -49,20 +53,16 @@
 
 	<div class="entry-content">
 		<?php
-			if ( is_single() ) {
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'blaskan' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
+			the_content( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'blaskan' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
 
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blaskan' ),
-					'after'  => '</div>',
-				) );
-			}else{
-				blaskan_show_index_content();
-			}
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blaskan' ),
+				'after'  => '</div>',
+			) );
 		?>
 	</div><!-- .entry-content -->
 

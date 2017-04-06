@@ -37,20 +37,20 @@ function blaskan_customize_register( $wp_customize ) {
 		),
 	) );
 
-	$wp_customize->add_setting( 'blaskan_article_content', array(
-		'default'           => 'excerpt',
-		'sanitize_callback' => 'blaskan_sanitize_content',
-	) );
+	// $wp_customize->add_setting( 'blaskan_article_content', array(
+	// 	'default'           => 'excerpt',
+	// 	'sanitize_callback' => 'blaskan_sanitize_content',
+	// ) );
 
-	$wp_customize->add_control( 'blaskan_article_content', array(
-		'label'             => esc_html__( 'For each article in blog page, show', 'blaskan' ),
-		'section'           => 'blaskan_theme_options',
-		'type'              => 'radio',
-		'choices'           => array(
-			'excerpt' => esc_html__( 'Summary', 'blaskan' ),
-			'full-text' => esc_html__( 'Full text', 'blaskan' ),
-		),
-	) );
+	// $wp_customize->add_control( 'blaskan_article_content', array(
+	// 	'label'             => esc_html__( 'For each article in blog page, show', 'blaskan' ),
+	// 	'section'           => 'blaskan_theme_options',
+	// 	'type'              => 'radio',
+	// 	'choices'           => array(
+	// 		'excerpt' => esc_html__( 'Summary', 'blaskan' ),
+	// 		'full-text' => esc_html__( 'Full text', 'blaskan' ),
+	// 	),
+	// ) );
 
 	$wp_customize->add_setting( 'blaskan_footer_column', array(
 		'default'           => 'column-3',

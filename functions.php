@@ -79,9 +79,15 @@ function blaskan_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add image sizes
+	add_image_size( 'related-blog-post', 360, 270 );
+	add_image_size( 'big-blog-post', 1140, 570 );
+	add_image_size( 'small-blog-post', 550, 415 );
 }
 endif;
 add_action( 'after_setup_theme', 'blaskan_setup' );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -196,3 +202,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load plugin enhancement file to display admin notices.
+ */
+require get_template_directory() . '/inc/plugin-enhancements.php';

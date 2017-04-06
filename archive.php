@@ -43,7 +43,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : 
 
-			echo '<div class="row">';
+			echo '<div id="posts-container" class="row">';
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 

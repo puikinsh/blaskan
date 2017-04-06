@@ -11,6 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php if ( has_post_thumbnail() && blaskan_jetpack_featured_image() ) { 
+			echo '<div class="entry-thumbnail">';
+				the_post_thumbnail();
+			echo '</div>';
+		} ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 

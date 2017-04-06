@@ -20,13 +20,13 @@ function blaskan_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	$posted_on = $byline;
+	$posted_on = '<span class="byline">'.$byline.'</span>';
 
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( esc_html__( ', ', 'blaskan' ) );
 	if ( $categories_list && blaskan_categorized_blog() && is_single() ) {
-		$categories = sprintf( '<span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
-		$posted_on .= ' - '.$categories;
+		$categories = sprintf( '<span class="category-delimeter"> - </span><span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
+		$posted_on .= $categories;
 	}
 
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -42,7 +42,7 @@ function blaskan_posted_on() {
 	);
 
 	if ( !is_sticky() ) {
-		$posted_on .= '  -  <span class="posted-on"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>';
+		$posted_on .= '<span class="posted-on"><span class="posted-on-delimeter">  -  </span><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>';
 	}
 
 	echo $posted_on;
@@ -259,5 +259,33 @@ function blaskan_show_index_content() {
 			'after'  => '</div>',
 		) );
 	}
+
+}
+
+
+function blaskan_jetpack_featured_image() {
+
+	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
+        return true;
+    }
+
+    $options = get_theme_support( 'jetpack-content-options' );
+
+   	if ( !isset($options[0]['featured-images']) ) {
+   		return true;
+   	}
+
+   	$featured_image_options = $options[0]['featured-images'];
+
+	if ( ( is_home() || is_archive() ) &&  $featured_image_options['archive'] ) {
+		return true;
+	}elseif ( is_page() && $featured_image_options['page'] ) {
+		return true;
+	}elseif ( is_single() && $featured_image_options['post'] ) {
+		return true;
+	}
+
+
+    return false;
 
 }
