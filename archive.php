@@ -1,104 +1,68 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying archive pages
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package blaskan
+ */
+
+get_header(); ?>
+
+	<?php
+
+	// Get layout options
+	$site_layout = get_theme_mod( 'blaskan_site_layout', 'right-sidebar' );
+
+	$class = 'col-md-8 col-sm-12';
+
+	if ( $site_layout == 'left-sidebar' && is_active_sidebar( 'sidebar-1' ) ) {
+		$class = 'col-md-8 col-sm-12 pull-right';
+	}elseif ( $site_layout == 'no-sidebar' || !is_active_sidebar( 'sidebar-1' ) ) {
+		$class = 'col-md-12 col-sm-12';
+	}
+
+	?>
+
+	<div id="primary" class="content-area row">
+
+		<?php if ( have_posts() ): ?>
+			
+			<header class="page-header archive-header">
+				<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+
+		<?php endif ?>
+
+
+		<main id="main" class="site-main <?php echo $class ?>" role="main">
 
 		<?php
-			if ( have_posts() )
-				the_post();
-		?>
-				
-		<?php if ( is_day() ) : ?>
-			<article id="content" role="main">
-				<header class="archive-header">
-					<h1 class="page-title"><?php printf( __( 'Daily Archives: <time format="%s">%s</time>', 'blaskan' ), get_the_date('c'), get_the_date('j F, Y') ); ?></h1>
-				</header>	
-				
-				<?php rewind_posts(); ?>
+		if ( have_posts() ) : 
 
-				<ul>
-				<?php get_template_part( 'loop', 'archive' ); ?>
-				</ul>
-			</article>
-			<!-- / #content -->	
-		<?php elseif ( is_month() ) : ?>
-			<article id="content" role="main">
-				<header class="archive-header">
-					<h1 class="page-title"><?php printf( __( 'Monthly Archives: <span>%s</span>', 'blaskan' ), get_the_date('F, Y') ); ?></h1>
-				</header>
-					
-				<?php rewind_posts(); ?>
+			echo '<div id="posts-container" class="row">';
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-				<ul>
-				<?php get_template_part( 'loop', 'archive' ); ?>
-				</ul>
-			</article>	
-			<!-- / #content -->			
-		<?php elseif ( is_year() ) : ?>
-			<article id="content" role="main">
-				<header class="archive-header">
-					<h1 class="page-title"><?php printf( __( 'Yearly Archives: <span>%s</span>', 'blaskan' ), get_the_date('Y') ); ?></h1>
-				</header>
-					
-				<?php rewind_posts(); ?>
+				get_template_part( 'template-parts/content', get_post_format() );
 
-				<ul>
-				<?php get_template_part( 'loop', 'archive' ); ?>
-				</ul>
-			</article>	
-			<!-- / #content -->	
-		<?php elseif ( is_tag() ) : ?>
-			<section id="content" role="main">
-				<header class="archive-header">
-					<h1 class="page-title"><?php printf( __( 'Tagged: <span>%s</span>', 'blaskan' ), single_tag_title( '', false ) ); ?></h1>
-				
-					<?php if ( tag_description() ): ?>
-						<div class="archive-description"><?php echo tag_description(); ?></div>
-					<?php endif; ?>
-				</header>
-				
-				<?php rewind_posts(); ?>
+			endwhile;
+			echo '</div>';
+			the_posts_navigation();
 
-				<?php
-				// List both pages and posts
-				global $wp_query;
-				$args = array_merge( $wp_query->query, array( 'post_type' => array('page', 'post') ) );
-				query_posts( $args );
-				?>
+		else :
 
-				<?php get_template_part( 'loop', 'archive' ); ?>
-			</section>
-			<!-- / #content -->	
-		<?php elseif ( is_category() ) : ?>
-			<section id="content" role="main">
-				<header class="archive-header">
-					<h1 class="page-title"><?php printf( __( 'Category: <span>%s</span>', 'blaskan' ), single_cat_title( '', false ) ); ?></h1>
-				
-					<?php if ( category_description() ): ?>
-						<div class="archive-description"><?php echo category_description(); ?></div>
-					<?php endif; ?>
-				</header>
-				
-				<?php rewind_posts(); ?>
+			get_template_part( 'template-parts/content', 'none' );
 
-				<?php
-				// List both pages and posts
-				global $wp_query;
-				$args = array_merge( $wp_query->query, array( 'post_type' => array('page', 'post') ) );
-				query_posts( $args );
-				?>
+		endif; ?>
 
-				<?php get_template_part( 'loop', 'archive' ); ?>
-			</section>
-			<!-- / #content -->
-		<?php else : ?>
-			<section id="content" role="main">
-				<h1 class="title"><?php _e( 'Archives', 'blaskan' ); ?></h1>
-				
-				<?php rewind_posts(); ?>
+		</main><!-- #main -->
+		<?php get_sidebar(); ?>
+	</div><!-- #primary -->
 
-				<?php get_template_part( 'loop', 'archive' ); ?>
-			</section>
-			<!-- / #content -->
-		<?php endif; ?>
-					
-	<?php get_sidebar(); ?>
+<?php
 
-	<?php get_footer(); ?>
+get_footer();

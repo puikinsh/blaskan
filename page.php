@@ -1,50 +1,37 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package blaskan
+ */
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	
-		<article id="content" role="main" <?php post_class(); ?>>
+get_header(); ?>
 
-				<header>
-					<?php if ( has_post_thumbnail() ) : ?>
-					  <figure class="post-thumbnail">
-							<?php the_post_thumbnail(); ?>
-						</figure>
-					<?php endif; ?>
-					
-					<?php if ( get_the_title() ): ?>
-						<h1><?php the_title(); ?></h1>
-					<?php endif; ?>
-				</header>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-				<div class="content"><?php the_content(); ?></div>
-				
-				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'blaskan' ), 'after' => '</div>' ) ); ?>
-				
-				<footer>
-					<?php if ( count( get_the_category() ) ) : ?>
-						<span class="categories">
-							<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'blaskan' ), 'categories-label', get_the_category_list( ', ' ) ); ?>
-						</span>
-					<?php endif; ?>
-					
-					<?php
-						$tags_list = get_the_tag_list( '', ', ' );
-						if ( $tags_list ):
-					?>
-						<span class="tags">
-							<?php printf( __( '<span class="%1$s">Tagged with</span> %2$s', 'blaskan' ), 'tags-label', $tags_list ); ?>
-						</span>
-					<?php endif; ?>
+			<?php
+			while ( have_posts() ) : the_post();
 
-					<?php edit_post_link( __( 'Edit', 'blaskan' ), '<span class="edit-link">', '</span>' ); ?>
-				</footer>
+				get_template_part( 'template-parts/content', 'page' );
 
-				<?php comments_template( '', true ); ?>
-		
-			</article>
-			<!-- #content -->
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
 
-<?php endwhile; ?>
+			endwhile; // End of the loop.
+			?>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_footer();
