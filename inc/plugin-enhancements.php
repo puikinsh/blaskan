@@ -315,7 +315,7 @@ function enqueue_scripts() {
 	if ( is_admin() && get_user_meta( get_current_user_id(), 'blaskan_jetpack_admin_notice', true ) !== 'dismissed' ) {
 
 		// Adds our JS file to the queue that WordPress will load
-		wp_enqueue_script( 'blaskan_jetpack_admin_script', get_template_directory_uri() . '/inc/plugin-enhancements.js', array( 'jquery' ), '20160624', true );
+		wp_enqueue_script( 'blaskan_jetpack_admin_script', get_template_directory_uri() . '/assets/js/plugin-enhancements.js', array( 'jquery' ), '20160624', true );
 
 		// Make some data available to our JS file
 		wp_localize_script( 'blaskan_jetpack_admin_script', 'blaskan_jetpack_admin', array(

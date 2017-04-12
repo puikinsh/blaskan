@@ -19,26 +19,18 @@
 
 		<?php
 
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			if ( is_sticky() ) {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><i class="fa fa-thumb-tack" aria-hidden="true"></i>', '</a></h2>' );
-			}else{
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
-		endif;
+		if ( is_sticky() ) {
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><i class="fa fa-thumb-tack" aria-hidden="true"></i>', '</a></h2>' );
+		}else{
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		}
 
 		?>
 
 		<?php if ( has_post_thumbnail() && blaskan_jetpack_featured_image() ) { 
-			if ( is_single() ) {
-				the_post_thumbnail( 'big-blog-post' );
-			}else{
-				echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-				the_post_thumbnail( 'big-blog-post' );
-				echo '</a>';
-			}
+			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
+			the_post_thumbnail( 'big-blog-post' );
+			echo '</a>';
 		} ?>
 		
 	</header><!-- .entry-header -->
@@ -59,10 +51,4 @@
 	
 		?>
 	</div><!-- .entry-content -->
-
-	<?php if ( is_single() ): ?>
-		<footer class="entry-footer">
-			<?php blaskan_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
-	<?php endif ?>
 </article><!-- #post-## -->

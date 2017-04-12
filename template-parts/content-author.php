@@ -15,9 +15,9 @@
 			<?php echo get_avatar(  get_the_author_meta( 'ID' ), 72 ); ?> 
 		</div>
 		<div class="author-description">
-			<p class="author-name"> <?php echo get_the_author_meta( 'first_name' ).' '.get_the_author_meta( 'last_name' ) ?> </p>
+			<p class="author-name"> <?php echo get_the_author_posts_link(); ?> </p>
 			<div class="author-bio">
-				<?php echo get_the_author_meta( 'description' ) ?>
+				<?php echo wp_kses_post(get_the_author_meta( 'description' )) ?>
 			</div>
 		</div>
 	</div>

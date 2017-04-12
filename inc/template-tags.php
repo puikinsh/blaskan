@@ -138,62 +138,6 @@ function blaskan_category_transient_flusher() {
 add_action( 'edit_category', 'blaskan_category_transient_flusher' );
 add_action( 'save_post',     'blaskan_category_transient_flusher' );
 
-
-function blaskna_has_footer_widgets() {
-
-	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-3' );
-	$number = str_replace( 'column-' , '', $footer_layout);
-	if ( is_active_sidebar( 'footer-sidebar' ) ) {
-		return true;
-	}
-
-	for ($i=2; $i <= $number; $i++) { 
-		if ( is_active_sidebar( 'footer-sidebar-'.$i ) ) {
-			return true;
-		}
-	}
-
-	return false;
-	
-}
-
-
-function blaskna_footer_widgets(){
-
-	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-3' );
-	$number = intval(str_replace( 'column-' , '', $footer_layout));
-	$count = $number;
-	$current_sidebars = array();
-	$columns_classes = array(
-		1 => 'col-md-12 col-xs-12',
-		2 => 'col-md-6 col-sm-12',
-		3 => 'col-md-4 col-sm-12'
-		);
-
-	if ( !is_active_sidebar( 'footer-sidebar' ) ) {
-		$count--;
-	}else{
-		$current_sidebars[] = 'footer-sidebar';
-	}
-
-	for ($i=2; $i <= $number; $i++) { 
-		if ( !is_active_sidebar( 'footer-sidebar-'.$i ) ) {
-			$count--;
-		}else{
-			$current_sidebars[] = 'footer-sidebar-'.$i;
-		}
-	}
-
-	$class = $columns_classes[$count];
-	foreach ($current_sidebars as $sidebar) {
-		echo '<div class="'.$class.'">';
-		dynamic_sidebar( $sidebar );
-		echo '</div>';
-	}
-
-}
-
-
 function blaskan_fonts_url() {
 	$fonts_url = '';
  

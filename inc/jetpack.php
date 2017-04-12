@@ -9,9 +9,6 @@
 
 /**
  * Jetpack setup function.
- *
- * See: https://jetpack.com/support/infinite-scroll/
- * See: https://jetpack.com/support/responsive-videos/
  */
 function blaskan_jetpack_setup() {
 

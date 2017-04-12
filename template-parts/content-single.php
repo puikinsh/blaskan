@@ -19,9 +19,7 @@ if ( !is_single() ) {
 
 		<?php if ( has_post_thumbnail() && blaskan_jetpack_featured_image() ) { 
 			echo '<div class="entry-thumbnail">';
-				echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 				the_post_thumbnail( 'small-blog-post' );
-				echo '</a>';
 			echo '</div>';
 		} ?>
 	
@@ -32,11 +30,9 @@ if ( !is_single() ) {
 		<?php endif; ?>
 
 		<?php
-			if ( is_sticky() ) {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><i class="fa fa-thumb-tack" aria-hidden="true"></i>', '</a></h2>' );
-			}else{
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+
+		the_title( '<h1 class="entry-title">', '</h1>' );
+
 		?>
 		
 	</header><!-- .entry-header -->
@@ -56,4 +52,7 @@ if ( !is_single() ) {
 		?>
 	</div><!-- .entry-content -->
 
+	<footer class="entry-footer row">
+		<?php blaskan_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

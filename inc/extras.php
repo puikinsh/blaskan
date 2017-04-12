@@ -90,7 +90,7 @@ function blaskan_comment($comment, $args, $depth) {
     <div class="comment-content">
     	<div class="comment-meta commentmetadata">
 	    	<div class="comment-info">
-	    		<?php printf( __( '<cite class="fn">%s</cite>' ), get_comment_author_link() ); ?>
+	    		<?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?>
 		        <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
 		        	<?php printf( '%1$s', get_comment_date() ); ?>
 		        </a>
@@ -103,7 +103,7 @@ function blaskan_comment($comment, $args, $depth) {
 	    </div>
 
 	    <?php if ( $comment->comment_approved == '0' ) : ?>
-	        <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+	        <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'blaskan' ); ?></em>
 	        <br />
 	    <?php endif; ?>
 	    <div class="comment-text">

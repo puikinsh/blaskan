@@ -1,23 +1,17 @@
 /*
 Theme Name: Blaskan
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Theme URI: 
+Author: Colorlib
+Author URI: https://colorlib.com/
 Description: Description
 Version: 3.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: blaskan
-Tags:
+Tags: custom-background,custom-header,editor-style,featured-images,blog,grid-layout,left-sidebar,right-sidebar
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-blaskan is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+Blaskan is a responsive and accessible WordPress theme that's built for
+many kinds of screens.
 */
 
 /*--------------------------------------------------------------
@@ -112,11 +106,6 @@ strong {
 
 dfn {
 	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
 }
 
 mark {
@@ -429,7 +418,7 @@ ul,
 ol {
 	margin: 0 0 1.5em 3em;
 	font-size: 14px;
-	line-height: 2.85;
+	line-height: 1.85;
 }
 
 ul {
@@ -525,6 +514,11 @@ header#masthead {
 header.archive-header {
     padding: 0 15px;
     margin-bottom: 60px;
+}
+.custom-header {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /*--------------------------------------------------------------
@@ -640,6 +634,7 @@ input[ type="submit" ] {
 	font-family: 'Work Sans', sans-serif;
 	font-size: 14px;
 	padding: 10px 20px;
+	line-height: 1.85;
 }
 a.button:hover,
 input[ type="submit" ]:hover,
@@ -1128,6 +1123,9 @@ a:active {
 .main-footer-navigation #footer-menu li:last-child {
 	padding-right: 0;
 }
+.copyright-info {
+    line-height: 2.85;
+}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1330,15 +1328,20 @@ a:active {
 	padding: 0;
 	border: 0 none;
 }
-.widget.widget_search .search-form .search-field,
+.search-form .search-field,
 .widget.widget_search .search-form label {
 	display: block;
 	width: 100%;
 }
-.widget.widget_search .search-form {
+.search-form:hover input {
+	color: #111;
+    border-color: #ae3c4e;
+    outline: none;
+}
+.search-form {
 	position: relative;
 }
-.widget.widget_search .search-form .search-submit {
+.search-form .search-submit {
 	border-radius: 0;
 	background-color: transparent;
 	border: 0 none;
@@ -1570,8 +1573,15 @@ a:active {
 	border-color: rgba( 255,255,255, .1 );
 }
 #colophon .widget.widget_search .search-form .search-field:focus,
-#colophon .widget.widget_search .search-form .search-field:hover {
+#colophon .widget.widget_search .search-form .search-field:hover,
+#colophon .widget.widget_search .search-form:hover .search-field {
 	border-color: #ae3c4e;
+	color: #fff;
+}
+
+#colophon .widget.widget_search .search-form .search-field:hover,
+#colophon .widget.widget_search .search-form:hover .search-field {
+	color: #fff;
 }
 
 #colophon .widget a:hover, 
@@ -1701,12 +1711,16 @@ footer.entry-footer.row {
 	content: "";
 	clear: both;
 }
-.author-container p.author-name {
+.author-container p.author-name a {
     color: #f63c4e;
     line-height: 1;
-    margin-bottom: 10px;
 }
-
+.author-container p.author-name {
+	margin-bottom: 10px;
+}
+.author-container p.author-name a:hover {
+	color: #ae3c4e;
+}
 .related-posts .entry-thumbnail {
 	margin-bottom: 20px;
 }
@@ -1762,6 +1776,7 @@ blockquote {
 ol.comment-list {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 ol.comment-list li > ol {
 	margin: 0;
@@ -1864,6 +1879,10 @@ p.comment-form-url input {
 	font-family:'FontAwesome';
 	font-size: 14px;
 	margin-left: 10px;
+}
+
+.no-results.not-found {
+	margin-bottom: 60px;
 }
 
 /*--------------------------------------------------------------

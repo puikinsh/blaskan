@@ -89,20 +89,20 @@ if ( post_password_required() ) {
 	  'author' =>
 	    '<p class="comment-form-author">'.
 	    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-	    '" size="30"' . $aria_req . ' placeholder="'. __( 'Name', 'domainreference' ) .( $req ? '*' : '' ).'" /></p>',
+	    '" size="30"' . $aria_req . ' placeholder="'. __( 'Name', 'blaskan' ) .( $req ? '*' : '' ).'" /></p>',
 
 	  'email' =>
 	    '<p class="comment-form-email">' .
 	    '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-	    '" size="30"' . $aria_req . ' placeholder="' . __( 'Email', 'domainreference' ) . ( $req ? '*' : '' ). '" /></p>',
+	    '" size="30"' . $aria_req . ' placeholder="' . __( 'Email', 'blaskan' ) . ( $req ? '*' : '' ). '" /></p>',
 
 	  'url' =>
 	    '<p class="comment-form-url">' .
-	    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . __( 'Website', 'domainreference' ) . '" /></p>',
+	    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . __( 'Website', 'blaskan' ) . '" /></p>',
 	);
 
 	$comment_form_args = array(
-		'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Comment', 'noun' ) . '"></textarea></p>',
+		'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Comment', 'noun', 'blaskan' ) . '"></textarea></p>',
 		'title_reply_before' => '<h5 id="reply-title" class="comment-reply-title">',
 		'title_reply_after' => '</h5>',
 		'fields' => $fields,

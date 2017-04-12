@@ -4,7 +4,6 @@ $(document).ready(function(){
 
 	if ( $('.mansonry-posts #main .row > article').length > 1 ) {
 
-
 		$('.mansonry-posts #main .row').imagesLoaded(function () {
 	        $('.mansonry-posts #main .row').masonry({
 				itemSelector: '.post', 
@@ -19,22 +18,14 @@ $(document).ready(function(){
 	    	infinite_count = infinite_count + 1;
 	    	var $selector = $('#infinite-view-' + infinite_count);
 	    	var $elements = $selector.find('.hentry');
-
-
 			var $container = $('.mansonry-posts #main .row');
-
 			$selector.remove();
-			$container.append( $elements )
+			$container.append( $elements );
 			$container.masonry( 'appended', $elements, true );
 			$container.masonry();
-			
-
 	    });
 
 	}
-	
-
-
 
 	$('.top-header .search .search-form label').click(function( evt ){
 		evt.stopPropagation();

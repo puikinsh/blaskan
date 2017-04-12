@@ -8,19 +8,10 @@
  */
 
 if ( ! function_exists( 'blaskan_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
+
 function blaskan_setup() {
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on blaskan, use a find and replace
-	 * to change 'blaskan' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'blaskan', get_template_directory() . '/languages' );
 
@@ -29,16 +20,11 @@ function blaskan_setup() {
 
 	/*
 	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -77,6 +63,14 @@ function blaskan_setup() {
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 
+	//Set up the WordPress core custom header feature.
+	add_theme_support( 'custom-header', apply_filters( 'blaskan_custom_header_args', array(
+		'height'      			=> 460,
+      	'width'      			=> 1600,
+		'flex-width'            => true,
+		'default-image' 		=> get_template_directory_uri() . '/assets/images/custom-header.jpg',
+	) ) );
+
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -103,8 +97,6 @@ add_action( 'after_setup_theme', 'blaskan_content_width', 0 );
 
 /**
  * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function blaskan_widgets_init() {
 	register_sidebar( array(
@@ -139,15 +131,15 @@ add_action( 'widgets_init', 'blaskan_widgets_init' );
 function blaskan_scripts() {
 
 	wp_enqueue_style( 'blaskan-fonts', blaskan_fonts_url() );
-	wp_enqueue_style( 'blaskan-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css' );
-	wp_enqueue_style( 'blaskan-font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css' );
 	wp_enqueue_style( 'blaskan-style', get_stylesheet_uri() );
 
 	wp_enqueue_script('imagesloaded');
 	wp_enqueue_script('masonry');
-	wp_enqueue_script( 'blaskan-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'blaskan-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'blaskan-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'blaskan-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'blaskan-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'blaskan-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -156,14 +148,10 @@ function blaskan_scripts() {
 add_action( 'wp_enqueue_scripts', 'blaskan_scripts' );
 
 function blaskan_add_editor_styles() {
-    add_editor_style( 'css/editor-style.css' );
+    add_editor_style( 'assets/css/editor-style.css' );
 }
 add_action( 'admin_init', 'blaskan_add_editor_styles' );
 
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with ... and
- * a 'Continue reading' link.
- */
 function blaskan_excerpt_more( $link ) {
 	if ( is_admin() ) {
 		return $link;
@@ -178,10 +166,13 @@ function blaskan_excerpt_more( $link ) {
 }
 add_filter( 'excerpt_more', 'blaskan_excerpt_more' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+function blaskan_search_filter( $query ) {
+    if ($query->is_search && !is_admin() ) {
+        $query->set('post_type',array('post'));
+    }
+	return $query;
+}
+add_filter('pre_get_posts','blaskan_search_filter');
 
 /**
  * Custom template tags for this theme.
