@@ -34,7 +34,7 @@
 
 				<div class="search pull-right">
 					<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input id="search" type="" name="s" placeholder="<?php _e( 'Search …', 'blaskan' ) ?>">
+						<input id="search" type="" name="s" placeholder="<?php _e( 'Search ...', 'blaskan' ) ?>">
 						<label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
 					</form>
 				</div>
@@ -61,7 +61,7 @@
 
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description<?php echo $extra_class ?>"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<p class="site-description<?php echo $extra_class ?>"><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
 					<?php
 					endif;
 

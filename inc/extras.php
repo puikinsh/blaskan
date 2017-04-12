@@ -43,31 +43,6 @@ function blaskan_pingback_header() {
 }
 add_action( 'wp_head', 'blaskan_pingback_header' );
 
-
-/**
- * Adds custom classes to the array of post classes.
- *
- * @param array $classes Classes for the post element.
- * @return array
- */
-function blaskan_post_classes( $classes ) {
-	
-	global $wp_query;
-	
-	if ( $wp_query->current_post == 0 && !is_singular() ) {
-		$classes[] = 'big-post col-md-12';
-	}
-
-	if ( $wp_query->current_post != 0 && !is_singular() ) {
-		$classes[] = 'col-md-6 col-sm-12';
-	}
-
-	// $classes[] = 'col-md-6 col-sm-12';
-
-	return $classes;
-}
-// add_filter( 'post_class', 'blaskan_post_classes' );
-
 function blaskan_comment($comment, $args, $depth) {
     if ( 'div' === $args['style'] ) {
         $tag       = 'div';

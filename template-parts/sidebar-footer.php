@@ -1,7 +1,7 @@
 <?php
 
 	
-	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-3' );
+	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-4' );
 	$number = str_replace( 'column-' , '', $footer_layout);
 	$active_sidebars = array();
 

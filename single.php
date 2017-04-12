@@ -35,7 +35,7 @@ get_header(); ?>
 			$author_bio = get_option( 'jetpack_content_author_bio' );
 
 			if ( $author_bio ) {
-				get_template_part( 'template-parts/content', 'author' );
+				get_template_part( 'template-parts/author', 'description' );
 			}
 
 			$current_post_categories = wp_get_post_categories( get_the_ID(), array( 'fields' => 'ids' ) );
