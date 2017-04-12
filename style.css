@@ -1266,9 +1266,14 @@ a:active {
 .widget_recent_comments ul li,
 .widget_archive ul li,
 .widget_nav_menu ul li {
-	padding-bottom: 0;
-	margin-bottom: 0;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 	border-bottom: 1px solid rgba( 235,235,235, .5 );
+}
+.widget_pages ul li ul {
+	padding-top: 10px;
+	margin-top: 10px;
+	border-top: 1px solid rgba( 235,235,235, .5 );
 }
 .widget_recent_entries ul li,
 .widget_recent_comments ul li {
@@ -1288,11 +1293,21 @@ a:active {
 	margin-bottom: 0;
 	border-bottom: 0 none;
 }
+.widget_nav_menu ul.sub-menu > li:last-child {
+	margin-bottom: 10px;
+}
+
+/*.widget_nav_menu ul.sub-menu {
+	padding-top: 10px;
+	margin-top: 10px;
+}*/
 
 /* Menu Widget */
 .widget_nav_menu ul li.menu-item-has-children > a {
 	display: block;
 	border-bottom: 1px solid rgba( 235,235,235, .5 );
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .widget_nav_menu .sub-menu > li > a {
@@ -1567,7 +1582,8 @@ a:active {
 #colophon .widget_calendar table tbody tr td:not(.pad),
 #colophon .widget_calendar table caption,
 #colophon .widget.widget_search .search-form .search-field,
-#colophon .widget.widget_search .search-form .search-submit {
+#colophon .widget.widget_search .search-form .search-submit,
+.widget_pages ul li ul {
 	border-color: rgba( 255,255,255, .1 );
 }
 #colophon .widget.widget_search .search-form .search-field:focus,
@@ -1692,6 +1708,7 @@ footer.entry-footer.row {
 	border-top: 1px solid #ebebeb;
 	border-bottom: 1px solid #ebebeb;
 	margin-bottom: 35px;
+	float: left;
 }
 .author-container .author-avatar {
 	float: left;
@@ -1718,6 +1735,10 @@ footer.entry-footer.row {
 }
 .author-container p.author-name a:hover {
 	color: #ae3c4e;
+}
+.related-posts {
+	width: 100%;
+	float: left;
 }
 .related-posts .entry-thumbnail {
 	margin-bottom: 20px;
@@ -1770,6 +1791,10 @@ blockquote {
 
 .bypostauthor {
 	display: block;
+}
+div#comments {
+    float: left;
+    width: 100%;
 }
 ol.comment-list {
     margin: 0;
