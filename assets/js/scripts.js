@@ -19,10 +19,12 @@ $(document).ready(function(){
 	    	var $selector = $('#infinite-view-' + infinite_count);
 	    	var $elements = $selector.find('.hentry');
 			var $container = $('.mansonry-posts #main .row');
-			$selector.remove();
-			$container.append( $elements );
-			$container.masonry( 'appended', $elements, true );
-			$container.masonry();
+			$container.imagesLoaded(function () {
+				$selector.remove();
+				$container.append( $elements );
+				$container.masonry( 'appended', $elements, true );
+				$container.masonry();
+			});
 	    });
 
 	}
