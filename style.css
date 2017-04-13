@@ -2160,6 +2160,7 @@ object {
 /* Responsive */
 
 @media screen and (max-width: 768px) {
+
     #colophon .copyright-info,
     #colophon .main-footer-navigation #footer-menu {
         text-align: center;
@@ -2169,3 +2170,5 @@ object {
         margin-top: 15px;
     }
 }
+}
+
