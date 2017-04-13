@@ -11,6 +11,7 @@
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
+ *
  * @return array
  */
 function blaskan_body_classes( $classes ) {
@@ -31,6 +32,7 @@ function blaskan_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'blaskan_body_classes' );
 
 /**
@@ -41,55 +43,61 @@ function blaskan_pingback_header() {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
+
 add_action( 'wp_head', 'blaskan_pingback_header' );
 
-function blaskan_comment($comment, $args, $depth) {
-    if ( 'div' === $args['style'] ) {
-        $tag       = 'div';
-        $add_below = 'comment';
-    } else {
-        $tag       = 'li';
-        $add_below = 'div-comment';
-    }
-    ?>
-    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+function blaskan_comment( $comment, $args, $depth ) {
+	if ( 'div' === $args['style'] ) {
+		$tag       = 'div';
+		$add_below = 'comment';
+	} else {
+		$tag       = 'li';
+		$add_below = 'div-comment';
+	}
+	?>
+    <<?php echo $tag ?><?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
 
-    <?php if ( 'div' != $args['style'] ) : ?>
+	<?php if ( 'div' != $args['style'] ) : ?>
         <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-    <?php endif; ?>
+	<?php endif; ?>
     <div class="comment-author vcard">
-        <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+		<?php if ( $args['avatar_size'] != 0 ) {
+			echo get_avatar( $comment, $args['avatar_size'] );
+		} ?>
     </div>
-    
+
 
     <div class="comment-content">
-    	<div class="comment-meta commentmetadata">
-	    	<div class="comment-info">
-	    		<?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?>
-		        <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
-		        	<?php printf( '%1$s', get_comment_date() ); ?>
-		        </a>
-		        <?php edit_comment_link( __( '(Edit)', 'blaskan' ), '  ', '' ); ?>
-	    	</div>
+        <div class="comment-meta commentmetadata">
+            <div class="comment-info">
+				<?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?>
+                <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+					<?php printf( '%1$s', get_comment_date() ); ?>
+                </a>
+				<?php edit_comment_link( esc_html__( '(Edit)', 'blaskan' ), '  ', '' ); ?>
+            </div>
 
-	         <div class="reply">
-		        <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-		    </div>
-	    </div>
+            <div class="reply">
+				<?php comment_reply_link( array_merge( $args, array(
+					'add_below' => $add_below,
+					'depth'     => $depth,
+					'max_depth' => $args['max_depth']
+				) ) ); ?>
+            </div>
+        </div>
 
-	    <?php if ( $comment->comment_approved == '0' ) : ?>
-	        <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'blaskan' ); ?></em>
-	        <br />
-	    <?php endif; ?>
-	    <div class="comment-text">
-	    	<?php comment_text(); ?>
-	    </div>
+		<?php if ( $comment->comment_approved == '0' ) : ?>
+            <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'blaskan' ); ?></em>
+            <br/>
+		<?php endif; ?>
+        <div class="comment-text">
+			<?php comment_text(); ?>
+        </div>
     </div>
-    
 
-   
-    <?php if ( 'div' != $args['style'] ) : ?>
-    </div>
-    <?php endif; ?>
-    <?php
-    }
+
+	<?php if ( 'div' != $args['style'] ) : ?>
+        </div>
+	<?php endif; ?>
+	<?php
+}

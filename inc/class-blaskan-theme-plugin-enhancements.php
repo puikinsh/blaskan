@@ -1,12 +1,12 @@
 <?php
+
 /**
  * Inform a theme user of plugins that will extend their theme's functionality.
  *
- * @link https://github.com/Automattic/theme-tools/
+ * @link    https://github.com/Automattic/theme-tools/
  *
  * @package Blaskan
  */
-
 class Blaskan_Theme_Plugin_Enhancements {
 
 	/**
@@ -54,12 +54,13 @@ class Blaskan_Theme_Plugin_Enhancements {
 		$this->dependencies = $this->get_theme_dependencies();
 
 		// Return early if we have no plugin dependencies.
-		if ( empty( $this->dependencies ) )
+		if ( empty( $this->dependencies ) ) {
 			return;
+		}
 
 		// Otherwise, build an array to list all the necessary dependencies and modules.
 		$dependency_list = '';
-		$this->modules = array();
+		$this->modules   = array();
 
 		// Create a list of dependencies.
 		foreach ( $this->dependencies as $dependency ) :
@@ -103,9 +104,9 @@ class Blaskan_Theme_Plugin_Enhancements {
 
 		if ( current_theme_supports( 'jetpack-content-options' ) ) :
 			$dependencies['content'] = array(
-				'name' => esc_html__( 'Content Option', 'blaskan' ),
-				'slug' => 'jetpack-content-options',
-				'url'  => '',
+				'name'   => esc_html__( 'Content Option', 'blaskan' ),
+				'slug'   => 'jetpack-content-options',
+				'url'    => '',
 				'module' => 'none',
 			);
 		endif;
@@ -124,6 +125,7 @@ class Blaskan_Theme_Plugin_Enhancements {
 			'none'                 => esc_html__( 'no specific module needed', 'blaskan' ),
 			'custom-content-types' => esc_html__( 'Custom Content Types module', 'blaskan' ),
 		);
+
 		return $module_names[ $module ];
 	}
 
@@ -147,13 +149,13 @@ class Blaskan_Theme_Plugin_Enhancements {
 				} // Set the plugin status as to-activate.
 				else {
 					$this->plugins[ $key ]['status'] = 'to-activate';
-					$this->display_notice = true;
+					$this->display_notice            = true;
 				}
 
 				// Set the plugin status as to-install.
 			} else {
 				$this->plugins[ $key ]['status'] = 'to-install';
-				$this->display_notice = true;
+				$this->display_notice            = true;
 			}
 		}
 	}
@@ -168,12 +170,13 @@ class Blaskan_Theme_Plugin_Enhancements {
 			if ( class_exists( 'Jetpack' ) && ! Jetpack::is_module_active( $module ) ) :
 				// Add this feature to our array.
 				$this->unactivated_modules[ $module ][] = $feature;
-				$this->display_notice = true;
+				$this->display_notice                   = true;
 
 			endif;
 		endforeach;
 
 	}
+
 	/**
 	 * Display the admin notice for the plugin enhancements.
 	 */
@@ -198,7 +201,7 @@ class Blaskan_Theme_Plugin_Enhancements {
 			// Activation message.
 			if ( 'to-activate' === $plugin['status'] ) {
 				$activate_url = $this->plugin_activate_url( $plugin['slug'] );
-				$notice .= sprintf(
+				$notice       .= sprintf(
 					esc_html__( ' Please activate %1$s. %2$s', 'blaskan' ),
 					esc_html( $plugin['name'] ),
 					( $activate_url ) ? '<a href="' . $activate_url . '">' . esc_html__( 'Activate', 'blaskan' ) . '</a>' : ''
@@ -208,7 +211,7 @@ class Blaskan_Theme_Plugin_Enhancements {
 			// Download message.
 			if ( 'to-install' === $plugin['status'] ) {
 				$install_url = $this->plugin_install_url( $plugin['slug'] );
-				$notice .= sprintf(
+				$notice      .= sprintf(
 					esc_html__( ' Please install %1$s. %2$s', 'blaskan' ),
 					esc_html( $plugin['name'] ),
 					( $install_url ) ? '<a href="' . $install_url . '">' . esc_html__( 'Install', 'blaskan' ) . '</a>' : ''
@@ -225,13 +228,13 @@ class Blaskan_Theme_Plugin_Enhancements {
 				$featurelist[] = $feature;
 			}
 
-			if ( 2 === count( $featurelist) ) {
-				$featurelist  = implode( ' or ', $featurelist );
+			if ( 2 === count( $featurelist ) ) {
+				$featurelist = implode( ' or ', $featurelist );
 			} elseif ( 1 < count( $featurelist ) ) {
 				$last_feature = array_pop( $featurelist );
 				$featurelist  = implode( ', ', $featurelist ) . ', or ' . $last_feature;
 			} else {
-				$featurelist  = implode( ', ', $featurelist );
+				$featurelist = implode( ', ', $featurelist );
 			}
 
 			$notice .= '<p>';
@@ -269,7 +272,7 @@ class Blaskan_Theme_Plugin_Enhancements {
 		$plugin_path  = false;
 
 		foreach ( $plugin_paths as $path ) {
-			if ( preg_match( '|^' . $slug .'|', $path ) ) {
+			if ( preg_match( '|^' . $slug . '|', $path ) ) {
 				$plugin_path = $path;
 			}
 		}
@@ -308,6 +311,7 @@ class Blaskan_Theme_Plugin_Enhancements {
 		}
 	}
 }
+
 add_action( 'admin_head', array( 'Blaskan_Theme_Plugin_Enhancements', 'init' ) );
 
 function enqueue_scripts() {
@@ -320,27 +324,29 @@ function enqueue_scripts() {
 		// Make some data available to our JS file
 		wp_localize_script( 'blaskan_jetpack_admin_script', 'blaskan_jetpack_admin', array(
 			'blaskan_jetpack_admin_nonce' => wp_create_nonce( 'blaskan_jetpack_admin_nonce' ),
-		));
+		) );
 	}
 }
+
 add_action( 'admin_enqueue_scripts', 'enqueue_scripts' );
 
 /**
- *	Process the AJAX request on the server and send a response back to the JS.
- *	If nonce is valid, update the current user's meta to prevent notice from displaying.
+ *    Process the AJAX request on the server and send a response back to the JS.
+ *    If nonce is valid, update the current user's meta to prevent notice from displaying.
  */
 function dismiss_admin_notice() {
 	// Verify the security nonce and die if it fails
 	if ( ! isset( $_POST['blaskan_jetpack_admin_nonce'] ) || ! wp_verify_nonce( $_POST['blaskan_jetpack_admin_nonce'], 'blaskan_jetpack_admin_nonce' ) ) {
-		wp_die( __( 'Your request failed permission check.', 'blaskan' ) );
+		wp_die( esc_html__( 'Your request failed permission check.', 'blaskan' ) );
 	}
 	// Store the user's dimissal so that the notice doesn't show again
 	update_user_meta( get_current_user_id(), 'blaskan_jetpack_admin_notice', 'dismissed' );
 	// Send success message
 	wp_send_json( array(
-		'status' => 'success',
-		'message' => __( 'Your request was processed. See ya!', 'blaskan' )
-	) );
+		              'status'  => 'success',
+		              'message' => esc_html__( 'Your request was processed. See ya!', 'blaskan' )
+	              ) );
 }
+
 add_action( 'wp_ajax_blaskan_jetpack_admin_notice', 'dismiss_admin_notice' );
 
