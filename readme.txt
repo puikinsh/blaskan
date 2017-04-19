@@ -13,7 +13,7 @@ Blaskan is a responsive and accessible WordPress theme that's built for many kin
 
 Getting started and help:
 -------------------------
-See guides on http://www.blaskan.net.
+See guides on https://colorlib.com/wp/themes/blaskan
 
 Configuration:
 --------------
