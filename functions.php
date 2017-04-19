@@ -1,662 +1,229 @@
 <?php
 /**
- * Theme options
- * Credits: http://themeshaper.com/sample-theme-options/
- */
-require_once ( get_template_directory() . '/theme-options.php' );
-
-/**
- * Load theme options
+ * blaskan functions and definitions
+ *
+ * @link    https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package blaskan
  */
 
-$blaskan_options = get_option('blaskan_options');
+if ( ! function_exists( 'blaskan_setup' ) ) :
 
-define( 'BLASKAN_SIDEBARS', $blaskan_options['sidebars'] );
+	function blaskan_setup() {
+		/*
+		 * Make theme available for translation.
+		 */
+		load_theme_textdomain( 'blaskan', get_template_directory() . '/languages' );
 
-if ( $blaskan_options['custom_sidebars_in_pages'] == 1 ) {
-	define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', TRUE );
-} else {
-	define( 'BLASKAN_CUSTOM_SIDEBARS_IN_PAGES', FALSE );
-}
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-define( 'BLASKAN_HEADER_MESSAGE', $blaskan_options['header_message'] );
-define( 'BLASKAN_FOOTER_MESSAGE', $blaskan_options['footer_message'] );
-define( 'BLASKAN_SHOW_CREDITS', $blaskan_options['show_credits'] );
+		/*
+		 * Let WordPress manage the document title.
+		 */
+		add_theme_support( 'title-tag' );
 
-if ( empty( $blaskan_options['typeface_titles'] ) ) {
-	define( 'BLASKAN_TYPEFACE_TITLE', 'default' );
-} else {
-	define( 'BLASKAN_TYPEFACE_TITLE', $blaskan_options['typeface_titles'] );
-}
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 */
+		add_theme_support( 'post-thumbnails' );
 
-if ( empty( $blaskan_options['hide_site_title_header_message'] ) ) {
-	$blaskan_options['hide_site_title_header_message'] = FALSE;
-}
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			                    'menu-1'      => esc_html__( 'Primary', 'blaskan' ),
+			                    'menu-2'      => esc_html__( 'Footer', 'blaskan' ),
+			                    'social-menu' => esc_html__( 'Social Menu', 'blaskan' ),
+		                    ) );
 
-/**
- * Theme setup
- */
-if ( ! function_exists( 'blaskan_setup' ) ):
-function blaskan_setup() {
-	global $blaskan_options;
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
 
-	add_theme_support( 'automatic-feed-links' );
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'blaskan_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+			'height'        => 460,
+			'width'         => 1600,
+			'flex-width'    => true,
+		) ) );
 
-	add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'custom-logo', array(
+			'height'      => 200,
+			'width'       => 400,
+			'flex-width'  => true,
+			'header-text' => array( 'site-title', 'site-description' ),
+		) );
 
-	load_theme_textdomain( 'blaskan', get_template_directory() . '/languages' );
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
+		//Set up the WordPress core custom header feature.
+		add_theme_support( 'custom-header', apply_filters( 'blaskan_custom_header_args', array(
+			'height'        => 460,
+			'width'         => 1600,
+			'flex-width'    => true,
+			'default-image' => get_template_directory_uri() . '/assets/images/custom-header.jpg',
+		) ) );
 
-  add_editor_style( 'editor-style.css' );
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
-  add_theme_support( 'custom-background' );
-
-	define( 'HEADER_TEXTCOLOR', '' );
-	define( 'HEADER_IMAGE', '' );
-
-	if ( empty ( $blaskan_options['header_image_height'] ) || !is_numeric( $blaskan_options['header_image_height'] ) ) {
-		define( 'HEADER_IMAGE_HEIGHT', 160 );
-	} else {
-		define( 'HEADER_IMAGE_HEIGHT', $blaskan_options['header_image_height'] );
+		// Add image sizes
+		add_image_size( 'related-blog-post', 360, 270 );
+		add_image_size( 'big-blog-post', 1140, 570 );
+		add_image_size( 'small-blog-post', 550, 415 );
 	}
-
-	define( 'NO_HEADER_TEXT', true );
-
-	$custom_header_args = array(
-		'flex-height' => true,
-		'flex-width' => true,
-		'height' => HEADER_IMAGE_HEIGHT,
-		'width' => HEADER_IMAGE_WIDTH,
-	);
-	add_theme_support( 'custom-header', $custom_header_args );
-}
 endif;
 add_action( 'after_setup_theme', 'blaskan_setup' );
 
-/**
- * Setup widths
- */
-if ( ! function_exists( 'blaskan_setup_widths' ) ):
-function blaskan_setup_widths() {
-	if ( BLASKAN_SIDEBARS == 'one_sidebar') {
-		set_post_thumbnail_size( 830, 9999, true );
-		if ( ! isset( $content_width ) )
-			$content_width = 830;
-	} else {
-		set_post_thumbnail_size( 540, 9999, true );
-		if ( ! isset( $content_width ) )
-			$content_width = 540;
-	}
 
-	if (
-		( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) )
-		||
-		( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) )
-		||
-		( BLASKAN_SIDEBARS == 'one_sidebar' && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'primary-page-sidebar' ) ) )
-	) {
-		define( 'HEADER_IMAGE_WIDTH', 1120 );
-	} elseif (
-		( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) )
-		||
-		( is_active_sidebar( 'primary-page-sidebar' ) || is_active_sidebar( 'secondary-page-sidebar' ) )
-		||
-		( BLASKAN_SIDEBARS == 'one_sidebar' && ( !is_active_sidebar( 'primary-sidebar' ) || !is_active_sidebar( 'primary-page-sidebar' ) ) )
-	) {
-		define( 'HEADER_IMAGE_WIDTH', 830 );
-	} else {
-		define( 'HEADER_IMAGE_WIDTH', 540 );
-	}
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function blaskan_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'blaskan_content_width', 780 );
 }
-endif;
-add_action( 'after_setup_theme', 'blaskan_setup_widths', 0 );
+
+add_action( 'after_setup_theme', 'blaskan_content_width', 0 );
 
 /**
- * Register menus
+ * Register widget area.
  */
-if ( ! function_exists( 'blaskan_register_nav_menus' ) ):
-function blaskan_register_nav_menus() {
-	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'blaskan' ),
-		'footer' => __( 'Footer Navigation', 'blaskan' ),
-	) );
-}
-endif;
-add_action( 'after_setup_theme', 'blaskan_register_nav_menus' );
-
-/**
- * JS init
- */
-if ( ! function_exists( 'blaskan_js_init' ) ):
-function blaskan_js_init() {
-	if ( !is_admin() ) {
-		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr.min.js' );
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/libs/jquery.fitvids.js' );
-		wp_enqueue_script( 'mobile-boilerplate-helper', get_template_directory_uri() . '/js/mylibs/helper.js' );
-		wp_enqueue_script( 'blaskan', get_template_directory_uri() . '/js/script.js' );
-		wp_localize_script( 'blaskan', 'objectL10n', array( 'blaskan_navigation_title' => __( '- Navigation -', 'blaskan' ) ) );
-	}
-}
-endif;
-add_action( 'init', 'blaskan_js_init' );
-
-/**
- * Load League Gothic typeface
- */
-if ( ! function_exists( 'blaskan_font_face' ) ):
-function blaskan_font_face() {
-	if ( BLASKAN_TYPEFACE_TITLE == 'default' ) {
-		echo "
-		<style type='text/css'>
-		/**
-		 * Bulletproof syntax:
-		 * http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax
-		 * Font files generated by Font Squirrel:
-		 * http://www.fontsquirrel.com
-		 * License: Open Font License. See " . get_template_directory_uri() . "/OFL.txt.
-		 */
-		@font-face {
-			font-family: 'LeagueGothic';
-			src: url('" . get_template_directory_uri() . "/fonts/league_gothic-webfont.eot'); /* IE9 Compat Modes */
-			src: url('" . get_template_directory_uri() . "/fonts/league_gothic-webfont.eot?iefix') format('eot'), /* IE6-IE8 */
-			     url('" . get_template_directory_uri() . "/fonts/league_gothic-webfont.woff') format('woff'), /* Modern Browsers */
-			     url('" . get_template_directory_uri() . "/fonts/league_gothic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-			     url('" . get_template_directory_uri() . "/fonts/league_gothic-webfont.svg#webfont3nLbXkSC') format('svg'); /* Legacy iOS */
-		}
-		</style>
-		";
-	}
-}
-endif;
-add_action( 'wp_head', 'blaskan_font_face', 1 );
-
-/**
- * CSS init
- */
-if ( ! function_exists( 'blaskan_css_init' ) ):
-function blaskan_css_init() {
-	if ( !is_admin() && !in_array( $GLOBALS['pagenow'], array( 'wp-login.php', 'wp-signup.php', 'wp-register.php' ) ) ) {
-		wp_enqueue_style( 'blaskan-framework', get_template_directory_uri() . '/framework.css', array(), false, 'screen' );
-		wp_enqueue_style( 'blaskan-style', get_bloginfo('stylesheet_url'), array(), false, 'all' );
-	}
-}
-endif;
-add_action( 'init', 'blaskan_css_init' );
-
-/**
- * Register widget areas. All are empty by default.
- */
-if ( ! function_exists( 'blaskan_widgets_init' ) ):
 function blaskan_widgets_init() {
-	// Primary sidebar
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'blaskan' ),
-		'id' => 'primary-sidebar',
-		'description' => __( 'The primary sidebar', 'blaskan' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
+		                  'name'          => esc_html__( 'Sidebar', 'blaskan' ),
+		                  'id'            => 'sidebar-1',
+		                  'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
+		                  'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		                  'after_widget'  => '</section>',
+		                  'before_title'  => '<h2 class="widget-title">',
+		                  'after_title'   => '</h2>',
+	                  ) );
 
-	if ( BLASKAN_SIDEBARS !== 'one_sidebar' ) {
-		// Secondary sidebar
+	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-4' );
+	print_r( $footer_layout );
+	$number        = str_replace( 'column-', '', $footer_layout );
+
+	if ( $number == 1 ) {
+		
 		register_sidebar( array(
-			'name' => __( 'Secondary Widget Area', 'blaskan' ),
-			'id' => 'secondary-sidebar',
-			'description' => __( 'The secondary sidebar', 'blaskan' ),
+			'name'          => esc_html__( 'Footer Sidebar', 'blaskan' ),
+			'id'            => 'footer-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<h3 class="title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		) );
-	}
-	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE ) {
-		// Primary page sidebar
-		register_sidebar( array(
-			'name' => __( 'Primary Page Widget Area', 'blaskan' ),
-			'id' => 'primary-page-sidebar',
-			'description' => __( 'The primary page sidebar', 'blaskan' ),
+
+	}else{
+
+		register_sidebars( $number, array(
+			'name'          => esc_html__( 'Footer Sidebar %d', 'blaskan' ),
+			'id'            => 'footer-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<h3 class="title">',
-			'after_title' => '</h3>',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		) );
-	}
-	if ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && BLASKAN_SIDEBARS !== 'one_sidebar' ) {
-		// Secondary page sidebar
-		register_sidebar( array(
-			'name' => __( 'Secondary Page Widget Area', 'blaskan' ),
-			'id' => 'secondary-page-sidebar',
-			'description' => __( 'The secondary page sidebar', 'blaskan' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<h3 class="title">',
-			'after_title' => '</h3>',
-		) );
+
 	}
 
-	// Footer widgets
-	register_sidebar( array(
-		'name' => __( 'Footer Widget Area', 'blaskan' ),
-		'id' => 'footer-widget-area',
-		'description' => __( 'The footer widget area', 'blaskan' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h3 class="title">',
-		'after_title' => '</h3>',
-	) );
+	
+
 }
-endif;
+
 add_action( 'widgets_init', 'blaskan_widgets_init' );
 
 /**
- * Head clean up
+ * Enqueue scripts and styles.
  */
-if ( ! function_exists( 'blaskan_head_cleanup' ) ):
-function blaskan_head_cleanup() {
-  remove_action( 'wp_head', 'rsd_link' );
-  remove_action( 'wp_head', 'wlwmanifest_link' );
-  remove_action( 'wp_head', 'wp_generator' );
-}
-endif;
-add_action( 'init' , 'blaskan_head_cleanup' );
+function blaskan_scripts() {
 
-/**
- * Add content to wp_head()
- */
-if ( ! function_exists( 'blaskan_head' ) ):
-function blaskan_head() {
-	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">'."\r";
-	echo '<meta name="viewport" content="width=device-width">'."\r";
-	echo '<link rel="pingback" href="'.get_bloginfo( 'pingback_url' ).'">'."\r";
-}
-endif;
-add_action( 'wp_head', 'blaskan_head' );
+	wp_enqueue_style( 'blaskan-fonts', blaskan_fonts_url() );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+	wp_enqueue_style( 'blaskan-style', get_stylesheet_uri() );
 
-/**
- * Add body classes
- */
-if ( ! function_exists( 'blaskan_body_class' ) ):
-function blaskan_body_class($classes) {
-	if ( get_theme_mod( 'background_image' ) || get_theme_mod( 'background_color' ) ) {
-    $classes[] = 'background-image';
-		if ( get_theme_mod( 'background_color' ) == 'FFFFFF' || get_theme_mod( 'background_color' ) == 'FFF' ) {
-			$classes[] = 'background-white';
-		}
-  }
+	wp_enqueue_script( 'imagesloaded' );
+	wp_enqueue_script( 'masonry' );
+	wp_enqueue_script( 'blaskan-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'blaskan-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'blaskan-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '20151215', true );
 
-  if ( get_theme_mod( 'header_image' ) ) {
-    $classes[] = 'header-image';
-  }
-
-  $nav = wp_nav_menu( array( 'theme_location' => 'primary', 'echo' => false, 'container' => false ) );
-  $nav_links = substr_count( $nav, '<a' );
-  $nav_lists = substr_count( $nav, '<ul' );
-  if ( $nav_links == 0 ) {
-  	$classes[] = 'no-menu';
-  } elseif ( $nav_links < 9 && $nav_lists < 2 ) {
-  	$classes[] = 'simple-menu';
-  } else {
-  	$classes[] = 'advanced-menu';
-  }
-
-	if ( BLASKAN_SIDEBARS == 'one_sidebar' ) {
-		$classes[] = 'content-wide';
-
-		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && is_active_sidebar( 'primary-page-sidebar' ) ) {
-			$classes[] = 'sidebar';
-			$classes[] = 'content-wide-sidebar';
-		} elseif ( ( BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE || !is_page() ) && is_active_sidebar( 'primary-sidebar' ) ) {
-			$classes[] = 'sidebar';
-			$classes[] = 'content-wide-sidebar';
-		} else {
-			$classes[] = 'no-sidebars';
-			$classes[] = 'content-wide-no-sidebars';
-		}
-	} else {
-		if ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && ( is_active_sidebar( 'primary-page-sidebar' ) && is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
-			$classes[] = 'sidebars';
-		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === TRUE && ( is_active_sidebar( 'primary-page-sidebar' ) || is_active_sidebar( 'secondary-page-sidebar' ) ) ) {
-			$classes[] = 'sidebar';
-		} elseif ( !is_page() && ( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) ) {
-			$classes[] = 'sidebars';
-		} elseif ( !is_page() && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) ) {
-			$classes[] = 'sidebar';
-		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE && ( is_active_sidebar( 'primary-sidebar' ) && is_active_sidebar( 'secondary-sidebar' ) ) ) {
-			$classes[] = 'sidebars';
-		} elseif ( is_page() && BLASKAN_CUSTOM_SIDEBARS_IN_PAGES === FALSE && ( is_active_sidebar( 'primary-sidebar' ) || is_active_sidebar( 'secondary-sidebar' ) ) ) {
-			$classes[] = 'sidebar';
-		} else {
-			$classes[] = 'no-sidebars';
-		}
-	}
-
-	if ( BLASKAN_TYPEFACE_TITLE == 'sans_serif' ) {
-		$classes[] = 'sans-serif';
-	}
-
-	if ( is_active_sidebar( 'footer-widget-area' ) ) {
-		$classes[] = 'footer-widgets';
-	}
-
-	return $classes;
-}
-endif;
-add_filter( 'body_class', 'blaskan_body_class' );
-
-/**
- * Blaskan top
- * Empty per default but could be used by child themes
- */
-if ( ! function_exists( 'blaskan_top' ) ):
-function blaskan_top() {
-	return;
-}
-endif;
-
-/**
- * Blaskan header structure
- */
-if ( ! function_exists( 'blaskan_header_structure' ) ):
-function blaskan_header_structure( $description = '' ) {
-	global $blaskan_options;
-
-	$output = '';
-
-	if ( get_header_image() ):
-		$output .= '<figure><a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home"><img src="'.get_header_image().'" height="'.get_custom_header()->height.'" width="'.get_custom_header()->width.'" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'"></a></figure>';
-	endif;
-
-	if ( $blaskan_options['hide_site_title_header_message'] !== 1 ) {
-		if ( is_front_page() ) {
-			$header_element = 'h1';
-		} else {
-			$header_element = 'div';
-		}
-		$output .= '<'.$header_element.' id="site-name"><a href="'.home_url( '/' ).'" title="'. esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></'.$header_element.'>';
-
-		$output .= blaskan_header_message( get_bloginfo( 'description' ) );
-	}
-
-	$output .= blaskan_primary_nav();
-
-	return $output;
-}
-endif;
-
-/**
- * Checks if to display a header message
- */
-if ( ! function_exists( 'blaskan_header_message' ) ):
-function blaskan_header_message( $description = '' ) {
-	if ( strlen( BLASKAN_HEADER_MESSAGE ) > 1 ) {
-		return '<div id="header-message">' . nl2br( stripslashes( wp_filter_post_kses( BLASKAN_HEADER_MESSAGE ) ) ) . '</div>';
-	} elseif ( !empty( $description ) ) {
-		return '<div id="header-message">' . $description . '</div>';
-	} else {
-		return false;
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
 }
-endif;
 
-/**
- * Returns primary nav
- */
-if ( ! function_exists( 'blaskan_primary_nav' ) ):
-function blaskan_primary_nav() {
-  $nav = wp_nav_menu( array( 'theme_location' => 'primary', 'echo' => false, 'container' => false ) );
+add_action( 'wp_enqueue_scripts', 'blaskan_scripts' );
 
-  // Check nav for links
-  if ( strpos( $nav, '<a' ) ) {
-  	if ( strpos( $nav, 'div class="menu"' ) ) {
-  		$nav_prepend = '';
-  		$nav_append = '';
-  	} else {
-  		$nav_prepend = '<div class="menu">';
-  		$nav_append = '</div>';
-  		$nav = str_replace('class="menu"', '', $nav);
-  	}
-
-    return '<nav id="nav" role="navigation">' . $nav_prepend . $nav . $nav_append . '</nav>';
-  } else {
-    return;
-  }
+function blaskan_add_editor_styles() {
+	add_editor_style( 'assets/css/editor-style.css' );
 }
-endif;
 
-/**
- * Blaskan footer structure
- */
-if ( ! function_exists( 'blaskan_footer_structure' ) ):
-function blaskan_footer_structure() {
-  $output = '';
+add_action( 'admin_init', 'blaskan_add_editor_styles' );
 
-  $output .= get_sidebar( 'footer' );
-	$output .= blaskan_footer_nav();
-
-	if ( blaskan_footer_message() || blaskan_footer_credits() ) :
-		$output .= '<div id="footer-info" role="contentinfo">';
-		$output .= blaskan_footer_message();
-		$output .= blaskan_footer_credits();
-		$output .= '</div>';
-	endif;
-
-  return $output;
-}
-endif;
-
-/**
- * Returns footer nav
- */
-if ( ! function_exists( 'blaskan_footer_nav' ) ):
-function blaskan_footer_nav() {
-  $nav = wp_nav_menu( array( 'theme_location' => 'footer', 'depth' => 1, 'fallback_cb' => false, 'echo' => false, 'container' => false ) );
-
-  // Check nav for links
-  if ( strpos( $nav, '<a' ) ) {
-    return '<nav id="footer-nav" role="navigation">' . $nav . '</nav>';
-  } else {
-    return;
-  }
-}
-endif;
-
-/**
- * Add content to wp_footer()
- */
-if ( ! function_exists( 'blaskan_footer' ) ):
-function blaskan_footer() {
-	// MBP helper functions
-	echo '
-	<script>
-	MBP.scaleFix();
-	MBP.hideUrlBar();
-	</script>
-	';
-
-	// Selectivizr and Respond.js
-	echo '<!--[if (lt IE 9) & (!IEMobile)]>'."\r";
-	echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/selectivizr.1.0.3b.js"></script>'."\r";
-	echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/libs/respond.min.js"></script>'."\r";
-	echo '<![endif]-->'."\r";
-}
-endif;
-add_action( 'wp_footer', 'blaskan_footer' );
-
-/**
- * Removes the default styles that are packaged with the Recent Comments widget.
- * Credits: http://wordpress.org/extend/themes/coraline
- */
-if ( ! function_exists( 'blaskan_remove_recent_comments_style' ) ):
-function blaskan_remove_recent_comments_style() {
-	global $wp_widget_factory;
-	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-}
-endif;
-add_action( 'widgets_init', 'blaskan_remove_recent_comments_style' );
-
-/**
- * Root relative permalinks
- * Credits: http://www.456bereastreet.com/archive/201010/how_to_make_wordpress_urls_root_relative/
- */
-if ( ! function_exists( 'blaskan_root_relative_permalinks' ) ):
-function blaskan_root_relative_permalinks($input) {
-    return preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $input);
-}
-endif;
-add_filter( 'the_permalink', 'blaskan_root_relative_permalinks' );
-
-/**
- * Remove empty span
- * Credits: http://nicolasgallagher.com/anatomy-of-an-html5-wordpress-theme/
- */
-if ( ! function_exists( 'blaskan_remove_empty_read_more_span' ) ):
-function blaskan_remove_empty_read_more_span($content) {
-	return eregi_replace( "(<p><span id=\"more-[0-9]{1,}\"></span></p>)", "", $content );
-}
-endif;
-add_filter( 'the_content', 'blaskan_remove_empty_read_more_span' );
-
-/**
- * Remove more jump link
- * Credits: http://codex.wordpress.org/Customizing_the_Read_More#Link_Jumps_to_More_or_Top_of_Page
- */
-if ( ! function_exists( 'blaskan_remove_more_jump_link' ) ):
-function blaskan_remove_more_jump_link($link) {
-	$offset = strpos($link, '#more-');
-	if ($offset) {
-		$end = strpos($link, '"',$offset);
-	}
-	if ($end) {
-		$link = substr_replace($link, '', $offset, $end-$offset);
-	}
-	return $link;
-}
-endif;
-add_filter('the_content_more_link', 'blaskan_remove_more_jump_link');
-
-/**
- * Use <figure> and <figcaption> in captions
- */
-if ( ! function_exists( 'blaskan_caption' ) ):
-function blaskan_caption( $val, $attr, $content = null ) {
-	extract( shortcode_atts( array(
-		'id'	=> '',
-		'align'	=> '',
-		'width'	=> '',
-		'caption' => ''
-	) , $attr ) );
-
-	if ( 1 > (int) $width || empty( $caption ) )
-		return $val;
-
-	$capid = '';
-	if ( $id ) {
-		$id = esc_attr( $id );
-		$capid = 'id="figcaption_'. $id . '" ';
-		$id = 'id="' . $id . '" aria-labelledby="figcaption_' . $id . '" ';
+function blaskan_excerpt_more( $link ) {
+	if ( is_admin() ) {
+		return $link;
 	}
 
-	return '<figure ' . $id . 'class="wp-caption ' . esc_attr( $align ) . '" style="width: '
-	. ( 4 + (int) $width ) . 'px">' . do_shortcode( $content ) . '<figcaption ' . $capid
-	. 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
+	/* translators: %s: Name of current post */
+	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s <span class="meta-nav">→</span></a></p>',
+	                 esc_url( get_permalink( get_the_ID() ) ),
+	                 esc_html__( 'Continue reading', 'blaskan' )
+	);
+
+	return ' &hellip; ' . $link;
 }
-endif;
-add_filter( 'img_caption_shortcode', 'blaskan_caption', 10, 3 );
 
-if ( ! function_exists( 'blaskan_comment' ) ) :
-function blaskan_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case '' :
-	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<article>
-			<header class="comment-header">
-			  <?php echo blaskan_avatar( $comment ); ?>
-  			<time><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s - %2$s', 'blaskan' ), get_comment_date(),  get_comment_time() ); ?></a></time>
+add_filter( 'excerpt_more', 'blaskan_excerpt_more' );
 
-  			<?php if ( $comment->user_id && !$comment->comment_author_url ): ?>
-  			  <cite><a href="<?php echo get_author_posts_url( $comment->user_id ); ?>"><?php echo $comment->comment_author; ?></a></cite>
-  			<?php else: ?>
-  			  <?php printf( '<cite>%s</cite>', get_comment_author_link() ); ?>
-  			<?php endif; ?>
-  		</header>
+function blaskan_search_filter( $query ) {
+	if ( $query->is_search && ! is_admin() ) {
+		$query->set( 'post_type', array( 'post' ) );
+	}
 
-  		<?php if ( $comment->comment_approved == '0' ) : ?>
-  			<p class="moderation"><em><?php _e( 'Your comment is awaiting moderation.', 'blaskan' ); ?></em></p>
-  		<?php endif; ?>
-
-  		<?php comment_text(); ?>
-
-  		<div class="reply">
-  			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-
-  			<?php edit_comment_link( __( 'Edit', 'blaskan' ), ' ' ); ?>
-  		</div><!-- .reply -->
-		  </article>
-	<?php
-			break;
-		case 'pingback'  :
-	?>
-	<li class="pingback">
-		<time><?php printf( __( '%1$s - %2$s', 'blaskan' ), get_comment_date(),  get_comment_time() ); ?></time>
-		<?php _e( 'Pingback:', 'blaskan' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit', 'blaskan'), ' ' ); ?>
-	<?php
-			break;
-		case 'trackback' :
-	?>
-	<li class="trackback">
-		<time><?php printf( __( '%1$s - %2$s', 'blaskan' ), get_comment_date(),  get_comment_time() ); ?></time>
-		<?php _e( 'Trackback:', 'blaskan' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit', 'blaskan'), ' ' ); ?>
-	<?php
-			break;
-	endswitch;
+	return $query;
 }
-endif;
+
+add_filter( 'pre_get_posts', 'blaskan_search_filter' );
 
 /**
- * Display avatar
+ * Custom template tags for this theme.
  */
-if ( ! function_exists( 'blaskan_avatar' ) ):
-function blaskan_avatar( $user ) {
-	$avatar = get_avatar( $user, 40 );
-
-	if ( !empty( $avatar ) ) {
-		return '<figure>' . $avatar . '</figure>';
-	} else {
-		return;
-	}
-}
-endif;
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Checks if to display a footer message
+ * Custom functions that act independently of the theme templates.
  */
-if ( ! function_exists( 'blaskan_footer_message' ) ):
-function blaskan_footer_message() {
-	if ( strlen( BLASKAN_FOOTER_MESSAGE ) > 1 ) {
-		return '<div id="footer-message">' . nl2br( stripslashes( wp_filter_post_kses( BLASKAN_FOOTER_MESSAGE ) ) ) . '</div>';
-	} else {
-		return false;
-	}
-}
-endif;
+require get_template_directory() . '/inc/extras.php';
 
 /**
- * Checks if to display footer credits
+ * Customizer additions.
  */
-if ( ! function_exists( 'blaskan_footer_credits' ) ):
-function blaskan_footer_credits() {
-	if ( BLASKAN_SHOW_CREDITS ) {
-		return '<div id="footer-credits">' . sprintf( __( 'Powered by <a href="%s">Blaskan</a> and <a href="%s">WordPress</a>.', 'blaskan' ), 'http://www.blaskan.net', 'http://www.wordpress.org' ) . '</div>';
-	} else {
-		return false;
-	}
-}
-endif;
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load plugin enhancement file to display admin notices.
+ */
+require get_template_directory() . '/inc/class-blaskan-theme-plugin-enhancements.php';
+
+
