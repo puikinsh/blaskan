@@ -1,0 +1,343 @@
+# Copyright (C) 2017 Colorlib
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blaskan 3.0.0\n"
+"Report-Msgid-Bugs-To: https://www.colorlib.com/\n"
+"POT-Creation-Date: 2017-04-13 06:45:17+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Colorlib <office@colorlib.com>\n"
+"Language-Team: Colorlib <office@colorlib.com>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
+msgstr ""
+
+#: 404.php:33
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:51
+#. translators: %1$s: smiley
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:39 comments.php:62
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:42 comments.php:65
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:43 comments.php:66
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:79
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:92
+msgid "Name"
+msgstr ""
+
+#: comments.php:97
+msgid "Email"
+msgstr ""
+
+#: comments.php:101
+msgid "Website"
+msgstr ""
+
+#: footer.php:24
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:26
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:33
+msgid "Primary"
+msgstr ""
+
+#: functions.php:34
+msgid "Footer"
+msgstr ""
+
+#: functions.php:35
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:103
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:105 functions.php:118
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:116
+msgid "Footer Sidebar %d"
+msgstr ""
+
+#: functions.php:163
+#. translators: %s: Name of current post
+msgid "Continue reading"
+msgstr ""
+
+#: header.php:37
+msgid "Search ..."
+msgstr ""
+
+#: header.php:76
+msgid "Menu"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:82
+msgid ""
+"The %1$s is necessary to use some of this theme&rsquo;s features, "
+"including: "
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:83
+msgid "Jetpack plugin"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:106
+msgid "Content Option"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:124
+msgid "no specific module needed"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:125
+msgid "Custom Content Types module"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:202
+msgid " Please activate %1$s. %2$s"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:204
+msgid "Activate"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:212
+msgid " Please install %1$s. %2$s"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:214
+msgid "Install"
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:239
+msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:335
+msgid "Your request failed permission check."
+msgstr ""
+
+#: inc/class-blaskan-theme-plugin-enhancements.php:342
+msgid "Your request was processed. See ya!"
+msgstr ""
+
+#: inc/customizer.php:20
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "Site layout"
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:35
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer.php:36
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer.php:46
+msgid "Footer Area Layout"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "1 Column"
+msgstr ""
+
+#: inc/customizer.php:51
+msgid "2 Columns"
+msgstr ""
+
+#: inc/customizer.php:52
+msgid "3 Columns"
+msgstr ""
+
+#: inc/customizer.php:53
+msgid "4 Columns"
+msgstr ""
+
+#: inc/extras.php:72
+msgid "(Edit)"
+msgstr ""
+
+#: inc/extras.php:81
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:26
+#. translators: used between list items, there is a space after the comma
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:62
+msgid " "
+msgstr ""
+
+#: inc/template-tags.php:71 template-parts/content-page.php:39
+#. translators: %s: Name of current post
+msgid "Edit %s"
+msgstr ""
+
+#: inc/template-tags.php:197 template-parts/content-big.php:43
+#: template-parts/content-single.php:44 template-parts/content.php:48
+#. translators: %s: Name of current post.
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:202 template-parts/content-big.php:48
+#: template-parts/content-page.php:27 template-parts/content-single.php:49
+#: template-parts/content.php:53
+msgid "Pages:"
+msgstr ""
+
+#: search.php:32
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:48
+msgid "Similar Posts"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:21
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Blaskan"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Blaskan is a responsive and accessible WordPress theme that's built for "
+"many kinds of screens."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Colorlib"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://colorlib.com/"
+msgstr ""
+
+#: comments.php:31
+msgctxt "comments number"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:105
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: inc/template-tags.php:19
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:148
+#. Translators: If there are characters in your language that are not supported
+#. by Droid Serif, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/template-tags.php:154
+#. Translators: If there are characters in your language that are not supported
+#. by Source Sans Pro, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Source Sans Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/template-tags.php:160
+#. Translators: If there are characters in your language that are not supported
+#. by Work Sans, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Work Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: searchform.php:15
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:17
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:20
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
