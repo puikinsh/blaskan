@@ -44,6 +44,11 @@ http://www.theleagueofmoveabletype.com/fonts/7-league-gothic
 Licensed under the Open Font License. See OFL.txt.
 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
+Images
+---------
+Header Image :
+	- https://pixabay.com/en/girl-female-modeling-model-sexy-1502520/ - Licensed under CC0 Public Domain ( https://creativecommons.org/publicdomain/zero/1.0/deed.en )
+
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.

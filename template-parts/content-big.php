@@ -28,9 +28,9 @@
 		?>
 
 		<?php if ( has_post_thumbnail() && blaskan_jetpack_featured_image() ) {
-			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
+			echo '<div class="entry-thumbnail"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
 			the_post_thumbnail( 'big-blog-post' );
-			echo '</a>';
+			echo '</a></div>';
 		} ?>
 
     </header><!-- .entry-header -->

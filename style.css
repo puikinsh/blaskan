@@ -523,7 +523,7 @@ header#masthead {
 
 .top-header .search form {
     position: relative;
-    top: 6px;
+    top: 1.75px;
 }
 
 header.archive-header {

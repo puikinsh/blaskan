@@ -76,7 +76,7 @@ add_action( 'customize_preview_init', 'blaskan_customize_preview_js' );
  * @return string (column-1|column-2|column-3).
  */
 function blaskan_sanitize_column( $column ) {
-	if ( ! in_array( $column, array( 'column-1', 'column-2', 'column-3' ) ) ) {
+	if ( ! in_array( $column, array( 'column-1', 'column-2', 'column-3',  'column-4' ) ) ) {
 		$column = 'column-1';
 	}
 
