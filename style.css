@@ -1176,7 +1176,8 @@ a:active {
     padding-right: 0;
 }
 
-.copyright-info {
+.copyright-info,
+.main-footer-navigation a {
     line-height: 2.85;
 }
 
