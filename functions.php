@@ -110,18 +110,37 @@ function blaskan_widgets_init() {
 		                  'after_title'   => '</h2>',
 	                  ) );
 
-	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-3' );
+	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-4' );
+	print_r( $footer_layout );
 	$number        = str_replace( 'column-', '', $footer_layout );
 
-	register_sidebars( $number, array(
-		'name'          => esc_html__( 'Footer Sidebar %d', 'blaskan' ),
-		'id'            => 'footer-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	if ( $number == 1 ) {
+		
+		register_sidebar( array(
+			'name'          => esc_html__( 'Footer Sidebar', 'blaskan' ),
+			'id'            => 'footer-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+
+	}else{
+
+		register_sidebars( $number, array(
+			'name'          => esc_html__( 'Footer Sidebar %d', 'blaskan' ),
+			'id'            => 'footer-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+
+	}
+
+	
 
 }
 
@@ -206,3 +225,5 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load plugin enhancement file to display admin notices.
  */
 require get_template_directory() . '/inc/class-blaskan-theme-plugin-enhancements.php';
+
+

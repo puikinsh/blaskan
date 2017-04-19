@@ -1,6 +1,6 @@
 /*
 Theme Name: Blaskan
-Theme URI: 
+Theme URI: https://colorlib.com/wp/themes/blaskan/
 Author: Colorlib
 Author URI: https://colorlib.com/
 Description: Blaskan is a responsive and accessible WordPress theme that's built for many kinds of screens.
@@ -523,7 +523,7 @@ header#masthead {
 
 .top-header .search form {
     position: relative;
-    top: 6px;
+    top: 1.75px;
 }
 
 header.archive-header {

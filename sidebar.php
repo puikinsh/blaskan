@@ -10,6 +10,14 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+// Get layout options
+$site_layout = get_theme_mod( 'blaskan_site_layout', 'right-sidebar' );
+
+if ( $site_layout == 'no-sidebar' ) {
+	return;
+}
+
 ?>
 
 <aside id="secondary" class="widget-area col-md-4 col-sm-12" role="complementary">
