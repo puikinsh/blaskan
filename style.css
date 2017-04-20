@@ -2198,4 +2198,13 @@ object {
     #colophon .main-footer-navigation #footer-menu {
         margin-top: 15px;
     }
+
+    .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+        left: auto;
+    }
+
+    #primary-menu .sub-menu li:hover:after {
+        width: 0;
+    }
+
 }
