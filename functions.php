@@ -225,4 +225,7 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/class-blaskan-theme-plugin-enhancements.php';
 
-
+/**
+ * Load theme widgets.
+ */
+require get_template_directory() . '/inc/class-blaskan-author-widget.php';

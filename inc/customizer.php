@@ -54,6 +54,13 @@ function blaskan_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector'        => '.site-title',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector'        => '.site-description',
+	) );
+
 }
 
 add_action( 'customize_register', 'blaskan_customize_register' );
