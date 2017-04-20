@@ -1363,11 +1363,6 @@ a:active {
     margin-bottom: 10px;
 }
 
-/*.widget_nav_menu ul.sub-menu {
-	padding-top: 10px;
-	margin-top: 10px;
-}*/
-
 /* Menu Widget */
 .widget_nav_menu ul li.menu-item-has-children > a {
     display: block;
@@ -1647,6 +1642,37 @@ a:active {
     color: #fff;
 }
 
+.widget_blaskan_author_widget .user-info {
+    text-align: center;
+    padding: 0 25px;
+}
+
+.widget_blaskan_author_widget .user-info > img {
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.widget_blaskan_author_widget .user-info > a {
+    font-size: 14px;
+    line-height: 3.4;
+    color: #f63c4e;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.widget_blaskan_author_widget .user-info > a:hover,
+.widget_blaskan_author_widget #social-menu li a:hover {
+    color: #ae3c4e;
+}
+.widget_blaskan_author_widget #social-menu li a {
+    color: #ababb2;
+}
+.widget_blaskan_author_widget .author-social-menu {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ebebeb;
+}
 /* Footer sidebar */
 .footer-widgets.container {
     padding: 40px 15px 55px;
@@ -1818,6 +1844,8 @@ footer.entry-footer.row {
     border-bottom: 1px solid #ebebeb;
     margin-bottom: 35px;
     float: left;
+    width: 100%;
+    clear: both;
 }
 
 .author-container .author-avatar {
@@ -2170,4 +2198,13 @@ object {
     #colophon .main-footer-navigation #footer-menu {
         margin-top: 15px;
     }
+
+    .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+        left: auto;
+    }
+
+    #primary-menu .sub-menu li:hover:after {
+        width: 0;
+    }
+
 }
