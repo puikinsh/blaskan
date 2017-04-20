@@ -32,7 +32,7 @@ class Blaskan_Author_Widget extends WP_Widget {
 			printf( '<a href="%1$s" title="%2$s" class="author-name" rel="author">%3$s</a>',
 		        esc_url( get_author_posts_url( $user->ID ) ),
 		        /* translators: %s: author's display name */
-		        esc_attr( sprintf( __( 'Posts by %s' ), $user->display_name ) ),
+		        esc_attr( $user->display_name ),
 		        $user->display_name
 		    );
 
