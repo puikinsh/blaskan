@@ -37,7 +37,14 @@
                     </div>
 				<?php } ?>
 
-                <div class="search pull-right">
+                <?php
+
+                $disable_search = get_theme_mod( 'blaskan_disable_header_search', 0 );
+
+                if ( !$disable_search || is_customize_preview() ) {
+
+                ?>
+                <div id="search-header-form" class="search pull-right <?php echo ( is_customize_preview() && $disable_search ) ? 'hide' : '' ?>">
                     <form role="search" method="get" class="search-form"
                           action="<?php echo esc_url( home_url( '/' ) ); ?>">
                         <input id="search" type="search" name="s"
@@ -45,6 +52,8 @@
                         <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
                     </form>
                 </div>
+
+                <?php } ?>
 
                 <div class="clearfix"></div>
             </div>

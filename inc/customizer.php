@@ -21,6 +21,18 @@ function blaskan_customize_register( $wp_customize ) {
 		'priority' => 33,
 	) );
 
+	$wp_customize->add_setting( 'blaskan_disable_header_search', array(
+		'default'           => 0,
+		'transport'			=> 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( 'blaskan_disable_header_search', array(
+		'label'   => esc_html__( 'Hide Header Search', 'blaskan' ),
+		'section' => 'blaskan_theme_options',
+		'type'    => 'checkbox',
+	) );
+
 	$wp_customize->add_setting( 'blaskan_site_layout', array(
 		'default'           => 'right-sidebar',
 		'sanitize_callback' => 'blaskan_sanitize_layout',

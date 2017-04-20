@@ -30,4 +30,16 @@
 			}
 		} );
 	} );
+
+	// Disable/enable search header
+	wp.customize( 'blaskan_disable_header_search', function( value ) {
+		value.bind( function( to ) {
+			if ( to ) {
+				$('#search-header-form').addClass( 'hide' );
+			}else{
+				$('#search-header-form').removeClass( 'hide' );
+			}
+		} );
+	} );
+
 } )( jQuery );
