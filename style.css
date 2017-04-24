@@ -287,36 +287,31 @@ h6 {
     font-weight: 400;
     font-family: 'Droid Serif', serif;
     color: #333;
+    line-height: 1.25;
 }
 
 h1 {
-    font-size: 30px;
-    line-height: 1.1;
+    font-size: 36px;
 }
 
 h2 {
     font-size: 28px;
-    line-height: 1.2;
 }
 
 h3 {
     font-size: 25px;
-    line-height: 1.2;
 }
 
 h4 {
     font-size: 23px;
-    line-height: 1.22;
 }
 
 h5 {
     font-size: 20px;
-    line-height: 1.4;
 }
 
 h6 {
     font-size: 18px;
-    line-height: 1.33;
 }
 
 p {
