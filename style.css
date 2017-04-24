@@ -287,36 +287,31 @@ h6 {
     font-weight: 400;
     font-family: 'Droid Serif', serif;
     color: #333;
+    line-height: 1.25;
 }
 
 h1 {
-    font-size: 30px;
-    line-height: 1.1;
+    font-size: 36px;
 }
 
 h2 {
     font-size: 28px;
-    line-height: 1.2;
 }
 
 h3 {
     font-size: 25px;
-    line-height: 1.2;
 }
 
 h4 {
     font-size: 23px;
-    line-height: 1.22;
 }
 
 h5 {
     font-size: 20px;
-    line-height: 1.4;
 }
 
 h6 {
     font-size: 18px;
-    line-height: 1.33;
 }
 
 p {
@@ -467,10 +462,18 @@ table {
 # Header
 --------------------------------------------------------------*/
 .site-title {
-    font-size: 30px;
+    font-size: 50px;
     line-height: 1.1;
-    font-family: 'Droid Serif', serif;
+    font-family: 'Pacifico', serif;
     margin: 0.67em 0;
+}
+.site-title a:visited,
+.site-title a {
+    color: #1a171c;
+}
+.site-title a:hover,
+.site-title a:focus {
+    color: #ae3c4e;
 }
 
 .site-branding {
@@ -646,9 +649,14 @@ select {
     background-color: transparent;
 }
 
+#colophon select {
+	border-color: rgba( 255,255,255,.1 );
+}
+
 #colophon select:focus,
 #colophon select:hover {
     color: #fff;
+    border-color: #ae3c4e;
 }
 
 #colophon select:focus option,
@@ -1296,17 +1304,20 @@ a:active {
     max-width: 100%;
 }
 
-#secondary .widget {
+.widget-area .widget {
     padding: 25px 15px;
     border: 1px solid #ebebeb;
 }
 
+#colophon .widget-area .widget {
+	border-color: rgba( 255, 255, 255, .1 );
+}
+
 .widget .widget-title {
-    font-size: 20px;
     margin: 0 0 30px 0;
 }
 
-#secondary .widget .widget-title {
+.widget-area .widget .widget-title {
     text-align: center;
 }
 
@@ -1415,8 +1426,8 @@ a:active {
     line-height: 1.85;
 }
 
-#secondary .widget.widget_calendar,
-#secondary .widget.widget_search {
+.widget-area .widget.widget_calendar,
+.widget-area .widget.widget_search {
     padding: 0;
     border: 0 none;
 }
