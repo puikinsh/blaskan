@@ -22,40 +22,47 @@ class Blaskan_Author_Widget extends WP_Widget {
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
+
+		if ( $instance['author'] ) {
+			
+			$user = get_userdata( $instance['author'] );
+
+			if ( !is_wp_error( $user ) && $user ) {
+				
+				echo '<div class="user-info">';
+				echo get_avatar( $user->ID, 75 );
+
+				printf( '<a href="%1$s" title="%2$s" class="author-name" rel="author">%3$s</a>',
+			        esc_url( get_author_posts_url( $user->ID ) ),
+			        /* translators: %s: author's display name */
+			        esc_attr( $user->display_name ),
+			        $user->display_name
+			    );
+
+			    echo '<p class="author-description">'.wp_kses_post( $user->description ).'</p>';
+
+			}
+
+			$social_menu = ! empty( $instance['social_menu'] ) ? wp_get_nav_menu_object( $instance['social_menu'] ) : false;
+
+			if ( $social_menu ) {
+				
+				$social_menu_args = array(
+					'fallback_cb' 		=> '',
+					'menu'        		=> $social_menu,
+					'menu_id'    		=> 'social-menu',
+					'container_class'	=> 'author-social-menu',
+	               	'link_before'  		=> '<span>',
+	               	'link_after'   		=> '</span>'
+				);
+
+				wp_nav_menu( $social_menu_args );
+
+			}
+
+		}
 		
-		$user = get_userdata( $instance['author'] );
-		if ( !is_wp_error( $user ) ) {
-			
-			echo '<div class="user-info">';
-			echo get_avatar( $user->ID, 75 );
-
-			printf( '<a href="%1$s" title="%2$s" class="author-name" rel="author">%3$s</a>',
-		        esc_url( get_author_posts_url( $user->ID ) ),
-		        /* translators: %s: author's display name */
-		        esc_attr( $user->display_name ),
-		        $user->display_name
-		    );
-
-		    echo '<p class="author-description">'.wp_kses_post( $user->description ).'</p>';
-
-		}
-
-		$social_menu = ! empty( $instance['social_menu'] ) ? wp_get_nav_menu_object( $instance['social_menu'] ) : false;
-
-		if ( $social_menu ) {
-			
-			$social_menu_args = array(
-				'fallback_cb' 		=> '',
-				'menu'        		=> $social_menu,
-				'menu_id'    		=> 'social-menu',
-				'container_class'	=> 'author-social-menu',
-               	'link_before'  		=> '<span>',
-               	'link_after'   		=> '</span>'
-			);
-
-			wp_nav_menu( $social_menu_args );
-
-		}
+		
 
 		echo $args['after_widget'];
 	}
@@ -65,6 +72,7 @@ class Blaskan_Author_Widget extends WP_Widget {
 	 *
 	 */
 	public function form( $instance ) {
+		global $wp_customize;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'About Author', 'blaskan' );
 		$author = ! empty( $instance['author'] ) ? $instance['author'] : 1;
 		$social_menu = ! empty( $instance['social_menu'] ) ? $instance['social_menu'] : 0;

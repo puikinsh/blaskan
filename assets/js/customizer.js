@@ -8,36 +8,13 @@
 
 ( function( $ ) {
 
-	// Site title and description.
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
-		} );
-	} );
-	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
-		} );
-	} );
-
 	// Header text color.
-	wp.customize( 'header_textcolor', function( value ) {
-		value.bind( function( to ) {
-			if ( 'blank' === to ) {
-				$( '.site-title, .site-description' ).addClass('hide');
-			} else {
-				$( '.site-title, .site-description' ).removeClass('hide');
-			}
-		} );
-	} );
-
-	// Disable/enable search header
-	wp.customize( 'blaskan_disable_header_search', function( value ) {
+	wp.customize( 'header_text', function( value ) {
 		value.bind( function( to ) {
 			if ( to ) {
-				$('#search-header-form').addClass( 'hide' );
-			}else{
-				$('#search-header-form').removeClass( 'hide' );
+				$( '.site-title, .site-description' ).removeClass('hide');
+			} else {
+				$( '.site-title, .site-description' ).addClass('hide');
 			}
 		} );
 	} );

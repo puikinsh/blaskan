@@ -35,25 +35,25 @@
 							                   'link_after'     => '</span>'
 						                   ) ); ?>
                     </div>
-				<?php } ?>
-
-                <?php
+				<?php }
 
                 $disable_search = get_theme_mod( 'blaskan_disable_header_search', 0 );
 
-                if ( !$disable_search || is_customize_preview() ) {
-
                 ?>
-                <div id="search-header-form" class="search pull-right <?php echo ( is_customize_preview() && $disable_search ) ? 'hide' : '' ?>">
-                    <form role="search" method="get" class="search-form"
-                          action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <input id="search" type="search" name="s"
-                               placeholder="<?php esc_html__( 'Search ...', 'blaskan' ) ?>">
-                        <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
-                    </form>
+                <div class="search-header-form-container pull-right">
+                    <?php if ( !$disable_search || is_customize_preview() ) { ?>
+                    <div id="search-header-form" class="search <?php echo ( is_customize_preview() && $disable_search ) ? 'hide' : '' ?>">
+                        <form role="search" method="get" class="search-form"
+                              action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <input id="search" type="search" name="s"
+                                   placeholder="<?php esc_html__( 'Search ...', 'blaskan' ) ?>">
+                            <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
+                        </form>
+                    </div>
+                    <?php } ?>
                 </div>
 
-                <?php } ?>
+                
 
                 <div class="clearfix"></div>
             </div>
@@ -61,12 +61,14 @@
             <div class="container">
 				<?php
 
+                $display_text = get_theme_mod( 'header_text', 0 );
+
 				if ( function_exists( 'the_custom_logo' ) ) {
 					the_custom_logo();
 				}
-				if ( display_header_text() || is_customize_preview() ) {
+				if ( $display_text || is_customize_preview() ) {
 
-					$extra_class = ! display_header_text() ? ' hide' : '';
+					$extra_class = ! $display_text ? ' hide' : '';
 
 					if ( is_front_page() && is_home() ) : ?>
                         <h1 class="site-title<?php echo $extra_class ?>"><a

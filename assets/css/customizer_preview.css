@@ -1,0 +1,11 @@
+.search-header-form-container,
+.blaskan-social-menu {
+	position: relative;
+}
+.search-header-form-container .customize-partial-edit-shortcut {
+	left: 0;
+}
+
+.blaskan-social-menu .customize-partial-edit-shortcut {
+	right: 0;
+}

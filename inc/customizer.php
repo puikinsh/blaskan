@@ -13,7 +13,7 @@
 function blaskan_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_text' )->transport = 'postMessage';
 
 	// Theme Options
 	$wp_customize->add_section( 'blaskan_theme_options', array(
@@ -72,6 +72,24 @@ function blaskan_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 		'selector'        => '.site-description',
 	) );
+	$wp_customize->selective_refresh->add_partial( 'blaskan_disable_header_search', array(
+		'selector'        => '#search-header-form',
+		'container_inclusive' => true,
+		'render_callback' => function() {
+            $disable_search = get_theme_mod( 'blaskan_disable_header_search', 0 );
+            if ( $disable_search ) {
+            	return "";
+            }else{
+            	$output = "";
+            	$output .= '<div id="search-header-form" class="search"><form role="search" method="get" class="search-form" action="'.esc_url( home_url( '/' ) ).'">';
+                    $output .= '<input id="search" type="search" name="s" placeholder="'.esc_html__( 'Search ...', 'blaskan' ).'">';
+                    $output .= '<label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>';
+                $output .= '</form></div>';
+
+                return $output;
+            }
+        },
+	) );
 
 }
 
@@ -81,6 +99,9 @@ add_action( 'customize_register', 'blaskan_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function blaskan_customize_preview_js() {
+
+	wp_enqueue_style( 'blaskan_previewer', get_template_directory_uri() . '/assets/css/customizer_preview.css' );
+
 	wp_enqueue_script( 'blaskan_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 
