@@ -646,6 +646,10 @@ select {
     background-color: transparent;
 }
 
+#colophon select {
+	border-color: rgba( 255,255,255,.1 );
+}
+
 #colophon select:focus,
 #colophon select:hover {
     color: #fff;
@@ -1296,16 +1300,20 @@ a:active {
     max-width: 100%;
 }
 
-#secondary .widget {
+.widget-area .widget {
     padding: 25px 15px;
     border: 1px solid #ebebeb;
+}
+
+#colophon .widget-area .widget {
+	border-color: rgba( 255, 255, 255, .1 );
 }
 
 .widget .widget-title {
     margin: 0 0 30px 0;
 }
 
-#secondary .widget .widget-title {
+.widget-area .widget .widget-title {
     text-align: center;
 }
 
@@ -1414,8 +1422,8 @@ a:active {
     line-height: 1.85;
 }
 
-#secondary .widget.widget_calendar,
-#secondary .widget.widget_search {
+.widget-area .widget.widget_calendar,
+.widget-area .widget.widget_search {
     padding: 0;
     border: 0 none;
 }

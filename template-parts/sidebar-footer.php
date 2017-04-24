@@ -27,7 +27,7 @@ if ( ! empty( $active_sidebars ) ) {
 
 	?>
 
-    <div class="footer-widgets container">
+    <div class="footer-widgets widget-area container">
         <div class="row">
 			<?php
 
