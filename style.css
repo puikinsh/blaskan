@@ -462,10 +462,18 @@ table {
 # Header
 --------------------------------------------------------------*/
 .site-title {
-    font-size: 30px;
+    font-size: 50px;
     line-height: 1.1;
-    font-family: 'Droid Serif', serif;
+    font-family: 'Pacifico', serif;
     margin: 0.67em 0;
+}
+.site-title a:visited,
+.site-title a {
+    color: #1a171c;
+}
+.site-title a:hover,
+.site-title a:focus {
+    color: #ae3c4e;
 }
 
 .site-branding {

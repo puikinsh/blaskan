@@ -222,6 +222,12 @@ function blaskan_fonts_url() {
 	*/
 	$work_sans = _x( 'on', 'Work Sans font: on or off', 'blaskan' );
 
+	/* Translators: If there are characters in your language that are not
+	* supported by Pacifico, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$pacifico = _x( 'on', 'Pacifico font: on or off', 'blaskan' );
+
 	if ( 'off' !== $droid || 'off' !== $source_sans || 'off' !== $work_sans ) {
 		$font_families = array();
 
@@ -235,6 +241,10 @@ function blaskan_fonts_url() {
 
 		if ( 'off' !== $work_sans ) {
 			$font_families[] = 'Work Sans';
+		}
+
+		if ( 'off' !== $pacifico ) {
+			$font_families[] = 'Pacifico';
 		}
 
 		$query_args = array(
