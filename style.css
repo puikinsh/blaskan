@@ -656,6 +656,7 @@ select {
 #colophon select:focus,
 #colophon select:hover {
     color: #fff;
+    border-color: #ae3c4e;
 }
 
 #colophon select:focus option,
