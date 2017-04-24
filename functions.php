@@ -68,6 +68,7 @@ if ( ! function_exists( 'blaskan_setup' ) ) :
 			'height'        => 460,
 			'width'         => 1600,
 			'flex-width'    => true,
+			'header-text'   => false,
 			'default-image' => get_template_directory_uri() . '/assets/images/custom-header.jpg',
 		) ) );
 

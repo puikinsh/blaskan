@@ -588,16 +588,13 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-textarea {
+textarea,
+select {
     font-family: 'Work Sans', sans-serif;
     color: #666;
     border: 1px solid #ebebeb;
     padding: 10px 25px;
     box-sizing: border-box;
-}
-
-select {
-    border: 1px solid #ccc;
 }
 
 input[type="text"]:focus,
@@ -631,14 +628,32 @@ input[type="time"]:hover,
 input[type="datetime"]:hover,
 input[type="datetime-local"]:hover,
 input[type="color"]:hover,
-textarea:hover {
+textarea:hover,
+select:focus,
+select:hover {
     color: #111;
     border-color: #ae3c4e;
     outline: none;
 }
 
-textarea {
+textarea,
+.widget_archive select,
+.widget_categories select {
     width: 100%;
+}
+
+select {
+    background-color: transparent;
+}
+
+#colophon select:focus,
+#colophon select:hover {
+    color: #fff;
+}
+
+#colophon select:focus option,
+#colophon select:hover option {
+    color: #111;
 }
 
 a.button,
@@ -768,23 +783,26 @@ a:active {
     text-decoration: none;
 }
 
-#primary-menu .sub-menu .menu-item-has-children > a:after {
+#primary-menu .sub-menu .menu-item-has-children > a:after,
+#primary-menu .children .page_item_has_children > a:after {
     content: "\f105";
     font-family: 'FontAwesome';
     font-size: 14px;
     line-height: 40px;
     float: right;
     display: block;
-    color: rgba(255, 255, 255, .13);
+    color: rgba(255, 255, 255, .5);
     -webkit-transition: color .6s; /* Safari */
     transition: color .6s;
 }
 
-#primary-menu .sub-menu .menu-item-has-children:hover > a:after {
+#primary-menu .sub-menu .menu-item-has-children:hover > a:after,
+#primary-menu .children .page_item_has_children:hover > a:after {
     color: #fff;
 }
 
-#primary-menu .sub-menu li:after {
+#primary-menu .sub-menu li:after,
+#primary-menu .children li:after {
     position: absolute;
     width: 0;
     height: 1px;
@@ -796,7 +814,8 @@ a:active {
     transition: width .6s;
 }
 
-#primary-menu .sub-menu li:hover:after {
+#primary-menu .sub-menu li:hover:after,
+#primary-menu .children li:hover:after {
     width: 50%;
 }
 
@@ -849,13 +868,8 @@ a:active {
     left: 100%;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-}
-
-.main-navigation .menu-item-has-children > a:after {
+.main-navigation .menu-item-has-children > a:after,
+.main-navigation .page_item_has_children > a:after {
     content: "\f107";
     font-family: 'FontAwesome';
     display: inline-block;
@@ -1360,6 +1374,7 @@ a:active {
 }
 
 .widget_nav_menu ul.sub-menu > li:last-child {
+    padding-bottom: 10px;
     margin-bottom: 10px;
 }
 
@@ -1486,6 +1501,17 @@ a:active {
     text-align: center;
     margin-bottom: 30px;
     border: 1px solid #e1e1e1;
+    position: relative;
+}
+.widget_calendar table caption:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 55px;
+    left: 50%;
+    margin-left: -27.5px;
+    background: #f63c4e;
 }
 
 .widget_calendar table thead {
