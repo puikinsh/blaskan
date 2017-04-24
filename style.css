@@ -837,7 +837,7 @@ a:active {
 }
 
 .main-navigation ul ul li {
-    background-color: #f63c4e;
+    background-color: rgba(246, 60, 78, .88);
     border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 
