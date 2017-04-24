@@ -102,14 +102,14 @@ add_action( 'after_setup_theme', 'blaskan_content_width', 0 );
  */
 function blaskan_widgets_init() {
 	register_sidebar( array(
-		                  'name'          => esc_html__( 'Sidebar', 'blaskan' ),
-		                  'id'            => 'sidebar-1',
-		                  'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
-		                  'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		                  'after_widget'  => '</section>',
-		                  'before_title'  => '<h2 class="widget-title">',
-		                  'after_title'   => '</h2>',
-	                  ) );
+          'name'          => esc_html__( 'Sidebar', 'blaskan' ),
+          'id'            => 'sidebar-1',
+          'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
+          'before_widget' => '<section id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</section>',
+          'before_title'  => '<h5 class="widget-title">',
+          'after_title'   => '</h5>',
+      ) );
 
 	$footer_layout = get_theme_mod( 'blaskan_footer_column', 'column-4' );
 	$number        = str_replace( 'column-', '', $footer_layout );
@@ -122,8 +122,8 @@ function blaskan_widgets_init() {
 			'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
 		) );
 
 	}else{
@@ -134,8 +134,8 @@ function blaskan_widgets_init() {
 			'description'   => esc_html__( 'Add widgets here.', 'blaskan' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
 		) );
 
 	}
