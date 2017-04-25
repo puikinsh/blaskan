@@ -1088,7 +1088,7 @@ a:active {
 }
 
 @media screen and (max-width: 768px) {
-    .main-navigation .menu-primary-container {
+    .main-navigation .blaskan-main-menu {
         position: absolute;
         background: #f63c4e;
         padding: 0;
