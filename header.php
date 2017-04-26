@@ -64,7 +64,7 @@
                 $display_text = get_theme_mod( 'header_text', 0 );
 
 				if ( function_exists( 'the_custom_logo' ) ) {
-					the_custom_logo();
+                    the_custom_logo();
 				}
 				if ( $display_text || is_customize_preview() ) {
 
@@ -97,7 +97,9 @@
         <nav id="site-navigation" class="main-navigation container" role="navigation">
             <button class="menu-toggle" aria-controls="primary-menu"
                     aria-expanded="false"><?php esc_html_e( 'Menu', 'blaskan' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+            <div class="blaskan-main-menu">
+			 <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu', 'container' => false ) ); ?>
+            </div>
         </nav><!-- #site-navigation -->
 
         <!-- Custom Header -->

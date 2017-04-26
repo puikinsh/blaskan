@@ -18,6 +18,11 @@ class Blaskan_Author_Widget extends WP_Widget {
 	 *
 	 */
 	public function widget( $args, $instance ) {
+
+		if ( !isset($instance['author']) ) {
+			return;
+		}
+
 		echo $args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
@@ -74,7 +79,7 @@ class Blaskan_Author_Widget extends WP_Widget {
 	public function form( $instance ) {
 		global $wp_customize;
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'About Author', 'blaskan' );
-		$author = ! empty( $instance['author'] ) ? $instance['author'] : 1;
+		$author = ! empty( $instance['author'] ) ? $instance['author'] : 0;
 		$social_menu = ! empty( $instance['social_menu'] ) ? $instance['social_menu'] : 0;
 
 		$menus = wp_get_nav_menus();
@@ -87,6 +92,7 @@ class Blaskan_Author_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'author' ) ); ?>"><?php esc_attr_e( 'Author:', 'blaskan' ); ?></label>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'author' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'author' ) ); ?>">
+				<option value="0"><?php _e( 'Select an user', 'blaskan' ); ?></option>
 				<?php
 
 					$users = get_users();

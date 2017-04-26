@@ -30,10 +30,10 @@ if ( ! function_exists( 'blaskan_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			                    'menu-1'      => esc_html__( 'Primary', 'blaskan' ),
-			                    'menu-2'      => esc_html__( 'Footer', 'blaskan' ),
-			                    'social-menu' => esc_html__( 'Social Menu', 'blaskan' ),
-		                    ) );
+            'menu-1'      => esc_html__( 'Primary', 'blaskan' ),
+            'menu-2'      => esc_html__( 'Footer', 'blaskan' ),
+            'social-menu' => esc_html__( 'Social Menu', 'blaskan' ),
+        ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -60,6 +60,7 @@ if ( ! function_exists( 'blaskan_setup' ) ) :
 			'height'      => 200,
 			'width'       => 400,
 			'flex-width'  => true,
+			'flex-height'  => true,
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 
@@ -76,9 +77,10 @@ if ( ! function_exists( 'blaskan_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		// Add image sizes
-		add_image_size( 'related-blog-post', 360, 270 );
-		add_image_size( 'big-blog-post', 1140, 570 );
-		add_image_size( 'small-blog-post', 550, 415 );
+		add_image_size( 'related-blog-post', 360, 270, true );
+		add_image_size( 'big-blog-post', 1140, 570, true );
+		add_image_size( 'small-blog-post-portrait', 350, 390, true );
+		add_image_size( 'small-blog-post-landscape', 350, 250, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'blaskan_setup' );

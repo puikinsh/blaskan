@@ -20,7 +20,8 @@ if ( ! is_single() ) {
 		<?php if ( has_post_thumbnail() && blaskan_jetpack_featured_image() ) {
 			echo '<div class="entry-thumbnail">';
 			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-			the_post_thumbnail( 'small-blog-post' );
+			$image_orientation = blaskan_verify_image_orientation( get_post_thumbnail_id() );
+			the_post_thumbnail( 'small-blog-post-'.$image_orientation );
 			echo '</a>';
 			echo '</div>';
 		} ?>
