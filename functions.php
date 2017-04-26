@@ -60,6 +60,7 @@ if ( ! function_exists( 'blaskan_setup' ) ) :
 			'height'      => 200,
 			'width'       => 400,
 			'flex-width'  => true,
+			'flex-height'  => true,
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 

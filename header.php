@@ -64,7 +64,7 @@
                 $display_text = get_theme_mod( 'header_text', 0 );
 
 				if ( function_exists( 'the_custom_logo' ) ) {
-					the_custom_logo();
+                    the_custom_logo();
 				}
 				if ( $display_text || is_customize_preview() ) {
 
