@@ -200,6 +200,9 @@ input::-moz-focus-inner {
 
 input {
     line-height: normal;
+    -webkit-appearance: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 input[type="checkbox"],
@@ -604,6 +607,8 @@ select {
     border: 1px solid #ebebeb;
     padding: 10px 25px;
     box-sizing: border-box;
+    -webkit-appearance: none;
+	border-radius: 0;
 }
 
 input[type="text"]:focus,
@@ -725,6 +730,10 @@ a:visited {
 
 .entry-content a {
     color: #f63c4e;
+}
+
+.entry-content a.button {
+	color: #fff;
 }
 
 .entry-content a:hover {
@@ -1786,6 +1795,7 @@ a:active {
 
 .hentry {
     margin: 0 0 60px;
+    max-width: 100%;
 }
 
 .updated:not(.published) {
