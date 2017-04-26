@@ -670,6 +670,11 @@ select {
     border-color: #ae3c4e;
 }
 
+#colophon select option {
+    background-color: #fff;
+    color: #000;
+}
+
 #colophon select:focus option,
 #colophon select:hover option {
     color: #111;
