@@ -101,3 +101,18 @@ function blaskan_comment( $comment, $args, $depth ) {
 	<?php endif; ?>
 	<?php
 }
+
+
+function blaskan_verify_image_orientation( $image_id ){
+
+	$image = wp_get_attachment_image_src( $image_id, 'full');
+    $image_w = $image[1];
+    $image_h = $image[2];
+
+    if ($image_w >= $image_h) { 
+        return 'landscape';
+    }else { 
+        return 'portrait';
+    } 
+
+}
