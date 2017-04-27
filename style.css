@@ -809,6 +809,7 @@ a:active {
     line-height: 40px;
     font-weight: 300;
     text-decoration: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 #primary-menu .sub-menu .menu-item-has-children > a:after,
@@ -853,6 +854,7 @@ a:active {
     left: -999em;
     z-index: 99999;
     text-align: left;
+    padding-left: 20px;
 }
 
 .main-navigation ul ul ul {
@@ -1164,18 +1166,17 @@ a:active {
 
     .main-navigation #primary-menu > ul > li > a, #primary-menu > li > a,
     .main-navigation ul.sub-menu li.menu-item-has-children > a,
-    .main-navigation ul.children li.page_item_has_children > a {
+    .main-navigation ul.children li.page_item_has_children > a,
+    .main-navigation ul.sub-menu,
+    .main-navigation ul.children {
         border-bottom: 1px solid rgba(255, 255, 255, 0.13);
     }
 
     .main-navigation ul.sub-menu li.menu-item-has-children,
-    .main-navigation ul.children li.page_item_has_children {
+    .main-navigation ul.children li.page_item_has_children,
+    .main-navigation ul.sub-menu li:last-child,
+    .main-navigation ul.children li:last-child {
         border-bottom: 0 none;
-    }
-
-    .main-navigation ul.sub-menu li a,
-    .main-navigation ul.children li a {
-        padding-left: 40px;
     }
 }
 
@@ -1865,7 +1866,7 @@ a:active {
 
 .entry-header h2.entry-title {
     margin: 20px 0 35px;
-    line-height: 1.71;
+    line-height: 1.25;
 }
 
 .entry-title a .fa {
