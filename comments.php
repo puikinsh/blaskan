@@ -1,90 +1,115 @@
+<?php
+/**
+ * The template for displaying comments
+ *
+ * This is the template that displays the area of the page that contains both the current comments
+ * and the comment form.
+ *
+ * @link    https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package blaskan
+ */
 
-<section id="comments">
-	<?php if ( post_password_required() ) : ?>
-		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'blaskan' ); ?></p>
-		</section>
-		<!-- /#comments -->
-		<?php return; ?>
-	<?php endif; ?>
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
+?>
 
-	<?php if ( have_comments() ) : ?>
-		<h1 id="comments-title"><?php printf( _n( __( 'One comment', 'blaskan' ), __( '%1$s comments', 'blaskan' ), get_comments_number(), 'blaskan' ), number_format_i18n( get_comments_number() ) ); ?></h1>
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-			<nav class="post-nav" role="navigation">
-				<div class="previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'blaskan' ) ); ?></div>
-				<div class="next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'blaskan' ) ); ?></div>
-			</nav>
-			<!-- / .post-nav -->
-		<?php endif; ?>
-
-		<ol id="comment-list"><?php wp_list_comments( array( 'callback' => 'blaskan_comment' ) ); ?></ol>
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-			<footer>
-				<nav class="post-nav" role="navigation">
-					<div class="previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'blaskan' ) ); ?></div>
-					<div class="next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'blaskan' ) ); ?></div>
-				</nav>
-				<!-- / .post-nav -->
-			</footer>
-		<?php endif; ?>
-	<?php else : ?>
-		<?php if ( ! comments_open() && ! is_page() ) : ?>
-			<p class="nocomments"><?php _e( 'Comments are closed.', 'blaskan' ); ?></p>
-		<?php endif;?>
-
-	<?php endif; // end have_comments() ?>
+<div id="comments" class="comments-area">
 
 	<?php
-	$commentform = array(
-		'fields' => apply_filters( 'comment_form_default_fields',
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) : ?>
+        <h5 class="comments-title">
+			<?php
+			printf( // WPCS: XSS OK.
+				esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments number', 'blaskan' ) ),
+				number_format_i18n( get_comments_number() )
+			);
+			?>
+        </h5><!-- .comments-title -->
 
-		array(
-			'author' => '<label for="comment-author">' . __( 'Name', 'blaskan' ) .
-      ( $req ? ' <span class="required">' . __( '(required)', 'blaskan' ) . '</span>' : '' ) .
-			'</label> ' .
-      '<input id="comment-author" name="author" type="text" value="' .
-      esc_attr( $commenter['comment_author'] ) . '" size="30"'.
-			( $req ? ' aria-required="true"' : '' ) .
-			'>',
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+            <nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+                <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'blaskan' ); ?></h2>
+                <div class="nav-links">
 
-			'email' => '<label for="comment-email">' . __( 'Email', 'blaskan' ) .
-			( $req ? ' <span class="required">' . __( '(required - will be kept a secret)', 'blaskan' ) . '</span>' : '' ) .
-			'</label> ' .
-      '<input id="comment-email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"'.
-			( $req ? ' aria-required="true"' : '' ) .
-			'>',
+                    <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'blaskan' ) ); ?></div>
+                    <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'blaskan' ) ); ?></div>
 
-			'url' => '<label for="comment-url">' . __( 'Website', 'blaskan' ) . '</label>' .
-       '<input id="comment-url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30">' ) ),
+                </div><!-- .nav-links -->
+            </nav><!-- #comment-nav-above -->
+		<?php endif; // Check for comment navigation. ?>
 
-			'comment_field' => '<label for="comment">' . __( 'Comment', 'blaskan' ) . '</label>' .
-      '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>',
+        <ol class="comment-list">
+			<?php
+			wp_list_comments( array(
+				                  'style'       => 'ol',
+				                  'short_ping'  => true,
+				                  'avatar_size' => 50,
+				                  'callback'    => 'blaskan_comment'
+			                  ) );
+			?>
+        </ol><!-- .comment-list -->
 
-			'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'blaskan' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ) . '</p>',
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+            <nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+                <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'blaskan' ); ?></h2>
+                <div class="nav-links">
 
-			'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'You are logged in as <a href="%s">%s</a>. <a href="%s" title="Log out of this account">Log out?</a></p>', 'blaskan' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ),
+                    <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'blaskan' ) ); ?></div>
+                    <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'blaskan' ) ); ?></div>
 
-			'comment_notes_before' => null,
+                </div><!-- .nav-links -->
+            </nav><!-- #comment-nav-below -->
+			<?php
+		endif; // Check for comment navigation.
 
-			'comment_notes_after' => '<dl class="form-allowed-tags"><dt>' . __( 'You may use the following <abbr title="HyperText Markup Language">HTML</abbr>:', 'blaskan' ) . '</dt> <dd><code>' . allowed_tags() . '</code></dd></dl>',
+	endif; // Check for have_comments().
 
-			'id_form' => 'commentform',
 
-			'id_submit' => 'submit',
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-			'title_reply' => __( 'Post a comment', 'blaskan' ),
+        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'blaskan' ); ?></p>
+		<?php
+	endif;
 
-			'title_reply_to' => __( 'Leave a Reply to %s', 'blaskan' ),
+	$commenter = wp_get_current_commenter();
+	$req       = get_option( 'require_name_email' );
+	$aria_req  = ( $req ? " aria-required='true'" : '' );
 
-			'cancel_reply_link' => __( 'Cancel reply', 'blaskan' ),
+	$fields = array(
 
-			'label_submit' => __( 'Post comment', 'blaskan' ),
+		'author' =>
+			'<p class="comment-form-author">' .
+			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+			'" size="30" ' . $aria_req . ' placeholder="' . esc_html__( 'Name', 'blaskan' ) . ( $req ? '*' : '' ) . '" /></p>',
+
+		'email' =>
+			'<p class="comment-form-email">' .
+			'<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
+			'" size="30" ' . $aria_req . ' placeholder="' . esc_html__( 'Email', 'blaskan' ) . ( $req ? '*' : '' ) . '" /></p>',
+
+		'url' =>
+			'<p class="comment-form-url">' .
+			'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . esc_html__( 'Website', 'blaskan' ) . '" /></p>',
 	);
 
-	comment_form( $commentform );
+	$comment_form_args = array(
+		'comment_field'      => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . _x( 'Comment', 'noun', 'blaskan' ) . '"></textarea></p>',
+		'title_reply_before' => '<h5 id="reply-title" class="comment-reply-title">',
+		'title_reply_after'  => '</h5>',
+		'fields'             => $fields,
+	);
+
+
+	comment_form( $comment_form_args );
 	?>
 
-</section>
-<!-- / #comments -->
+</div><!-- #comments -->
