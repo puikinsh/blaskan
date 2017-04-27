@@ -77,13 +77,13 @@ if ( ! function_exists( 'blaskan_entry_footer' ) ) :
 		echo '</div>';
 
 		echo '<div class="col-md-4 col-xs-12 pull-right text-right">';
-		$url   = urlencode( get_permalink() );
-		$title = urlencode( get_the_title() );
+		$url   = urlencode( esc_url(get_permalink()) );
+		$title = urlencode( esc_url(get_the_title()) );
 		echo '<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
 		echo '<a href="https://twitter.com/home?status=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
 
 		if ( has_post_thumbnail() ) {
-			$image = urlencode( get_the_post_thumbnail_url( get_the_ID(), 'full' ) );
+			$image = urlencode( esc_url((get_the_post_thumbnail_url( get_the_ID(), 'full' ))) );
 			echo '<a href="https://pinterest.com/pin/create/button/?url=' . $url . '&media=' . $image . '" target="_blank" class="social-icons"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>';
 		}
 
@@ -104,11 +104,11 @@ function blaskan_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'blaskan_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
-			                                     'fields'     => 'ids',
-			                                     'hide_empty' => 1,
-			                                     // We only need to know if there is more than one category.
-			                                     'number'     => 2,
-		                                     ) );
+             'fields'     => 'ids',
+             'hide_empty' => 1,
+             // We only need to know if there is more than one category.
+             'number'     => 2,
+         ) );
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );

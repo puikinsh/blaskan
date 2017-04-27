@@ -61,7 +61,7 @@
             <div class="container">
 				<?php
 
-                $display_text = get_theme_mod( 'header_text', 0 );
+                $display_text = get_theme_mod( 'header_text', 1 );
 
 				if ( function_exists( 'the_custom_logo' ) ) {
                     the_custom_logo();

@@ -41,7 +41,7 @@ class Blaskan_Author_Widget extends WP_Widget {
 			        esc_url( get_author_posts_url( $user->ID ) ),
 			        /* translators: %s: author's display name */
 			        esc_attr( $user->display_name ),
-			        $user->display_name
+			        wp_kses_post( $user->display_name )
 			    );
 
 			    echo '<p class="author-description">'.wp_kses_post( $user->description ).'</p>';
