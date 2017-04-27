@@ -113,7 +113,7 @@ add_action( 'customize_preview_init', 'blaskan_customize_preview_js' );
  *
  * @param string $column .
  *
- * @return string (column-1|column-2|column-3).
+ * @return string (column-1|column-2|column-3|column-4).
  */
 function blaskan_sanitize_column( $column ) {
 	if ( ! in_array( $column, array( 'column-1', 'column-2', 'column-3',  'column-4' ) ) ) {
@@ -130,20 +130,20 @@ function blaskan_sanitize_column( $column ) {
  *
  * @return string (right-sidebar|left-sidebar|no-sidebar).
  */
-function blaskan_sanitize_layout( $column ) {
-	if ( ! in_array( $column, array( 'right-sidebar', 'left-sidebar', 'no-sidebar' ) ) ) {
-		$column = 'right-sidebar';
+function blaskan_sanitize_layout( $layout ) {
+	if ( ! in_array( $layout, array( 'right-sidebar', 'left-sidebar', 'no-sidebar' ) ) ) {
+		$layout = 'right-sidebar';
 	}
 
-	return $column;
+	return $layout;
 }
 
 /**
- * Sanitize the Layout value.
+ * Sanitize the Content value.
  *
- * @param string $layout .
+ * @param string $content .
  *
- * @return string (right-sidebar|left-sidebar|no-sidebar).
+ * @return string (excerpt|full-text).
  */
 function blaskan_sanitize_content( $content ) {
 	if ( ! in_array( $content, array( 'excerpt', 'full-text' ) ) ) {
