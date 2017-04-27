@@ -854,7 +854,6 @@ a:active {
     left: -999em;
     z-index: 99999;
     text-align: left;
-    padding-left: 20px;
 }
 
 .main-navigation ul ul ul {
@@ -874,18 +873,6 @@ a:active {
 .main-navigation ul ul li a {
     color: #fff;
     padding: 0 20px;
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
 }
 
 .main-navigation ul li:hover > ul,
@@ -1153,6 +1140,7 @@ a:active {
         position: relative;
         top: 0;
         left: 0;
+        padding-left: 20px;
     }
 
     .main-navigation ul ul ul {
