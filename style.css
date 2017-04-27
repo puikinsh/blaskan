@@ -716,11 +716,6 @@ a.more-link:focus,
     color: #ae3c4e;
 }
 
-.more-link {
-    display: block;
-    padding-top: 20px;
-    border-top: 1px solid #efefef;
-}
 
 /*--------------------------------------------------------------
 # Navigation
@@ -1877,6 +1872,27 @@ a:active {
 
 .entry-thumbnail a {
     display: block;
+}
+
+.entry-footer.index-entry {
+    padding-top: 20px;
+    border-top: 1px solid #efefef;
+}
+.entry-footer.index-entry:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.entry-footer.index-entry .link-more {
+    display: block;
+    float: left;
+}
+.entry-footer.index-entry .social-icons {
+    color: #898989;
+}
+.entry-footer.index-entry .social-icons:hover {
+    color: #ae3c4e;
 }
 
 .entry-footer .tags-links a {

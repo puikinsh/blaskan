@@ -78,7 +78,7 @@ if ( ! function_exists( 'blaskan_entry_footer' ) ) :
 
 		echo '<div class="col-md-4 col-xs-12 pull-right text-right">';
 		$url   = urlencode( esc_url(get_permalink()) );
-		$title = urlencode( esc_url(get_the_title()) );
+		$title = urlencode( esc_attr(get_the_title()) );
 		echo '<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
 		echo '<a href="https://twitter.com/home?status=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
 
@@ -139,28 +139,6 @@ function blaskan_category_transient_flusher() {
 add_action( 'edit_category', 'blaskan_category_transient_flusher' );
 add_action( 'save_post', 'blaskan_category_transient_flusher' );
 
-function blaskan_show_index_content() {
-
-	$article_content = get_theme_mod( 'blaskan_article_content', 'excerpt' );
-
-	if ( 'excerpt' == $article_content ) {
-		the_excerpt();
-	} else {
-		the_content( sprintf(
-		             /* translators: %s: Name of current post. */
-			             wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'blaskan' ), array( 'span' => array( 'class' => array() ) ) ),
-			             the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		             ) );
-
-		wp_link_pages( array(
-			               'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blaskan' ),
-			               'after'  => '</div>',
-		               ) );
-	}
-
-}
-
-
 function blaskan_jetpack_featured_image() {
 
 	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
@@ -185,5 +163,33 @@ function blaskan_jetpack_featured_image() {
 
 
 	return false;
+
+}
+
+add_filter( 'the_content_more_link', 'blaskan_create_read_more_link' );
+
+function blaskan_create_read_more_link( $more_link ){
+
+	$output = '<footer class="entry-footer index-entry">';
+
+	$output .= $more_link;
+	$output .= '<div class="post-social pull-right">';
+
+	$url   = urlencode( esc_url(get_permalink()) );
+	$title = urlencode( esc_attr(get_the_title()) );
+	$output .= '<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
+	$output .= '<a href="https://twitter.com/home?status=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
+
+	if ( has_post_thumbnail() ) {
+		$image = urlencode( esc_url((get_the_post_thumbnail_url( get_the_ID(), 'full' ))) );
+		$output .= '<a href="https://pinterest.com/pin/create/button/?url=' . $url . '&media=' . $image . '" target="_blank" class="social-icons"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>';
+	}
+
+	$output .= '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title . '" target="_blank" class="social-icons"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
+
+	$output .= '</div>';
+	$output .= '</footer>';
+
+	return $output;
 
 }
