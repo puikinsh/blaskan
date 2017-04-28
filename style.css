@@ -265,6 +265,19 @@ th {
     border-right: 1px solid #ebebeb;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #898989;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #898989;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #898989;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #898989;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -910,6 +923,11 @@ a:active {
     display: block;
     line-height: 30px;
     margin-right: 15px;
+    color: rgba( 171, 171, 178, .53 );
+}
+
+#social-menu li a:hover {
+    color: #ae3c4e;
 }
 
 #social-menu li:last-child a {
@@ -1836,11 +1854,12 @@ a:active {
     top: -4px;
     position: relative;
     margin-right: 10px;
+    opacity: .4;
 }
 
 .byline,
 .byline a {
-    color: #f63c4e;
+    color: rgba( 246, 60, 78, .7 );
 }
 
 .byline a:hover {
@@ -1858,7 +1877,7 @@ a:active {
 }
 
 .big-post .entry-header h2.entry-title {
-    margin: 25px 0 45px;
+    margin: 20px 0 45px;
 }
 
 .entry-header h2.entry-title a {
@@ -1890,9 +1909,9 @@ a:active {
     float: right;
 }
 .entry-footer.index-entry .social-icons {
-    color: #898989;
+    color: rgba( 137, 137, 137, .5 );
     margin-left: 0;
-    margin-right: 25px;
+    margin-right: 15px;
 }
 .entry-footer.index-entry .social-icons:hover {
     color: #ae3c4e;
