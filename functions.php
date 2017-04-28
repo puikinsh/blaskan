@@ -183,12 +183,12 @@ function blaskan_excerpt_more( $link ) {
 	}
 
 	/* translators: %s: Name of current post */
-	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s <span class="meta-nav">→</span></a></p>',
+	$link = blaskan_create_read_more_link( sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s <span class="meta-nav">→</span></a></p>',
 	                 esc_url( get_permalink( get_the_ID() ) ),
 	                 esc_html__( 'Continue reading', 'blaskan' )
-	);
+	));
 
-	return ' &hellip; ' . $link;
+	return $link;
 }
 
 add_filter( 'excerpt_more', 'blaskan_excerpt_more' );
