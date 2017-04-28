@@ -15,7 +15,7 @@
         <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'blaskan' ); ?></span>
     </label>
     <input type="search" id="<?php echo $unique_id; ?>" class="search-field"
-           placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'blaskan' ); ?>"
+           placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'blaskan' ); ?>"
            value="<?php echo get_search_query(); ?>" name="s"/>
     <button type="submit" class="search-submit">
         <i class="fa fa-search" aria-hidden="true"></i>
