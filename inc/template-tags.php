@@ -171,9 +171,8 @@ add_filter( 'the_content_more_link', 'blaskan_create_read_more_link' );
 function blaskan_create_read_more_link( $more_link ){
 
 	$output = '<footer class="entry-footer index-entry">';
-
-	$output .= $more_link;
-	$output .= '<div class="post-social pull-right">';
+	
+	$output .= '<div class="post-social pull-left">';
 
 	$url   = urlencode( esc_url(get_permalink()) );
 	$title = urlencode( esc_attr(get_the_title()) );
@@ -188,6 +187,7 @@ function blaskan_create_read_more_link( $more_link ){
 	$output .= '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title . '" target="_blank" class="social-icons"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
 
 	$output .= '</div>';
+	$output .= $more_link;
 	$output .= '</footer>';
 
 	return $output;

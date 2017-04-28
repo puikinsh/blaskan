@@ -1884,12 +1884,15 @@ a:active {
     clear: both;
 }
 
-.entry-footer.index-entry .link-more {
+.entry-footer.index-entry .link-more,
+.entry-footer.index-entry .more-link {
     display: block;
-    float: left;
+    float: right;
 }
 .entry-footer.index-entry .social-icons {
     color: #898989;
+    margin-left: 0;
+    margin-right: 25px;
 }
 .entry-footer.index-entry .social-icons:hover {
     color: #ae3c4e;
