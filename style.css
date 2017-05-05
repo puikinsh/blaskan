@@ -2019,6 +2019,25 @@ blockquote {
     font-size: 20px;
     text-align: center;
     line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 1.5em;
+    padding-bottom: 20px;
+    position: relative;
+}
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+blockquote:after {
+	content: "";
+	display: block;
+	width: 100%;
+	max-width: 135px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 1px;
+	background-color: #f63c4e;
+	position: absolute;
 }
 
 .date-hidden.categories-hidden.author-hidden .entry-meta,
