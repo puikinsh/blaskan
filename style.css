@@ -1342,7 +1342,7 @@ a:active {
     max-width: 100%;
 }
 
-.widget-area .widget {
+#secondary.widget-area .widget {
     padding: 25px 15px;
     border: 1px solid #ebebeb;
 }
@@ -1758,9 +1758,11 @@ a:active {
 #colophon h3,
 #colophon h4,
 #colophon h5,
-#colophon h6,
-#colophon .widget a {
+#colophon h6 {
     color: #fff;
+}
+#colophon .widget a {
+    color: #ababb2;
 }
 
 #colophon .widget_nav_menu li:not(:last-child) > .sub-menu > li:last-child,
@@ -2023,22 +2025,25 @@ blockquote {
     margin-bottom: 1.5em;
     padding-bottom: 20px;
     position: relative;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAABCAIAAABlpRorAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExOERCQjhGNzExQzI0RkZBQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3Q0RDRTNCQjMxQkIxMUU3QUQ3MUNGODlFMEI0QUE3QSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3Q0RDRTNCQTMxQkIxMUU3QUQ3MUNGODlFMEI0QUE3QSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjliMmExMjc4LTcxYTgtNDlmOS1iNjMyLTUzYzEwZTA0NzM5NyIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmE4ZWMyNjVkLTM0NmQtMTE3YS04YzE0LWMyODFkMTAyYWZhYSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pi6ThWAAAAATSURBVHjaYvxm48cwCgYlAAgwAGr+AYLW8J+ZAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: bottom center;
 }
 blockquote p:last-child {
 	margin-bottom: 0;
 }
-blockquote:after {
-	content: "";
-	display: block;
-	width: 100%;
-	max-width: 135px;
-	bottom: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	height: 1px;
-	background-color: #f63c4e;
-	position: absolute;
+blockquote p {
+	display: inline-block;
 }
+blockquote p:first-of-type:after {
+	content: "\201E";
+	display: inline-block;
+}
+blockquote p:last-of-type:before {
+	content: "\201C";
+	display: inline-block;
+}
+
 
 .date-hidden.categories-hidden.author-hidden .entry-meta,
 .author-hidden .posted-on-delimeter,
