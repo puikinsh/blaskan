@@ -2,7 +2,7 @@ WordPress theme Blaskan:
 ------------------------
 Author: Colorlib
 Author URL: https://colorlib.com/
-Theme URL: 
+Theme URI:  https://colorlib.com/wp/themes/blaskan/
 Source code: https://github.com/puikinsh/blaskan
 Requires: WordPress 4.x
 License: GNU General Public License (see license.txt)
