@@ -91,7 +91,7 @@ blockquote p {
 	display: inline-block;
 }
 blockquote p:first-of-type:after {
-	content: "\201E";
+	content: "\201D";
 	display: inline-block;
 }
 blockquote p:last-of-type:before {

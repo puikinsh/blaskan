@@ -25,14 +25,14 @@ if ( $site_layout == 'left-sidebar' && is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
     <div id="primary" class="content-area row">
-        <main id="main" class="site-main <?php echo $class ?>" role="main">
+        <main id="main" class="site-main <?php echo esc_attr($class) ?>" role="main">
 
 			<?php
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'single' );
 
-				$author_bio = get_option( 'jetpack_content_author_bio' );
+				$author_bio = get_option( 'jetpack_content_author_bio', true );
 
 				if ( $author_bio ) {
 					get_template_part( 'template-parts/author', 'description' );

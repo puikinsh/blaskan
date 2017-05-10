@@ -30,7 +30,7 @@ if ( $site_layout == 'left-sidebar' && is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
     <div id="primary" class="content-area row">
-        <main id="main" class="site-main <?php echo $class ?>" role="main">
+        <main id="main" class="site-main <?php echo esc_attr($class) ?>" role="main">
 
 			<?php
 			if ( have_posts() ) :
