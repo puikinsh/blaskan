@@ -68,22 +68,22 @@
 				}
 				if ( $display_text || is_customize_preview() ) {
 
-					$extra_class = ! $display_text ? ' hide' : '';
+					$extra_class = ! $display_text ? 'hide' : '';
 
 					if ( is_front_page() && is_home() ) : ?>
-                        <h1 class="site-title<?php echo $extra_class ?>"><a
+                        <h1 class="site-title<?php echo esc_attr($extra_class) ?>"><a
                                     href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                                    rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                    rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></h1>
 					<?php else : ?>
-                        <p class="site-title<?php echo $extra_class ?>"><a
+                        <p class="site-title<?php echo esc_attr($extra_class) ?>"><a
                                     href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                                    rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                                    rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></p>
 						<?php
 					endif;
 
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) : ?>
-                        <p class="site-description<?php echo $extra_class ?>"><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
+                        <p class="site-description <?php echo esc_attr($extra_class) ?>"><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
 						<?php
 					endif;
 

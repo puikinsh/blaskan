@@ -22,8 +22,7 @@ if ( ! function_exists( 'blaskan_posted_on' ) ) :
 
 		$posted_on = '<span class="byline">' . $byline . '</span>';
 
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'blaskan' ) );
+		$categories_list = get_the_category_list( ', ' );
 		if ( $categories_list && blaskan_categorized_blog() && is_single() ) {
 			$categories = sprintf( '<span class="category-delimeter"> - </span><span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
 			$posted_on  .= $categories;
