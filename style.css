@@ -1343,7 +1343,7 @@ a:active {
 }
 
 #secondary.widget-area .widget {
-    padding: 25px 15px;
+    padding: 25px 45px;
     border: 1px solid #ebebeb;
 }
 
@@ -1353,6 +1353,18 @@ a:active {
 
 .widget .widget-title {
     margin: 0 0 30px 0;
+}
+
+.widget.widget_rss .widget-title > a {
+    font-weight: 400;
+    font-family: 'Droid Serif', serif;
+    line-height: 1.25;
+    font-size: 20px;
+    color: #333;
+}
+
+#colophon .widget.widget_rss .widget-title > a {
+    color: #fff;
 }
 
 .widget-area .widget .widget-title {
@@ -1763,6 +1775,11 @@ a:active {
 }
 #colophon a {
     color: #ababb2;
+}
+
+#colophon .widget_rss .rss-date,
+#colophon .widget_recent_entries .post-date {
+    color: #fff;
 }
 
 #colophon .widget_nav_menu li:not(:last-child) > .sub-menu > li:last-child,
