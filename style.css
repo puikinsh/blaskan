@@ -1511,6 +1511,9 @@ a:active {
     padding: 4px 15px;
     line-height: 25.9px;
 }
+.search-form .search-submit:focus {
+    outline: none;
+}
 
 .widget.widget_search .search-form .search-field {
     padding: 10px 25px;
