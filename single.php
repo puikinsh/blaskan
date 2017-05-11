@@ -52,6 +52,7 @@ if ( $site_layout == 'left-sidebar' && is_active_sidebar( 'sidebar-1' ) ) {
 							$related_posts->the_post();
 							get_template_part( 'template-parts/content', 'related' );
 						}
+						echo '<div class="line"></div>';
 						echo '</div>';
 						wp_reset_postdata();
 					}

@@ -1781,6 +1781,9 @@ a:active {
 #colophon .widget_recent_entries .post-date {
     color: #fff;
 }
+#colophon .widget-area .widget .widget-title {
+	text-align: left;
+}
 
 #colophon .widget_nav_menu li:not(:last-child) > .sub-menu > li:last-child,
 #colophon .widget_nav_menu ul li.menu-item-has-children > a,
@@ -2008,8 +2011,16 @@ footer.entry-footer.row {
 .related-posts {
     width: 100%;
     float: left;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #ebebeb;
+}
+
+.related-posts .line {
+    width: 100%;
+    height: 1px;
+    background-color: #ebebeb;
+    margin: 25px 15px 55px;
+    clear: both;
+    position: relative;
+    float: left;
 }
 
 .related-posts .entry-thumbnail {
