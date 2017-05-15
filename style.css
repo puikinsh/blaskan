@@ -1771,10 +1771,6 @@ a:active {
     padding: 40px 15px 55px;
 }
 
-.footer-widgets > .row > .col-md-3:nth-child( 2n+1 ) {
-	clear: both;
-}
-
 #colophon h1,
 #colophon h2,
 #colophon h3,
@@ -2381,5 +2377,8 @@ object {
     #primary-menu .sub-menu li:hover:after {
         width: 0;
     }
+    .footer-widgets > .row > .col-md-3:nth-child( 2n+1 ) {
+		clear: both;
+	}
 
 }
