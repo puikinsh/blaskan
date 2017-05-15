@@ -1362,6 +1362,9 @@ a:active {
     font-size: 20px;
     color: #333;
 }
+.widget_rss > ul > li {
+	margin-bottom: 20px;
+}
 
 #colophon .widget.widget_rss .widget-title > a {
     color: #fff;
@@ -1766,6 +1769,10 @@ a:active {
 /* Footer sidebar */
 .footer-widgets.container {
     padding: 40px 15px 55px;
+}
+
+.footer-widgets > .row > .col-md-3:nth-child( 2n+1 ) {
+	clear: both;
 }
 
 #colophon h1,
@@ -2220,6 +2227,7 @@ p.comment-form-url input {
 
 #colophon {
     background-color: #333333;
+    color: #fff;
 }
 
 .site-info {
