@@ -16,6 +16,7 @@ Tags: custom-background,custom-header,editor-style,featured-images,blog,grid-lay
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
+# Layout grid
 # Typography
 # Elements
 # Header
@@ -86,6 +87,13 @@ template {
 
 a {
     background-color: transparent;
+    /* Was inherited from the Bootstrap build this theme no longer loads. */
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
 }
 
 a:active,
@@ -279,6 +287,170 @@ th {
 }
 
 /*--------------------------------------------------------------
+# Layout grid
+
+Replaces the Bootstrap 3 grid-only build the theme used to load. Blaskan only
+ever used .container, .row, eight .col-* widths and the float utilities, while
+that build also shipped a second copy of normalize.css on top of the one above.
+
+The breakpoints and widths below are Bootstrap 3's own numbers, so existing
+markup -- and any child theme built against it -- lays out identically.
+
+.row is a flex container. Floats are ignored on flex items, so the .pull-*
+utilities that reorder columns (index.php and friends float #main right to put
+the sidebar on the left) are translated to `order` for that case. The float
+declarations still apply everywhere else, such as in the site header.
+--------------------------------------------------------------*/
+.container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+/* Bootstrap applied its clearfix to .container, and the theme depends on the side
+   effect rather than the clearing: these pseudo-elements stop the site title's 33.5px
+   margins collapsing out through .container, which otherwise lifts the whole header
+   by 15px. .row needs no equivalent -- a flex container already contains its margins. */
+.container::before,
+.container::after {
+	display: table;
+	content: " ";
+}
+
+.container::after {
+	clear: both;
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 750px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 970px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1170px;
+	}
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	/* Floated columns were never stretched to a common height, and the sidebar has a
+	   background in some widget styles, so keep them at their natural height. */
+	align-items: flex-start;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+[class*="col-xs-"],
+[class*="col-sm-"],
+[class*="col-md-"] {
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.col-xs-12 {
+	flex: 0 0 auto;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.col-sm-6 {
+		flex: 0 0 auto;
+		width: 50%;
+	}
+
+	.col-sm-12 {
+		flex: 0 0 auto;
+		width: 100%;
+	}
+}
+
+@media (min-width: 992px) {
+	.col-md-3 {
+		flex: 0 0 auto;
+		width: 25%;
+	}
+
+	.col-md-4 {
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+
+	.col-md-6 {
+		flex: 0 0 auto;
+		width: 50%;
+	}
+
+	.col-md-8 {
+		flex: 0 0 auto;
+		width: 66.66666667%;
+	}
+
+	.col-md-12 {
+		flex: 0 0 auto;
+		width: 100%;
+	}
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+/* An archive header or a divider is not a column. Under floats it filled the row;
+   as a flex item it would shrink to its content, so give it the whole line back. */
+.row > :not([class*="col-xs-"]):not([class*="col-sm-"]):not([class*="col-md-"]) {
+	flex: 0 0 100%;
+	width: 100%;
+}
+
+/* Such a block is now a flex item, so it contains its children's margins instead of
+   letting them collapse out. The archive and search headers put an h1 with a 24px
+   bottom margin inside one; left contained, that margin stacks on top of the header's
+   own 60px and pushes the results down. Drop the trailing one to restore the gap. */
+.row > :not([class*="col-xs-"]):not([class*="col-sm-"]):not([class*="col-md-"]) > :last-child {
+	margin-bottom: 0;
+}
+
+/* A float does nothing to a flex item, so reorder the column instead. */
+.row > .pull-left {
+	order: -1;
+}
+
+.row > .pull-right {
+	order: 1;
+}
+
+/* Bootstrap's exact clearfix, both pseudo-elements included. header.php uses it as an
+   empty sibling after two floated blocks; the ::before and the single space in `content`
+   are load-bearing -- dropping them shortens the header by 15px. */
+.clearfix::before,
+.clearfix::after {
+	display: table;
+	content: " ";
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 body,
@@ -463,6 +635,9 @@ dd {
 img {
     height: auto; /* Make sure images are scaled correctly. */
     max-width: 100%; /* Adhere to container width. */
+    vertical-align: middle; /* Was Bootstrap's; without it an inline image sits on the
+                               baseline and leaves a 9px descender gap below every
+                               featured image. */
 }
 
 figure {

@@ -154,7 +154,6 @@ add_action( 'widgets_init', 'blaskan_widgets_init' );
 function blaskan_scripts() {
 
 	wp_enqueue_style( 'blaskan-fonts', blaskan_fonts_url() );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
 	wp_enqueue_style( 'blaskan-style', get_stylesheet_uri() );
 
