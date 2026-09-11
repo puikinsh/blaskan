@@ -998,7 +998,8 @@ a:active {
 #primary-menu .sub-menu .menu-item-has-children > a:after,
 #primary-menu .children .page_item_has_children > a:after {
     content: "\f105";
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
     font-size: 14px;
     line-height: 40px;
     float: right;
@@ -1071,7 +1072,8 @@ a:active {
 .main-navigation .menu-item-has-children > a:after,
 .main-navigation .page_item_has_children > a:after {
     content: "\f107";
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
     display: inline-block;
     padding-left: 10px;
     font-size: 14px;
@@ -1111,7 +1113,8 @@ a:active {
 #social-menu li a:before {
     content: "";
     display: block;
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 7 Brands";
+    font-weight: 400;
     font-size: 12px;
 }
 
@@ -1135,9 +1138,12 @@ a:active {
     content: "\f16b";
 }
 
-/* Email */
+/* Email -- not a brand, so it needs the Free family back. \f003 was Font
+   Awesome 4's envelope-o, which version 7 does not carry. */
 #social-menu li a[href*="mailto:"]:before {
-    content: "\f003";
+    content: "\f0e0";
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
 }
 
 /* Facebook */
@@ -1185,9 +1191,11 @@ a:active {
     content: "\f1a1";
 }
 
-/* RSS Feed */
+/* RSS Feed -- also not a brand. */
 #social-menu li a[href$="/feed/"]:before {
     content: "\f09e";
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
 }
 
 /* Skype */
@@ -1267,7 +1275,8 @@ a:active {
 }
 
 .menu-toggle:after {
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
     content: "\f0c9";
     font-size: 20px;
     padding-left: 20px;
@@ -1856,7 +1865,8 @@ a:active {
 
 .widget_calendar table td#prev a:before,
 .widget_calendar table td#next a:before {
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
     color: #f63c4e;
     display: inline-block;
     font-size: 20px;
@@ -2411,14 +2421,16 @@ p.comment-form-url input {
 --------------------------------------------------------------*/
 .nav-links .nav-previous a:before {
     content: "\f104";
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
     font-size: 14px;
     margin-right: 10px;
 }
 
 .nav-links .nav-next a:after {
     content: "\f105";
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
     font-size: 14px;
     margin-left: 10px;
 }

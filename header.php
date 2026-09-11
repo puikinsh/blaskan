@@ -47,7 +47,7 @@
                               action="<?php echo esc_url( home_url( '/' ) ); ?>">
                             <input id="search" type="search" name="s"
                                    placeholder="<?php esc_html__( 'Search ...', 'blaskan' ) ?>">
-                            <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
+                            <label for="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></label>
                         </form>
                     </div>
                     <?php } ?>

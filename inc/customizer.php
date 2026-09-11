@@ -83,7 +83,7 @@ function blaskan_customize_register( $wp_customize ) {
             	$output = "";
             	$output .= '<div id="search-header-form" class="search"><form role="search" method="get" class="search-form" action="'.esc_url( home_url( '/' ) ).'">';
                     $output .= '<input id="search" type="search" name="s" placeholder="'.esc_html__( 'Search ...', 'blaskan' ).'">';
-                    $output .= '<label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>';
+                    $output .= '<label for="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></label>';
                 $output .= '</form></div>';
 
                 return $output;

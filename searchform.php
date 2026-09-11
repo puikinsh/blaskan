@@ -18,7 +18,7 @@
            placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'blaskan' ); ?>"
            value="<?php echo esc_attr( get_search_query() ); ?>" name="s"/>
     <button type="submit" class="search-submit">
-        <i class="fa fa-search" aria-hidden="true"></i>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         <span class="screen-reader-text"><?php echo esc_html_x( 'Search', 'submit button', 'blaskan' ); ?></span>
     </button>
 </form>

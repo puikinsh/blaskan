@@ -154,7 +154,25 @@ add_action( 'widgets_init', 'blaskan_widgets_init' );
 function blaskan_scripts() {
 
 	wp_enqueue_style( 'blaskan-fonts', blaskan_fonts_url() );
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+	/*
+	 * Font Awesome 7, self-hosted. The bundled stylesheet is subsetted to the glyphs
+	 * this theme renders -- the social menu's brand marks and a handful of core icons --
+	 * which is a fraction of the full set's weight. A site that needs the rest, for a
+	 * widget, a page builder or a child theme, can swap in the complete build:
+	 *
+	 *     add_filter( 'blaskan_full_fontawesome', '__return_true' );
+	 */
+	$fa_uri = get_template_directory_uri() . '/assets/css/fontawesome/';
+
+	if ( apply_filters( 'blaskan_full_fontawesome', false ) ) {
+		wp_enqueue_style( 'blaskan-icons', $fa_uri . 'fontawesome.min.css', array(), '7.3.1' );
+		wp_enqueue_style( 'blaskan-icons-solid', $fa_uri . 'solid.min.css', array( 'blaskan-icons' ), '7.3.1' );
+		wp_enqueue_style( 'blaskan-icons-regular', $fa_uri . 'regular.min.css', array( 'blaskan-icons' ), '7.3.1' );
+		wp_enqueue_style( 'blaskan-icons-brands', $fa_uri . 'brands.min.css', array( 'blaskan-icons' ), '7.3.1' );
+	} else {
+		wp_enqueue_style( 'blaskan-icons', $fa_uri . 'subset/fontawesome-subset.min.css', array(), '7.3.1' );
+	}
+
 	wp_enqueue_style( 'blaskan-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'imagesloaded' );

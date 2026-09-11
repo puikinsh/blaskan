@@ -78,15 +78,15 @@ if ( ! function_exists( 'blaskan_entry_footer' ) ) :
 		echo '<div class="col-md-4 col-xs-12 pull-right text-right">';
 		$url   = urlencode( esc_url(get_permalink()) );
 		$title = urlencode( esc_attr(get_the_title()) );
-		echo '<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
-		echo '<a href="https://twitter.com/home?status=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
+		echo '<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" target="_blank" class="social-icons"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>';
+		echo '<a href="https://twitter.com/home?status=' . $url . '" target="_blank" class="social-icons"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>';
 
 		if ( has_post_thumbnail() ) {
 			$image = urlencode( esc_url((get_the_post_thumbnail_url( get_the_ID(), 'full' ))) );
-			echo '<a href="https://pinterest.com/pin/create/button/?url=' . $url . '&media=' . $image . '" target="_blank" class="social-icons"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>';
+			echo '<a href="https://pinterest.com/pin/create/button/?url=' . $url . '&media=' . $image . '" target="_blank" class="social-icons"><i class="fa-brands fa-pinterest-p" aria-hidden="true"></i></a>';
 		}
 
-		echo '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title . '" target="_blank" class="social-icons"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
+		echo '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title . '" target="_blank" class="social-icons"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>';
 
 		echo '</div>';
 
@@ -175,15 +175,15 @@ function blaskan_create_read_more_link( $more_link ){
 
 	$url   = urlencode( esc_url(get_permalink()) );
 	$title = urlencode( esc_attr(get_the_title()) );
-	$output .= '<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
-	$output .= '<a href="https://twitter.com/home?status=' . $url . '" target="_blank" class="social-icons"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
+	$output .= '<a href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '" target="_blank" class="social-icons"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>';
+	$output .= '<a href="https://twitter.com/home?status=' . $url . '" target="_blank" class="social-icons"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>';
 
 	if ( has_post_thumbnail() ) {
 		$image = urlencode( esc_url((get_the_post_thumbnail_url( get_the_ID(), 'full' ))) );
-		$output .= '<a href="https://pinterest.com/pin/create/button/?url=' . $url . '&media=' . $image . '" target="_blank" class="social-icons"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>';
+		$output .= '<a href="https://pinterest.com/pin/create/button/?url=' . $url . '&media=' . $image . '" target="_blank" class="social-icons"><i class="fa-brands fa-pinterest-p" aria-hidden="true"></i></a>';
 	}
 
-	$output .= '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title . '" target="_blank" class="social-icons"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
+	$output .= '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $title . '" target="_blank" class="social-icons"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>';
 
 	$output .= '</div>';
 	$output .= $more_link;
