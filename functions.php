@@ -153,7 +153,7 @@ add_action( 'widgets_init', 'blaskan_widgets_init' );
  */
 function blaskan_scripts() {
 
-	wp_enqueue_style( 'blaskan-fonts', blaskan_fonts_url() );
+	wp_enqueue_style( 'blaskan-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), '3.0.2' );
 	/*
 	 * Font Awesome 7, self-hosted. The bundled stylesheet is subsetted to the glyphs
 	 * this theme renders -- the social menu's brand marks and a handful of core icons --
@@ -220,62 +220,6 @@ function blaskan_search_filter( $query ) {
 
 add_filter( 'pre_get_posts', 'blaskan_search_filter' );
 
-function blaskan_fonts_url() {
-	$fonts_url = '';
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Droid Serif, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$droid = _x( 'on', 'Droid Serif font: on or off', 'blaskan' );
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Source Sans Pro, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$source_sans = _x( 'on', 'Source Sans Pro font: on or off', 'blaskan' );
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Work Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$work_sans = _x( 'on', 'Work Sans font: on or off', 'blaskan' );
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Pacifico, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$pacifico = _x( 'on', 'Pacifico font: on or off', 'blaskan' );
-
-	if ( 'off' !== $droid || 'off' !== $source_sans || 'off' !== $work_sans ) {
-		$font_families = array();
-
-		if ( 'off' !== $droid ) {
-			$font_families[] = 'Droid Serif:400,700';
-		}
-
-		if ( 'off' !== $source_sans ) {
-			$font_families[] = 'Source Sans Pro:300,400,600,700,900';
-		}
-
-		if ( 'off' !== $work_sans ) {
-			$font_families[] = 'Work Sans';
-		}
-
-		if ( 'off' !== $pacifico ) {
-			$font_families[] = 'Pacifico';
-		}
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
-
-	return esc_url_raw( $fonts_url );
-}
 
 /**
  * Custom template tags for this theme.
