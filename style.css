@@ -4,11 +4,14 @@ Theme URI: https://colorlib.com/wp/themes/blaskan/
 Author: Colorlib
 Author URI: https://colorlib.com/
 Description: Blaskan is a responsive and accessible WordPress theme that's built for many kinds of screens.
-Version: 3.0.2
+Version: 3.1.0
+Requires at least: 5.2
+Tested up to: 7.1
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blaskan
-Tags: custom-background,custom-header,editor-style,featured-images,blog,grid-layout,left-sidebar,right-sidebar
+Tags: blog, grid-layout, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 */
 
