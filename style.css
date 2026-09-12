@@ -2019,6 +2019,14 @@ a:active {
     color: #fff;
 }
 
+.blaskan-empty-sidebar-message {
+    padding: 20px;
+    border: 1px dashed #d3d3d3;
+    color: #898989;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

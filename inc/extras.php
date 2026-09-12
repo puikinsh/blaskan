@@ -116,3 +116,42 @@ function blaskan_verify_image_orientation( $image_id ){
     } 
 
 }
+/**
+ * Whether the sidebar should sit alongside the content.
+ *
+ * An empty widget area means no sidebar, which is right on a live site but reads as a
+ * broken setting in the Customizer: you choose "Right Sidebar", nothing moves, and
+ * nothing says the area is simply empty. That is what issue #197 turned out to be. The
+ * Customizer preview therefore keeps the column so the message in sidebar.php can
+ * explain itself; visitors never see it.
+ *
+ * @return bool
+ */
+function blaskan_has_sidebar() {
+	if ( 'no-sidebar' === get_theme_mod( 'blaskan_site_layout', 'right-sidebar' ) ) {
+		return false;
+	}
+
+	return is_active_sidebar( 'sidebar-1' ) || is_customize_preview();
+}
+
+/**
+ * Grid classes for the main content column.
+ *
+ * index.php, archive.php, search.php and single.php each carried their own copy of this,
+ * which is how sidebar.php and the templates could disagree about whether a sidebar was
+ * being drawn.
+ *
+ * @return string
+ */
+function blaskan_content_class() {
+	if ( ! blaskan_has_sidebar() ) {
+		return 'col-md-12 col-sm-12';
+	}
+
+	if ( 'left-sidebar' === get_theme_mod( 'blaskan_site_layout', 'right-sidebar' ) ) {
+		return 'col-md-8 col-sm-12 pull-right';
+	}
+
+	return 'col-md-8 col-sm-12';
+}

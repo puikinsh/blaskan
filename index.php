@@ -16,16 +16,7 @@ get_header(); ?>
 
 <?php
 
-// Get layout options
-$site_layout = get_theme_mod( 'blaskan_site_layout', 'right-sidebar' );
-
-$class = 'col-md-8 col-sm-12';
-
-if ( $site_layout == 'left-sidebar' && is_active_sidebar( 'sidebar-1' ) ) {
-	$class = 'col-md-8 col-sm-12 pull-right';
-} elseif ( $site_layout == 'no-sidebar' || ! is_active_sidebar( 'sidebar-1' ) ) {
-	$class = 'col-md-12 col-sm-12';
-}
+$class = blaskan_content_class();
 
 ?>
 
