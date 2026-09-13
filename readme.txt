@@ -7,7 +7,7 @@ Author URI: https://colorlib.com/
 Requires at least: 5.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 3.1.0
+Stable tag: 3.1.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Source code: https://github.com/puikinsh/blaskan
@@ -64,6 +64,21 @@ from a child theme or plugin:
 
 == Changelog ==
 
+= 3.1.1 =
+* Added wp_body_open(), which WordPress has expected since 5.2.
+* Replaced the default header image. The previous one came from a stock photo library
+  whose licence WordPress.org does not accept as GPL compatible; the new one was made for
+  the theme and carries the theme's own licence.
+* The header search is now rendered with get_search_form() from a single template part,
+  rather than three hand-written copies of a form that a plugin could not filter. Its
+  magnifier is a real button with aria-expanded instead of a label pressed into service
+  as a toggle, so it announces itself and works from the keyboard, and its placeholder is
+  no longer empty.
+* Three labels in the author widget escaped their text with esc_attr_e() instead of
+  esc_html_e(), and two of its select attributes were printed unescaped.
+* Added wp-block-styles, responsive-embeds and align-wide support, a Framed image style,
+  a plain quote style and a standfirst block pattern.
+
 = 3.1.0 =
 * Removed the bundled Bootstrap grid. The theme uses its own layout rules on the same
   breakpoints and widths, so existing markup and child themes are unaffected. This also
@@ -80,19 +95,6 @@ from a child theme or plugin:
 * Added the Requires at least, Tested up to and Requires PHP headers, and corrected the
   theme tags to what the theme actually supports.
 * Recompressed the screenshot from 727 KB to 132 KB.
-* Replaced the default header image. The previous one came from a stock photo library
-  whose licence WordPress.org does not accept as GPL compatible; the new one was made for
-  the theme and carries the theme's own licence.
-* Added wp_body_open(), which WordPress has expected since 5.2.
-* The header search is now rendered with get_search_form() from a single template part,
-  rather than three hand-written copies of a form that a plugin could not filter. Its
-  magnifier is a real button with aria-expanded instead of a label pressed into service
-  as a toggle, so it announces itself and works from the keyboard.
-* Added wp-block-styles, responsive-embeds and align-wide support for the block editor.
-* Three labels in the author widget escaped their text with esc_attr_e() instead of
-  esc_html_e(), and two of its select attributes were printed unescaped.
-* The header search field's placeholder was always empty: esc_html__() returns a string
-  rather than printing one.
 
 = 3.0.2 =
 * Fixed footer columns, related posts, widget titles in the footer and search focus.
