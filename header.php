@@ -20,6 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
     <header id="masthead" class="site-header" role="banner">
         <div class="site-branding ">
@@ -37,20 +38,10 @@
                     </div>
 				<?php }
 
-                $disable_search = get_theme_mod( 'blaskan_disable_header_search', 0 );
 
                 ?>
                 <div class="search-header-form-container pull-right">
-                    <?php if ( !$disable_search || is_customize_preview() ) { ?>
-                    <div id="search-header-form" class="search <?php echo ( is_customize_preview() && $disable_search ) ? 'hide' : '' ?>">
-                        <form role="search" method="get" class="search-form"
-                              action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <input id="search" type="search" name="s"
-                                   placeholder="<?php esc_html__( 'Search ...', 'blaskan' ) ?>">
-                            <label for="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></label>
-                        </form>
-                    </div>
-                    <?php } ?>
+                    <?php get_template_part( 'template-parts/header-search' ); ?>
                 </div>
 
                 

@@ -29,12 +29,17 @@ $(document).ready(function(){
 
 	}
 
-	$('.top-header .search .search-form label').click(function( evt ){
+	// The magnifier is a button now, not a label, so it carries aria-expanded and has
+	// to keep it in step with the class that reveals the field.
+	$('.top-header .search').on('click', '.search-toggle', function( evt ){
 		evt.stopPropagation();
 		evt.preventDefault();
-		$('.top-header .search').toggleClass( 'active' );
-		$('.top-header #search').focus();
-	});	
+		var $search = $(this).closest('.search').toggleClass('active');
+		$(this).attr('aria-expanded', $search.hasClass('active') ? 'true' : 'false');
+		if ( $search.hasClass('active') ) {
+			$search.find('.search-field').trigger('focus');
+		}
+	});
 
 });
 

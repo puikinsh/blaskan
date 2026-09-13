@@ -80,6 +80,19 @@ from a child theme or plugin:
 * Added the Requires at least, Tested up to and Requires PHP headers, and corrected the
   theme tags to what the theme actually supports.
 * Recompressed the screenshot from 727 KB to 132 KB.
+* Replaced the default header image. The previous one came from a stock photo library
+  whose licence WordPress.org does not accept as GPL compatible; the new one was made for
+  the theme and carries the theme's own licence.
+* Added wp_body_open(), which WordPress has expected since 5.2.
+* The header search is now rendered with get_search_form() from a single template part,
+  rather than three hand-written copies of a form that a plugin could not filter. Its
+  magnifier is a real button with aria-expanded instead of a label pressed into service
+  as a toggle, so it announces itself and works from the keyboard.
+* Added wp-block-styles, responsive-embeds and align-wide support for the block editor.
+* Three labels in the author widget escaped their text with esc_attr_e() instead of
+  esc_html_e(), and two of its select attributes were printed unescaped.
+* The header search field's placeholder was always empty: esc_html__() returns a string
+  rather than printing one.
 
 = 3.0.2 =
 * Fixed footer columns, related posts, widget titles in the footer and search focus.
@@ -100,5 +113,5 @@ from a child theme or plugin:
 
 == Images ==
 
-Header image: https://pixabay.com/en/girl-female-modeling-model-sexy-1502520/
-Licensed under CC0 Public Domain, https://creativecommons.org/publicdomain/zero/1.0/deed.en
+assets/images/custom-header.jpg -- the default header image. Created for this theme and
+licensed under the GNU General Public License v2 or later, the same terms as the theme.

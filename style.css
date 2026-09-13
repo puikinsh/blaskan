@@ -690,43 +690,58 @@ header#masthead {
     margin-bottom: 15px;
 }
 
-.top-header .search label {
+/* The header search is a toggle button followed by get_search_form()'s markup. That
+   form carries its own submit button, which is redundant here: the toggle already shows
+   the magnifier and the field submits on Enter, exactly as the old label-based version
+   did. */
+.top-header .search .search-toggle {
     font-size: 12px;
-    padding-right: 20px;
+    padding: 0 20px 0 0;
     margin-right: 20px;
+    border: 0 none;
     border-right: 1px solid #dddde0;
+    background: none;
     display: inline-block;
     line-height: 12px;
     color: #fe92a1;
     cursor: pointer;
 }
 
-.top-header .search input#search {
+.top-header .search .search-header-fields {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.top-header .search .search-submit {
+    display: none;
+}
+
+.top-header .search .search-field {
     border-left: 0 none;
     border-top: 0 none;
     border-right: 0 none;
     border-bottom: 1px solid #dddde0;
     margin-right: 10px;
     width: 0;
-    -webkit-transition: width .6s; /* Safari */
     transition: width .6s;
     box-sizing: border-box;
     padding: 0;
 }
 
-.top-header .search.active input#search {
+.top-header .search.active .search-field {
     width: 135px;
 }
 
-.top-header .search input#search:focus,
-.top-header .search input#search:hover {
+.top-header .search .search-field:focus,
+.top-header .search .search-field:hover {
     outline: none;
     border-color: #ae3c4e;
 }
 
-.top-header .search form {
+.top-header .search .search-form {
     position: relative;
     top: 1.75px;
+    display: inline-block;
 }
 
 header.archive-header {
@@ -1373,7 +1388,7 @@ a:active {
         display: block;
     }
 
-    .top-header .search label {
+    .top-header .search .search-toggle {
         border-right: 0 none;
         padding-right: 0;
         margin-right: 0;

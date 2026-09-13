@@ -76,6 +76,13 @@ if ( ! function_exists( 'blaskan_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// Block editor. wp-block-styles brings the default block styles the editor
+		// assumes, responsive-embeds keeps embedded video inside its column, and
+		// align-wide lets a block break out of the content measure.
+		add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'align-wide' );
+
 		// Add image sizes
 		add_image_size( 'related-blog-post', 360, 270, true );
 		add_image_size( 'big-blog-post', 1140, 570, true );
@@ -230,6 +237,7 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/blocks.php';
 
 /**
  * Customizer additions.

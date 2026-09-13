@@ -51,7 +51,13 @@ class Blaskan_Author_Widget extends WP_Widget {
 			$social_menu = ! empty( $instance['social_menu'] ) ? wp_get_nav_menu_object( $instance['social_menu'] ) : false;
 
 			if ( $social_menu ) {
-				
+
+				/*
+				 * No theme_location here on purpose. This is not a theme location: the
+				 * menu is whichever one the site owner picked in this widget's own form,
+				 * passed by term id. Theme Check flags any wp_nav_menu() without a
+				 * location for manual review, which this note is for.
+				 */
 				$social_menu_args = array(
 					'fallback_cb' 		=> '',
 					'menu'        		=> $social_menu,
@@ -86,11 +92,11 @@ class Blaskan_Author_Widget extends WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'blaskan' ); ?></label> 
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'blaskan' ); ?></label> 
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'author' ) ); ?>"><?php esc_attr_e( 'Author:', 'blaskan' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'author' ) ); ?>"><?php esc_html_e( 'Author:', 'blaskan' ); ?></label>
 			<select id="<?php echo esc_attr( $this->get_field_id( 'author' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'author' ) ); ?>">
 				<option value="0"><?php _e( 'Select an user', 'blaskan' ); ?></option>
 				<?php
@@ -114,8 +120,8 @@ class Blaskan_Author_Widget extends WP_Widget {
 			<?php echo sprintf( __( 'No menus have been created yet. <a href="%s">Create some</a>.', 'blaskan' ), esc_attr( $url ) ); ?>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'social_menu' ) ); ?>"><?php esc_attr_e( 'Social Menu:', 'blaskan' ); ?></label>
-			<select id="<?php echo $this->get_field_id( 'social_menu' ); ?>" name="<?php echo $this->get_field_name( 'social_menu' ); ?>">
+			<label for="<?php echo esc_attr( $this->get_field_id( 'social_menu' ) ); ?>"><?php esc_html_e( 'Social Menu:', 'blaskan' ); ?></label>
+			<select id="<?php echo esc_attr( $this->get_field_id( 'social_menu' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'social_menu' ) ); ?>">
 				<option value="0"><?php _e( '&mdash; Select &mdash;', 'blaskan' ); ?></option>
 				<?php foreach ( $menus as $menu ) : ?>
 					<option value="<?php echo esc_attr( $menu->term_id ); ?>" <?php selected( $social_menu, $menu->term_id ); ?>>

@@ -76,19 +76,13 @@ function blaskan_customize_register( $wp_customize ) {
 		'selector'        => '#search-header-form',
 		'container_inclusive' => true,
 		'render_callback' => function() {
-            $disable_search = get_theme_mod( 'blaskan_disable_header_search', 0 );
-            if ( $disable_search ) {
-            	return "";
-            }else{
-            	$output = "";
-            	$output .= '<div id="search-header-form" class="search"><form role="search" method="get" class="search-form" action="'.esc_url( home_url( '/' ) ).'">';
-                    $output .= '<input id="search" type="search" name="s" placeholder="'.esc_html__( 'Search ...', 'blaskan' ).'">';
-                    $output .= '<label for="search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></label>';
-                $output .= '</form></div>';
+			// Render the same template part header.php uses, rather than a second copy of
+			// the markup that then has to be kept in step with it by hand.
+			ob_start();
+			get_template_part( 'template-parts/header-search' );
 
-                return $output;
-            }
-        },
+			return ob_get_clean();
+		},
 	) );
 
 }
