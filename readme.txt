@@ -78,6 +78,7 @@ from a child theme or plugin:
   esc_html_e(), and two of its select attributes were printed unescaped.
 * Added wp-block-styles, responsive-embeds and align-wide support, a Framed image style,
   a plain quote style and a standfirst block pattern.
+* New screenshot, taken from the updated demo at colorlibhub.com/blaskan.
 
 = 3.1.0 =
 * Removed the bundled Bootstrap grid. The theme uses its own layout rules on the same
